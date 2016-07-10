@@ -11,6 +11,6 @@
 
 USING_NS_CC;
 
-static Scene* SceneManager::getFirstScene() {
+Scene* SceneManager::getFirstScene() {
     return Title::createScene();
 }

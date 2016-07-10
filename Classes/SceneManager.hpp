@@ -15,7 +15,7 @@
 // シーンの切り替え担当
 class SceneManager {
 public:
-    static cocos2d::Scene getFirstScene();
+    static cocos2d::Scene* getFirstScene();
 };
 
 #endif /* SceneManager_hpp */

@@ -21,9 +21,7 @@
 		46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7A19C43A67006E1F66 /* HelloWorld.png */; };
 		46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7A19C43A67006E1F66 /* HelloWorld.png */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
-		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
-		46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -59,88 +57,12 @@
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
-		551DAD5D1D328079009A293D /* Actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD0F1D328078009A293D /* Actor.cpp */; };
-		551DAD5E1D328079009A293D /* Actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD0F1D328078009A293D /* Actor.cpp */; };
-		551DAD5F1D328079009A293D /* AlchemistManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD111D328078009A293D /* AlchemistManager.cpp */; };
-		551DAD601D328079009A293D /* AlchemistManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD111D328078009A293D /* AlchemistManager.cpp */; };
-		551DAD611D328079009A293D /* Battle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD131D328078009A293D /* Battle.cpp */; };
-		551DAD621D328079009A293D /* Battle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD131D328078009A293D /* Battle.cpp */; };
-		551DAD631D328079009A293D /* BattleCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD151D328078009A293D /* BattleCalculator.cpp */; };
-		551DAD641D328079009A293D /* BattleCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD151D328078009A293D /* BattleCalculator.cpp */; };
-		551DAD651D328079009A293D /* BImgBank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD171D328078009A293D /* BImgBank.cpp */; };
-		551DAD661D328079009A293D /* BImgBank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD171D328078009A293D /* BImgBank.cpp */; };
-		551DAD671D328079009A293D /* CmdList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD191D328078009A293D /* CmdList.cpp */; };
-		551DAD681D328079009A293D /* CmdList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD191D328078009A293D /* CmdList.cpp */; };
-		551DAD691D328079009A293D /* CmdManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD1B1D328078009A293D /* CmdManager.cpp */; };
-		551DAD6A1D328079009A293D /* CmdManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD1B1D328078009A293D /* CmdManager.cpp */; };
-		551DAD6B1D328079009A293D /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD1E1D328078009A293D /* Enemy.cpp */; };
-		551DAD6C1D328079009A293D /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD1E1D328078009A293D /* Enemy.cpp */; };
-		551DAD6D1D328079009A293D /* EnemyAI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD201D328078009A293D /* EnemyAI.cpp */; };
-		551DAD6E1D328079009A293D /* EnemyAI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD201D328078009A293D /* EnemyAI.cpp */; };
-		551DAD6F1D328079009A293D /* EnemyPlanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD221D328078009A293D /* EnemyPlanner.cpp */; };
-		551DAD701D328079009A293D /* EnemyPlanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD221D328078009A293D /* EnemyPlanner.cpp */; };
-		551DAD711D328079009A293D /* EnemySpeciesManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD241D328078009A293D /* EnemySpeciesManager.cpp */; };
-		551DAD721D328079009A293D /* EnemySpeciesManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD241D328078009A293D /* EnemySpeciesManager.cpp */; };
-		551DAD731D328079009A293D /* EnemyTargetter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD261D328078009A293D /* EnemyTargetter.cpp */; };
-		551DAD741D328079009A293D /* EnemyTargetter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD261D328078009A293D /* EnemyTargetter.cpp */; };
-		551DAD751D328079009A293D /* EveManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD281D328078009A293D /* EveManager.cpp */; };
-		551DAD761D328079009A293D /* EveManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD281D328078009A293D /* EveManager.cpp */; };
-		551DAD771D328079009A293D /* EveObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD2A1D328078009A293D /* EveObj.cpp */; };
-		551DAD781D328079009A293D /* EveObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD2A1D328078009A293D /* EveObj.cpp */; };
-		551DAD791D328079009A293D /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD2C1D328078009A293D /* Field.cpp */; };
-		551DAD7A1D328079009A293D /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD2C1D328078009A293D /* Field.cpp */; };
-		551DAD7B1D328079009A293D /* ImgBank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD2E1D328078009A293D /* ImgBank.cpp */; };
-		551DAD7C1D328079009A293D /* ImgBank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD2E1D328078009A293D /* ImgBank.cpp */; };
-		551DAD7D1D328079009A293D /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD301D328078009A293D /* Item.cpp */; };
-		551DAD7E1D328079009A293D /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD301D328078009A293D /* Item.cpp */; };
-		551DAD7F1D328079009A293D /* ItemManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD321D328078009A293D /* ItemManager.cpp */; };
-		551DAD801D328079009A293D /* ItemManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD321D328078009A293D /* ItemManager.cpp */; };
-		551DAD811D328079009A293D /* Load.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD341D328078009A293D /* Load.cpp */; };
-		551DAD821D328079009A293D /* Load.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD341D328078009A293D /* Load.cpp */; };
-		551DAD831D328079009A293D /* LogWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD361D328078009A293D /* LogWindow.cpp */; };
-		551DAD841D328079009A293D /* LogWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD361D328078009A293D /* LogWindow.cpp */; };
-		551DAD851D328079009A293D /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD381D328078009A293D /* Main.cpp */; };
-		551DAD861D328079009A293D /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD381D328078009A293D /* Main.cpp */; };
-		551DAD871D328079009A293D /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD3A1D328078009A293D /* Map.cpp */; };
-		551DAD881D328079009A293D /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD3A1D328078009A293D /* Map.cpp */; };
-		551DAD891D328079009A293D /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD3C1D328078009A293D /* Menu.cpp */; };
-		551DAD8A1D328079009A293D /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD3C1D328078009A293D /* Menu.cpp */; };
-		551DAD8B1D328079009A293D /* Mrt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD3E1D328078009A293D /* Mrt.cpp */; };
-		551DAD8C1D328079009A293D /* Mrt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD3E1D328078009A293D /* Mrt.cpp */; };
-		551DAD8D1D328079009A293D /* mrtLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD401D328078009A293D /* mrtLib.cpp */; };
-		551DAD8E1D328079009A293D /* mrtLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD401D328078009A293D /* mrtLib.cpp */; };
-		551DAD8F1D328079009A293D /* MusicManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD421D328078009A293D /* MusicManager.cpp */; };
-		551DAD901D328079009A293D /* MusicManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD421D328078009A293D /* MusicManager.cpp */; };
-		551DAD911D328079009A293D /* nunuLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD441D328078009A293D /* nunuLib.cpp */; };
-		551DAD921D328079009A293D /* nunuLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD441D328078009A293D /* nunuLib.cpp */; };
-		551DAD941D328079009A293D /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD461D328078009A293D /* Player.cpp */; };
-		551DAD951D328079009A293D /* PlayerSpeciesManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD481D328079009A293D /* PlayerSpeciesManager.cpp */; };
-		551DAD961D328079009A293D /* PlayerSpeciesManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD481D328079009A293D /* PlayerSpeciesManager.cpp */; };
-		551DAD971D328079009A293D /* ScreenChanger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD4A1D328079009A293D /* ScreenChanger.cpp */; };
-		551DAD981D328079009A293D /* ScreenChanger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD4A1D328079009A293D /* ScreenChanger.cpp */; };
-		551DAD991D328079009A293D /* ShopManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD4C1D328079009A293D /* ShopManager.cpp */; };
-		551DAD9A1D328079009A293D /* ShopManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD4C1D328079009A293D /* ShopManager.cpp */; };
-		551DAD9D1D328079009A293D /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD501D328079009A293D /* System.cpp */; };
-		551DAD9E1D328079009A293D /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD501D328079009A293D /* System.cpp */; };
-		551DAD9F1D328079009A293D /* TalkName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD511D328079009A293D /* TalkName.cpp */; };
-		551DADA01D328079009A293D /* TalkName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD511D328079009A293D /* TalkName.cpp */; };
-		551DADA11D328079009A293D /* TextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD531D328079009A293D /* TextBox.cpp */; };
-		551DADA21D328079009A293D /* TextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD531D328079009A293D /* TextBox.cpp */; };
-		551DADA31D328079009A293D /* TextWrap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD551D328079009A293D /* TextWrap.cpp */; };
-		551DADA41D328079009A293D /* TextWrap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD551D328079009A293D /* TextWrap.cpp */; };
-		551DADA51D328079009A293D /* TrickDamageEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD571D328079009A293D /* TrickDamageEffect.cpp */; };
-		551DADA61D328079009A293D /* TrickDamageEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD571D328079009A293D /* TrickDamageEffect.cpp */; };
-		551DADA71D328079009A293D /* TrickManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD591D328079009A293D /* TrickManager.cpp */; };
-		551DADA81D328079009A293D /* TrickManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD591D328079009A293D /* TrickManager.cpp */; };
-		551DADA91D328079009A293D /* WorldManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD5B1D328079009A293D /* WorldManager.cpp */; };
-		551DADAA1D328079009A293D /* WorldManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD5B1D328079009A293D /* WorldManager.cpp */; };
 		551DADB51D329597009A293D /* Title.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DADB31D329597009A293D /* Title.cpp */; };
 		551DADB61D329597009A293D /* Title.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DADB31D329597009A293D /* Title.cpp */; };
-		551DADBA1D3296C0009A293D /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DADB81D3296C0009A293D /* SceneManager.cpp */; };
-		551DADBB1D3296C0009A293D /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DADB81D3296C0009A293D /* SceneManager.cpp */; };
-		551DADBC1D329A16009A293D /* Species.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD4E1D328079009A293D /* Species.cpp */; };
-		551DADBD1D329A16009A293D /* Species.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD4E1D328079009A293D /* Species.cpp */; };
-		551DADBE1D329A28009A293D /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DAD461D328078009A293D /* Player.cpp */; };
+		551DADC21D329BA4009A293D /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
+		551DADC41D329BB7009A293D /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
+		551DADC61D329C69009A293D /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DADB81D3296C0009A293D /* SceneManager.cpp */; };
+		551DADC71D329C6A009A293D /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 551DADB81D3296C0009A293D /* SceneManager.cpp */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -462,11 +384,11 @@
 			isa = PBXGroup;
 			children = (
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
+				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
+				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 				551DADAC1D3287A9009A293D /* Battle */,
 				551DADAF1D328907009A293D /* Field */,
-				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
-				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 				551DADAD1D3287FA009A293D /* Item */,
 				551DADAE1D3288B0009A293D /* Load */,
 				551DADB11D328949009A293D /* Other */,
@@ -528,33 +450,33 @@
 		551DADAC1D3287A9009A293D /* Battle */ = {
 			isa = PBXGroup;
 			children = (
-				551DAD4E1D328079009A293D /* Species.cpp */,
-				551DAD4F1D328079009A293D /* Species.h */,
-				551DAD171D328078009A293D /* BImgBank.cpp */,
-				551DAD181D328078009A293D /* BImgBank.h */,
 				551DAD0F1D328078009A293D /* Actor.cpp */,
-				551DAD101D328078009A293D /* Actor.h */,
 				551DAD131D328078009A293D /* Battle.cpp */,
-				551DAD141D328078009A293D /* Battle.h */,
 				551DAD151D328078009A293D /* BattleCalculator.cpp */,
-				551DAD161D328078009A293D /* BattleCalculator.h */,
+				551DAD171D328078009A293D /* BImgBank.cpp */,
 				551DAD1E1D328078009A293D /* Enemy.cpp */,
-				551DAD1F1D328078009A293D /* Enemy.h */,
 				551DAD201D328078009A293D /* EnemyAI.cpp */,
-				551DAD211D328078009A293D /* EnemyAI.h */,
 				551DAD221D328078009A293D /* EnemyPlanner.cpp */,
-				551DAD231D328078009A293D /* EnemyPlanner.h */,
 				551DAD241D328078009A293D /* EnemySpeciesManager.cpp */,
-				551DAD251D328078009A293D /* EnemySpeciesManager.h */,
 				551DAD261D328078009A293D /* EnemyTargetter.cpp */,
-				551DAD271D328078009A293D /* EnemyTargetter.h */,
 				551DAD461D328078009A293D /* Player.cpp */,
-				551DAD471D328078009A293D /* Player.h */,
 				551DAD481D328079009A293D /* PlayerSpeciesManager.cpp */,
-				551DAD491D328079009A293D /* PlayerSpeciesManager.h */,
+				551DAD4E1D328079009A293D /* Species.cpp */,
 				551DAD571D328079009A293D /* TrickDamageEffect.cpp */,
-				551DAD581D328079009A293D /* TrickDamageEffect.h */,
 				551DAD591D328079009A293D /* TrickManager.cpp */,
+				551DAD101D328078009A293D /* Actor.h */,
+				551DAD141D328078009A293D /* Battle.h */,
+				551DAD161D328078009A293D /* BattleCalculator.h */,
+				551DAD181D328078009A293D /* BImgBank.h */,
+				551DAD1F1D328078009A293D /* Enemy.h */,
+				551DAD211D328078009A293D /* EnemyAI.h */,
+				551DAD231D328078009A293D /* EnemyPlanner.h */,
+				551DAD251D328078009A293D /* EnemySpeciesManager.h */,
+				551DAD271D328078009A293D /* EnemyTargetter.h */,
+				551DAD471D328078009A293D /* Player.h */,
+				551DAD491D328079009A293D /* PlayerSpeciesManager.h */,
+				551DAD4F1D328079009A293D /* Species.h */,
+				551DAD581D328079009A293D /* TrickDamageEffect.h */,
 				551DAD5A1D328079009A293D /* TrickManager.h */,
 			);
 			name = Battle;
@@ -592,14 +514,14 @@
 			isa = PBXGroup;
 			children = (
 				551DAD281D328078009A293D /* EveManager.cpp */,
-				551DAD291D328078009A293D /* EveManager.h */,
 				551DAD2A1D328078009A293D /* EveObj.cpp */,
-				551DAD2B1D328078009A293D /* EveObj.h */,
 				551DAD2C1D328078009A293D /* Field.cpp */,
-				551DAD2D1D328078009A293D /* Field.h */,
 				551DAD3A1D328078009A293D /* Map.cpp */,
-				551DAD3B1D328078009A293D /* Map.h */,
 				551DAD3C1D328078009A293D /* Menu.cpp */,
+				551DAD291D328078009A293D /* EveManager.h */,
+				551DAD2B1D328078009A293D /* EveObj.h */,
+				551DAD2D1D328078009A293D /* Field.h */,
+				551DAD3B1D328078009A293D /* Map.h */,
 				551DAD3D1D328078009A293D /* Menu.h */,
 			);
 			name = Field;
@@ -804,52 +726,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				551DAD971D328079009A293D /* ScreenChanger.cpp in Sources */,
+				551DADC71D329C6A009A293D /* SceneManager.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				551DADA11D328079009A293D /* TextBox.cpp in Sources */,
-				551DAD731D328079009A293D /* EnemyTargetter.cpp in Sources */,
-				551DAD6F1D328079009A293D /* EnemyPlanner.cpp in Sources */,
-				551DAD871D328079009A293D /* Map.cpp in Sources */,
-				551DADA31D328079009A293D /* TextWrap.cpp in Sources */,
-				551DAD671D328079009A293D /* CmdList.cpp in Sources */,
-				551DAD951D328079009A293D /* PlayerSpeciesManager.cpp in Sources */,
-				551DAD851D328079009A293D /* Main.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
-				551DADA91D328079009A293D /* WorldManager.cpp in Sources */,
-				551DAD8D1D328079009A293D /* mrtLib.cpp in Sources */,
-				551DADBA1D3296C0009A293D /* SceneManager.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
-				551DAD791D328079009A293D /* Field.cpp in Sources */,
-				551DAD991D328079009A293D /* ShopManager.cpp in Sources */,
-				551DAD6D1D328079009A293D /* EnemyAI.cpp in Sources */,
-				551DAD7B1D328079009A293D /* ImgBank.cpp in Sources */,
-				551DAD9D1D328079009A293D /* System.cpp in Sources */,
-				551DAD811D328079009A293D /* Load.cpp in Sources */,
-				551DAD5D1D328079009A293D /* Actor.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				551DADB51D329597009A293D /* Title.cpp in Sources */,
-				551DAD9F1D328079009A293D /* TalkName.cpp in Sources */,
-				551DAD691D328079009A293D /* CmdManager.cpp in Sources */,
-				551DADA51D328079009A293D /* TrickDamageEffect.cpp in Sources */,
-				551DAD6B1D328079009A293D /* Enemy.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				551DAD7D1D328079009A293D /* Item.cpp in Sources */,
-				551DADBE1D329A28009A293D /* Player.cpp in Sources */,
-				551DAD891D328079009A293D /* Menu.cpp in Sources */,
-				551DAD651D328079009A293D /* BImgBank.cpp in Sources */,
-				551DAD7F1D328079009A293D /* ItemManager.cpp in Sources */,
-				551DAD5F1D328079009A293D /* AlchemistManager.cpp in Sources */,
-				551DAD751D328079009A293D /* EveManager.cpp in Sources */,
-				551DAD8F1D328079009A293D /* MusicManager.cpp in Sources */,
-				551DAD911D328079009A293D /* nunuLib.cpp in Sources */,
-				551DADA71D328079009A293D /* TrickManager.cpp in Sources */,
-				551DAD8B1D328079009A293D /* Mrt.cpp in Sources */,
-				551DADBD1D329A16009A293D /* Species.cpp in Sources */,
-				551DAD711D328079009A293D /* EnemySpeciesManager.cpp in Sources */,
-				551DAD771D328079009A293D /* EveObj.cpp in Sources */,
-				551DAD611D328079009A293D /* Battle.cpp in Sources */,
-				551DAD631D328079009A293D /* BattleCalculator.cpp in Sources */,
-				551DAD831D328079009A293D /* LogWindow.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -857,50 +740,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				551DAD8C1D328079009A293D /* Mrt.cpp in Sources */,
-				551DADA81D328079009A293D /* TrickManager.cpp in Sources */,
-				551DAD661D328079009A293D /* BImgBank.cpp in Sources */,
-				551DAD881D328079009A293D /* Map.cpp in Sources */,
-				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				551DAD741D328079009A293D /* EnemyTargetter.cpp in Sources */,
-				551DADA41D328079009A293D /* TextWrap.cpp in Sources */,
-				551DAD981D328079009A293D /* ScreenChanger.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
-				551DAD901D328079009A293D /* MusicManager.cpp in Sources */,
-				551DAD841D328079009A293D /* LogWindow.cpp in Sources */,
-				551DAD7E1D328079009A293D /* Item.cpp in Sources */,
-				551DADBC1D329A16009A293D /* Species.cpp in Sources */,
-				551DAD861D328079009A293D /* Main.cpp in Sources */,
-				551DAD9E1D328079009A293D /* System.cpp in Sources */,
-				551DAD8E1D328079009A293D /* mrtLib.cpp in Sources */,
-				551DAD681D328079009A293D /* CmdList.cpp in Sources */,
-				551DAD641D328079009A293D /* BattleCalculator.cpp in Sources */,
-				551DADAA1D328079009A293D /* WorldManager.cpp in Sources */,
-				551DADA01D328079009A293D /* TalkName.cpp in Sources */,
-				551DAD821D328079009A293D /* Load.cpp in Sources */,
-				551DAD9A1D328079009A293D /* ShopManager.cpp in Sources */,
-				551DAD701D328079009A293D /* EnemyPlanner.cpp in Sources */,
-				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
-				551DAD5E1D328079009A293D /* Actor.cpp in Sources */,
-				551DAD941D328079009A293D /* Player.cpp in Sources */,
-				551DAD8A1D328079009A293D /* Menu.cpp in Sources */,
-				551DAD601D328079009A293D /* AlchemistManager.cpp in Sources */,
-				551DAD7A1D328079009A293D /* Field.cpp in Sources */,
-				551DAD761D328079009A293D /* EveManager.cpp in Sources */,
-				551DADBB1D3296C0009A293D /* SceneManager.cpp in Sources */,
+				551DADC41D329BB7009A293D /* HelloWorldScene.cpp in Sources */,
 				551DADB61D329597009A293D /* Title.cpp in Sources */,
-				551DAD781D328079009A293D /* EveObj.cpp in Sources */,
-				551DAD801D328079009A293D /* ItemManager.cpp in Sources */,
-				551DAD6E1D328079009A293D /* EnemyAI.cpp in Sources */,
-				551DADA21D328079009A293D /* TextBox.cpp in Sources */,
-				551DAD6A1D328079009A293D /* CmdManager.cpp in Sources */,
-				551DAD921D328079009A293D /* nunuLib.cpp in Sources */,
-				551DAD6C1D328079009A293D /* Enemy.cpp in Sources */,
-				551DAD621D328079009A293D /* Battle.cpp in Sources */,
-				551DAD961D328079009A293D /* PlayerSpeciesManager.cpp in Sources */,
-				551DAD7C1D328079009A293D /* ImgBank.cpp in Sources */,
-				551DAD721D328079009A293D /* EnemySpeciesManager.cpp in Sources */,
-				551DADA61D328079009A293D /* TrickDamageEffect.cpp in Sources */,
+				551DADC21D329BA4009A293D /* AppDelegate.cpp in Sources */,
+				551DADC61D329C69009A293D /* SceneManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
