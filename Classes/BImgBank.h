@@ -3,7 +3,7 @@
 #define BIMGBANK_H						////
 ////////////////////////////////////////////////
 
-#include "../Main/ImgBank.h"
+#include "ImgBank.h"
 
 class CBImgBank : public CImgBank{
 public:

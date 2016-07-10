@@ -1,6 +1,6 @@
 #include "TextBox.h"
 #include "CmdList.h"
-#include "../Field/ItemManager.h"
+#include "ItemManager.h"
 
 CTextBox::CTextBox(){
 	CONSTRUCTED;

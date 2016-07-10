@@ -1,6 +1,6 @@
 #include "ItemManager.h"
 #include "Item.h"
-#include "../Menu.h"
+#include "Menu.h"
 
 void CItemManager::Init() {
 	Clear();

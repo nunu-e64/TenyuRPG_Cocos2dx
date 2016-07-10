@@ -1,5 +1,5 @@
 
-#include "Main/Main.h"
+#include "Main.h"
 
 struct objkind_tag objkind_tag;
 struct target_tag target_tag;

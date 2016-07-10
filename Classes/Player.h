@@ -4,8 +4,8 @@
 ////////////////////////////////////////////////
 
 #include "Actor.h"
-#include "../Menu.h"
-#include "../Field/Item.h"
+#include "Menu.h"
+#include "Item.h"
 
 
 class CPlayer : public CActor, public CPlayerSpecies{

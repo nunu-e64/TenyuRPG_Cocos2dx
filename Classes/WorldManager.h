@@ -4,12 +4,12 @@
 ////////////////////////////////////////////////
 
 
-//#include "../Field/Map.h"
+//#include "Map.h"
 //#include "TextBox.h"
 //#include "TextWrap.h"
 //#include "CmdManager.h"
 //#include "CmdList.h"
-//#include "../Field/EveManager.h"
+//#include "EveManager.h"
 
 class CWorldManager{
 public:

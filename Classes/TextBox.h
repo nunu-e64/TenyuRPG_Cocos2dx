@@ -4,7 +4,7 @@
 ////////////////////////////////////////////////
 
 #include "TalkName.h"
-#include "../Battle/LogWindow.h"
+#include "LogWindow.h"
 
 	//static const int TextShowMode = 0;	//0…行送り 1…ページ送り
 

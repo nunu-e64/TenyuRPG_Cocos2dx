@@ -6,9 +6,9 @@
 #include "Player.h"
 #include "Enemy.h"
 
-#include "../Field/Load.h"
-#include "../Field/EveManager.h"
-#include "../Field/ItemManager.h"
+#include "Load.h"
+#include "EveManager.h"
+#include "ItemManager.h"
 
 
 CBattle::CBattle(){

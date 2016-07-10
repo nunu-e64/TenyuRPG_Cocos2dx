@@ -1,6 +1,6 @@
 #include "Actor.h"
 #include "BImgBank.h"
-#include "../Main/TextBox.h"
+#include "TextBox.h"
 #include "LogWindow.h"
 #include "BattleCalculator.h"
 

@@ -1,6 +1,6 @@
 #include "Load.h"
 
-#include "../Main/CmdList.h"
+#include "CmdList.h"
 #include "Map.h"
 #include "EveManager.h"
 

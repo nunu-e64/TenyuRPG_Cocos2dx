@@ -5,14 +5,14 @@
 
 #include "Map.h"
 
-#include "../Main/TextBox.h"
-#include "../Main/TextWrap.h"
-#include "../Main/CmdManager.h"
-#include "../Main/CmdList.h"
-#include "../Main/WorldManager.h"
-#include "../Main/ScreenChanger.h"
+#include "TextBox.h"
+#include "TextWrap.h"
+#include "CmdManager.h"
+#include "CmdList.h"
+#include "WorldManager.h"
+#include "ScreenChanger.h"
 
-#include "../Menu.h"
+#include "Menu.h"
 
 class CEveManager;
 class CBattle;

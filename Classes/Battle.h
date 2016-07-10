@@ -6,12 +6,12 @@
 #include "BImgBank.h"
 #include "LogWindow.h"
 
-#include "../Main/TextBox.h"
-#include "../Main/TextWrap.h"
-#include "../Main/CmdList.h"
-#include "../Main/CmdManager.h"
-#include "../Main/WorldManager.h"
-#include "../Menu.h"
+#include "TextBox.h"
+#include "TextWrap.h"
+#include "CmdList.h"
+#include "CmdManager.h"
+#include "WorldManager.h"
+#include "Menu.h"
 
 #include <queue>
 

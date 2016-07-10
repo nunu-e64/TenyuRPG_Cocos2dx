@@ -4,8 +4,8 @@
 #include "ItemManager.h"
 #include "AlchemistManager.h"
 
-#include "../Battle/Battle.h"
-#include "../Main/MusicManager.h"
+#include "Battle.h"
+#include "MusicManager.h"
 
 CField::CField(){
 	CONSTRUCTED;

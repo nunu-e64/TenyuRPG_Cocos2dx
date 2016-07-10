@@ -1,6 +1,6 @@
 #include "PlayerSpeciesManager.h"
 #include "Player.h"
-#include "../Field/Item.h"
+#include "Item.h"
 
 void CPlayerSpeciesManager::Clear(){
 	PlayerBank.clear(); 

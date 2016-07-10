@@ -1,8 +1,8 @@
 #include "Enemy.h"
 #include "Species.h"
 #include "LogWindow.h"
-#include "../Main/TextBox.h"
-#include "../Main/CmdList.h"
+#include "TextBox.h"
+#include "CmdList.h"
 
 
 

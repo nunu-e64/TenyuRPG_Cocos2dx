@@ -3,8 +3,8 @@
 #define MAIN_H								////
 ////////////////////////////////////////////////
 
-//#include "../Define.h"
-#include "../Field/EveObj.h"
+//#include "Define.h"
+#include "EveObj.h"
 
 class CMain{	//Singletonパターンを使い単独存在を保証
 public:

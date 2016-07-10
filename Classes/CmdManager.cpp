@@ -2,17 +2,17 @@
 #include "CmdManager.h"
 #include "TextBox.h"
 
-#include "../Field/Field.h"
-#include "../Field/Load.h"
-#include "../Field/Map.h"
-#include "../Field/EveManager.h"
-#include "../Field/Item.h"
-#include "../Field/AlchemistManager.h"
+#include "Field.h"
+#include "Load.h"
+#include "Map.h"
+#include "EveManager.h"
+#include "Item.h"
+#include "AlchemistManager.h"
 
-#include "../Battle/Battle.h"
-#include "../Battle/TrickManager.h"
-#include "../Battle/PlayerSpeciesManager.h"
-#include "../Battle/EnemySpeciesManager.h"
+#include "Battle.h"
+#include "TrickManager.h"
+#include "PlayerSpeciesManager.h"
+#include "EnemySpeciesManager.h"
 
 #include "MusicManager.h"
 

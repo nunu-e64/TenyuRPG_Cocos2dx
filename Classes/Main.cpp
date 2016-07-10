@@ -1,8 +1,8 @@
 #include "Main.h"
 
-#include "../Mrt.h"
-#include "../Field/Field.h"
-#include "../Field/Load.h"
+#include "Mrt.h"
+#include "Field.h"
+#include "Load.h"
 
 
 bool CMain::Init(){

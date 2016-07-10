@@ -1,5 +1,5 @@
 #include "Menu.h"
-#include "Field/ItemManager.h"
+#include "ItemManager.h"
 
 void CMenu::Init(int _x, int _y, int _width, int _height){
 	X = _x;

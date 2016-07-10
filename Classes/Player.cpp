@@ -1,7 +1,7 @@
 #include "Player.h"
 #include "Battle.h"
 #include "BattleCalculator.h"
-#include "../Field/Item.h"
+#include "Item.h"
 
 void CPlayer::FirstSet2(){
 	if (strlen(BaseTrick.Name)){
