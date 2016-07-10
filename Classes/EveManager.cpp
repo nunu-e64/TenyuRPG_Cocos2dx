@@ -28,9 +28,9 @@ void CEveManager::Save(FILE *fp){
 
 
 void CEveManager::Draw(int _mapnum, int _x, int _y, bool _overdraw, int _dx, int _dy){
-	MAP_MAX_CHECK(_mapnum,);		//ƒ}ƒbƒv‚Ì”z—ñéŒ¾Å‘å”‚ğ’´‚¦‚Ä‚éê‡‚Í“Ç‚İ‚ß‚È‚¢
+	MAP_MAX_CHECK(_mapnum,);		//ãƒãƒƒãƒ—ã®é…åˆ—å®£è¨€æœ€å¤§æ•°ã‚’è¶…ãˆã¦ã‚‹å ´åˆã¯èª­ã¿è¾¼ã‚ãªã„
 	
-	int drawx = _x-(WINDOW_WIDTH/MAP_CHIP_SIZE)/2;		//‰æ–Ê¶ã‚Ìƒ}ƒX‚Ì¢ŠEÀ•W
+	int drawx = _x-(WINDOW_WIDTH/MAP_CHIP_SIZE)/2;		//ç”»é¢å·¦ä¸Šã®ãƒã‚¹ã®ä¸–ç•Œåº§æ¨™
 	int drawy = _y-(WINDOW_HEIGHT/MAP_CHIP_SIZE)/2;
 	CEveObj *eveobj_p;
 	eveobj_p = &EveObj_dammy;
@@ -72,7 +72,7 @@ void CEveManager::SetEveObj(int _mapnum, int _datanum, int _kind, int _img[CHARA
 		}
 		strcpy_s(eveobj.PicKey, _pickey);
 
-	//Name	“¯Kind‚Å“¯–¼‚ÍŒx
+	//Name	åŒKindã§åŒåã¯è­¦å‘Š
 
 		if(strlen(_name)) {
 			if (strlen(_name)>sizeof(eveobj.Name)-1){
@@ -209,11 +209,11 @@ bool CEveManager::GetText(char** &_text, int &_count, int _mapnum, int _x, int _
 		_text[i] = new char[strlen(EOP)+1];
 		mystrcpy(_text[i], EOP);
 
-		_count = ++(eveobj_p->Count);		//ƒeƒLƒXƒg‚ğ‚¿Viible‚ªTrue‚Ì‚à‚Ì‚ÍAPANEL‚Å‚àÀÛ‚É•\¦‚·‚éƒeƒLƒXƒg‚ª‘¶İ‚µ‚È‚­‚Ä‚àƒJƒEƒ“ƒgƒAƒbƒv
-		if (eveobj_p->Kind == objkind_tag::NPC) eveobj_p->Dir = sys::TurnDir(_mydir, +2);	//NPC‚È‚ç˜b‚µ‚©‚¯‚½‚Æ‚«‚ÌŒü‚«‚É‰‚¶‚ÄŒü‚«‚ğ•Ï‚¦‚é
-		strcpy_s(NowName, eveobj_p->Name);	//’²‚×‚½ƒIƒuƒWƒFƒNƒg‚Ì–¼‘O‚ÍEveManager‚É•Û‘¶‚µ‚Ä‚¨‚­BƒRƒ}ƒ“ƒh‚Å‘ÎÛ‚Æ‚·‚é–¼‘O‚ğ“ü—Í‚·‚éÛ‚Ég‚¤B
+		_count = ++(eveobj_p->Count);		//ãƒ†ã‚­ã‚¹ãƒˆã‚’æŒã¡ViibleãŒTrueã®ã‚‚ã®ã¯ã€PANELã§ã‚‚å®Ÿéš›ã«è¡¨ç¤ºã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆãŒå­˜åœ¨ã—ãªãã¦ã‚‚ã‚«ã‚¦ãƒ³ãƒˆã‚¢ãƒƒãƒ—
+		if (eveobj_p->Kind == objkind_tag::NPC) eveobj_p->Dir = sys::TurnDir(_mydir, +2);	//NPCãªã‚‰è©±ã—ã‹ã‘ãŸã¨ãã®å‘ãã«å¿œã˜ã¦å‘ãã‚’å¤‰ãˆã‚‹
+		strcpy_s(NowName, eveobj_p->Name);	//èª¿ã¹ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®åå‰ã¯EveManagerã«ä¿å­˜ã—ã¦ãŠãã€‚ã‚³ãƒãƒ³ãƒ‰ã§å¯¾è±¡ã¨ã™ã‚‹åå‰ã‚’å…¥åŠ›ã™ã‚‹éš›ã«ä½¿ã†ã€‚
 
-		TmpEffect = eveobj_p->Effect;		//RND_DIR‚È‚Ç‚ÌEffect‚ğ˜b‚µ‚©‚¯‚½‚Æ‚«‚Éˆê“I‚É–³Œø‰»‚·‚é‚½‚ß‚ÉEveManager‚Éˆê•Û‘¶‚µ‚Ä‚¨‚­
+		TmpEffect = eveobj_p->Effect;		//RND_DIRãªã©ã®Effectã‚’è©±ã—ã‹ã‘ãŸã¨ãã«ä¸€æ™‚çš„ã«ç„¡åŠ¹åŒ–ã™ã‚‹ãŸã‚ã«EveManagerã«ä¸€æ™‚ä¿å­˜ã—ã¦ãŠã
 		if (TmpEffect>KEEP_NUM){
 			eveobj_p->Effect = NONE;
 		}
@@ -252,10 +252,10 @@ void CEveManager::SetText(const char _eventtext[1000][256], const int _line, con
 			eveobj_p->Text.clear();
 
 			for (int i=0; i<_line; i++){
-				if (mystrcmp(_eventtext[i], "@Event(", 'l')){		//@EventƒRƒ}ƒ“ƒh‚Ì‚¾‚¯–‘O“o˜^‚µ‚½ƒ}ƒNƒ‚ğŒÄ‚Ño‚·ˆ—
+				if (mystrcmp(_eventtext[i], "@Event(", 'l')){		//@Eventã‚³ãƒãƒ³ãƒ‰ã®æ™‚ã ã‘äº‹å‰ç™»éŒ²ã—ãŸãƒã‚¯ãƒ­ã‚’å‘¼ã³å‡ºã™å‡¦ç†
 					CopyOriginalEvent(&(eveobj_p->Text), _eventtext[i]);
 
-				}else{		//•’Ê‚Í‚±‚Á‚¿
+				}else{		//æ™®é€šã¯ã“ã£ã¡
 					strcpy_s(settext.text, _eventtext[i]);
 					eveobj_p->Text.push_back(settext);
 				}
@@ -293,7 +293,7 @@ void CEveManager::SetVisible(const char* _name, bool _visible){
 	
 	if (GetEveObj(&eveobj_p, _name)){
 		eveobj_p->Visible = _visible;
-		if (_visible) eveobj_p->Alpha = max(15, eveobj_p->Alpha);  //Œ©‚¦‚È‚¢‚Ì‚ÉVisible‚ªTrue‚¾‚Æ–ŒÌ‚è‚»‚¤‚È‚Ì‚ÅAlpha‚ğÅ¬15‚É
+		if (_visible) eveobj_p->Alpha = max(15, eveobj_p->Alpha);  //è¦‹ãˆãªã„ã®ã«VisibleãŒTrueã ã¨äº‹æ•…ã‚Šãã†ãªã®ã§Alphaã‚’æœ€å°15ã«
 		return;
 	}
 	ErrorDx("Error->NotFound-SetVisible_name->%s", __FILE__, __LINE__, _name);
@@ -311,13 +311,13 @@ void CEveManager::SetEffect(const char* _name, int _effectname, int _effectnum[]
 	CEveObj *eveobj_p = &EveObj_dammy;
 		
 	if (GetEveObj(&eveobj_p, _name)){
-		if (_effectname==-1) {	//TextBox.Term‚©‚ç‚ÌŒÄ‚Ño‚µ
+		if (_effectname==-1) {	//TextBox.Termã‹ã‚‰ã®å‘¼ã³å‡ºã—
 			eveobj_p->Effect = TmpEffect;
 			return;
 		}
 
 		eveobj_p->Effect = (charaeffect_tag)_effectname;
-		if (mystrcmp(_name, JOKER_NAME)) TmpEffect = (charaeffect_tag)_effectname;	//ˆê•Û‘¶‚ÌÀ¿”jŠü
+		if (mystrcmp(_name, JOKER_NAME)) TmpEffect = (charaeffect_tag)_effectname;	//ä¸€æ™‚ä¿å­˜ã®å®Ÿè³ªç ´æ£„
 
 		for (int i=0; i<ARRAY_SIZE(eveobj_p->EffectNum); i++){
 			eveobj_p->EffectNum[i] = 0;
@@ -397,7 +397,7 @@ void CEveManager::Walk(CField* _field, char* _name, int _dir, int _walkspeed, bo
 	if (GetEveObj(&eveobj_p, _name, (_walk?objkind_tag::NPC:-1), _field->GetNowMap())){
 		if (_walk) SetDir(_name, _dir);
 
-		//áŠQ•¨‚Ì—L–³ƒ`ƒFƒbƒN‚È‚µ‚Å•à‚«‘±‚¯‚éd—l¨ƒXƒ‰ƒCƒh‚Ì‚É‚ÍáŠQ•¨‚Ì—L–³ƒ`ƒFƒbƒN‚·‚éd—liCommand.cpp‚Åj
+		//éšœå®³ç‰©ã®æœ‰ç„¡ãƒã‚§ãƒƒã‚¯ãªã—ã§æ­©ãç¶šã‘ã‚‹ä»•æ§˜â†’ã‚¹ãƒ©ã‚¤ãƒ‰ã®æ™‚ã«ã¯éšœå®³ç‰©ã®æœ‰ç„¡ãƒã‚§ãƒƒã‚¯ã™ã‚‹ä»•æ§˜ï¼ˆCommand.cppã§ï¼‰
 		
 
 		int d=0, oldd=0;	//delta;
@@ -445,7 +445,7 @@ bool CEveManager::GetEveObj(CEveObj** _eveobj_p, int _mapnum, int _x, int _y, in
 
 	int x=_x, y=_y;
 	for (unsigned int i=0; i<EveObj[_mapnum].size(); i++){
-		if (!(_kind==-1 || (int)EveObj[_mapnum][i].Kind==_kind)) continue;	//Œy—Ê‰»‚Ì‚½‚ßğŒ•¶‚ğ•ªŠ„
+		if (!(_kind==-1 || (int)EveObj[_mapnum][i].Kind==_kind)) continue;	//è»½é‡åŒ–ã®ãŸã‚æ¡ä»¶æ–‡ã‚’åˆ†å‰²
 		if (_forcheck){
 			x = _x - EveObj[_mapnum][i].Dx/MAP_CHIP_SIZE;
 			y = _y - EveObj[_mapnum][i].Dy/MAP_CHIP_SIZE;
@@ -483,7 +483,7 @@ bool CEveManager::GetEveObj(CEveObj** _eveobj_p, const char* _name, const int _k
 }
 
 bool CEveManager::CopyOriginalEvent(std::vector<char256> *vectext_p, const char* _eventtext, int _count){
-	char *cntx, *cntx2;		//strtok_s—p‚ÌG—p
+	char *cntx, *cntx2;		//strtok_sç”¨ã®é›‘ç”¨
 	char* string_copy = new char[strlen(_eventtext)+1];
 	char *eventname, *chtimes, *args;
 	std::vector <char256> arg;
@@ -532,10 +532,10 @@ bool CEveManager::CopyOriginalEvent(std::vector<char256> *vectext_p, const char*
 		for (int i = 0; i < times; i++){
 			for (unsigned int j=0; j < originalevent_p->Text.size(); j++){
 
-				if (mystrcmp(originalevent_p->Text[j].text, "@Event(", 'l')){		//@EventƒRƒ}ƒ“ƒh‚Ì‚¾‚¯–‘O“o˜^‚µ‚½ƒ}ƒNƒ‚ğŒÄ‚Ño‚·ˆ—
+				if (mystrcmp(originalevent_p->Text[j].text, "@Event(", 'l')){		//@Eventã‚³ãƒãƒ³ãƒ‰ã®æ™‚ã ã‘äº‹å‰ç™»éŒ²ã—ãŸãƒã‚¯ãƒ­ã‚’å‘¼ã³å‡ºã™å‡¦ç†
 					
 					if (_count>100){
-						ErrorDx("–³ŒÀƒ‹[ƒv‚Á‚Ä‚±‚í‚­‚ËH   :%s", __FILE__, __LINE__, originalevent_p->Text[j].text);
+						ErrorDx("ç„¡é™ãƒ«ãƒ¼ãƒ—ã£ã¦ã“ã‚ãã­ï¼Ÿ   :%s", __FILE__, __LINE__, originalevent_p->Text[j].text);
 						continue;
 					}else{
 						CopyOriginalEvent(vectext_p, originalevent_p->Text[j].text, ++_count);

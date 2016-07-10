@@ -18,9 +18,9 @@
 
 void CFirstSetCmdManager::Main(CCmdList* _cmdlist, CField* _field, CMap* _map, CEveManager* _evemanager){
 
-	char commandline[256];	//ƒRƒ}ƒ“ƒhs
-	char command[256];		//@››
-	char *argument=NULL;	//ˆø”	//ƒRƒ“ƒpƒCƒ‹Œx‚ªŸT“©‚µ‚¢‚Ì‚Å‰Šú‰»‚µ‚Ä‚¨‚¢‚Ä‚ ‚°‚é
+	char commandline[256];	//ã‚³ãƒãƒ³ãƒ‰è¡Œ
+	char command[256];		//@â—‹â—‹
+	char *argument=NULL;	//å¼•æ•°	//ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«è­¦å‘ŠãŒé¬±é™¶ã—ã„ã®ã§åˆæœŸåŒ–ã—ã¦ãŠã„ã¦ã‚ã’ã‚‹
 
 	while (NextCommand(_cmdlist, commandline, command, argument)){
 		if (!SystemCmdSolve(command, argument, _field, _map, _evemanager)
@@ -32,11 +32,11 @@ void CFirstSetCmdManager::Main(CCmdList* _cmdlist, CField* _field, CMap* _map, C
 
 void CFieldCmdManager::Main(CCmdList* _cmdlist, CField* _field, CMap* _map, CTextBox* _textbox, CEveManager* _evemanager){
 	
-	char commandline[256];	//ƒRƒ}ƒ“ƒhs
-	char command[256];	//@››
-	char *argument;	//ˆø”
+	char commandline[256];	//ã‚³ãƒãƒ³ãƒ‰è¡Œ
+	char command[256];	//@â—‹â—‹
+	char *argument;	//å¼•æ•°
 
-	while (NextCommand(_cmdlist, commandline, command, argument) && _field->GetGameMode()==MODE_PLAYING){	//Mode‚ª•ÏX‚³‚ê‚ÄGameOver‚Æ‚©‚µ‚Ä‚¢‚½‚ç‹­§I—¹
+	while (NextCommand(_cmdlist, commandline, command, argument) && _field->GetGameMode()==MODE_PLAYING){	//ModeãŒå¤‰æ›´ã•ã‚Œã¦GameOverã¨ã‹ã—ã¦ã„ãŸã‚‰å¼·åˆ¶çµ‚äº†
 		if (!FieldCmdSolve (command, argument, _field, _map, _textbox, _evemanager) 
 		 && !WindowCmdSolve(command, argument, _field, _map, _textbox)
 		 && !TextCmdSolve  (command, argument, _field, _textbox)
@@ -48,9 +48,9 @@ void CFieldCmdManager::Main(CCmdList* _cmdlist, CField* _field, CMap* _map, CTex
 
 void CBattleCmdManager::Main(CCmdList* _cmdlist, CBattle* _battle, CTextBox* _textbox){
 	
-	char commandline[256];	//ƒRƒ}ƒ“ƒhs
-	char command[256];	//@››
-	char *argument;	//ˆø”
+	char commandline[256];	//ã‚³ãƒãƒ³ãƒ‰è¡Œ
+	char command[256];	//@â—‹â—‹
+	char *argument;	//å¼•æ•°
 
 	while (NextCommand(_cmdlist, commandline, command, argument)){
 		if (!WindowCmdSolve(command, argument, _battle, Map_p, _textbox)
@@ -64,9 +64,9 @@ void CBattleCmdManager::Main(CCmdList* _cmdlist, CBattle* _battle, CTextBox* _te
 
 void CBattleFirstSetCmdManager::Main(CCmdList* _cmdlist, CBImgBank* _bimgbank, CPlayerSpeciesManager* _playerSpeciesManager, CEnemySpeciesManager* _enemySpeciesManager, CTrickManager* _trickManager){
 	
-	char commandline[256];	//ƒRƒ}ƒ“ƒhs
-	char command[256];	//@››
-	char *argument;	//ˆø”
+	char commandline[256];	//ã‚³ãƒãƒ³ãƒ‰è¡Œ
+	char command[256];	//@â—‹â—‹
+	char *argument;	//å¼•æ•°
 
 	while (NextCommand(_cmdlist, commandline, command, argument)){
 		if (!BattleSystemCmdSolve(command, argument, _bimgbank, _playerSpeciesManager, _enemySpeciesManager, _trickManager)){
@@ -81,8 +81,8 @@ bool CCmdManager::NextCommand(CCmdList* _cmdlist, char* commandline, char* comma
 		_cmdlist->Get(commandline);
 		mystrcpy(command, commandline);
 
-		//ƒRƒ}ƒ“ƒhs‚ğƒRƒ}ƒ“ƒh•”‚Æˆø”•”‚É•ª—£
-			char *cntx;		//strtok_s—p‚ÌG—p
+		//ã‚³ãƒãƒ³ãƒ‰è¡Œã‚’ã‚³ãƒãƒ³ãƒ‰éƒ¨ã¨å¼•æ•°éƒ¨ã«åˆ†é›¢
+			char *cntx;		//strtok_sç”¨ã®é›‘ç”¨
 			strtok_s(command, "(", &cntx);
 			argument =  strchr(commandline, '(' );
 			if (argument==NULL) {
@@ -92,7 +92,7 @@ bool CCmdManager::NextCommand(CCmdList* _cmdlist, char* commandline, char* comma
 				char* p;
 				if ((p = strrchr(argument, ')'))!=NULL) {
 					*p = '\0';					
-					//char *cntx;		//strtok_s—p‚ÌG—p
+					//char *cntx;		//strtok_sç”¨ã®é›‘ç”¨
 					//strtok_s(argument, ")", &cntx);
 				}else{
 					WarningDx("Warning->You may forget ')' in CommandText:%s", commandline);
@@ -106,10 +106,10 @@ bool CCmdManager::NextCommand(CCmdList* _cmdlist, char* commandline, char* comma
 }
 
 
-//ˆø”•ª‰ğF‹æØ‚è•¶šCMD_SEPARATOR‚ÍDefine.h‚Å’è‹`
+//å¼•æ•°åˆ†è§£ï¼šåŒºåˆ‡ã‚Šæ–‡å­—CMD_SEPARATORã¯Define.hã§å®šç¾©
 bool CCmdManager::ArgCut(const char* _command, char* _argument, char** _arg, int _argnum, bool _warning, int _minimum){
 
-	char *cntx;		//strtok_s—p‚ÌG—p
+	char *cntx;		//strtok_sç”¨ã®é›‘ç”¨
 	_arg[0] = strtok_s(_argument, CMD_SEPARATOR, &cntx );
 		
 	for (int i=1; i<_argnum; i++){
@@ -129,7 +129,7 @@ bool CCmdManager::ArgCut(const char* _command, char* _argument, char** _arg, int
 }
 
 //////////////////////////////////////////////////////////////////
-//ƒVƒXƒeƒ€ƒRƒ}ƒ“ƒh‚Ìˆ—//////////////////////////////////////////
+//ã‚·ã‚¹ãƒ†ãƒ ã‚³ãƒãƒ³ãƒ‰ã®å‡¦ç†//////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* _field, CMap* _map, CEveManager* _evemanager){
 	int argnum=0;	char** arg;
@@ -140,7 +140,7 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 
 //@Load_Chip
 	}else if (mystrcmp(_command,"@Load_Chip")){		
-		argnum = 3;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 3;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 		
 		long int num[2];	
 		for (int i=0; (i<ARRAY_SIZE(num)&&i<argnum-1); i++){
@@ -153,7 +153,7 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 		
 //@Load_Map
 	}else if (mystrcmp(_command, "@Load_Map")){
-		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		long int mapnum;
 		if(!( mystrtol(arg[1], &mapnum))){
@@ -166,13 +166,13 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 
 //@Load_Pic
 	}else if (mystrcmp(_command, "@Load_Pic")){
-		argnum = 3;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 3;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		_map->LoadPic(arg[0], arg[1], arg[2]);
 
 //@Set_MapMusic(map_num, music_key)
 	} else if (mystrcmp(_command, "@Set_MapMusic")) {
-		argnum = 2;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 2;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		int mapNum;
 		if (!(mystrtol(arg[0], &mapNum))) {
@@ -183,7 +183,7 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 
 //@Set_BattleMusic(map_num, music_key)
 	} else if (mystrcmp(_command, "@Set_BattleMusic")) {
-		argnum = 2;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 2;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		int mapNum;
 		if (!(mystrtol(arg[0], &mapNum))) {
@@ -194,7 +194,7 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 
 //@Set_EventObj
 	}else if (mystrcmp(_command,"@Set_EventObj")){
-		argnum = 6;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 6;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 		
 		long int num[2];
 		for (int i=0; i<ARRAY_SIZE(num); i++){
@@ -233,7 +233,7 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 		//}
 			
 		char numname[16];
-		if (mystrcmp(arg[4], "NULL") || arg[4]==NULL) {		//Name‚ğw’è‚µ‚Ä‚¢‚È‚¢‚Í"Kind-Mapnum-Datanum"‚ğName‚É‚·‚é
+		if (mystrcmp(arg[4], "NULL") || arg[4]==NULL) {		//Nameã‚’æŒ‡å®šã—ã¦ã„ãªã„æ™‚ã¯"Kind-Mapnum-Datanum"ã‚’Nameã«ã™ã‚‹
 			strcpy_s(numname, arg[2]);	strcat_s(numname, "-"); strcat_s(numname, arg[0]);	strcat_s(numname, "-"); strcat_s(numname, arg[1]);
 		}
 
@@ -244,7 +244,7 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 
 //@Set_StartPosition
 	}else if (mystrcmp(_command,"@Set_StartPosition")){
-		argnum = 5;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 5;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		long int pos[3];
 		for (int i=0; i<3; i++){
@@ -257,9 +257,9 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 		_field->SetMyDir(sys::StrtoDir(arg[3]));
 		_field->SetMyPic(_map->GetImgData(arg[4]), arg[4]);
 
-//@Create_ConsumptionItem(Name, OwnLimit, Price, ”„‹p‰Â”Û, í“¬’†g—p‰Â”Ûƒtƒ‰ƒO ? , WaitTIme, ‘ÎÛ, [ƒXƒe[ƒ^ƒX–¼, Œø‰Ê’l] * n)
+//@Create_ConsumptionItem(Name, OwnLimit, Price, å£²å´å¯å¦, æˆ¦é—˜ä¸­ä½¿ç”¨å¯å¦ãƒ•ãƒ©ã‚° ? , WaitTIme, å¯¾è±¡, [ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹å, åŠ¹æœå€¤] * n)
 	} else if (mystrcmp(_command, "@Create_ConsumptionItem")) {
-		argnum = 7 + 2 * 10 + 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum, false, 7))goto finish;	//•K{
+		argnum = 7 + 2 * 10 + 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum, false, 7))goto finish;	//å¿…é ˆ
 
 		if (arg[argnum - 1] != NULL) WARNINGDX("ArgumentNum may be too large. @Create_ConsumptionItem:%s", _command);
 
@@ -284,7 +284,7 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 		
 		target_tag::type target;
 
-		//ƒ^[ƒQƒbƒg‚ğ”’l‚©‚çENUM‚É•ÏŠ·
+		//ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’æ•°å€¤ã‹ã‚‰ENUMã«å¤‰æ›
 		if (target_tag.exist(arg[6])) {
 			target = target_tag.converter[arg[6]];
 		} else {
@@ -292,7 +292,7 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 			goto finish;
 		}
 
-		//ƒTƒCƒhƒGƒtƒFƒNƒg‚Ì“Ç‚İ‚İ‚ÆvectorƒŠƒXƒg‰»///////////////////////////
+		//ã‚µã‚¤ãƒ‰ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®èª­ã¿è¾¼ã¿ã¨vectorãƒªã‚¹ãƒˆåŒ–///////////////////////////
 		std::vector <sideEffect_tag> sideEffectList;
 		sideEffect_tag tmpEffect;
 
@@ -323,9 +323,9 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 		CItemManager::GetInstance()->AddConsumptionItem(arg[0], ownLimit, price, sellable, battleUsable, waitTime, target, sideEffectList);
 
 
-//@Create_AccessoryItem(Name, OwnLimit, Price, ”„‹p‰Â”Û, [SOZAINAME, num] * n, [ME, ATK, 25%, 200time]*n)
+//@Create_AccessoryItem(Name, OwnLimit, Price, å£²å´å¯å¦, [SOZAINAME, num] * n, [ME, ATK, 25%, 200time]*n)
 	} else if (mystrcmp(_command, "@Create_AccessoryItem")) {
-		argnum = 4 + 2*10 + 4*10 + 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum, false, 4))goto finish;	//•K{
+		argnum = 4 + 2*10 + 4*10 + 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum, false, 4))goto finish;	//å¿…é ˆ
 				
 		if (arg[argnum - 1] != NULL) WARNINGDX("ArgumentNum may be too large. @Create_AccessoryItem(Name=%s)", arg[0]);
 
@@ -348,7 +348,7 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 			materialSet.push_back(std::pair<std::string, int>(arg[i], num));
 		}
 
-		//ƒTƒCƒhƒGƒtƒFƒNƒg‚Ì“Ç‚İ‚İ‚ÆvectorƒŠƒXƒg‰»
+		//ã‚µã‚¤ãƒ‰ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®èª­ã¿è¾¼ã¿ã¨vectorãƒªã‚¹ãƒˆåŒ–
 		std::vector <sideEffect_tag> sideEffectList;
 
 		if (mystrchr(arg[i], '[')) {
@@ -394,7 +394,7 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 
 //@Create_KeyItem
 	} else if (mystrcmp(_command, "@Create_KeyItem")) {
-		argnum = 4;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 4;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		int ownLimit, price;
 		if (!(mystrtol(arg[1], &ownLimit)) || !(mystrtol(arg[2], &price))) {
@@ -409,7 +409,7 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 
 //@Create_MaterialItem
 	} else if (mystrcmp(_command, "@Create_MaterialItem")) {
-		argnum = 4;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 4;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 		
 		int ownLimit, price;
 		if (!(mystrtol(arg[1], &ownLimit)) || !(mystrtol(arg[2], &price))) {
@@ -422,9 +422,9 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 		CItemManager::GetInstance()->AddMaterialItem(arg[0], ownLimit, price, sellable);
 
 
-//@Create_Shop(”Ô†, [¤•i–¼] * n, ...)
+//@Create_Shop(ç•ªå·, [å•†å“å] * n, ...)
 	} else if (mystrcmp(_command, "@Create_Shop")) {
-		argnum = 1 + 30 + 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum, false, 2))goto finish;	//•K{
+		argnum = 1 + 30 + 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum, false, 2))goto finish;	//å¿…é ˆ
 		
 		if (arg[argnum - 1] != NULL) WARNINGDX("Too many arguments.(max=%d) @Create_Shop :%s", argnum, _command);
 		
@@ -448,9 +448,9 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 
 		CShopManager::GetInstance()->AddShop(index, itemList);
 
-//@Create_Alchemist(”Ô†, [¤•i–¼] * n, ...)	//˜B¬‰®
+//@Create_Alchemist(ç•ªå·, [å•†å“å] * n, ...)	//éŒ¬æˆå±‹
 	} else if (mystrcmp(_command, "@Create_Alchemist")) {
-		argnum = 1 + 30 + 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum, false, 2))goto finish;	//•K{
+		argnum = 1 + 30 + 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum, false, 2))goto finish;	//å¿…é ˆ
 		
 		if (arg[argnum - 1] != NULL) WARNINGDX("Too many arguments.(max=%d) @Create_Alchemist :%s", argnum, _command);
 		
@@ -474,7 +474,7 @@ bool CCmdManager::SystemCmdSolve(const char* _command, char* _argument, CField* 
 
 		CAlchemistManager::GetInstance()->AddShop(index, itemList);
 
-//ƒRƒ}ƒ“ƒh•sˆê’v
+//ã‚³ãƒãƒ³ãƒ‰ä¸ä¸€è‡´
 	}else{
 		return false;
 	}
@@ -494,17 +494,17 @@ bool CCmdManager::MusicSystemCmdSolve(const char* _command, char* _argument)
 
 //@Load_Music
 	} else if (mystrcmp(_command, "@Load_Music", 'l')) {
-		argnum = 2;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//•K{
+		argnum = 2;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//å¿…é ˆ
 
 		CMusicManager::GetInstance()->LoadMusic(arg[1], arg[0], true);
 
 //@Load_Sound
 	} else if (mystrcmp(_command, "@Load_Sound", 'l')) {
-		argnum = 2;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//•K{
+		argnum = 2;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//å¿…é ˆ
 
 		CMusicManager::GetInstance()->LoadMusic(arg[1], arg[0], false);
 
-//ƒRƒ}ƒ“ƒh•sˆê’v
+//ã‚³ãƒãƒ³ãƒ‰ä¸ä¸€è‡´
 	} else {
 		return false;
 	}
@@ -524,7 +524,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 		
 //@Load_Pic
 	}else if (mystrcmp(_command, "@Load_Pic")){
-		argnum = 4;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum, false))goto finish;	//•K{
+		argnum = 4;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum, false))goto finish;	//å¿…é ˆ
 
 		int size[2] = {1,1};
 		if ((arg[2] != NULL && !(mystrtol(arg[2], &size[0]))) || (arg[3] != NULL && !(mystrtol(arg[3], &size[1])))) {
@@ -536,7 +536,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 
 //@Player_Create
 	}else if (mystrcmp(_command,"@Player_Create")){	
-		argnum = 8;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 8;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		int value[6];
 		for (int i=0; i<6; i++){
@@ -550,7 +550,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 
 //@Enemy_Create
 	}else if (mystrcmp(_command,"@Enemy_Create")){		
-		argnum = 7;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 7;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		int value[5];
 		for (int i=0; i<5; i++){
@@ -563,7 +563,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 
 //@TrickEffect_Create
 	}else if (mystrcmp(_command,"@TrickEffect_Create")){
-		argnum = 2+10;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 2+10;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		if (arg[0]==NULL){
 			ErrorDx("Error->@TrickEffect_Create->arg[EffectName]=NULL", __FILE__, __LINE__);
@@ -582,7 +582,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 
 //@BaseTrick_Create
 	}else if (mystrcmp(_command,"@BaseTrick_Create")){
-		argnum = 3;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum)) goto finish;	//•K{
+		argnum = 3;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum)) goto finish;	//å¿…é ˆ
 
 		std::vector <sideEffect_tag> tmp;
 		trick_tag tmpTrick;
@@ -604,7 +604,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 
 //@NormalTrick_Create
 	}else if (mystrcmp(_command,"@NormalTrick_Create")){
-		argnum = 6+5*10+1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum, false)) goto finish;	//•K{
+		argnum = 6+5*10+1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum, false)) goto finish;	//å¿…é ˆ
 
 		int value[3];
 		for (int i=0; i<3; i++){
@@ -629,7 +629,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 
 		if (arg[argnum-1]!=NULL) WARNINGDX("@NormalTrick_Create: too large number of args:%d (continue)", argnum);
 
-		//ƒTƒCƒhƒGƒtƒFƒNƒg‚Ì“Ç‚İ‚İ‚ÆvectorƒŠƒXƒg‰»
+		//ã‚µã‚¤ãƒ‰ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®èª­ã¿è¾¼ã¿ã¨vectorãƒªã‚¹ãƒˆåŒ–
 		std::vector <sideEffect_tag> sideEffectList;
 		sideEffect_tag tmpEffect;
 		int tmpNum[5]; 
@@ -673,7 +673,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 
 //@PlayerTrick_Set
 	}else if (mystrcmp(_command,"@PlayerTrick_Set")){		
-		argnum = 20;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 20;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		if (arg[0]==NULL){
 			ErrorDx("Error->@PlayerTrick_Set->arg[name]=NULL", __FILE__, __LINE__);
@@ -701,7 +701,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 
 //@EnemyTrick_Set
 	}else if (mystrcmp(_command,"@EnemyTrick_Set")){		
-		argnum = 10 + 2 + 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 10 + 2 + 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		if (arg[0]==NULL){
 			ErrorDx("Error->@EnemyTrick_Set->arg[name]=NULL", __FILE__, __LINE__);
@@ -729,7 +729,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 
 //@EnemyDropItem_Set
 	} else if (mystrcmp(_command, "@EnemyDropItem_Set")) {
-		argnum = 1 + 2 * 10 + 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false, 1);	//•K{
+		argnum = 1 + 2 * 10 + 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false, 1);	//å¿…é ˆ
 
 		if (arg[argnum - 1] != NULL) {
 			WARNINGDX("Too many args(max DropItemNum is 10) :%s", _command);
@@ -756,7 +756,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 		
 //@RandomPlan_Set
 	}else if (mystrcmp(_command,"@RandomPlan_Set")){		
-		argnum = 20+2+1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 20+2+1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		if (arg[0]==NULL){
 			ErrorDx("Error->@RandomPlan_Set->arg[index]=NULL", __FILE__, __LINE__);
@@ -787,7 +787,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 				numset.push_back(num);
 			}
 		}
-		if (numset.size()%2==1) numset.push_back(0);	//ˆø”‚ªŠï”‚Ìê‡AÅŒã”ö‚É0%‚ğ’Ç‰Á
+		if (numset.size()%2==1) numset.push_back(0);	//å¼•æ•°ãŒå¥‡æ•°ã®å ´åˆã€æœ€å¾Œå°¾ã«0%ã‚’è¿½åŠ 
 
 		std::vector <std::pair<int,int> > planList;
 		for (unsigned int i=0; i<numset.size()/2; i++){
@@ -799,7 +799,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 
 //@AI_Set
 	}else if (mystrcmp(_command,"@AI_Set")){		
-		argnum = 20+2+1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 20+2+1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		if (arg[0]==NULL){
 			ErrorDx("Error->@AI_Set->arg[EnemyName]=NULL", __FILE__, __LINE__);
@@ -820,7 +820,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 
 //@Encount_Set
 	}else if (mystrcmp(_command,"@Encount_Set")){		
-		argnum = 3;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//•K{
+		argnum = 3;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//å¿…é ˆ
 
 		int num[2];
 		for (int i=0; i<2; i++){
@@ -835,12 +835,12 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 			goto finish;
 		}
 	
-		_enemySpeciesManager->SetMapEncount(num[0], num[1], (int)(dnum*10));	//100% = 1000‚É•ÏŠ·
+		_enemySpeciesManager->SetMapEncount(num[0], num[1], (int)(dnum*10));	//100% = 1000ã«å¤‰æ›
 
 
 //@Party_Set
 	}else if (mystrcmp(_command,"@Party_Set")){		
-		argnum = MAX_ENEMY_NUM+3+1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = MAX_ENEMY_NUM+3+1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		if (arg[0]==NULL){
 			ErrorDx("Error->@Party_Set->arg[mapnum]=NULL", __FILE__, __LINE__);
@@ -870,7 +870,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 
 //@BackGround_Set
 	}else if (mystrcmp(_command,"@BackGround_Set")){	
-		argnum = 3;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum, false))goto finish;	//•K{
+		argnum = 3;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum, false))goto finish;	//å¿…é ˆ
 
 		if (arg[0]==NULL || arg[1]==NULL){
 			ErrorDx("Error->@BackGround_Set->Need more argument:%s", arg[0]);
@@ -895,7 +895,7 @@ bool CCmdManager::BattleSystemCmdSolve(const char* _command, char* _argument, CB
 		}
 
 
-//ƒRƒ}ƒ“ƒh•sˆê’v
+//ã‚³ãƒãƒ³ãƒ‰ä¸ä¸€è‡´
 	}else{
 		return false;
 	}
@@ -906,7 +906,7 @@ finish:
 }
 
 //////////////////////////////////////////////////////////////////
-//ƒVƒiƒŠƒIƒRƒ}ƒ“ƒhiƒAƒNƒVƒ‡ƒ“ƒRƒ}ƒ“ƒhj‚Ìˆ—////////////////////
+//ã‚·ãƒŠãƒªã‚ªã‚³ãƒãƒ³ãƒ‰ï¼ˆã‚¢ã‚¯ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ï¼‰ã®å‡¦ç†////////////////////
 //////////////////////////////////////////////////////////////////
 bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _field, CMap* _map, CTextBox* _textbox, CEveManager* _evemanager){
 	int argnum=0;	char** arg;
@@ -917,28 +917,28 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 		
 //@GameOver
 	}else if (mystrcmp(_command, "@GameOver",'p')){
-		argnum = 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 		_field->SetGameMode(MODE_GAMEOVER);
 		CMusicManager::GetInstance()->StopAllMusic();
 		
 //@GameClear
 	}else if (mystrcmp(_command, "@GameClear",'p')){
-		argnum = 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 		_field->SetGameMode(MODE_GAMECLEAR);
 		CMusicManager::GetInstance()->StopAllMusic();
 
 //@BackToTitle
 	}else if (mystrcmp(_command, "@BackToTitle",'p')){
-		argnum = 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 		_field->SetGameMode(MODE_BACKTOTITLE);
 		CMusicManager::GetInstance()->StopAllMusic();
 
 //@BattleResult_Set
 	}else if (mystrcmp(_command, "@BattleResult_Set",'p')){
-		argnum = 2;		arg = new char*[argnum];	//if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{‚Ì—áŠO
+		argnum = 2;		arg = new char*[argnum];	//if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆã®ä¾‹å¤–
 
-		//@BattleResult_Set()‚Ìˆø”‚ğè“®•ª‰ğ‚·‚é‚±‚Æ‚ÅAArgCut‚Ìˆø”Œë”F‚ğ‰ñ”ğ
-		//@ƒRƒ}ƒ“ƒhˆÈŠO‚Å‚à•ª‰ğ‚µ‚Ä“n‚¹‚é
+		//@BattleResult_Set()ã®å¼•æ•°ã‚’æ‰‹å‹•åˆ†è§£ã™ã‚‹ã“ã¨ã§ã€ArgCutã®å¼•æ•°èª¤èªã‚’å›é¿
+		//@ã‚³ãƒãƒ³ãƒ‰ä»¥å¤–ã§ã‚‚åˆ†è§£ã—ã¦æ¸¡ã›ã‚‹
 		char winCommand[256];
 		char loseCommand[256];
 		char* p;
@@ -965,7 +965,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@Battle
 	}else if (mystrcmp(_command, "@Battle",'p')){
-		argnum = MAX_ENEMY_NUM+1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = MAX_ENEMY_NUM+1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		if (arg[0]==NULL || arg[1]==NULL){
 			ErrorDx("Error->@Battle->arg[pic_bg] or arg[enemy00] == NULL (do nothing)");
@@ -981,13 +981,13 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@BattleEncount
 	}else if (mystrcmp(_command, "@BattleEncount",'p')){
-		argnum = 1;		arg = new char*[argnum];	//ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 1;		arg = new char*[argnum];	//ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		_field->BattleStart();
 
 //@Dir_Set
 	}else if (mystrcmp(_command, "@Dir_Set",'l')){
-		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		if( sys::PlayerName(arg[0]) ){
 			_field->SetMyDir(sys::StrtoDir(arg[1] ,_textbox->GetOriginalDir()));
@@ -997,7 +997,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@Visible_Set
 	}else if (mystrcmp(_command, "@Visible_Set",'l')){
-		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		bool npc;
 		if( sys::PlayerName(arg[0]) ){	npc = false; }else{	npc = true;	}
@@ -1006,7 +1006,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 		if (sys::TrueOrFalse(arg[1], true)){				visible=true;
 		}else if (sys::TrueOrFalse(arg[1], false)){		visible=false;
 		}else{
-			ErrorDx("ErrorDx->@Visible_Setifalsej: Check arg[visible]:%s", arg[1]);
+			ErrorDx("ErrorDx->@Visible_Setï¼ˆfalseï¼‰: Check arg[visible]:%s", arg[1]);
 			visible=false;
 		}
 		
@@ -1020,7 +1020,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@Alpha_Set
 	}else if (mystrcmp(_command, "@Alpha_Set",'l')){
-		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		int per;
 		if (!(mystrtol(arg[1], &per))){
@@ -1039,7 +1039,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@Effect_Set
 	}else if (mystrcmp(_command, "@Effect_Set",'l')){
-		argnum = 7;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 7;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		int num[5] = {-1,-1,-1,-1,-1};
 		charaeffect_tag effect;
@@ -1052,7 +1052,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 			if( sys::PlayerName(arg[0]) ){
 				ErrorDx("Error->@Effect_Set->You can't use [PlayerName]with[TMP]:%s",__FILE__, __LINE__, arg[0]);
 			}else{
-				_evemanager->SetEffect(arg[0], -1, num);		//TextBox.Term‚©‚ç‚ÌŒÄ‚Ño‚µ
+				_evemanager->SetEffect(arg[0], -1, num);		//TextBox.Termã‹ã‚‰ã®å‘¼ã³å‡ºã—
 			}
 			goto finish;
 		}else if (mystrcmp(arg[1], 'p', 3, "NONE", "None", "none") || effectnum==NONE){
@@ -1087,7 +1087,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@Pic_Set
 	}else if (mystrcmp(_command, "@Pic_Set",'l')){
-		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 		
 		if( sys::PlayerName(arg[0]) ){
 			_field->SetMyPic(_map->GetImgData(arg[1]), arg[1]);
@@ -1099,14 +1099,14 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@Flag_Create
 	}else if (mystrcmp(_command, "@Flag_Create",'l')){
-		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 		
 		_field->FlagSet.CreateNewFlag(arg[0]);
 
 
 //@Flag_Set
 	}else if (mystrcmp(_command, "@Flag_Set",'l')){
-		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		int num=0;	char* p;
 		if(mystrtol(arg[1], &num)){
@@ -1133,7 +1133,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@Count_Set
 	}else if (mystrcmp(_command, "@Count_Set",'l')){
-		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		int num=0;	char* p;
 		if(mystrtol(arg[1], &num)){
@@ -1160,7 +1160,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 		
 //@Position_Set
 	}else if (mystrcmp(_command,"@Position_Set")){
-		argnum = 5;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 5;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		if( sys::PlayerName(arg[0]) ){
 			if (arg[3]!=NULL){		//@Position_Set(playername, mapnum, dx, dy)
@@ -1229,16 +1229,16 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 			}
 		}
 	
-//140420 EveManager‚ÌTmpEffect‚Æ‚ÌŒ“‚Ë‡‚¢‚Ì‚½‚ßíœ
+//140420 EveManagerã®TmpEffectã¨ã®å…¼ã­åˆã„ã®ãŸã‚å‰Šé™¤
 ////@JokerName_Set
 //	}else if (mystrcmp(_command, "@JokerName_Set",'l')){
-//		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+//		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 //
 //		_evemanager->SetNowName(arg[0]);
 		
 //@Jump
 	}else if (mystrcmp(_command, "@Jump",'l')){
-		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		if( sys::PlayerName(arg[0])){
 			_field->Jump();
@@ -1248,7 +1248,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@Walk
 	}else if (mystrcmp(_command, "@Walk",'l')){
-		argnum = 4;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 4;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		int walkspeed;
 		walkspeed = choose(sys::rank3(arg[3]), 1, 2, 4);
@@ -1280,7 +1280,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@Slide
 	}else if (mystrcmp(_command, "@Slide",'p')){
-		argnum = 4;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 4;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 		
 		int walkspeed;
 		walkspeed = choose(sys::rank3(arg[3]), 2, 4, 8);
@@ -1320,8 +1320,8 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 				if (x<0 || x>=MAP_SIZE || y<0 || y>=MAP_SIZE || mapnum<0 || mapnum>=MAP_MAX){
 					break;
 				}
-				if (_map->GetMapData(mapnum, x%MAP_SIZE, y%MAP_SIZE, 1)	//áŠQ•¨‚Ì—L–³‚ğŠm”F
-					|| (!_evemanager->CheckWalkable(mapnum, x%MAP_SIZE, y%MAP_SIZE))){	//NPCorBLOCKorPUSHBLOCKor...‚Ì—L–³‚ğŠm”F
+				if (_map->GetMapData(mapnum, x%MAP_SIZE, y%MAP_SIZE, 1)	//éšœå®³ç‰©ã®æœ‰ç„¡ã‚’ç¢ºèª
+					|| (!_evemanager->CheckWalkable(mapnum, x%MAP_SIZE, y%MAP_SIZE))){	//NPCorBLOCKorPUSHBLOCKor...ã®æœ‰ç„¡ã‚’ç¢ºèª
 						break;
 				}
 				_evemanager->Walk(_field, arg[0], dir, walkspeed, false);
@@ -1332,7 +1332,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@FadeWalk(name, dir, speed, fade)
 	}else if (mystrcmp(_command, "@FadeWalk",'p')){
-		argnum = 4;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 4;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 		
 		int walkspeed;
 		walkspeed = choose(sys::rank3(arg[3]), 1, 2, 4);
@@ -1355,7 +1355,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@GetItem(name, [num])
 	} else if (mystrcmp(_command, "@GetItem", 'p')) {
-		argnum = 2;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum, false, 1)) goto finish;	//•K{
+		argnum = 2;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum, false, 1)) goto finish;	//å¿…é ˆ
 
 		int num = 1;
 		if (arg[1] != NULL) {
@@ -1372,7 +1372,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@LoseItem(name, [num])
 	} else if (mystrcmp(_command, "@LoseItem", 'p')) {
-		argnum = 2;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum, false, 1)) goto finish;	//•K{
+		argnum = 2;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum, false, 1)) goto finish;	//å¿…é ˆ
 
 		int num = 1;
 		if (arg[1] != NULL) {
@@ -1390,7 +1390,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@GetMoney(num)
 	} else if (mystrcmp(_command, "@GetMoney", 'p')) {
-		argnum = 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum)) goto finish;	//•K{
+		argnum = 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum)) goto finish;	//å¿…é ˆ
 
 		int num;
 		if (!mystrtol(arg[0], &num)) {
@@ -1405,7 +1405,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@LoseMoney(num)
 	} else if (mystrcmp(_command, "@LoseMoney", 'p')) {
-		argnum = 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum)) goto finish;	//•K{
+		argnum = 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum)) goto finish;	//å¿…é ˆ
 
 		int num;
 		if (!mystrtol(arg[0], &num)) {
@@ -1420,7 +1420,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@Shop(index)
 	} else if (mystrcmp(_command, "@Shop", 'p')) {
-		argnum = 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum)) goto finish;	//•K{
+		argnum = 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum)) goto finish;	//å¿…é ˆ
 
 		int index;
 		if (!mystrtol(arg[0], &index)) {
@@ -1434,7 +1434,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 
 //@Alchemist(index)
 	} else if (mystrcmp(_command, "@Alchemist", 'p')) {
-		argnum = 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum)) goto finish;	//•K{
+		argnum = 1;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum)) goto finish;	//å¿…é ˆ
 
 		int index;
 		if (!mystrtol(arg[0], &index)) {
@@ -1448,7 +1448,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 		
 //@Accessory_Set(playername, slot, accessoryItemName)
 	} else if (mystrcmp(_command, "@Accessory_Set", 'p')) {
-		argnum = 3;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum)) goto finish;	//•K{
+		argnum = 3;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum)) goto finish;	//å¿…é ˆ
 
 		if (sys::CheckStrNULL(arg[2])) arg[2] = "";
 
@@ -1459,7 +1459,7 @@ bool CCmdManager::FieldCmdSolve(const char* _command, char* _argument, CField* _
 			ERRORDX("Check Argument Type[slotNum]. :%s:%s", _command, arg[1]);
 		}
 
-//ƒRƒ}ƒ“ƒh•sˆê’v
+//ã‚³ãƒãƒ³ãƒ‰ä¸ä¸€è‡´
 	}else{
 		return false;
 	}
@@ -1478,7 +1478,7 @@ bool CCmdManager::WindowCmdSolve(const char* _command, char* _argument, CWorldMa
 
 //@Wait
 	}else if (mystrcmp(_command, "@Wait",'l')){
-		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		long int num;
 		if(!( mystrtol(arg[0], &num))){
@@ -1490,11 +1490,11 @@ bool CCmdManager::WindowCmdSolve(const char* _command, char* _argument, CWorldMa
 		}
 
 		_worldmanager->Draw(true, true);
-		WaitTimer(num);		//UNDONE:@Wait‚É‚Â‚¢‚ÄAˆê’èŠÔŒo‰ß‚·‚é‚Ü‚Åwhileƒ‹[ƒv‚³‚¹‚ÄDraw‚·‚é•û‚ªŠeíƒAƒjƒ[ƒVƒ‡ƒ“‚ª~‚Ü‚ç‚È‚¢‚½‚ß‚¢‚¢‚Ì‚Å‚ÍH©•K—v‚È‚ç‚Ç‚Á‚¿‚àì‚Á‚¿‚á‚¦‚æ
+		WaitTimer(num);		//UNDONE:@Waitã«ã¤ã„ã¦ã€ä¸€å®šæ™‚é–“çµŒéã™ã‚‹ã¾ã§whileãƒ«ãƒ¼ãƒ—ã•ã›ã¦Drawã™ã‚‹æ–¹ãŒå„ç¨®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãŒæ­¢ã¾ã‚‰ãªã„ãŸã‚ã„ã„ã®ã§ã¯ï¼Ÿâ†å¿…è¦ãªã‚‰ã©ã£ã¡ã‚‚ä½œã£ã¡ã‚ƒãˆã‚ˆ
 
 //@Anten
 	}else if (mystrcmp(_command, "@Anten",'l')){
-		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		long int num;
 		if(!( mystrtol(arg[0], &num))){
@@ -1509,7 +1509,7 @@ bool CCmdManager::WindowCmdSolve(const char* _command, char* _argument, CWorldMa
 	
 //@Meiten
 	}else if (mystrcmp(_command, "@Meiten",'l')){
-		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		long int num;
 		if(!( mystrtol(arg[0], &num))){
@@ -1524,7 +1524,7 @@ bool CCmdManager::WindowCmdSolve(const char* _command, char* _argument, CWorldMa
 		
 //@BackGround_Change
 	}else if (mystrcmp(_command, "@BackGround_Change",'l')){
-		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		int num;
 		if(!( mystrtol(arg[1], &num))){
@@ -1544,7 +1544,7 @@ bool CCmdManager::WindowCmdSolve(const char* _command, char* _argument, CWorldMa
 
 //@Window_Shake
 	}else if (mystrcmp(_command, "@Window_Shake",'p')){
-		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 2;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 		
 		int num[2];
 		for (int i=0; i<2; i++){
@@ -1568,7 +1568,7 @@ bool CCmdManager::WindowCmdSolve(const char* _command, char* _argument, CWorldMa
 
 //@Window_MoveTurn
 	}else if (mystrcmp(_command, "@Window_MoveTurn",'l')){
-		argnum = 4;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 4;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		int speed;
 		speed = choose(sys::rank3(arg[3]), 2, 4, 8);
@@ -1610,7 +1610,7 @@ bool CCmdManager::WindowCmdSolve(const char* _command, char* _argument, CWorldMa
 
 //@Window_Move
 	}else if (mystrcmp(_command, "@Window_Move",'l')){
-		argnum = 4;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 4;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		int speed;
 		speed = choose(sys::rank3(arg[2]), 2, 4, 8);
@@ -1624,7 +1624,7 @@ bool CCmdManager::WindowCmdSolve(const char* _command, char* _argument, CWorldMa
 			cell = between(1, 100, cell);
 		}
 		direction_tag dir = sys::StrtoDir(arg[0],_textbox->GetOriginalDir());
-		if (arg[3]==NULL){	//’ÊíˆÚ“®
+		if (arg[3]==NULL){	//é€šå¸¸ç§»å‹•
 			int d=0;
 			while (d<cell*MAP_CHIP_SIZE){
 				d+=speed;
@@ -1640,7 +1640,7 @@ bool CCmdManager::WindowCmdSolve(const char* _command, char* _argument, CWorldMa
 			}
 		}
 
-//ƒRƒ}ƒ“ƒh•sˆê’v
+//ã‚³ãƒãƒ³ãƒ‰ä¸ä¸€è‡´
 	}else{
 		return false;
 	}
@@ -1659,14 +1659,14 @@ bool CCmdManager::TextCmdSolve(const char* _command, char* _argument, CWorldMana
 		
 //@EventWrap
 	}else if (mystrcmp(_command, "@EventWrap",'l')){
-		argnum = 1;		arg = new char*[argnum];//	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{‚Ì‚Í‚¸‚ª‚Ü‚³‚©‚Ì—áŠO
+		argnum = 1;		arg = new char*[argnum];//	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆã®ã¯ãšãŒã¾ã•ã‹ã®ä¾‹å¤–
 		char tmp[256];
-		sprintf_s(tmp, "@EventWrap(%s)", _argument);	//Š®‘S‚ÈŒ`‚ÅƒRƒ}ƒ“ƒh‚ª•K—v‚È‚½‚ß
+		sprintf_s(tmp, "@EventWrap(%s)", _argument);	//å®Œå…¨ãªå½¢ã§ã‚³ãƒãƒ³ãƒ‰ãŒå¿…è¦ãªãŸã‚
 		_worldmanager->ChangeTextMode(false, tmp);
 
 //@TextMode_Set	//Inner
 	}else if (mystrcmp(_command, "@TextMode_Set",'l')){
-		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		if (mystrcmp(arg[0], 'p', 3, "BOX", "Box", "box")){
 			_worldmanager->ChangeTextMode(true);
@@ -1679,7 +1679,7 @@ bool CCmdManager::TextCmdSolve(const char* _command, char* _argument, CWorldMana
 		
 //@TName_Add
 	}else if (mystrcmp(_command, "@TName_Add",'l')){
-		argnum = 11;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 11;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		bool left;
 		if (sys::StrtoDir(arg[0])==LEFT){
@@ -1702,7 +1702,7 @@ bool CCmdManager::TextCmdSolve(const char* _command, char* _argument, CWorldMana
 
 //@TName_Dec
 	}else if (mystrcmp(_command, "@TName_Dec",'l')){
-		argnum = 11;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 11;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		bool left;
 		if (sys::StrtoDir(arg[0])==LEFT){
@@ -1722,7 +1722,7 @@ bool CCmdManager::TextCmdSolve(const char* _command, char* _argument, CWorldMana
 		
 //@TName_Clear
 	}else if (mystrcmp(_command, "@TName_Clear",'l')){
-		argnum = 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 		
 		if (mystrcmp(arg[0], 'p', 3, "ALL", "All", "all")){
 			_textbox->TalkName.Clear(true);
@@ -1739,7 +1739,7 @@ bool CCmdManager::TextCmdSolve(const char* _command, char* _argument, CWorldMana
 		
 //@TName_Now
 	}else if (mystrcmp(_command, "@TName_Now",'l')){
-		argnum = 2;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 2;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		bool left;
 		if (sys::StrtoDir(arg[0])==LEFT){
@@ -1761,7 +1761,7 @@ bool CCmdManager::TextCmdSolve(const char* _command, char* _argument, CWorldMana
 
 //@AutoPlay_Set
 	}else if (mystrcmp(_command, "@AutoPlay_Set",'l')){
-		argnum = 2;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//•K{
+		argnum = 2;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum, false);	//å¿…é ˆ
 
 		int num;
 		if (!mystrtol(arg[1], &num)) num = NULL;
@@ -1771,7 +1771,7 @@ bool CCmdManager::TextCmdSolve(const char* _command, char* _argument, CWorldMana
 		}else if (sys::TrueOrFalse(arg[0], false)){
 			_textbox->SetAutoPlay(false);
 		}else{
-			WarningDx("WarningDx->@AutoPlay_Setifalsej: Check arg[TrueOrFalse]:%s", arg[0]);
+			WarningDx("WarningDx->@AutoPlay_Setï¼ˆfalseï¼‰: Check arg[TrueOrFalse]:%s", arg[0]);
 			_textbox->SetAutoPlay(false);
 		}
 
@@ -1780,7 +1780,7 @@ bool CCmdManager::TextCmdSolve(const char* _command, char* _argument, CWorldMana
 		argnum = 1;		arg = new char*[argnum];	//ArgCut(_command, _argument, arg, argnum, false);
 
 			
-//ƒRƒ}ƒ“ƒh•sˆê’v
+//ã‚³ãƒãƒ³ãƒ‰ä¸ä¸€è‡´
 	}else{
 		return false;
 	}
@@ -1800,31 +1800,31 @@ bool CCmdManager::MusicCmdSolve(const char * _command, char * _argument)
 
 //@Music_Play
 	} else if (mystrcmp(_command, "@Music_Play", 'l')) {
-		argnum = 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//•K{
+		argnum = 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//å¿…é ˆ
 
 		CMusicManager::GetInstance()->PlayMusic(arg[0]);
 
 //@Music_Stop
 	} else if (mystrcmp(_command, "@Music_Stop", 'l')) {
-		argnum = 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//•K{
+		argnum = 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//å¿…é ˆ
 
 		CMusicManager::GetInstance()->StopMusic(arg[0]);
 
 //@Music_AllStop
 	} else if (mystrcmp(_command, "@Music_AllStop", 'l')) {
-		argnum = 0;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//•K{
+		argnum = 0;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//å¿…é ˆ
 
 		CMusicManager::GetInstance()->StopAllMusic();
 
 //@Music_Pause
 	} else if (mystrcmp(_command, "@Music_Pause", 'l')) {
-		argnum = 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//•K{
+		argnum = 1;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//å¿…é ˆ
 
 		CMusicManager::GetInstance()->PauseMusic(arg[0]);
 
 //@Music_ChangeNextVolume
 	} else if (mystrcmp(_command, "@Music_ChangeNextVolume", 'l')) {
-		argnum = 2;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//•K{
+		argnum = 2;		arg = new char*[argnum];	ArgCut(_command, _argument, arg, argnum);	//å¿…é ˆ
 
 		int per;
 		if (mystrtol(arg[1], &per)) {
@@ -1834,7 +1834,7 @@ bool CCmdManager::MusicCmdSolve(const char * _command, char * _argument)
 			goto finish;
 		}
 
-//ƒRƒ}ƒ“ƒh•sˆê’v
+//ã‚³ãƒãƒ³ãƒ‰ä¸ä¸€è‡´
 	} else {
 		return false;
 	}
@@ -1846,7 +1846,7 @@ finish:
 
 
 //////////////////////////////////////////////////////////////////
-//ƒoƒgƒ‹ƒRƒ}ƒ“ƒh‚Ìˆ—////////////////////////////////////////////
+//ãƒãƒˆãƒ«ã‚³ãƒãƒ³ãƒ‰ã®å‡¦ç†////////////////////////////////////////////
 bool CCmdManager::BattleCmdSolve(const char* _command, char* _argument, CBattle* _battle){
 	int argnum=0;	char** arg;
 
@@ -1856,7 +1856,7 @@ bool CCmdManager::BattleCmdSolve(const char* _command, char* _argument, CBattle*
 		
 //@Target_Appear
 	}else if (mystrcmp(_command, "@Target_Appear",'l')){
-		argnum = 3;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 3;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		bool side;
 		if (mystrcmp(arg[0], 'p', 3, "ENEMY", "enemy", "Enemy")){
@@ -1888,14 +1888,14 @@ bool CCmdManager::BattleCmdSolve(const char* _command, char* _argument, CBattle*
 
 //@Target_Move
 	}else if (mystrcmp(_command, "@Target_Move",'l')){
-		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		_battle->TargetMarker.Move(sys::StrtoDir(arg[0]), _battle);
 
 
 //@Target_Decide
 	}else if (mystrcmp(_command, "@Target_Decide",'l')){
-		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 1;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		int actorindex = -1;
 		if (!mystrtol(arg[0], &actorindex)) ErrorDx("Error->@Target_Decode->Check type arg[index]->%s", __FILE__, __LINE__, arg[0]);
@@ -1909,7 +1909,7 @@ bool CCmdManager::BattleCmdSolve(const char* _command, char* _argument, CBattle*
 
 //@Damage
 	}else if (mystrcmp(_command, "@Damage",'l')){
-		argnum = 4;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 4;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		int attackerActorIndex = -1;
 		if (!mystrtol(arg[0], &attackerActorIndex)) {
@@ -1935,12 +1935,12 @@ bool CCmdManager::BattleCmdSolve(const char* _command, char* _argument, CBattle*
 			goto finish;
 		}
 
-		//•Ï”‚Ì€”õ‚ª‚Å‚«‚½‚ç‚¢‚´ˆ—‚Ö
+		//å¤‰æ•°ã®æº–å‚™ãŒã§ããŸã‚‰ã„ã–å‡¦ç†ã¸
 		if (mystrcmp(arg[3], "NORMAL")){
 			_battle->ManageAttack(attackerActorIndex, targetActorIndex, (trick_tag const*)trick);
 
 		//}else if (mystrcmp(arg[3], "STABLE")){ 
-			//Battle‚ÌƒCƒxƒ“ƒg—p•ÊŠÖ”‚É”ò‚Î‚·
+			//Battleã®ã‚¤ãƒ™ãƒ³ãƒˆç”¨åˆ¥é–¢æ•°ã«é£›ã°ã™
 		}else{
 			ErrorDx("Error->@Damange->Check arg[TYPE] :%s", arg[3]);
 		}
@@ -1948,7 +1948,7 @@ bool CCmdManager::BattleCmdSolve(const char* _command, char* _argument, CBattle*
 	
 //@Attention_Add
 	}else if (mystrcmp(_command, "@Attention_Add",'l')){
-		argnum = 3;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 3;		arg = new char*[argnum];	if(!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		int enemyIndex = -1;
 		if (!mystrtol(arg[0], &enemyIndex)) {
@@ -1974,7 +1974,7 @@ bool CCmdManager::BattleCmdSolve(const char* _command, char* _argument, CBattle*
 
 //@Item_Use(%s, %d, %d)", ItemName, UserActorIndex, TargetActorIndex)		
 	} else if (mystrcmp(_command, "@Item_Use", 'l')) {
-		argnum = 3;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum))goto finish;	//•K{
+		argnum = 3;		arg = new char*[argnum];	if (!ArgCut(_command, _argument, arg, argnum))goto finish;	//å¿…é ˆ
 
 		int userActorIndex = -1;
 		if (!mystrtol(arg[1], &userActorIndex)) {
@@ -2006,7 +2006,7 @@ bool CCmdManager::BattleCmdSolve(const char* _command, char* _argument, CBattle*
 
 
 
-//ƒRƒ}ƒ“ƒh•sˆê’v
+//ã‚³ãƒãƒ³ãƒ‰ä¸ä¸€è‡´
 	}else{
 		return false;
 	}

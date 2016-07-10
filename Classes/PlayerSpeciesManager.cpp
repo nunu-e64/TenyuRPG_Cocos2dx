@@ -14,12 +14,12 @@ bool CPlayerSpeciesManager::CreateSpecies(const char* _name, int _level, int _ge
 	newPlayer.SetValue(_name, _level, _geneMaxHp, _geneAtk, _geneDef, _geneSpd);
 	newPlayer.Img = _img;
 
-	//•’ÊUŒ‚‚ğTrickList‚©‚ç’†g‚²‚ÆƒRƒs[‚µ‚Ä‚­‚éBPower‚ÌŒvZ‚Æ‘ã“ü‚ÍƒŒƒxƒ‹‚É¶‰E‚³‚ê‚é‚Ì‚ÅPlayer‚ğƒCƒ“ƒXƒ^ƒ“ƒX‰»‚µ‚½‚Æ‚«‚És‚¤
+	//æ™®é€šæ”»æ’ƒã‚’TrickListã‹ã‚‰ä¸­èº«ã”ã¨ã‚³ãƒ”ãƒ¼ã—ã¦ãã‚‹ã€‚Powerã®è¨ˆç®—ã¨ä»£å…¥ã¯ãƒ¬ãƒ™ãƒ«ã«å·¦å³ã•ã‚Œã‚‹ã®ã§Playerã‚’ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–ã—ãŸã¨ãã«è¡Œã†
 		bool valueChecker;
 		newPlayer.BaseTrickPowerGene = between(1, 5, _geneBaseTrickPower, &valueChecker);
 		if (!valueChecker) WARNINGDX("ValueWarning(BaseTrickPowerGene):%d", _geneBaseTrickPower);
 
-		if (_baseTrick != NULL) newPlayer.BaseTrick = *_baseTrick;	//’Êí‹Z“o˜^
+		if (_baseTrick != NULL) newPlayer.BaseTrick = *_baseTrick;	//é€šå¸¸æŠ€ç™»éŒ²
 		else newPlayer.BaseTrick.Name[0] = '\0';
 
 	if (PlayerBankLock) {
@@ -57,7 +57,7 @@ bool CPlayerSpeciesManager::SetMemberList(int _index, const char* _name){
 	}
 	return true;
 }
-bool CPlayerSpeciesManager::SetMemberList(){	//ƒp[ƒeƒBƒƒ“ƒo[ƒŠƒXƒg‚Ì‰Šú‰»Bí“¬‚Éo‚È‚¢‚Å‚ ‚ë‚¤ƒƒ“ƒo[‚É‚à”Ô†‚ÍU‚Á‚Ä‚¨‚­
+bool CPlayerSpeciesManager::SetMemberList(){	//ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¡ãƒ³ãƒãƒ¼ãƒªã‚¹ãƒˆã®åˆæœŸåŒ–ã€‚æˆ¦é—˜ã«å‡ºãªã„ã§ã‚ã‚ã†ãƒ¡ãƒ³ãƒãƒ¼ã«ã‚‚ç•ªå·ã¯æŒ¯ã£ã¦ãŠã
 	MemberList.clear();
 	std::map<std::string, CPlayerSpecies>::iterator it=PlayerBank.begin();
 	if (it!=PlayerBank.end()) PlayerBankLock = true;
@@ -70,7 +70,7 @@ bool CPlayerSpeciesManager::SetMemberList(){	//ƒp[ƒeƒBƒƒ“ƒo[ƒŠƒXƒg‚Ì‰Šú‰»B
 
 CPlayerSpecies* CPlayerSpeciesManager::GetSpecies(const char* _name){
 	if (PlayerBank.find(_name)!=PlayerBank.end()){
-		PlayerBankLock = true;	//ˆÈŒãPlayerBank‚Ì—v‘fƒAƒhƒŒƒX‚ª•Ï‚í‚ç‚È‚¢‚æ‚¤‚É—v‘f‚Ì’Ç‰Á‚ğ‹Ö‚¶‚é
+		PlayerBankLock = true;	//ä»¥å¾ŒPlayerBankã®è¦ç´ ã‚¢ãƒ‰ãƒ¬ã‚¹ãŒå¤‰ã‚ã‚‰ãªã„ã‚ˆã†ã«è¦ç´ ã®è¿½åŠ ã‚’ç¦ã˜ã‚‹
 		return &PlayerBank[_name];
 	}else{
 		ErrorDx("Error->PlayerSpeciesManager->GetPlayerSpecies->NotFound:%s", __FILE__, __LINE__, _name);
@@ -91,7 +91,7 @@ CPlayerSpecies* CPlayerSpeciesManager::GetSpecies(int _index){
 
 void CPlayerSpeciesManager::CopyValue(int PLAYER_NUM, CPlayer* _player){
 
-	//í“¬I—¹ŒãAPlayerBank‚É•Û‘¶‚·‚×‚«î•ñ‚ğƒRƒs[‚·‚é
+	//æˆ¦é—˜çµ‚äº†å¾Œã€PlayerBankã«ä¿å­˜ã™ã¹ãæƒ…å ±ã‚’ã‚³ãƒ”ãƒ¼ã™ã‚‹
 
 	for (int i=0; i<PLAYER_NUM; i++){
 		//PlayerBank[_player[i].GetName()].Hp = _player[i].Hp;
@@ -103,7 +103,7 @@ void CPlayerSpeciesManager::CopyValue(int PLAYER_NUM, CPlayer* _player){
 
 void CPlayerSpeciesManager::AddExp(int _exp) {
 
-	//HACK: ŒoŒ±’n•ª”z‚É‚Â‚¢‚Ä‚Íƒxƒ“ƒ`‚Ì’‡ŠÔ‚É‚à•ª”z‚·‚é‚Ì‚©‚È‚ÇA—vŒŸ“¢
+	//HACK: çµŒé¨“åœ°åˆ†é…ã«ã¤ã„ã¦ã¯ãƒ™ãƒ³ãƒã®ä»²é–“ã«ã‚‚åˆ†é…ã™ã‚‹ã®ã‹ãªã©ã€è¦æ¤œè¨
 	_exp = max(0, _exp);
 	for (unsigned int i = 0; i < MemberList.size(); i++) {
 		MemberList[i]->Exp += _exp;
@@ -135,9 +135,9 @@ bool CPlayerSpeciesManager::SetAccessory(std::string _playerName, int _slot, std
 		CPlayerSpecies* player = GetSpecies(_playerName.c_str());
 		CItemManager* itemManager = CItemManager::GetInstance();
 
-		if (_accessoryItemName.length() == 0){	//‘•”õ‚È‚µ‚ğ‘I‘ğ‘•”õ‚ğ‚Í‚¸‚·
+		if (_accessoryItemName.length() == 0){	//è£…å‚™ãªã—ã‚’é¸æŠï¼è£…å‚™ã‚’ã¯ãšã™
 			
-			//Œ³X‘•”õ‚µ‚Ä‚¢‚½ƒAƒCƒeƒ€‚ğƒoƒbƒO‚É•Ô‚·
+			//å…ƒã€…è£…å‚™ã—ã¦ã„ãŸã‚¢ã‚¤ãƒ†ãƒ ã‚’ãƒãƒƒã‚°ã«è¿”ã™
 			if (player->AccessoryList[_slot].length() > 0) {
 				itemManager->IncPlayerItem(player->AccessoryList[_slot], 1);
 			}
@@ -145,17 +145,17 @@ bool CPlayerSpeciesManager::SetAccessory(std::string _playerName, int _slot, std
 
 			return true;
 
-		} else if (itemManager->GetAccessoryItem(_accessoryItemName) != NULL) {	//‘•”õƒAƒCƒeƒ€‚ğ‘I‘ğ‘•”õ‚ğŒğŠ·
+		} else if (itemManager->GetAccessoryItem(_accessoryItemName) != NULL) {	//è£…å‚™ã‚¢ã‚¤ãƒ†ãƒ ã‚’é¸æŠï¼è£…å‚™ã‚’äº¤æ›
 			
 			if (itemManager->GetPlayerItemNum(_accessoryItemName) > 0) {
 				
 				std::string oldAcce = player->AccessoryList[_slot];
 
-				//V‚µ‚­‘•”õ‚·‚éƒAƒCƒeƒ€‚ğƒoƒbƒO‚©‚ç‚à‚ç‚¤
+				//æ–°ã—ãè£…å‚™ã™ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã‚’ãƒãƒƒã‚°ã‹ã‚‰ã‚‚ã‚‰ã†
 				itemManager->DecPlayerItem(_accessoryItemName, 1);
 				player->AccessoryList[_slot] = _accessoryItemName;
 
-				//Œ³X‘•”õ‚µ‚Ä‚¢‚½ƒAƒCƒeƒ€‚ğƒoƒbƒO‚É•Ô‚·
+				//å…ƒã€…è£…å‚™ã—ã¦ã„ãŸã‚¢ã‚¤ãƒ†ãƒ ã‚’ãƒãƒƒã‚°ã«è¿”ã™
 				if (oldAcce.length() > 0) {
 					itemManager->IncPlayerItem(oldAcce, 1);
 				}				

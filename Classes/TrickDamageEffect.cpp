@@ -3,7 +3,7 @@
 
 CTrickDamageEffect_BOMB::CTrickDamageEffect_BOMB(std::string _name, std::vector<std::string>_argList):CTrickDamageEffect(_name){
 	CONSTRUCTED;
-	int numset[ARG_NUM] = {200,200,200, 10, 60};	//ìKìñ
+	int numset[ARG_NUM] = {200,200,200, 10, 60};	//ÈÅ©ÂΩì
 
 	for (unsigned int i=0; i<_argList.size() && i<ARG_NUM; i++){
 		int num;
@@ -26,14 +26,14 @@ CTrickDamageEffect_BOMB::CTrickDamageEffect_BOMB(std::string _name, std::vector<
 }
 
 void CTrickDamageEffect_BOMB::DrawDamageEffect(CBattle* _battle, CBImgBank* _bimgbank, CRect _attackerR, CRect _targetR) const{
-	//Ç±Ç±Ç…é¿ç€ÇÃÇ†ÇÍÇ±ÇÍÇèëÇ≠
+	//„Åì„Åì„Å´ÂÆüÈöõ„ÅÆ„ÅÇ„Çå„Åì„Çå„ÇíÊõ∏„Åè
 
 
 }
 
 CTrickDamageEffect_PROTO::CTrickDamageEffect_PROTO(std::string _name, std::vector<std::string>_argList):CTrickDamageEffect(_name){
 	CONSTRUCTED;
-	int numset[ARG_NUM] = {10, 15, 60};	//ìKìñ
+	int numset[ARG_NUM] = {10, 15, 60};	//ÈÅ©ÂΩì
 
 	for (unsigned int i=0; i<_argList.size() && i<ARG_NUM; i++){
 		int num;
@@ -57,9 +57,9 @@ CTrickDamageEffect_PROTO::CTrickDamageEffect_PROTO(std::string _name, std::vecto
 
 
 void CTrickDamageEffect_PROTO::DrawDamageEffect(CBattle* _battle, CBImgBank* _bimgbank, CRect _attackerR, CRect _targetR) const{
-	//Ç±Ç±Ç…é¿ç€ÇÃÇ†ÇÍÇ±ÇÍÇèëÇ≠
+	//„Åì„Åì„Å´ÂÆüÈöõ„ÅÆ„ÅÇ„Çå„Åì„Çå„ÇíÊõ∏„Åè
 
-	//ãZî≠ìÆââèo//////////////////////////////////////////////////////////////
+	//ÊäÄÁô∫ÂãïÊºîÂá∫//////////////////////////////////////////////////////////////
 	int timecount = 0;
 	CVector ball[8];
 	int a=Radius;
@@ -84,7 +84,7 @@ void CTrickDamageEffect_PROTO::DrawDamageEffect(CBattle* _battle, CBImgBank* _bi
 	}while(a!=0 && BasicLoop());
 
 	timecount=0;
-	a=20;	//åıãÖÇÃà⁄ìÆë¨ìx
+	a=20;	//ÂÖâÁêÉ„ÅÆÁßªÂãïÈÄüÂ∫¶
 	CVector vec = _targetR.Center()-_attackerR.Center();
 	vec *= 1/vec.GetLength();
 	do{

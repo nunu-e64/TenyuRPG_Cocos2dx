@@ -53,13 +53,13 @@ CEnemyPlanner_MYHP::CEnemyPlanner_MYHP(std::string _name, std::vector<std::strin
 		}
 		numset.push_back(num);
 	}
-	if (numset.size()%2==1) numset.push_back(0);	//ˆø”‚ªŠï”‚Ìê‡AÅŒã”ö‚É0%‚ğ’Ç‰Á
+	if (numset.size()%2==1) numset.push_back(0);	//å¼•æ•°ãŒå¥‡æ•°ã®å ´åˆã€æœ€å¾Œå°¾ã«0%ã‚’è¿½åŠ 
 
 	for (unsigned int i=0; i<numset.size()/2; i++){
 		planList.push_back( std::pair<int,int>(numset[i*2],numset[i*2+1]));
 	}
 
-	//ƒƒOo—Í
+	//ãƒ­ã‚°å‡ºåŠ›
 	//for (unsigned int i=0; i<planList.size(); i++){
 	//	myLog("%s:MYHP_AIList[%d]=(%d,%d)", _name.c_str(), i, planList[i].first, planList[i].second);
 	//}
@@ -70,8 +70,8 @@ CEnemyPlanner_MYHP::CEnemyPlanner_MYHP(std::string _name, std::vector<std::strin
 	//}
 }
 int CEnemyPlanner_MYHP::GetPlan(const CEnemy* _enemy){
-	//‚±‚±‚ÉÀÛ‚Ì‚ ‚ê‚±‚ê‚ğ‘‚­
-	//planList¥¥¥[0~n] first:TrickIndex, second:‹«ŠEü‚Æ‚È‚éHPƒp[ƒZƒ“ƒg
+	//ã“ã“ã«å®Ÿéš›ã®ã‚ã‚Œã“ã‚Œã‚’æ›¸ã
+	//planListãƒ»ãƒ»ãƒ»[0~n] first:TrickIndex, second:å¢ƒç•Œç·šã¨ãªã‚‹HPãƒ‘ãƒ¼ã‚»ãƒ³ãƒˆ
 
 	int ratio = (int)(100 * (double)_enemy->GetHp()/_enemy->GetMaxHp());
 	int plan = -1;
@@ -113,7 +113,7 @@ CEnemyPlanner_PLAYERNUM::CEnemyPlanner_PLAYERNUM(std::string _name, std::vector<
 	}
 }
 int CEnemyPlanner_PLAYERNUM::GetPlan(const CEnemy* _enemy){
-	//‚±‚±‚ÉÀÛ‚Ì‚ ‚ê‚±‚ê‚ğ‘‚­
+	//ã“ã“ã«å®Ÿéš›ã®ã‚ã‚Œã“ã‚Œã‚’æ›¸ã
 
 	int alivePlayerNum = 0;
 	for (int i=0; i<PLAYER_NUM+ENEMY_NUM ; i++){

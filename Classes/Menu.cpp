@@ -94,7 +94,7 @@ void CMenu::Clear(CMenuNode* _top) {
 
 	if (tmp->parent != NULL) tmp->parent->child = NULL;
 
-	_top->prev->next = NULL;	//ƒŠƒ“ƒO‚ðØ‚é
+	_top->prev->next = NULL;	//ãƒªãƒ³ã‚°ã‚’åˆ‡ã‚‹
 
 	while (tmp != NULL) {
 		if (tmp->child != NULL) Clear(tmp->child);
@@ -109,7 +109,7 @@ CMenuNode* CMenu::Find(const char _label[32]){
 	return Find(_label, front);
 }
 CMenuNode* CMenu::Find(const char _label[32], CMenuNode* _top){
-	//Ä‹A‚É‚æ‚é‘S’TõBŒ©“n‚µ‚Ä‚©‚çö‚é‚½‚ßó‚¢‚Ù‚¤‚ªŠT‚Ë”­Œ©‚ª‘‚¢B
+	//å†å¸°ã«ã‚ˆã‚‹å…¨æŽ¢ç´¢ã€‚è¦‹æ¸¡ã—ã¦ã‹ã‚‰æ½œã‚‹ãŸã‚æµ…ã„ã»ã†ãŒæ¦‚ã­ç™ºè¦‹ãŒæ—©ã„ã€‚
 	
 	CMenuNode* tmp = _top;
 
@@ -142,8 +142,8 @@ int CMenu::GetIndex(CMenuNode* _node){
 }
 
 bool CMenu::Move(CMenuNode* &_result, bool _atTip) {
-	//Œˆ’è‚Ü‚½‚ÍƒLƒƒƒ“ƒZƒ‹ƒL[‚ð‰Ÿ‚µ‚ÄƒJ[ƒ\ƒ‹‚ªˆÚ“®‚·‚é‚Æ‚«‚ÉTrue‚ð•Ô‚·B
-	//_atTipcTrue‚È‚çAƒƒjƒ…[‚ÌÅ[•”‚©ˆê”Ôã‚ÌŠK‘w‚Ì‚Æ‚«‚É‚µ‚©True‚ð•Ô‚³‚È‚¢
+	//æ±ºå®šã¾ãŸã¯ã‚­ãƒ£ãƒ³ã‚»ãƒ«ã‚­ãƒ¼ã‚’æŠ¼ã—ã¦ã‚«ãƒ¼ã‚½ãƒ«ãŒç§»å‹•ã™ã‚‹ã¨ãã«Trueã‚’è¿”ã™ã€‚
+	//_atTipâ€¦Trueãªã‚‰ã€ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®æœ€æ·±éƒ¨ã‹ä¸€ç•ªä¸Šã®éšŽå±¤ã®ã¨ãã«ã—ã‹Trueã‚’è¿”ã•ãªã„
 
 	_result = NULL;
 
@@ -201,7 +201,7 @@ void CBattleMenu::Draw(){
 	DrawBox(X, Y, X+Width, Y+Height, GetColor(30, 20, 80), true);
 	DrawBox(X+5, Y+5, X+Width-5, Y+Height-5, GRAY, false);
 	
-	//•êƒƒjƒ…[‚Ì•¶Žš•\Ž¦‚ÆƒJ[ƒ\ƒ‹•\Ž¦
+	//æ¯ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®æ–‡å­—è¡¨ç¤ºã¨ã‚«ãƒ¼ã‚½ãƒ«è¡¨ç¤º
 	CMenuNode* tmp = GetFront();
 	for (int i=0; tmp!=NULL; i++){
 		DrawString(X+30, Y+10+i*(1+GetFontSize()), tmp->label, WHITE, BLACK);
@@ -211,14 +211,14 @@ void CBattleMenu::Draw(){
 		if (tmp==GetFront()) break;
 	}
 
-	//Žqƒƒjƒ…[‚Ì•\Ž¦‚ÆƒJ[ƒ\ƒ‹•\Ž¦
+	//å­ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®è¡¨ç¤ºã¨ã‚«ãƒ¼ã‚½ãƒ«è¡¨ç¤º
 	if (Cursor->parent->child != tmp) {	//tmp=front
 		tmp = Cursor->parent->child;
 		CRect childRect(X + Width + 5, X + Width * 4 + 5, Y, Y + Height);
 		DrawBox(childRect.Left,		childRect.Top,		childRect.Right,		childRect.Bottom, GetColor(30, 20, 80), true);
 		DrawBox(childRect.Left + 5,	childRect.Top + 5,	childRect.Right - 5,	childRect.Bottom - 5, GRAY, false);
 
-		if (mystrcmp(Cursor->parent->label, "“¹‹ï")) {
+		if (mystrcmp(Cursor->parent->label, "é“å…·")) {
 			CItemManager* itemManager = CItemManager::GetInstance();
 			for (int i = 0; tmp != NULL; i++) {
 				char strNum[64];
@@ -248,10 +248,10 @@ void CBattleMenu::Draw(){
 void CFieldMenu::Draw() {
 	if (!Alive) return;
 
-	DrawBox(X, Y, X + Width, Y + Height, GetColor(30, 20, 80), true);	//HACK:DrawGraph‚É‚¹‚Ë‚Î
+	DrawBox(X, Y, X + Width, Y + Height, GetColor(30, 20, 80), true);	//HACK:DrawGraphã«ã›ã­ã°
 	DrawBox(X + 5, Y + 5, X + Width - 5, Y + Height - 5, GRAY, false);
 
-	//•êƒƒjƒ…[‚Ì•¶Žš•\Ž¦‚ÆƒJ[ƒ\ƒ‹•\Ž¦
+	//æ¯ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®æ–‡å­—è¡¨ç¤ºã¨ã‚«ãƒ¼ã‚½ãƒ«è¡¨ç¤º
 	CMenuNode* tmp = GetFront();
 	for (int i = 0; tmp != NULL; i++) {
 		DrawString(X + 30, Y + 10 + i*(1 + GetFontSize()), tmp->label, WHITE, BLACK);
@@ -261,7 +261,7 @@ void CFieldMenu::Draw() {
 		if (tmp == GetFront()) break;
 	}
 
-	//Žqƒƒjƒ…[‚Ì•\Ž¦‚ÆƒJ[ƒ\ƒ‹•\Ž¦
+	//å­ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®è¡¨ç¤ºã¨ã‚«ãƒ¼ã‚½ãƒ«è¡¨ç¤º
 
 /*	if (mystrcmp(Cursor->parent->parent->label, "Status")) {
 		tmp = Find("Status")->child->child;
@@ -289,7 +289,7 @@ void CFieldMenu::Draw() {
 		
 
 	} else */
-	if (Cursor->parent->child != GetFront()) {	//ƒJ[ƒ\ƒ‹‚ªfront‚Æ“¯‚¶ŠK‚É‚¢‚È‚¢¨Žq
+	if (Cursor->parent->child != GetFront()) {	//ã‚«ãƒ¼ã‚½ãƒ«ãŒfrontã¨åŒã˜éšŽã«ã„ãªã„â†’å­
 		tmp = Cursor->parent->child;
 		DrawBox(X, Y + Height + 5, X + Width, Y + Height * 4 + 5, GetColor(30, 20, 80), true);
 		DrawBox(X + 5, Y + Height + 5 + 5, X + Width - 5, Y + Height * 4 + 5 - 5, GRAY, false);
@@ -303,7 +303,7 @@ void CFieldMenu::Draw() {
 		}
 	}
 
-	//‘•”õƒƒjƒ…[‚Ì•`‰æ
+	//è£…å‚™ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®æç”»
 	if (AccessoryMenuVisible && AccessoryMenu != NULL) {
 
 		tmp = AccessoryMenu->GetFront();

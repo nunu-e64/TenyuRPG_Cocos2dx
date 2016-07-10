@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef ACTOR_H								////
 #define ACTOR_H								////
 ////////////////////////////////////////////////
@@ -6,7 +6,7 @@
 
 #include "Species.h"
 
-class CTextBox;		//‘O•ûéŒ¾
+class CTextBox;		//å‰æ–¹å®£è¨€
 class CCmdList;
 class CBImgBank;
 class CLogWindow;
@@ -24,26 +24,26 @@ public:
 		DESTRUCTED;
 	}
 
-	//‰Šúİ’èŠÖ˜A
+	//åˆæœŸè¨­å®šé–¢é€£
 		void FirstSet(int _playernum, int _enemynum, int _index, CTextBox** _textbox, CCmdList* _cmdlist, CLogWindow* _logWindow);
 		void SetRect(int _cx, int _cy);
-		//void SetImg(int _img); //g‚Á‚Ä‚È‚¢
+		//void SetImg(int _img); //ä½¿ã£ã¦ãªã„
 		bool SetSystemImg(CBImgBank* _bimgbank);
-		//void AddTrick(trick_tag const* _trick);	//g‚Á‚Ä‚È‚¢
-		//void ClearTrick(){TrickList.clear();} //g‚Á‚Ä‚È‚¢
+		//void AddTrick(trick_tag const* _trick);	//ä½¿ã£ã¦ãªã„
+		//void ClearTrick(){TrickList.clear();} //ä½¿ã£ã¦ãªã„
 
 	bool Main();
 	bool Do();
-	virtual void Draw(int _dx=0, int _dy=0)=0;	//ƒˆ‰¼‘zŠÖ”ceƒNƒ‰ƒX‘¤‚É’è‹`‚ğ‘‚­•K—v‚ª–³‚­‚È‚é
+	virtual void Draw(int _dx=0, int _dy=0)=0;	//ç´”ç²‹ä»®æƒ³é–¢æ•°â€¦è¦ªã‚¯ãƒ©ã‚¹å´ã«å®šç¾©ã‚’æ›¸ãå¿…è¦ãŒç„¡ããªã‚‹
 
-	//Šî‘bî•ñ
+	//åŸºç¤æƒ…å ±
 		int GetActorIndex()const { return ActorIndex; }
 		int GetIndex()const{return Index;}
 		bool IsPlayer()const{
 			return (ActorIndex<PLAYER_NUM);
 		}
 		
-	//í“¬ŠÖ˜A
+	//æˆ¦é—˜é–¢é€£
 		bool GetAlive()const{ return Alive; }
 		int GetVisibleStatus()const{ return VisibleStatus;}
 		bool GetVisible()const{ return Visible; }
@@ -59,21 +59,21 @@ public:
 		void SetStatus(int _key, int _value);
 
 		int Damaged(CActor* _attacker, trick_tag const* _trick);
-		bool CheckBarMove();	//€–SŠm”F‚ªÏ‚ñ‚¾‚çTrue
+		bool CheckBarMove();	//æ­»äº¡ç¢ºèªãŒæ¸ˆã‚“ã ã‚‰True
 		void SetTarget(int _target){ Target=_target; }
 	
-	//ƒXƒe[ƒ^ƒX•Ï‰»‹Z
-		void AddStatusChanger(int _kind, int _powerPercent, int _time);	//ŠÔ§ŒÀ•t‚«
-		void ChangeValue(int _kind, int _powerPercent);	//‰i‘±iƒXƒe[ƒ^ƒX‚É’¼Ú‰e‹¿j
+	//ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹å¤‰åŒ–æŠ€
+		void AddStatusChanger(int _kind, int _powerPercent, int _time);	//æ™‚é–“åˆ¶é™ä»˜ã
+		void ChangeValue(int _kind, int _powerPercent);	//æ°¸ç¶šï¼ˆã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã«ç›´æ¥å½±éŸ¿ï¼‰
 		void Heal(int _percent);
 
-	//‚»‚Ì‘¼
+	//ãã®ä»–
 		CRect GetRect()const{return Rect;}
 
 protected:
-	//ƒƒ“ƒoŠÖ”
+	//ãƒ¡ãƒ³ãƒé–¢æ•°
 		virtual void FirstSet2(){};
-		virtual void SetExtraImg(CBImgBank* _bImgBank){}	//SetSystemImg‚©‚çŒÄ‚Ño‚·BPlayer‚É‚Ì‚İ•K—v‚Å‚ ‚é‚½‚ßEnemy‚Ì‚É‚Í‚±‚Á‚¿‚ğ’Ê‚é
+		virtual void SetExtraImg(CBImgBank* _bImgBank){}	//SetSystemImgã‹ã‚‰å‘¼ã³å‡ºã™ã€‚Playerã«ã®ã¿å¿…è¦ã§ã‚ã‚‹ãŸã‚Enemyã®æ™‚ã«ã¯ã“ã£ã¡ã‚’é€šã‚‹
 		
 		void Draw_Sub(int _dx=0, int _dy=0);
 
@@ -81,26 +81,26 @@ protected:
 		virtual bool Plan()=0;
 		virtual bool Action()=0;
 
-	//Šî‘bî•ñ
+	//åŸºç¤æƒ…å ±
 		int PLAYER_NUM;
 		int ENEMY_NUM;
-		int ActorIndex;	//Actor‘S‘Ì‚Ì’Ê‚µ”Ô†
-		int Index;	//Player,Enemy‚²‚Æ‚Ì’Ê‚µ”Ô†
+		int ActorIndex;	//Actorå…¨ä½“ã®é€šã—ç•ªå·
+		int Index;	//Player,Enemyã”ã¨ã®é€šã—ç•ªå·
 
 		int Atk;
 		int Def;
 		double Spd;
 		int MaxHp;
 
-	//í“¬ŠÖ˜A
-		bool Alive;		//¶€B€‚ñ‚¾‚ç‘¦‚É•ÏX
-		bool Visible;	//’Pƒ‚É•`‰æ‚³‚ê‚é‚©”Û‚©Bˆ—‚ÍŒp‘±B“_–Å•\¦‚Ég—pB
+	//æˆ¦é—˜é–¢é€£
+		bool Alive;		//ç”Ÿæ­»ã€‚æ­»ã‚“ã ã‚‰å³æ™‚ã«å¤‰æ›´
+		bool Visible;	//å˜ç´”ã«æç”»ã•ã‚Œã‚‹ã‹å¦ã‹ã€‚å‡¦ç†ã¯ç¶™ç¶šã€‚ç‚¹æ»…è¡¨ç¤ºã«ä½¿ç”¨ã€‚
 		enum{
 			VISIBLE,
 			CHANGING,
 			INVISIBLE
-		}VisibleStatus;	//¶¨€‚Å‚Ì•`‰æ“à—e•ÏX‚ğŠÇ—
-		int OldHp;	//•`‰æ—p
+		}VisibleStatus;	//ç”Ÿâ†’æ­»ã§ã®æç”»å†…å®¹å¤‰æ›´ã‚’ç®¡ç†
+		int OldHp;	//æç”»ç”¨
 
 		std::vector <statusChanger_tag> StatusChangerList;
 
@@ -110,19 +110,19 @@ protected:
 			ACTION,
 			BEFORE_PLAN,
 			MODE_NUM
-		}Mode;		//‘Ò‹@‚â‰r¥,s“®‘I‘ğ‚È‚Ç	//private‚É‚µ‚½‚¢‚ªPlayer‚Ì–hŒäˆ—‚ÅƒAƒNƒZƒX‚µ‚Ä‚é(15/04/26)
+		}Mode;		//å¾…æ©Ÿã‚„è© å”±,è¡Œå‹•é¸æŠãªã©	//privateã«ã—ãŸã„ãŒPlayerã®é˜²å¾¡å‡¦ç†ã§ã‚¢ã‚¯ã‚»ã‚¹ã—ã¦ã‚‹(15/04/26)
 		int MaxTimeGauge; //0~XXX(%)
 
-	//‹ZŠÖ˜A
-		trick_tag const* NowTrick;		//uconst ‚ª * ‚æ‚è‚à‘O•û‚É‚ ‚ê‚ÎAw‚µ¦‚·æ‚Ì’l‚ª‘‚«Š·‚¦‚ç‚ê‚È‚¢BŒã•û‚É‚ ‚ê‚ÎAƒ|ƒCƒ“ƒ^•Ï”©‘Ì‚ª‘‚«Š·‚¦‚ç‚ê‚È‚¢v
+	//æŠ€é–¢é€£
+		trick_tag const* NowTrick;		//ã€Œconst ãŒ * ã‚ˆã‚Šã‚‚å‰æ–¹ã«ã‚ã‚Œã°ã€æŒ‡ã—ç¤ºã™å…ˆã®å€¤ãŒæ›¸ãæ›ãˆã‚‰ã‚Œãªã„ã€‚å¾Œæ–¹ã«ã‚ã‚Œã°ã€ãƒã‚¤ãƒ³ã‚¿å¤‰æ•°è‡ªä½“ãŒæ›¸ãæ›ãˆã‚‰ã‚Œãªã„ã€
 		int Target;
 
-	//ƒCƒ“ƒXƒ^ƒ“ƒX‚Ìƒ|ƒCƒ“ƒ^•Û—p
+	//ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿ä¿æŒç”¨
 		CTextBox** B_TextBox_pp;
 		CCmdList* CmdList;
 		CLogWindow* LogWindow;
 
-	//ƒOƒ‰ƒtƒBƒbƒN
+	//ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯
 		CRect Rect;
 		int Dx; int Dy;
 
@@ -131,8 +131,8 @@ private:
 			return _damage;
 		};
 
-		bool TimeGaugeForward();	//“à•”“I‚É‚ÍŒ¸­
-		double TimeGauge;	//MaxTimeGauge¨0(%)
+		bool TimeGaugeForward();	//å†…éƒ¨çš„ã«ã¯æ¸›å°‘
+		double TimeGauge;	//MaxTimeGaugeâ†’0(%)
 
 		static std::map <std::string, int> BarImg;
 		void SetBarImg(CBImgBank* _bImgBank, std::string _key);
@@ -152,6 +152,6 @@ private:
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

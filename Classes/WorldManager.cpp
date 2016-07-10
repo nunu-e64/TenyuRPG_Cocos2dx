@@ -1,7 +1,7 @@
 #include "WorldManager.h"
 
 
-//@Anten,@Meiten,@BackGround_Change—p‚ÌƒtƒF[ƒhƒCƒ“ƒAƒEƒgˆ—
+//@Anten,@Meiten,@BackGround_Changeç”¨ã®ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¤ãƒ³ã‚¢ã‚¦ãƒˆå‡¦ç†
 void CWorldManager::FadeDraw(int _time, int _img, bool _changeahead, bool _color){
     int starttime = GetNowCount() ;
 	int alpha;
@@ -16,11 +16,11 @@ void CWorldManager::FadeDraw(int _time, int _img, bool _changeahead, bool _color
 		}
 		
 		SetDrawBlendMode( DX_BLENDMODE_NOBLEND , 0 );	
-		Draw(false, true);		//Draw()“à‚ÅScreenFlip‚È‚Ç‚Í‚µ‚È‚¢
+		Draw(false, true);		//Draw()å†…ã§ScreenFlipãªã©ã¯ã—ãªã„
 
 		SetDrawBlendMode( DX_BLENDMODE_ALPHA, alpha);
 		if (_color){
-			DrawBox(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, _img, true);	//HACK:DrawBoxg‚í‚È‚¢•û‚ªŒy‚¢‚ç‚µ‚¢
+			DrawBox(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, _img, true);	//HACK:DrawBoxä½¿ã‚ãªã„æ–¹ãŒè»½ã„ã‚‰ã—ã„
 		}else{
 			CVector picsize = GetGraphSize(_img);
 			DrawGraph(WINDOW_WIDTH/2-picsize.x/2, WINDOW_HEIGHT/2-picsize.y/2, _img, true);
@@ -39,7 +39,7 @@ void CWorldManager::FadeDraw(int _time, int _img, bool _changeahead, bool _color
 //	}else{
 //		TextBox = &TextWrap1;
 //
-//		if (_eventtext!=NULL){	//EveManager::CopyOriginalEvent‚ğ”Ä—p«‚ğã‚°‚Ä‰ü‘PB‚±‚ê‚ÅTextWrap1‚É@EventWrap‚Ì“à—e‚ğ“n‚¹‚½
+//		if (_eventtext!=NULL){	//EveManager::CopyOriginalEventã‚’æ±ç”¨æ€§ã‚’ä¸Šã’ã¦æ”¹å–„ã€‚ã“ã‚Œã§TextWrap1ã«@EventWrapã®å†…å®¹ã‚’æ¸¡ã›ãŸ
 //			std::vector<char256> tmptext;
 //			EveManager_p->CopyOriginalEvent(&tmptext, _eventtext);
 //			for (unsigned int i=0; i<tmptext.size(); i++){

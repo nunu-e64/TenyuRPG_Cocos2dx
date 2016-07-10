@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef CMDMANAGER_H						////
 #define CMDMANAGER_H						////
 ////////////////////////////////////////////////
@@ -65,7 +65,7 @@ public:
 	void Init(CMap* _map){Map_p=_map;}
 
 private:
-	CMap* Map_p;				//Field‚©‚çó‚¯Œp‚®
+	CMap* Map_p;				//Fieldã‹ã‚‰å—ã‘ç¶™ã
 };
 
 class CBattleFirstSetCmdManager : public CCmdManager{
@@ -76,6 +76,6 @@ public:
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

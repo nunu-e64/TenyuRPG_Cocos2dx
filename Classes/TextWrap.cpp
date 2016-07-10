@@ -17,7 +17,7 @@ void CTextWrap::Term(CCmdList* _cmdlist){	//Terminate
 	AutoPlay = false;
 	AutoPlaySpeed = DefaultAutoPlaySpeed;
 			
-	//Boxƒ‚[ƒh‚É–ß‚·
+	//Boxãƒ¢ãƒ¼ãƒ‰ã«æˆ»ã™
 		_cmdlist->Add("@TextMode_Set(box)");
 }
 
@@ -27,19 +27,19 @@ void CTextWrap::Draw(bool _showingstop){
 
 	int oldfontsize = GetFontSize();
 
-	//”wŒi‚ğ”–ˆÃ‚­
-		SetDrawBlendMode( DX_BLENDMODE_ALPHA , 50*255/100) ;		//50%ƒAƒ‹ƒtƒ@ƒuƒŒƒ“ƒh
-		DrawBox(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, BLACK, true);	//HACK:DrawBoxg‚í‚È‚¢•û‚ªŒy‚¢‚ç‚µ‚¢
+	//èƒŒæ™¯ã‚’è–„æš—ã
+		SetDrawBlendMode( DX_BLENDMODE_ALPHA , 50*255/100) ;		//50%ã‚¢ãƒ«ãƒ•ã‚¡ãƒ–ãƒ¬ãƒ³ãƒ‰
+		DrawBox(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, BLACK, true);	//HACK:DrawBoxä½¿ã‚ãªã„æ–¹ãŒè»½ã„ã‚‰ã—ã„
 		SetDrawBlendMode( DX_BLENDMODE_NOBLEND , 0 ) ;
 
-	//ƒeƒLƒXƒg
-		//•\¦ƒAƒjƒ[ƒVƒ‡ƒ“’²®
+	//ãƒ†ã‚­ã‚¹ãƒˆ
+		//è¡¨ç¤ºã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³èª¿æ•´
 		Draw_Animation(_showingstop);	
 	
-		//@ƒ‹ƒr‚ğRuby‚ÆÆ‡,•\¦
+		//@ãƒ«ãƒ“ã‚’Rubyã¨ç…§åˆ,è¡¨ç¤º
 		Draw_Ruby();
 	
-		//ƒeƒLƒXƒg•`Ê
+		//ãƒ†ã‚­ã‚¹ãƒˆæå†™
 		SetFontSize(FontSize);
 		for (int i=0; i<LineNum; i++){
 			if (Color2!=-1) DrawString(PosX+Width/2 - WordNum*(FontSize+1)/4 + 1, PosY+Height/2 + LINE_SPACE/2 - LineNum*(FontSize+LINE_SPACE)/2 + (FontSize+LINE_SPACE)*i+1, chDrawText[i], Color2);
@@ -47,13 +47,13 @@ void CTextWrap::Draw(bool _showingstop){
 
 		}
 
-		//‘±‚«‚ª‚ ‚é‚Æ‚«‚Ìƒ}[ƒN•\¦
+		//ç¶šããŒã‚ã‚‹ã¨ãã®ãƒãƒ¼ã‚¯è¡¨ç¤º
 		if (!Showing && !AutoPlay) {
 			int i;
 			for (i=LineNum-1; i>=0; i--){
 				if (strlen(chDrawText[i])) break;
 			}
-			DrawString(5+PosX+Width/2-WordNum*(FontSize+1)/4+strlen(chDrawText[i])*(FontSize+1)/2, PosY+Height/2 - LineNum*(FontSize+LINE_SPACE)/2 + (FontSize+LINE_SPACE)*i + (GetNowCount()/100)%5, "¥", WHITE);
+			DrawString(5+PosX+Width/2-WordNum*(FontSize+1)/4+strlen(chDrawText[i])*(FontSize+1)/2, PosY+Height/2 - LineNum*(FontSize+LINE_SPACE)/2 + (FontSize+LINE_SPACE)*i + (GetNowCount()/100)%5, "â–¼", WHITE);
 		}
 	
 

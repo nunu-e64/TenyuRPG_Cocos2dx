@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef TRICKDAMAGEEFFECT_H					////
 #define TRICKDAMAGEEFFECT_H					////
 ////////////////////////////////////////////////
@@ -9,7 +9,7 @@
 
 class CBattle;
 class CBImgBank;
-class CTrickDamageEffect{ //í“¬ƒ_ƒ[ƒWƒGƒtƒFƒNƒg—p‚ÌƒCƒ“ƒ^[ƒtƒF[ƒX
+class CTrickDamageEffect{ //æˆ¦é—˜ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚¨ãƒ•ã‚§ã‚¯ãƒˆç”¨ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹
 public: 
 	CTrickDamageEffect(std::string _name){
 		CONSTRUCTED;;
@@ -21,18 +21,18 @@ public:
 	virtual void DrawDamageEffect(CBattle* _battle, CBImgBank* _bimgbank, CRect _attackerR, CRect _targetR) const =0;
 	std::string GetName() const {return Name;}
 protected:
-	std::string Name;	//ƒGƒtƒFƒNƒg‚Ì–¼‘O —áFRED_BOMB, BLUE_BOMB, BIG_SPREAD, SMALL_SPREAD
-	//std::string TypeName;	//Type‚Ì–¼‘O —áFBOMB, SPREAD
+	std::string Name;	//ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®åå‰ ä¾‹ï¼šRED_BOMB, BLUE_BOMB, BIG_SPREAD, SMALL_SPREAD
+	//std::string TypeName;	//Typeã®åå‰ ä¾‹ï¼šBOMB, SPREAD
 };
 
 
-class CTrickDamageEffect_BOMB: public CTrickDamageEffect{	//–¢ì¬
+class CTrickDamageEffect_BOMB: public CTrickDamageEffect{	//æœªä½œæˆ
 public:
 	CTrickDamageEffect_BOMB(std::string _name, std::vector<std::string>_argList);
 	~CTrickDamageEffect_BOMB(){
 		DESTRUCTED;
 	}
-	void DrawDamageEffect(CBattle* _battle, CBImgBank* _bimgbank, CRect _attackerR, CRect _targetR) const;	//‹¤’Ê
+	void DrawDamageEffect(CBattle* _battle, CBImgBank* _bimgbank, CRect _attackerR, CRect _targetR) const;	//å…±é€š
 private:
 	enum{ ARG_NUM=5 };
 	int Color;
@@ -41,23 +41,23 @@ private:
 };
 
 class CTrickDamageEffect_PROTO: public CTrickDamageEffect{
-	/*—†ùó‚É8‚Â‚ÌŒõ‹…‚ªW‚Ü‚Á‚ÄAˆê‚Â‚ÌŒõ‹…‚Æ‚È‚Á‚Ä‘Šè‚ß‚ª‚¯‚Ä”ò‚ñ‚Å‚¢‚­	*/
+	/*èºæ—‹çŠ¶ã«8ã¤ã®å…‰çƒãŒé›†ã¾ã£ã¦ã€ä¸€ã¤ã®å…‰çƒã¨ãªã£ã¦ç›¸æ‰‹ã‚ãŒã‘ã¦é£›ã‚“ã§ã„ã	*/
 public:
 	CTrickDamageEffect_PROTO(std::string _name, std::vector<std::string>_argList);
 	~CTrickDamageEffect_PROTO(){
 		DESTRUCTED;
 	}
-	void DrawDamageEffect(CBattle* _battle, CBImgBank* _bimgbank, CRect _attackerR, CRect _targetR) const;	//‹¤’Ê
+	void DrawDamageEffect(CBattle* _battle, CBImgBank* _bimgbank, CRect _attackerR, CRect _targetR) const;	//å…±é€š
 private:
 	enum{ ARG_NUM=3 };
-	int Size1;	//û‘©Œõ‹…‚Ì‘å‚«‚³
-	int Size2;	//‘Å‚¿‚¾‚³‚ê‚Äƒqƒbƒg‚·‚éŒõ‹…‚Ì‘å‚«‚³
-	int Radius;  //û‘©Œõ‹…‚Ì‰Šú”z’u”¼ŒaiƒLƒƒƒ‰‚Ì’†SÀ•W‚©‚ç‚Ì‹——£j
+	int Size1;	//åæŸå…‰çƒã®å¤§ãã•
+	int Size2;	//æ‰“ã¡ã ã•ã‚Œã¦ãƒ’ãƒƒãƒˆã™ã‚‹å…‰çƒã®å¤§ãã•
+	int Radius;  //åæŸå…‰çƒã®åˆæœŸé…ç½®åŠå¾„ï¼ˆã‚­ãƒ£ãƒ©ã®ä¸­å¿ƒåº§æ¨™ã‹ã‚‰ã®è·é›¢ï¼‰
 };
 
 
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

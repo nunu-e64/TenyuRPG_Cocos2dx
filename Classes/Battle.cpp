@@ -31,7 +31,7 @@ CBattle::CBattle(){
 }
 
 
-bool CBattle::Init(){	//Field.Init()‚ÅŒÄ‚Ño‚·	//14/06/26
+bool CBattle::Init(){	//Field.Init()ã§å‘¼ã³å‡ºã™	//14/06/26
 	PlayerSpeciesManager->Clear();
 	EnemySpeciesManager->Clear();
 	BImgBank.Clear();
@@ -42,9 +42,9 @@ bool CBattle::Init(){	//Field.Init()‚ÅŒÄ‚Ño‚·	//14/06/26
 	PLAYER_NUM = 0;
 	ENEMY_NUM = 0;
 	
-	//Load.cpp‚ğ’Ê‚µ‚Ä.rpg‚Ì“Ç‚İ‚İ/////////////////////
+	//Load.cppã‚’é€šã—ã¦.rpgã®èª­ã¿è¾¼ã¿/////////////////////
 		//DEBUGDX("BattleLoad_Start");
-		//ŠO•”ƒeƒLƒXƒg‚Ìƒ[ƒh
+		//å¤–éƒ¨ãƒ†ã‚­ã‚¹ãƒˆã®ãƒ­ãƒ¼ãƒ‰
 			CLoad bfsLoad;
 			CBattleFirstSetCmdManager  bfsCmdManager;
 			CCmdList bfsCmdList;
@@ -58,35 +58,35 @@ bool CBattle::Init(){	//Field.Init()‚ÅŒÄ‚Ño‚·	//14/06/26
 		//DEBUGDX("BattleLoad_End");
 	////////////////////////////////////////////////	
 	
-	//“Ç‚İ‚İ‚ª“KØ‚ÉÏ‚ñ‚¾‚©ƒ`ƒFƒbƒN//////////
+	//èª­ã¿è¾¼ã¿ãŒé©åˆ‡ã«æ¸ˆã‚“ã ã‹ãƒã‚§ãƒƒã‚¯//////////
 		PlayerSpeciesManager->CheckAfterLoad();
 		EnemySpeciesManager->CheckAfterLoad();
 	///////////////////////////////////////////
 
-	//í“¬ƒVƒXƒeƒ€—p‰æ‘œ‚Ì“Ç‚İ‚İ////////////////
+	//æˆ¦é—˜ã‚·ã‚¹ãƒ†ãƒ ç”¨ç”»åƒã®èª­ã¿è¾¼ã¿////////////////
 		TargetMarker.SetImage(BImgBank.GetImg(TARGET_CURSOR));
 		CEnemyAI::SetAttentionImg(BImgBank.GetImg(ATTENTION_MARKER, MAX_PLAYER_NUM), BImgBank.GetImg(ATTENTION_BOARD), BImgBank.GetImg(ATTENTION_EFFECT));
 
-	//ƒƒCƒ“‚ÌƒeƒLƒXƒgƒ{ƒbƒNƒX‚ÆƒI[ƒo[ƒ‰ƒbƒv—pƒeƒLƒXƒgƒ{ƒbƒNƒX‚Ì‰Šú‰»
+	//ãƒ¡ã‚¤ãƒ³ã®ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã¨ã‚ªãƒ¼ãƒãƒ¼ãƒ©ãƒƒãƒ—ç”¨ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã®åˆæœŸåŒ–
 		//DEBUGDX("BattleTextBoxInit_Start");
-		TextBox1.Init(60, 370, WINDOW_WIDTH-80*2, 100, 3, 25*2, 16, WHITE, BLACK, 3, NULL);	//ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚É‘‚¢‚½‚ç‹N“®‚µ‚È‚­‚È‚Á‚½
+		TextBox1.Init(60, 370, WINDOW_WIDTH-80*2, 100, 3, 25*2, 16, WHITE, BLACK, 3, NULL);	//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã«æ›¸ã„ãŸã‚‰èµ·å‹•ã—ãªããªã£ãŸ
 		TextWrap1.Init(100, 100, 400, 300, 30, 30 * 2, 14, WHITE, GRAY, 3, NULL);
 		TextBox = &TextBox1;
 		//DEBUGDX("BattleTextBoxInit_End");
 		
-	//ƒƒOƒEƒBƒ“ƒhƒE‚Ì‰Šú‰»
+	//ãƒ­ã‚°ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®åˆæœŸåŒ–
 		//DEBUGDX("BattleLogWindowInit_Start");
 		LogWindow.Init(WINDOW_WIDTH-50, 10, 50, WINDOW_HEIGHT-20, GetColor(30, 30, 30), 200, 12, GetColor(240, 240, 240), GetColor(20, 20, 20), &BImgBank);
 		//DEBUGDX("BattleLogWindowInit_End");
 
-	//ƒp[ƒeƒBƒŠƒXƒg‚Ì‰Šú‰»//////////
+	//ãƒ‘ãƒ¼ãƒ†ã‚£ãƒªã‚¹ãƒˆã®åˆæœŸåŒ–//////////
 		PlayerSpeciesManager->SetMemberList();
 	//////////////////////////////////
 
 	return true;
 }
 
-//ƒtƒB[ƒ‹ƒhƒƒjƒ…[‚ÌStatus€–Ú‚É‚¢‚ê‚é‚×‚«MenuNode(Player–¼ƒŠƒXƒg‚Æ‚»‚Ìq)‚ğì‚Á‚Ä•Ô‚·
+//ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®Statusé …ç›®ã«ã„ã‚Œã‚‹ã¹ãMenuNode(Playeråãƒªã‚¹ãƒˆã¨ãã®å­)ã‚’ä½œã£ã¦è¿”ã™
 CMenuNode* CBattle::GetFieldStatusMenuFrontNode(const char _parentLabel[32]) {
 	if (!PlayerSpeciesManager->CheckAfterLoad()) return NULL;
 
@@ -110,7 +110,7 @@ CMenuNode* CBattle::GetFieldStatusMenuFrontNode(const char _parentLabel[32]) {
 		newNode->parent = parentNode;
 		prevNode = newNode;
 
-		//ƒvƒŒƒCƒ„[‚Ì‘•”õ•i•\¦B‹óƒƒjƒ…[‚ğ–‘Oì¬‚µ‚Ä‚¨‚­B’†g‚Í•\¦‚ÌÛ‚ÉLabel‚¾‚¯‘‚«Š·‚¦‚Ä“®“I‚Éì¬
+		//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®è£…å‚™å“è¡¨ç¤ºã€‚ç©ºãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’äº‹å‰ä½œæˆã—ã¦ãŠãã€‚ä¸­èº«ã¯è¡¨ç¤ºã®éš›ã«Labelã ã‘æ›¸ãæ›ãˆã¦å‹•çš„ã«ä½œæˆ
 		for (int j = 0; j < MAX_ACCESSORY_SLOT; j++) {
 			newAccessoryNode = new CMenuNode("");
 			newAccessoryNode->parent = newNode;
@@ -138,7 +138,7 @@ CMenuNode* CBattle::GetFieldStatusMenuFrontNode(const char _parentLabel[32]) {
 	return parentNode;
 }
 
-//ƒvƒŒƒCƒ„[‚Ì¡‚Ì‘•”õ•iƒƒjƒ…[‚ğì‚Á‚Ä•Ô‚µFieldMenu‚É˜AŒ‹‚³‚¹‚é
+//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ä»Šã®è£…å‚™å“ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’ä½œã£ã¦è¿”ã—FieldMenuã«é€£çµã•ã›ã‚‹
 	
 void CBattle::UpdateFieldPlayerAccesssoryMenu(CMenuNode* _playerNodeParent) {
 
@@ -177,9 +177,9 @@ void UpdatePlayerAccesssoryMenu(CMenuNode* _playerNode) {
 
 
 void CBattle::BattleReady(CFlagSet* _flagset_p, CMap* _map_p, CEveManager* _evemanager_p){
-	//í“¬‚²‚Æ‚És‚¤ŠJn“à•”€”õˆ—///////////////////////////////////////////////////	
+	//æˆ¦é—˜ã”ã¨ã«è¡Œã†é–‹å§‹å†…éƒ¨æº–å‚™å‡¦ç†///////////////////////////////////////////////////	
 		
-		//Actor‚Ö‚ÌÅİÊŞØİ¸Ş‚ÆTextBox,LogWindow‚Ö‚Ì•R•t‚¯
+		//Actorã¸ã®ãƒŠãƒ³ãƒãƒªãƒ³ã‚°ã¨TextBox,LogWindowã¸ã®ç´ä»˜ã‘
 			ACTOR_NUM = PLAYER_NUM + ENEMY_NUM;
 			Actor = new CActor*[ACTOR_NUM];
 			for (int i=0; i<ACTOR_NUM; i++){ 
@@ -188,9 +188,9 @@ void CBattle::BattleReady(CFlagSet* _flagset_p, CMap* _map_p, CEveManager* _evem
 				Actor[i]->SetSystemImg(&BImgBank);
 			}
 
-		//‰Šú’lİ’è
+		//åˆæœŸå€¤è¨­å®š
 			for (int i=0; i<PLAYER_NUM; i++){
-				Player[i].CreateBattleMenu(CItemManager::GetInstance()->GetBattleItemNameList());//¦•K‚¸AddTrick‚ÌŒã‚É‚·‚é‚±‚Æi“à•”‚ÅBattleMenu‚ğì‚Á‚Ä‚¢‚é‚½‚ßj
+				Player[i].CreateBattleMenu(CItemManager::GetInstance()->GetBattleItemNameList());//â€»å¿…ãšAddTrickã®å¾Œã«ã™ã‚‹ã“ã¨ï¼ˆå†…éƒ¨ã§BattleMenuã‚’ä½œã£ã¦ã„ã‚‹ãŸã‚ï¼‰
 				Player[i].SetRect(WINDOW_WIDTH/4*(i+1), WINDOW_HEIGHT-200);
 			}
 			
@@ -199,7 +199,7 @@ void CBattle::BattleReady(CFlagSet* _flagset_p, CMap* _map_p, CEveManager* _evem
 				Enemy[i].SetRect(WINDOW_WIDTH/4*(i+1), 90);
 			}
 
-		//ƒ^[ƒQƒbƒg‘I‘ğƒ}[ƒJ[‰Šú‰»
+		//ã‚¿ãƒ¼ã‚²ãƒƒãƒˆé¸æŠãƒãƒ¼ã‚«ãƒ¼åˆæœŸåŒ–
 			TargetMarker.Init(ACTOR_NUM, PLAYER_NUM, ENEMY_NUM);
 
 		EveManager_p = _evemanager_p;
@@ -215,14 +215,14 @@ void CBattle::BattleStart(int* _result, CCmdList* _fieldcmdlist_p){
 		*_result = -1;
 	}else{
 
-		//ŠJn‰‰o//////////////////////////////////////////////////////////
+		//é–‹å§‹æ¼”å‡º//////////////////////////////////////////////////////////
 			StartEffect();
 		///////////////////////////////////////////////////////////////////
 
-		//ƒƒCƒ“ƒ‹[ƒvˆ—///////////////////////////////////////////////////
+		//ãƒ¡ã‚¤ãƒ³ãƒ«ãƒ¼ãƒ—å‡¦ç†///////////////////////////////////////////////////
 			int tmp_result = MainLoop();
 
-		//I—¹ˆ—///////////////////////////////////////////////////
+		//çµ‚äº†å‡¦ç†///////////////////////////////////////////////////
 			BattleFinish(tmp_result, _fieldcmdlist_p);
 			*_result = tmp_result;
 	}
@@ -250,7 +250,7 @@ void CBattle::SetBackGround(const char* _pickey){
 void CBattle::SetBackGround(int _mapnum, int _chipnum){
 	Img_BattleBackGround = BImgBank.GetBattleBackGround(_mapnum, _chipnum);
 }
-void CBattle::SetPlayer(){	//‘à—ñ‚ÉŠî‚Ã‚¢‚Ä‘Io
+void CBattle::SetPlayer(){	//éšŠåˆ—ã«åŸºã¥ã„ã¦é¸å‡º
 	PLAYER_NUM = min(PlayerSpeciesManager->GetMemberListSize(), MAX_PLAYER_NUM);
 	if (PLAYER_NUM==0){
 		ErrorDx("Error->Battle::SetPlayer->PLAYER_NUM=0.  SetPartyBattleMember!", __FILE__, __LINE__);
@@ -261,7 +261,7 @@ void CBattle::SetPlayer(){	//‘à—ñ‚ÉŠî‚Ã‚¢‚Ä‘Io
 		Player[i] = CPlayer(*(PlayerSpeciesManager->GetSpecies(i)));
 	}
 }
-void CBattle::SetPlayer(const int _playerNum, ...){	//ƒp[ƒeƒB©—Rw’è—piƒCƒxƒ“ƒgí“¬j
+void CBattle::SetPlayer(const int _playerNum, ...){	//ãƒ‘ãƒ¼ãƒ†ã‚£è‡ªç”±æŒ‡å®šç”¨ï¼ˆã‚¤ãƒ™ãƒ³ãƒˆæˆ¦é—˜ï¼‰
 	PLAYER_NUM=0;
 	va_list args;
 	va_start( args, _playerNum);
@@ -277,9 +277,9 @@ void CBattle::SetPlayer(const int _playerNum, ...){	//ƒp[ƒeƒB©—Rw’è—piƒCƒxƒ“
 		va_end(args);
 	}
 }
-void CBattle::SetEnemy(const int _enemyNum, ...){	//oŒ»ƒ‚ƒ“ƒXƒ^[©—Rw’è—p
+void CBattle::SetEnemy(const int _enemyNum, ...){	//å‡ºç¾ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼è‡ªç”±æŒ‡å®šç”¨
 	va_list args;
-	va_start( args, _enemyNum);	//target‚ª‘å‚«‚·‚¬‚½‚Æ‚«‚Ìˆ’u•û–@‚Í‚È‚¢‚Ì‚©H
+	va_start( args, _enemyNum);	//targetãŒå¤§ãã™ããŸã¨ãã®å‡¦ç½®æ–¹æ³•ã¯ãªã„ã®ã‹ï¼Ÿ
 	
 	if (_enemyNum<=0){
 		ErrorDx("Error->arg[enemyNum] should >=1: enemyNum=%d", __FILE__, __LINE__, _enemyNum);
@@ -310,7 +310,7 @@ void CBattle::SetEnemy(std::vector<CEnemySpecies*> _enemyParty){
 	}
 }
 
-void CBattle::StartEffect(){	//í“¬ŠJn‰‰o
+void CBattle::StartEffect(){	//æˆ¦é—˜é–‹å§‹æ¼”å‡º
 
 	char enemyName[256];
 	enemyName[0]='\0';
@@ -319,7 +319,7 @@ void CBattle::StartEffect(){	//í“¬ŠJn‰‰o
 		mystrcat(enemyName, " ");
 	}
 
-	LogWindow.Add("yí“¬ŠJnz%s", enemyName);
+	LogWindow.Add("ã€æˆ¦é—˜é–‹å§‹ã€‘%s", enemyName);
 
 	int x=WINDOW_WIDTH+20;
 	int timecount=0;
@@ -333,7 +333,7 @@ void CBattle::StartEffect(){	//í“¬ŠJn‰‰o
 		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 200);
 		DrawBox(obi.Left, obi.Top, obi.Right, obi.Bottom, BLACK, true);
 		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 200);
-		DrawCenterString(x, (int)(obi.Center().y), WHITE, true, "‚ I‚â‚¹‚¢‚Ì%s‚ª‚ ‚ç‚í‚ê‚½I", enemyName);
+		DrawCenterString(x, (int)(obi.Center().y), WHITE, true, "ã‚ï¼ã‚„ã›ã„ã®%sãŒã‚ã‚‰ã‚ã‚ŒãŸï¼", enemyName);
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND,0);
 
 		if (timecount<13) {obi.SetHeight(timecount*4);}
@@ -351,10 +351,10 @@ void CBattle::StartEffect(){	//í“¬ŠJn‰‰o
 
 }
 
-int CBattle::MainLoop(){	//í“¬’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
+int CBattle::MainLoop(){	//æˆ¦é—˜ä¸­ã¯ã“ã®ãƒ«ãƒ¼ãƒ—å†…ã‹ã‚‰å‡ºãªã„
 	int result;
 
-	///í“¬ŠJnŒø‰Ê”­“®iƒAƒNƒZƒTƒŠ[‚È‚Çj//////////////////////////
+	///æˆ¦é—˜é–‹å§‹æ™‚åŠ¹æœç™ºå‹•ï¼ˆã‚¢ã‚¯ã‚»ã‚µãƒªãƒ¼ãªã©ï¼‰//////////////////////////
 	for (int i = 0; i < PLAYER_NUM; i++) {
 		for (int j = 0; j < MAX_ACCESSORY_SLOT; j++) {
 			CAccessoryItem* item = PlayerSpeciesManager->GetAccessory(Player[i].GetName(), j);
@@ -363,7 +363,7 @@ int CBattle::MainLoop(){	//í“¬’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
 				continue;
 			} else {
 
-				LogWindow.Add("%s‚Ì%s‚ÌŒø‰Ê”­“®I", Player[i].GetName().c_str(), item->Name.c_str());
+				LogWindow.Add("%sã®%sã®åŠ¹æœç™ºå‹•ï¼", Player[i].GetName().c_str(), item->Name.c_str());
 				char tmpCmd[1024];
 				sprintf_s(tmpCmd, "@Item_Use(%s, %d, %d)", item->Name.c_str(), Player[i].GetActorIndex(), Player[i].GetActorIndex());
 				B_CmdList.Add(tmpCmd);
@@ -380,7 +380,7 @@ int CBattle::MainLoop(){	//í“¬’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
 	///////////////////////////////////////////////////////////////////
 
 	do{		
-		if(!LogWindow.Main() && !TextBox->Main(&B_CmdList, FlagSet_p)){	//ƒƒO•\¦’†‚ ‚é‚¢‚ÍƒeƒLƒXƒg•\¦’†‚ÍƒL[‘€ì–³ŒøiƒeƒLƒXƒg‘—‚è‚ÍTextBox.Main‚Å”»’èj
+		if(!LogWindow.Main() && !TextBox->Main(&B_CmdList, FlagSet_p)){	//ãƒ­ã‚°è¡¨ç¤ºä¸­ã‚ã‚‹ã„ã¯ãƒ†ã‚­ã‚¹ãƒˆè¡¨ç¤ºä¸­ã¯ã‚­ãƒ¼æ“ä½œç„¡åŠ¹ï¼ˆãƒ†ã‚­ã‚¹ãƒˆé€ã‚Šã¯TextBox.Mainã§åˆ¤å®šï¼‰
 
 			if ((result=ResultCheck())!=-1){
 				B_CmdManager.Main(&B_CmdList, this, TextBox);
@@ -389,26 +389,26 @@ int CBattle::MainLoop(){	//í“¬’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
 			}
 
 
-			if (ActionQueue.empty()){	//s“®‘Ò‹@ƒŠƒXƒg‚ª‹ó‚©ƒ`ƒFƒbƒN
+			if (ActionQueue.empty()){	//è¡Œå‹•å¾…æ©Ÿãƒªã‚¹ãƒˆãŒç©ºã‹ãƒã‚§ãƒƒã‚¯
 			
 				for (int i=0; i<ACTOR_NUM; i++){
-					if (Actor[i]->Main()) ActionQueue.push(Actor[i]);		//TimeBari‚Ü‚¹‚Ä•K—v‚È‚çs“®‘Ò‹@ƒŠƒXƒg‚É“ü‚ê‚é
+					if (Actor[i]->Main()) ActionQueue.push(Actor[i]);		//TimeBaré€²ã¾ã›ã¦å¿…è¦ãªã‚‰è¡Œå‹•å¾…æ©Ÿãƒªã‚¹ãƒˆã«å…¥ã‚Œã‚‹
 				}
 
 			}else{
 				if (ActionQueue.front()->Do()){
 					ActionQueue.pop();
 				}else{
-					//s“®‘Ò‹@ƒŠƒXƒgí“¬‚ÌƒLƒƒƒ‰‚Ìs“®‚ªŠ®—¹‚µ‚È‚©‚Á‚½‚Æ‚«‚É‚Í‚È‚É‚à‚µ‚È‚¢
+					//è¡Œå‹•å¾…æ©Ÿãƒªã‚¹ãƒˆæˆ¦é—˜ã®ã‚­ãƒ£ãƒ©ã®è¡Œå‹•ãŒå®Œäº†ã—ãªã‹ã£ãŸã¨ãã«ã¯ãªã«ã‚‚ã—ãªã„
 				}
 			}
 
 		}
 
-		////TextBox‚È‚Ç‚É‚æ‚Á‚ÄCmdList‚É’~Ï‚³‚ê‚½ƒRƒ}ƒ“ƒh‚ğˆ—////////////////////////////////////////
+		////TextBoxãªã©ã«ã‚ˆã£ã¦CmdListã«è“„ç©ã•ã‚ŒãŸã‚³ãƒãƒ³ãƒ‰ã‚’å‡¦ç†////////////////////////////////////////
 			B_CmdManager.Main(&B_CmdList, this, TextBox);
 
-		////•`‰æ////////////////////////////////////////
+		////æç”»////////////////////////////////////////
 			Draw();
 	}while(BasicLoop());
 
@@ -422,15 +422,15 @@ void CBattle::BattleFinish(int &_result, CCmdList* _fieldcmdlist){
 	B_CmdList.Clear();
 	////////////////////////////////////////////////////////////
 	
-	LogWindow.Add("yí“¬I—¹z%s", (_result==WIN?"Win":"Lose"));
+	LogWindow.Add("ã€æˆ¦é—˜çµ‚äº†ã€‘%s", (_result==WIN?"Win":"Lose"));
 
 	switch (_result){
 	case WIN:
-		{//ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‰ñ”ğ‚Ìˆ×‚ÉƒXƒR[ƒv‚ğ§ŒÀ
-		//–‘O“o˜^‚µ‚½ƒRƒ}ƒ“ƒh‚ğƒtƒB[ƒ‹ƒh‚ÌƒRƒ}ƒ“ƒhƒŠƒXƒg‚É‘}“ü
+		{//ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã‚¨ãƒ©ãƒ¼å›é¿ã®ç‚ºã«ã‚¹ã‚³ãƒ¼ãƒ—ã‚’åˆ¶é™
+		//äº‹å‰ç™»éŒ²ã—ãŸã‚³ãƒãƒ³ãƒ‰ã‚’ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®ã‚³ãƒãƒ³ãƒ‰ãƒªã‚¹ãƒˆã«æŒ¿å…¥
 			if (strlen(WinCommand)) _fieldcmdlist->Add(WinCommand);
 
-		//‹à‚ÆŒoŒ±’lŒvZ
+		//é‡‘ã¨çµŒé¨“å€¤è¨ˆç®—
 			int gold = 0;
 			int exp = 0;
 			for (int i = 0; i < ENEMY_NUM; i++) {
@@ -441,7 +441,7 @@ void CBattle::BattleFinish(int &_result, CCmdList* _fieldcmdlist){
 			CItemManager::GetInstance()->IncGold(gold);
 			PlayerSpeciesManager->AddExp(exp);
 
-		//ƒhƒƒbƒvƒAƒCƒeƒ€
+		//ãƒ‰ãƒ­ãƒƒãƒ—ã‚¢ã‚¤ãƒ†ãƒ 
 			std::vector<std::string> gotItemList;
 			for (int i = 0; i < ENEMY_NUM; i++) {
 				std::vector <std::string> tmp = Enemy[i].GetDropItemList();
@@ -452,13 +452,13 @@ void CBattle::BattleFinish(int &_result, CCmdList* _fieldcmdlist){
 				}
 			}
 		
-		//PlayerŒ³ƒf[ƒ^‚É•Û‘¶
-			PlayerSpeciesManager->CopyValue(PLAYER_NUM, Player);	//PlayerSpecies”z—ñ‚Å“n‚µ‚½‚¢‚ªƒLƒƒƒXƒg‚Å‚Íƒƒ‚ƒŠ”z’u‚ÌŠÖŒWã”z—ñ‚Å‚ÌQÆ‚ª‚¸‚ê‚é‚½‚ß’f”O
+		//Playerå…ƒãƒ‡ãƒ¼ã‚¿ã«ä¿å­˜
+			PlayerSpeciesManager->CopyValue(PLAYER_NUM, Player);	//PlayerSpeciesé…åˆ—ã§æ¸¡ã—ãŸã„ãŒã‚­ãƒ£ã‚¹ãƒˆã§ã¯ãƒ¡ãƒ¢ãƒªé…ç½®ã®é–¢ä¿‚ä¸Šé…åˆ—ã§ã®å‚ç…§ãŒãšã‚Œã‚‹ãŸã‚æ–­å¿µ
 
-		//ƒŠƒUƒ‹ƒg‰æ–Êo—Í
+		//ãƒªã‚¶ãƒ«ãƒˆç”»é¢å‡ºåŠ›
 			char resultMessage[2][256];
-			sprintf_s(resultMessage[0], "æ“¾GoldF%d", gold);
-			sprintf_s(resultMessage[1], "æ“¾ExpF%d", exp);
+			sprintf_s(resultMessage[0], "å–å¾—Goldï¼š%d", gold);
+			sprintf_s(resultMessage[1], "å–å¾—Expï¼š%d", exp);
 			CRect resultScreen(200, WINDOW_WIDTH-200, 100, WINDOW_HEIGHT-100);
 			int timecount=0;
 
@@ -475,7 +475,7 @@ void CBattle::BattleFinish(int &_result, CCmdList* _fieldcmdlist){
 				}
 
 				if (timecount >= 60) {
-					DrawCenterString((int)resultScreen.Center().x, (int)resultScreen.Bottom - 10 + (timecount / 6) % 5, WHITE, "¥");
+					DrawCenterString((int)resultScreen.Center().x, (int)resultScreen.Bottom - 10 + (timecount / 6) % 5, WHITE, "â–¼");
 				}
 				SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
@@ -494,7 +494,7 @@ void CBattle::BattleFinish(int &_result, CCmdList* _fieldcmdlist){
 		break;
 	case LOSE:
 		if (strlen(LoseCommand)) _fieldcmdlist->Add(LoseCommand);
-		if (mystrcmp(LoseCommand, "@GameOver")) _result = LOSE_NOSCREENCHANGE;	//”s–kˆ—‚ª’Êí‚È‚çƒtƒB[ƒ‹ƒh‚É–ß‚³‚È‚¢
+		if (mystrcmp(LoseCommand, "@GameOver")) _result = LOSE_NOSCREENCHANGE;	//æ•—åŒ—æ™‚å‡¦ç†ãŒé€šå¸¸ãªã‚‰ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã«æˆ»ã•ãªã„
 		break;
 	default:
 		break;
@@ -506,10 +506,10 @@ void CBattle::BattleFinish(int &_result, CCmdList* _fieldcmdlist){
 		Draw();
 	}
 
-	Draw();	//— ‰æ–Ê‚É•`‰æi‰æ–ÊØ‚è‘Ö‚¦‰‰o—pj
+	Draw();	//è£ç”»é¢ã«æç”»ï¼ˆç”»é¢åˆ‡ã‚Šæ›¿ãˆæ¼”å‡ºç”¨ï¼‰
 
 	//////////////////////////////////////////////////////
-	//í“¬ŠÖ˜A•Ï”‚Ì‰Šú‰»
+	//æˆ¦é—˜é–¢é€£å¤‰æ•°ã®åˆæœŸåŒ–
 	delete [] Actor;
 	delete [] Player;
 	delete [] Enemy;
@@ -528,42 +528,42 @@ void CBattle::BattleFinish(int &_result, CCmdList* _fieldcmdlist){
 
 void CBattle::Draw(bool _screenflip, bool _textshowingstop, int dx, int dy, bool _playeralsoshake){
 	
-	if (ImgBackGround!=NULL){	//”wŒiˆê–‡ŠGƒ‚[ƒh‚Ì‚Æ‚«
+	if (ImgBackGround!=NULL){	//èƒŒæ™¯ä¸€æšçµµãƒ¢ãƒ¼ãƒ‰ã®ã¨ã
 		CVector picsize = GetGraphSize(ImgBackGround);
 		DrawGraph(WINDOW_WIDTH/2-picsize.x/2, WINDOW_HEIGHT/2-picsize.y/2, ImgBackGround, true);
 	}else{
 
-		//”wŒi•`‰æ////////////////////////////////////////////////////////////
+		//èƒŒæ™¯æç”»////////////////////////////////////////////////////////////
 		SetDrawBright(200, 200, 200);
 		DrawExtendGraph(0,0,WINDOW_WIDTH, WINDOW_HEIGHT, Img_BattleBackGround,true);
 		SetDrawBright(255,255,255);
 		/////////////////////////////////////////////////////////////////////
 
-		//Player‚ÆEnemy‚Ì•`‰æ///////////////////////////////////////////////////////////////
+		//Playerã¨Enemyã®æç”»///////////////////////////////////////////////////////////////
 		for (int i=0; i<ACTOR_NUM; i++){
 			Actor[i]->Draw(dx, dy);
 		}
 
-		//ƒ^[ƒQƒbƒgƒ}[ƒJ[‚Ì•`‰æ//////////////////////////////////////////////
+		//ã‚¿ãƒ¼ã‚²ãƒƒãƒˆãƒãƒ¼ã‚«ãƒ¼ã®æç”»//////////////////////////////////////////////
 		SetDrawBright(255,255,255);
 		TargetMarker.Draw(dx,dy);
 
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////////
-	//ƒeƒLƒXƒgƒ{ƒbƒNƒX•`‰æ//////////////////////////////////////////////////////////////////
+	//ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹æç”»//////////////////////////////////////////////////////////////////
 	TextBox->Draw(_textshowingstop);
 	////////////////////////////////////////////////////////////////////////////////////////
 	
 	////////////////////////////////////////////////////////////////////////////////////////
-	//ƒƒOƒEƒBƒ“ƒhƒE•`‰æ//////////////////////////////////////////////////////////////////
+	//ãƒ­ã‚°ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦æç”»//////////////////////////////////////////////////////////////////
 	LogWindow.Draw();
 	////////////////////////////////////////////////////////////////////////////////////////
 	
 
-	///ƒeƒXƒg—p//////////////////////////////////////////////////////////////////////////
+	///ãƒ†ã‚¹ãƒˆç”¨//////////////////////////////////////////////////////////////////////////
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA , (int)(150+60*sin(2*PI*GetNowCount()/((double)2000))));
-	DrawCenterString(WINDOW_WIDTH/2,WINDOW_HEIGHT/2,"í“¬’†---W‚Ü‚½‚ÍL‚ÅI—¹",RED);
+	DrawCenterString(WINDOW_WIDTH/2,WINDOW_HEIGHT/2,"æˆ¦é—˜ä¸­---Wã¾ãŸã¯Lã§çµ‚äº†",RED);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND,0);
 	///////////////////////////////////////////////////////////////////////////////////////
 
@@ -572,7 +572,7 @@ void CBattle::Draw(bool _screenflip, bool _textshowingstop, int dx, int dy, bool
 }
 
 int CBattle::ResultCheck(){
-	//DEBUG:í“¬I—¹ƒVƒ‡[ƒgƒJƒbƒg//////////////////////////////
+	//DEBUG:æˆ¦é—˜çµ‚äº†ã‚·ãƒ§ãƒ¼ãƒˆã‚«ãƒƒãƒˆ//////////////////////////////
 		if (CheckHitKeyDown(KEY_INPUT_W) && ActionQueue.empty()) return WIN;
 		if (CheckHitKeyDown(KEY_INPUT_L) && ActionQueue.empty()) return LOSE;
 	////////////////////////////////////////////////////////////
@@ -594,12 +594,12 @@ int CBattle::ResultCheck(){
 void CBattle::ManageAttack(int _attackerActorIndex, int _targetActorIndex, trick_tag const* _trick){
 	bool noDamage = !(_trick->Power > 0);
 
-	//ƒGƒ‰[–h~ˆ—
+	//ã‚¨ãƒ©ãƒ¼é˜²æ­¢å‡¦ç†
 		_attackerActorIndex = between(0, ACTOR_NUM-1, _attackerActorIndex); 
 		_targetActorIndex   = between(0, ACTOR_NUM-1, _targetActorIndex); 
 
-	//ƒ^[ƒQƒbƒg‚ğŠm’è‚µActor”Ô†‚ğvectorƒŠƒXƒg‰»	//€l‚ÍœŠO
-		std::vector <int> targetList;	//ƒ^[ƒQƒbƒg‚ÌActor”Ô†	
+	//ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’ç¢ºå®šã—Actorç•ªå·ã‚’vectorãƒªã‚¹ãƒˆåŒ–	//æ­»äººã¯é™¤å¤–
+		std::vector <int> targetList;	//ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®Actorç•ªå·	
 		switch (_trick->Target) {
 		case target_tag::ME:
 		case target_tag::SINGLE_ENEMY:
@@ -608,14 +608,14 @@ void CBattle::ManageAttack(int _attackerActorIndex, int _targetActorIndex, trick
 			break;
 		case target_tag::ALL_ENEMY:
 			for (int i = (Actor[_attackerActorIndex]->IsPlayer() ? PLAYER_NUM : 0); i < (Actor[_attackerActorIndex]->IsPlayer() ? ACTOR_NUM : PLAYER_NUM); i++) {
-				if (Actor[i]->GetAlive()) {	 //¶‘¶Šm”F	
+				if (Actor[i]->GetAlive()) {	 //ç”Ÿå­˜ç¢ºèª	
 					targetList.push_back(i);
 				}	
 			}
 			break;
 		case target_tag::ALL_FRIEND:
 			for (int i = (!Actor[_attackerActorIndex]->IsPlayer() ? PLAYER_NUM : 0); i < (!Actor[_attackerActorIndex]->IsPlayer() ? ACTOR_NUM : PLAYER_NUM); i++) {
-				if (Actor[i]->GetAlive()) {	 //¶‘¶Šm”F	
+				if (Actor[i]->GetAlive()) {	 //ç”Ÿå­˜ç¢ºèª	
 					targetList.push_back(i);
 				}
 			}
@@ -625,35 +625,35 @@ void CBattle::ManageAttack(int _attackerActorIndex, int _targetActorIndex, trick
 			break;
 		}
 	
-	//UŒ‚‘ÎÛ‚ª‚¢‚È‚¢ê‡
+	//æ”»æ’ƒå¯¾è±¡ãŒã„ãªã„å ´åˆ
 		if (targetList.empty() && !noDamage) {
-			LogWindow.Add("  ‚µ‚©‚µUŒ‚‚ÍŠO‚ê‚½I");
+			LogWindow.Add("  ã—ã‹ã—æ”»æ’ƒã¯å¤–ã‚ŒãŸï¼");
 			return;
 		}
 
-	//‹Z‚Ìí—Ş‚É‰‚¶‚½•`‰æƒGƒtƒFƒNƒg”­“®
+	//æŠ€ã®ç¨®é¡ã«å¿œã˜ãŸæç”»ã‚¨ãƒ•ã‚§ã‚¯ãƒˆç™ºå‹•
 		if (_trick->DamageEffectIndex!=-1) TrickManager->DrawEffect(_trick->DamageEffectIndex, this, &BImgBank, Actor[_attackerActorIndex]->GetRect(), Actor[targetList[0]]->GetRect());
 
 
 		if (!noDamage) {
-			//ŠÔ‚Ì’²®
+			//é–“ã®èª¿æ•´
 				int timecount = 0;
 				do { Draw(); if (++timecount == 10) { break; } } while (BasicLoop());
 
-			//ÀÛ‚Ìƒ_ƒ[ƒWŒvZ
+			//å®Ÿéš›ã®ãƒ€ãƒ¡ãƒ¼ã‚¸è¨ˆç®—
 				int* damage = new int[targetList.size()];
 
 				for (unsigned int i = 0; i < targetList.size(); i++) {
 					damage[i] = Actor[targetList[i]]->Damaged(Actor[_attackerActorIndex], _trick);
 				}
 
-			//ƒƒOƒEƒBƒ“ƒhƒE‚Éo—Í
+			//ãƒ­ã‚°ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã«å‡ºåŠ›
 				for (int i = 0; i < (int)(targetList.size()); i++) {
-					LogWindow.Add("  %s‚É%d‚Ìƒ_ƒ[ƒWI", Actor[targetList[i]]->GetName().c_str(), damage[i]);
+					LogWindow.Add("  %sã«%dã®ãƒ€ãƒ¡ãƒ¼ã‚¸ï¼", Actor[targetList[i]]->GetName().c_str(), damage[i]);
 				}
 
 
-			//ƒ_ƒ[ƒW’l•\¦‰‰o//////////////////////////////////////////////////////////////
+			//ãƒ€ãƒ¡ãƒ¼ã‚¸å€¤è¡¨ç¤ºæ¼”å‡º//////////////////////////////////////////////////////////////
 				timecount = 0;
 				bool* oldVisible = new bool[targetList.size()];
 				CVector* charPos = new CVector[targetList.size()];
@@ -688,7 +688,7 @@ void CBattle::ManageAttack(int _attackerActorIndex, int _targetActorIndex, trick
 		
 
 
-			//UŒ‚Ò‚ªPlayer‚ÅUŒ‚‘ÎÛ‚ªEnemy‚¾‚Á‚½ê‡ƒAƒeƒ“ƒVƒ‡ƒ“‚ª•Ï“®////
+			//æ”»æ’ƒè€…ãŒPlayerã§æ”»æ’ƒå¯¾è±¡ãŒEnemyã ã£ãŸå ´åˆã‚¢ãƒ†ãƒ³ã‚·ãƒ§ãƒ³ãŒå¤‰å‹•////
 				if (!noDamage && Actor[_attackerActorIndex]->IsPlayer()) {
 					for (int i=0; i<(int)(targetList.size()); i++){	
 						if (!Actor[targetList[i]]->IsPlayer()) Enemy[Actor[targetList[i]]->GetIndex()].AddAttention(_attackerActorIndex, ATTENTION_DAMAGE);	
@@ -696,7 +696,7 @@ void CBattle::ManageAttack(int _attackerActorIndex, int _targetActorIndex, trick
 				}
 
 
-			//HPƒo[Œ¸­‚ğ‘Ò‚Â///////////////////////////////////////////////
+			//HPãƒãƒ¼æ¸›å°‘ã‚’å¾…ã¤///////////////////////////////////////////////
 				std::vector <bool> hpBarMoved(targetList.size());
 				unsigned int i;
 				bool allOk;
@@ -713,10 +713,10 @@ void CBattle::ManageAttack(int _attackerActorIndex, int _targetActorIndex, trick
 					if (allOk) break;
 				}
 
-			//HACK:€–SƒƒbƒZ[ƒW‚Í‚·‚×‚Ä‚ÌHPƒo[ˆÚ“®‚ªI‚í‚Á‚Ä‚©‚ç‚Ü‚Æ‚ß‚Äo‚é‚×‚«B
+			//HACK:æ­»äº¡ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã¯ã™ã¹ã¦ã®HPãƒãƒ¼ç§»å‹•ãŒçµ‚ã‚ã£ã¦ã‹ã‚‰ã¾ã¨ã‚ã¦å‡ºã‚‹ã¹ãã€‚
 			////////////////////////////////////////////////////////////////
 
-			//ƒTƒCƒhƒGƒtƒFƒNƒgHEAL_AFTER_ATTCK‚É‚æ‚é‰ñ•œ////////////////////
+			//ã‚µã‚¤ãƒ‰ã‚¨ãƒ•ã‚§ã‚¯ãƒˆHEAL_AFTER_ATTCKã«ã‚ˆã‚‹å›å¾©////////////////////
 				if (Actor[_attackerActorIndex]->GetStatus(sideEffect_tag::type_tag::HEAL_AFTER_ATTACK)) {
 					Actor[_attackerActorIndex]->Heal(Actor[_attackerActorIndex]->GetStatus(sideEffect_tag::type_tag::HEAL_AFTER_ATTACK));
 				}
@@ -725,40 +725,40 @@ void CBattle::ManageAttack(int _attackerActorIndex, int _targetActorIndex, trick
 
 		}
 
-	//ƒTƒCƒhƒGƒtƒFƒNƒg‚Ì—L–³Šm”F‚Æ”­“®//////////////////////////////////////////////////////////
+	//ã‚µã‚¤ãƒ‰ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®æœ‰ç„¡ç¢ºèªã¨ç™ºå‹•//////////////////////////////////////////////////////////
 		for (unsigned int i=0; i<_trick->SideEffect.size(); i++){
 			InvokeSideEffect(_trick->SideEffect[i], _attackerActorIndex, _targetActorIndex);
 		}
-	//ƒTƒCƒhƒGƒtƒFƒNƒg‚Ìˆ—‚±‚±‚Ü‚Å////////////////////////////////////////////////////////////////////////////////////////////
+	//ã‚µã‚¤ãƒ‰ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®å‡¦ç†ã“ã“ã¾ã§////////////////////////////////////////////////////////////////////////////////////////////
 	
 }
 
 void CBattle::InvokeSideEffect(sideEffect_tag _sideEffect, int _invokerActorIndex, int _cursorTargetActorIndex){
 
-	//ƒGƒ‰[–h~ˆ—
+	//ã‚¨ãƒ©ãƒ¼é˜²æ­¢å‡¦ç†
 	_invokerActorIndex = between(0, ACTOR_NUM - 1, _invokerActorIndex);
 	_cursorTargetActorIndex = between(0, ACTOR_NUM - 1, _cursorTargetActorIndex);
 
-	//ƒ^[ƒQƒbƒg‚ğŠm’è‚µActor”Ô†‚ğvectorƒŠƒXƒg‰»
-	std::vector <int> effectTargetList;	//ƒ^[ƒQƒbƒg‚ÌActor”Ô†	
+	//ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’ç¢ºå®šã—Actorç•ªå·ã‚’vectorãƒªã‚¹ãƒˆåŒ–
+	std::vector <int> effectTargetList;	//ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®Actorç•ªå·	
 	effectTargetList.clear();
 
 	switch (_sideEffect.EffectTarget) {
 	case target_tag::ME:
 		effectTargetList.push_back(_invokerActorIndex);
 		break;
-	case target_tag::SINGLE_ENEMY:	//ƒJ[ƒ\ƒ‹‘I‘ğ‚µ‚½Actor
-	case target_tag::SINGLE_FRIEND:	//ƒJ[ƒ\ƒ‹‘I‘ğ‚µ‚½Actor
+	case target_tag::SINGLE_ENEMY:	//ã‚«ãƒ¼ã‚½ãƒ«é¸æŠã—ãŸActor
+	case target_tag::SINGLE_FRIEND:	//ã‚«ãƒ¼ã‚½ãƒ«é¸æŠã—ãŸActor
 		effectTargetList.push_back(_cursorTargetActorIndex);
 		break;
-	case target_tag::ALL_ENEMY:	//“G‘S‘Ì
+	case target_tag::ALL_ENEMY:	//æ•µå…¨ä½“
 		for (int i = (Actor[_invokerActorIndex]->IsPlayer() ? PLAYER_NUM : 0); i<(Actor[_invokerActorIndex]->IsPlayer() ? ACTOR_NUM : PLAYER_NUM); i++) {
 			if (Actor[i]->GetAlive()) {
 				effectTargetList.push_back(i);
 			}
 		}
 		break;
-	case target_tag::ALL_FRIEND:	//–¡•û‘S‘Ì
+	case target_tag::ALL_FRIEND:	//å‘³æ–¹å…¨ä½“
 		for (int i = (Actor[_invokerActorIndex]->IsPlayer() ? 0 : PLAYER_NUM); i<(Actor[_invokerActorIndex]->IsPlayer() ? PLAYER_NUM : ACTOR_NUM); i++) {
 			if (Actor[i]->GetAlive()) {
 				effectTargetList.push_back(i);
@@ -770,7 +770,7 @@ void CBattle::InvokeSideEffect(sideEffect_tag _sideEffect, int _invokerActorInde
 		break;
 	}
 
-	//Œø‰Ê”­“®”»’è‚Ì‚Ì‚¿ƒ^[ƒQƒbƒg‚²‚Æ‚Éˆ—‚ğ‚³‚¹‚é
+	//åŠ¹æœç™ºå‹•åˆ¤å®šã®ã®ã¡ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã”ã¨ã«å‡¦ç†ã‚’ã•ã›ã‚‹
 	if (_sideEffect.Incidence > rand() % 100) {
 		for (unsigned int j = 0; j < effectTargetList.size(); j++) {
 			switch (_sideEffect.EffectType) {
@@ -866,7 +866,7 @@ void CBattle::CTargetMarker::Draw(int dx, int dy){
 }
 
 void CBattle::CTargetMarker::Move(int _dir, CBattle* _battle, int _count){
-	if (Status==1) return;	//ƒoƒO—\–h
+	if (Status==1) return;	//ãƒã‚°äºˆé˜²
 	switch (_dir){
 	case RIGHT:
 		Index = mod(Index+1,(EnemySide? ENEMY_NUM: PLAYER_NUM));
@@ -879,7 +879,7 @@ void CBattle::CTargetMarker::Move(int _dir, CBattle* _battle, int _count){
 	}
 
 	if (!DeadOk && !_battle->Actor[Index+(EnemySide?PLAYER_NUM:0)]->GetAlive()) {
-		if (_count >= (EnemySide? ENEMY_NUM: PLAYER_NUM)) {	//–³ŒÀƒ‹[ƒv–h~
+		if (_count >= (EnemySide? ENEMY_NUM: PLAYER_NUM)) {	//ç„¡é™ãƒ«ãƒ¼ãƒ—é˜²æ­¢
 			ERRORDX("All targets are Dead. INFINITY LOOP! (MoveCancel)");
 			return;
 		} else {
@@ -897,7 +897,7 @@ void CBattle::CTargetMarker::Decide(CBattle* _battle, int _actorIndex){
 		_battle->Actor[actorIndex]->SetTarget(Index + (EnemySide?PLAYER_NUM:0));
 		Status = 1;
 		do {
-			_battle->Draw();	//ƒJ[ƒ\ƒ‹Šm’è“_–Å‰‰o
+			_battle->Draw();	//ã‚«ãƒ¼ã‚½ãƒ«ç¢ºå®šç‚¹æ»…æ¼”å‡º
 		}while(BasicLoop()&&Status!=0);
 	}
 
@@ -909,7 +909,7 @@ void CBattle::ChangeTextMode(bool _box, const char* _eventtext){
 	}else{
 		TextBox = &TextWrap1;
 
-		if (_eventtext!=NULL){	//EveManager::CopyOriginalEvent‚ğ”Ä—p«‚ğã‚°‚Ä‰ü‘PB‚±‚ê‚ÅTextWrap1‚É@EventWrap‚Ì“à—e‚ğ“n‚¹‚½
+		if (_eventtext!=NULL){	//EveManager::CopyOriginalEventã‚’æ±ç”¨æ€§ã‚’ä¸Šã’ã¦æ”¹å–„ã€‚ã“ã‚Œã§TextWrap1ã«@EventWrapã®å†…å®¹ã‚’æ¸¡ã›ãŸ
 			std::vector<char256> tmptext;
 			EveManager_p->CopyOriginalEvent(&tmptext, _eventtext);
 			for (unsigned int i=0; i<tmptext.size(); i++){

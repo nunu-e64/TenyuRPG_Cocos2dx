@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef IMGBANK_H						////
 #define IMGBANK_H						////
 ////////////////////////////////////////////////
@@ -20,7 +20,7 @@ public:
 
 	void Clear();
 
-	void LoadPic(const char *_path, const char _key[32], const char _kind[32]);	//CMap‚Æ‚ÌŒİŠ·«Šm•Û
+	void LoadPic(const char *_path, const char _key[32], const char _kind[32]);	//CMapã¨ã®äº’æ›æ€§ç¢ºä¿
 
 	bool AddImg(const char* _key, const int _img, int _sizeX = 1, int _sizeY = 1);
 	
@@ -36,6 +36,6 @@ private:
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

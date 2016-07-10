@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//	//pragmaonce‚Æ“¯‚¶ˆÓ–¡‚¾‚ª‚±‚¿‚ç‚ÍƒRƒ“ƒpƒCƒ‰‚ÉˆË‘¶‚µ‚È‚¢
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//	//pragmaonceã¨åŒã˜æ„å‘³ã ãŒã“ã¡ã‚‰ã¯ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ã«ä¾å­˜ã—ãªã„
 #ifndef SHOPMANAGER_H						////
 #define SHOPMANAGER_H						////
 ////////////////////////////////////////////////
@@ -8,8 +8,8 @@ class CItemManager;
 
 class CShopMenu {
 public:
-	std::vector	<CItem*> ItemList;	//ŠJ“X‚Éì‚é¤•i’I
-	std::vector<int> Basket;	//”—Ê‚ğ‹L˜^‚·‚é”ƒ‚¢•¨‚©‚²
+	std::vector	<CItem*> ItemList;	//é–‹åº—æ™‚ã«ä½œã‚‹å•†å“æ£š
+	std::vector<int> Basket;	//æ•°é‡ã‚’è¨˜éŒ²ã™ã‚‹è²·ã„ç‰©ã‹ã”
 	int SumPrice;
 
 	int Cursor;
@@ -52,7 +52,7 @@ protected:
 	int CurrentOpenShopIndex;
 	CShopMenu* ShopMenu;
 
-	//’Pˆê«‚ğ•ÛØ(Singleton)////////////////////////////////
+	//å˜ä¸€æ€§ã‚’ä¿è¨¼(Singleton)////////////////////////////////
 	CShopManager() {
 		CONSTRUCTED;
 	}
@@ -65,6 +65,6 @@ private :
 
 };
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

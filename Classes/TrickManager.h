@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef TRICKMANAGER_H						////
 #define TRICKMANAGER_H						////
 ////////////////////////////////////////////////
@@ -28,7 +28,7 @@ public:
 	trick_tag const* GetTrick(const char _name[32], bool _errorMessage=false);
 
 
-	//ƒ_ƒ[ƒWƒGƒtƒFƒNƒgŠÖŒW
+	//ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚¨ãƒ•ã‚§ã‚¯ãƒˆé–¢ä¿‚
 		void CreateDamageEffect(std::string _typeName, std::string _effectName, std::vector<std::string>_argList);
 		int GetTrickDamageEffectIndex(std::string _name);
 		void DrawEffect(int _effectIndex, CBattle* _battle, CBImgBank* _bimgbank, CRect _attackerR, CRect _targetR) {
@@ -47,7 +47,7 @@ private:
 
 	std::vector <const CTrickDamageEffect*> TrickDamageEffectBank;		
 
-	//’Pˆê«‚ğ•ÛØ(Singleton)////////////////////////////////
+	//å˜ä¸€æ€§ã‚’ä¿è¨¼(Singleton)////////////////////////////////
 		CTrickManager(){
 			CONSTRUCTED;
 			TrickBankLock = false;
@@ -59,6 +59,6 @@ private:
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

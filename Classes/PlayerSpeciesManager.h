@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef PLAYERSPECIESMANAGER_H				////
 #define PLAYERSPECIESMANAGER_H				////
 ////////////////////////////////////////////////
@@ -22,7 +22,7 @@ public:
 
 	void Clear();
 
-	bool CPlayerSpeciesManager::CheckAfterLoad();	//•K—v‚È“Ç‚İ‚İˆ—‚ª‚·‚×‚ÄŠ®—¹‚µ‚Ä‚¢‚é‚©‚ÌŠm”F
+	bool CPlayerSpeciesManager::CheckAfterLoad();	//å¿…è¦ãªèª­ã¿è¾¼ã¿å‡¦ç†ãŒã™ã¹ã¦å®Œäº†ã—ã¦ã„ã‚‹ã‹ã®ç¢ºèª
 
 	bool CreateSpecies(const char* _name, int _level, int _geneMaxHp, int _geneBaseTrickPower, int _geneAtk, int _geneDef, int _geneSpd, int _img, const trick_tag* _baseTrick);
 	bool SetTrickList(const char* _name, std::vector <trick_tag const*> _trickList);
@@ -45,9 +45,9 @@ private:
 	std::map <std::string, CPlayerSpecies> PlayerBank;
 	CPlayerSpecies DummyPlayer;
 
-	std::vector <CPlayerSpecies*> MemberList;		//ƒvƒŒƒCƒ„[ƒŠƒXƒgB0~MAX_PLAYER_NUM-1	‚ªí“¬‚Éo‚é
+	std::vector <CPlayerSpecies*> MemberList;		//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒªã‚¹ãƒˆã€‚0~MAX_PLAYER_NUM-1	ãŒæˆ¦é—˜ã«å‡ºã‚‹
 
-	//’Pˆê«‚ğ•ÛØ(Singleton)//////////////////////////////////////////
+	//å˜ä¸€æ€§ã‚’ä¿è¨¼(Singleton)//////////////////////////////////////////
 		CPlayerSpeciesManager(){
 			CONSTRUCTED;
 			PlayerBankLock = false;
@@ -57,6 +57,6 @@ private:
 	//////////////////////////////////////////////////////////////////
 
 };
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										  //
 ////////////////////////////////////////////////

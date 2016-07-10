@@ -3,12 +3,12 @@
 
 void CMap::Draw(int _mapnum, int _x, int _y, int _dx, int _dy){
 	
-	int drawx = _x-(WINDOW_WIDTH/MAP_CHIP_SIZE)/2;		//‰æ–Ê¶ã‚Ìƒ}ƒX
+	int drawx = _x-(WINDOW_WIDTH/MAP_CHIP_SIZE)/2;		//ç”»é¢å·¦ä¸Šã®ãƒã‚¹
 	int drawy = _y-(WINDOW_HEIGHT/MAP_CHIP_SIZE)/2;
 	
 	DrawRectGraph(0, 0, _dx+drawx*MAP_CHIP_SIZE+MAP_CHIP_SIZE/2, _dy+drawy*MAP_CHIP_SIZE, WINDOW_WIDTH, WINDOW_HEIGHT, MapGraph[_mapnum], false, false);
 
-	//int drawx = _x-(WINDOW_WIDTH/MAP_CHIP_SIZE)/2;		//‰æ–Ê¶ã‚Ìƒ}ƒX
+	//int drawx = _x-(WINDOW_WIDTH/MAP_CHIP_SIZE)/2;		//ç”»é¢å·¦ä¸Šã®ãƒã‚¹
 	//int drawy = _y-(WINDOW_HEIGHT/MAP_CHIP_SIZE)/2;
 	//int maxi = WINDOW_WIDTH/MAP_CHIP_SIZE + 2;
 	//int maxj = WINDOW_HEIGHT/MAP_CHIP_SIZE + 1;
@@ -22,7 +22,7 @@ void CMap::Draw(int _mapnum, int _x, int _y, int _dx, int _dy){
 
 }
 
-void CMap::CreateMapGraph(int _mapnum){	//HACK:ˆê‹C‚ÉCreate‚·‚é‚Ì‚ªd‰ß‚¬‚é‚È‚çAƒ}ƒbƒv‚É“ü‚Á‚½‚Æ‚«‚É‡ŸCreate‚à‚ ‚èi-1F‚Ü‚¾Create‚µ‚Ä‚È‚¢j
+void CMap::CreateMapGraph(int _mapnum){	//HACK:ä¸€æ°—ã«Createã™ã‚‹ã®ãŒé‡éãã‚‹ãªã‚‰ã€ãƒãƒƒãƒ—ã«å…¥ã£ãŸã¨ãã«é †æ¬¡Createã‚‚ã‚ã‚Šï¼ˆ-1ï¼šã¾ã Createã—ã¦ãªã„ï¼‰
 	//MAP_MAX_CHECK(_mapnum,)
 	SetTitle("MapLoading...");
 
@@ -56,9 +56,9 @@ void CMap::SetMap(unsigned int _mapnum, int _filesize, unsigned char* buf){
 
 void CMap::LoadChip(const char *_path, int _mapnum, bool _mapchip){
 	
-	MAP_MAX_CHECK(_mapnum,);		//ƒ}ƒbƒv‚Ì”z—ñéŒ¾Å‘å”‚ğ’´‚¦‚Ä‚éê‡‚Í“Ç‚İ‚ß‚È‚¢
+	MAP_MAX_CHECK(_mapnum,);		//ãƒãƒƒãƒ—ã®é…åˆ—å®£è¨€æœ€å¤§æ•°ã‚’è¶…ãˆã¦ã‚‹å ´åˆã¯èª­ã¿è¾¼ã‚ãªã„
 
-	//‰º€”õiƒ`ƒbƒv‚ª³•ûŒ`‚È‚çMAP_CHIP_SIZE‚ÉŠî‚Ã‚¢‚Äƒ`ƒbƒvƒŠƒXƒg‚ª‚Ç‚ñ‚ÈŒ`‚Å‚à“Ç‚İ‚ß‚éj
+	//ä¸‹æº–å‚™ï¼ˆãƒãƒƒãƒ—ãŒæ­£æ–¹å½¢ãªã‚‰MAP_CHIP_SIZEã«åŸºã¥ã„ã¦ãƒãƒƒãƒ—ãƒªã‚¹ãƒˆãŒã©ã‚“ãªå½¢ã§ã‚‚èª­ã¿è¾¼ã‚ã‚‹ï¼‰
 		int sizeX , sizeY , grHandle, width, height ;
 
 		grHandle = LoadGraph(_path, true) ;
@@ -67,7 +67,7 @@ void CMap::LoadChip(const char *_path, int _mapnum, bool _mapchip){
 		height = sizeY/MAP_CHIP_SIZE;
 		DeleteGraph(grHandle);
 
-	//“Ç‚İ‚İ
+	//èª­ã¿è¾¼ã¿
 	if (_mapchip){
 		if (LoadDivGraph(_path, width*height, width, height, MAP_CHIP_SIZE, MAP_CHIP_SIZE, ImgMapChip[_mapnum]) == -1) ErrorDx("Error->LoadChip->%s", __FILE__, __LINE__, _path);
 	}else{
@@ -75,12 +75,12 @@ void CMap::LoadChip(const char *_path, int _mapnum, bool _mapchip){
 	}
 }
 
-//ƒCƒxƒ“ƒg—p‰æ‘œ‚Ì–‘O€”õ
+//ã‚¤ãƒ™ãƒ³ãƒˆç”¨ç”»åƒã®äº‹å‰æº–å‚™
 void CMap::LoadPic(const char *_path, const char _key[32], const char _kind[32]){
 	
 	ImgData_tag newimg;
 	for (int i=0; i<CHARA_PIC_NUM; i++){
-		newimg.Img[i]=0;	//0‚Å‰Šú‰»
+		newimg.Img[i]=0;	//0ã§åˆæœŸåŒ–
 	}
 
 	if (mystrcmp(_key, "NULL")){
@@ -109,14 +109,14 @@ void CMap::LoadPic(const char *_path, const char _key[32], const char _kind[32])
 		}
 	}	
 
-	//ƒGƒ‰[”­¶‚µ‚È‚©‚Á‚½
+	//ã‚¨ãƒ©ãƒ¼ç™ºç”Ÿã—ãªã‹ã£ãŸæ™‚
 	strcpy_s(newimg.Key, _key);
 	strcpy_s(newimg.Kind, _kind);
 	ImgData.push_back(newimg);
 }
 
 
-//ƒ}ƒbƒv‚ÌƒoƒCƒiƒŠƒf[ƒ^‚ğ•Ô‚·
+//ãƒãƒƒãƒ—ã®ãƒã‚¤ãƒŠãƒªãƒ‡ãƒ¼ã‚¿ã‚’è¿”ã™
 int CMap::GetMapData(int _mapnum, int _x, int _y, int layer){
 	MAP_MAX_CHECK(_mapnum, -1)
 
@@ -134,20 +134,20 @@ int CMap::GetMapData(int _mapnum, int _x, int _y, int layer){
 }
 
 
-//“Ç‚İ‚ñ‚¾‰æ‘œ‚Ö‚ÌƒpƒX‚ğ•Ô‚·
+//èª­ã¿è¾¼ã‚“ã ç”»åƒã¸ã®ãƒ‘ã‚¹ã‚’è¿”ã™
 int* CMap::GetImgData(const char _key[32]){
 
 	if (ImgData.empty()) {
 		ErrorDx("Error->No Image Loaded->%s", __FILE__, __LINE__, _key);
-		return dammyimg.Img;	//“Ç‚İ‚İÏ‚İ‰æ‘œ‚ª‚È‚¯‚ê‚Î0‚ğ•Ô‚·
+		return dammyimg.Img;	//èª­ã¿è¾¼ã¿æ¸ˆã¿ç”»åƒãŒãªã‘ã‚Œã°0ã‚’è¿”ã™
 	}
 	for (unsigned int i=0; i<ImgData.size(); i++){
 		if (mystrcmp(ImgData[i].Key, _key)){
-			return ImgData[i].Img;	//CMap‚ÌPrivate•Ï”‚Ö‚ÌƒAƒhƒŒƒX‚ğMap¨CmdManagerACmdManager¨Field‚Åfor•¶‚Å’l“n‚µ  ˆ‘½•ªˆÀ‘S
+			return ImgData[i].Img;	//CMapã®Privateå¤‰æ•°ã¸ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’Mapâ†’CmdManagerã€CmdManagerâ†’Fieldã§foræ–‡ã§å€¤æ¸¡ã—  âˆ´å¤šåˆ†å®‰å…¨
 		}
 	}
 
-	if (!mystrcmp(_key, "NULL")) ErrorDx("Error->Don't match Pickey(all 0):%s", __FILE__, __LINE__, _key);		//"NULL"‚Å‚·‚ç‚È‚¢‚Ì‚ÍƒGƒ‰[
+	if (!mystrcmp(_key, "NULL")) ErrorDx("Error->Don't match Pickey(all 0):%s", __FILE__, __LINE__, _key);		//"NULL"ã§ã™ã‚‰ãªã„ã®ã¯ã‚¨ãƒ©ãƒ¼
 	return dammyimg.Img;
 }
 

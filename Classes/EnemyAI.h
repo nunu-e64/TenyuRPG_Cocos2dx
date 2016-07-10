@@ -1,4 +1,4 @@
-////���d�C���N���[�h�h�~�i�C���N���[�h�K�[�h�j//
+////多重インクルード防止（インクルードガード）//
 #ifndef ENEMYAI_H						////
 #define ENEMYAI_H						////
 ////////////////////////////////////////////////
@@ -10,7 +10,7 @@ class CLogWindow;
 #include "EnemyPlanner.h"
 #include "EnemyTargetter.h"
 
-class CEnemyAI{		//EnemySpecies�����Aplanner��Targeter�𑩂˂�
+class CEnemyAI{		//EnemySpeciesが持つ、plannerやTargeterを束ねる
 public: 
 	CEnemyAI(){
 		CONSTRUCTED;
@@ -23,7 +23,7 @@ public:
 			AttentionEffectCount[i] = 0;
 		}
 
-		//DEBUG:�A�e���V���������l////////////////
+		//DEBUG:アテンション初期値////////////////
 			Attention[0] = 5;
 			Attention[1] = 5;
 			Attention[2] = 5;
@@ -53,7 +53,7 @@ public:
 	CEnemyTargetter* SetTargetter(CEnemyTargetter* _targetter){
 		Targetter = _targetter;
 
-		//Targetter->SetAttention(Attention);	�����ŃA�h���X��n���Ă��܂��Ɛ퓬�J�n����Enemy�����̍ۂɔz�񂪃R�s�[����ăA�h���X���ς�邽�ߓ��������Ȃ��Ȃ�
+		//Targetter->SetAttention(Attention);	ここでアドレスを渡してしまうと戦闘開始時にEnemy生成の際に配列がコピーされてアドレスが変わるため同期が取れなくなる
 		//myLogf("Attention_P", "EnemyAI:%d", Attention);
 
 		return _targetter;
@@ -77,14 +77,14 @@ private:
 
 	std::map <int, std::vector<std::pair<int, int> > > RandomPlanSet;
 		//RandomPlanSet[index] = (choice, probability)
-		//�s���I�����Ƃ��̔��������ׂ����X�g�B
-		//�s���v�Z�ׂ̈�AI.planner��AI.Target�Ƀ|�C���^��n���Ă���
+		//行動選択肢とその発動比を並べたリスト。
+		//行動計算の為にAI.plannerとAI.Targetにポインタを渡しておく
 
-	int Attention[MAX_PLAYER_NUM];	//Enemy�̊e�v���C���[�ɑ΂��钍�ړx������
-	int AttentionEffectCount[MAX_PLAYER_NUM];	//�A�e���V�������ω������Ƃ��̃G�t�F�N�g�p�t���O���`��J�E���^	�ω��Ȃ�0, UP:+, DOWN:-
+	int Attention[MAX_PLAYER_NUM];	//Enemyの各プレイヤーに対する注目度を示す
+	int AttentionEffectCount[MAX_PLAYER_NUM];	//アテンションが変化したときのエフェクト用フラグ兼描画カウンタ	変化なし0, UP:+, DOWN:-
 	enum{EFFECT_COUNT = 60};
 
-	//�S�A�N�^�[�ւ̃A�N�Z�X���������Ă����i�퓬�J�n���ƂɍX�V�j�iEnemyAI�͋��n���Ȃ̂Ŏ��ۂɎ��K�v�͂Ȃ��j
+	//全アクターへのアクセスを持たせておく（戦闘開始ごとに更新）（EnemyAIは橋渡しなので実際に持つ必要はない）
 		const CActor* const* Actor;
 		int PLAYER_NUM;
 		int ENEMY_NUM;
@@ -95,6 +95,6 @@ private:
 
 };
 
-////���d�C���N���[�h�h�~�i�C���N���[�h�K�[�h�j//
+////多重インクルード防止（インクルードガード）//
 #endif										////
 ////////////////////////////////////////////////

@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–hŽ~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef ENEMY_H								////
 #define ENEMY_H								////
 ////////////////////////////////////////////////
@@ -34,11 +34,11 @@ public:
 		AI.SetAttention(_playerIndex, _value);
 	}
 
-	std::vector<std::string> GetDropItemList();		//í“¬I—¹Žž‚Éƒhƒƒbƒv‚µ‚½ƒAƒCƒeƒ€‚ðƒŠƒXƒg‚É‚µ‚ÄŽæ“¾
+	std::vector<std::string> GetDropItemList();		//æˆ¦é—˜çµ‚äº†æ™‚ã«ãƒ‰ãƒ­ãƒƒãƒ—ã—ãŸã‚¢ã‚¤ãƒ†ãƒ ã‚’ãƒªã‚¹ãƒˆã«ã—ã¦å–å¾—
 
 
 private:
-	//ƒƒ“ƒoŠÖ”
+	//ãƒ¡ãƒ³ãƒé–¢æ•°
 		bool Plan();
 		bool Action();
 
@@ -46,6 +46,6 @@ private:
 
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–hŽ~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

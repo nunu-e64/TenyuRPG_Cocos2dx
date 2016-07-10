@@ -134,7 +134,7 @@ bool CEnemySpeciesManager::AddRandomPlanSet(const char* _name, unsigned int _ind
 bool CEnemySpeciesManager::SetEnemyPlanner(std::string _enemyName, std::string _typeName, std::vector<std::string> _argList){	
 	bool forReturn = true;
 	
-	//SetEnemyPlanner‚Íã‘‚«‰Â”\
+	//SetEnemyPlannerã¯ä¸Šæ›¸ãå¯èƒ½
 	if (EnemyBank.find(_enemyName)!=EnemyBank.end()){
 		
 		if (_typeName=="MYHP"){
@@ -167,7 +167,7 @@ bool CEnemySpeciesManager::SetEnemyPlanner(std::string _enemyName, std::string _
 bool CEnemySpeciesManager::SetEnemyTargetter(std::string _enemyName, std::string _typeName, std::vector<std::string> _argList){	
 	bool forReturn = true;
 	
-	//SetEnemyTargetter‚Íã‘‚«‰Â”\
+	//SetEnemyTargetterã¯ä¸Šæ›¸ãå¯èƒ½
 	if (EnemyBank.find(_enemyName)!=EnemyBank.end()){
 		
 		if (_typeName=="REVERSE"){
@@ -261,7 +261,7 @@ bool CEnemySpeciesManager::CheckEncount(int _mapnum, int _chipnum, std::vector<C
 	///////////////////////////////////////////////////////////////////////////////////////
 
 	if (MapEncount[_mapnum][_chipnum].encount > rand()%1000){
-		//ƒGƒ“ƒJƒEƒ“ƒgŒˆ’è‚µ‚½‚Ì‚Åí‚¤“Gƒp[ƒeƒB‚ğŒˆ’è
+		//ã‚¨ãƒ³ã‚«ã‚¦ãƒ³ãƒˆæ±ºå®šã—ãŸã®ã§æˆ¦ã†æ•µãƒ‘ãƒ¼ãƒ†ã‚£ã‚’æ±ºå®š
 
 		int probability=0;
 		int partynum = -1;

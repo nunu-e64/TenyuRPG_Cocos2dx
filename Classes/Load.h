@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef LOAD_H								////
 #define LOAD_H								////
 ////////////////////////////////////////////////
@@ -27,19 +27,19 @@ public:
 	void EventTextCopy(CEveManager* _evemanager);
 
 private:
-	//’è”
+	//å®šæ•°
 		enum{ TEXT_SIZE = 1000};
 	
-	//ƒƒ“ƒo•Ï”
-		char LoadText[TEXT_SIZE][256];		//‹ß‚¢‚¤‚¿‚É•Ê‚ÌƒNƒ‰ƒX‚É‚½‚¹‚½•û‚ª‚¢‚¢‚©‚àiƒRƒ}ƒ“ƒh”»’èŒn‚È‚Çj©“–•ª‚Í‚±‚Ì‚Ü‚Ü‚Å‚¢‚¢
-		int FileLineNum;				//s”iLoadText[FileLineNum]‚Í‹ó”’s);
+	//ãƒ¡ãƒ³ãƒå¤‰æ•°
+		char LoadText[TEXT_SIZE][256];		//è¿‘ã„ã†ã¡ã«åˆ¥ã®ã‚¯ãƒ©ã‚¹ã«æŒãŸã›ãŸæ–¹ãŒã„ã„ã‹ã‚‚ï¼ˆã‚³ãƒãƒ³ãƒ‰åˆ¤å®šç³»ãªã©ï¼‰â†å½“åˆ†ã¯ã“ã®ã¾ã¾ã§ã„ã„
+		int FileLineNum;				//è¡Œæ•°ï¼ˆLoadText[FileLineNum]ã¯ç©ºç™½è¡Œ);
 	
-	//ƒƒ“ƒoŠÖ”
+	//ãƒ¡ãƒ³ãƒé–¢æ•°
 		void Punctuate(CEveManager* _evemanager, const char* _command, int _kind);
 		void CmdArg(const char* string, char* name);
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////	
 ////////////////////////////////////////////////

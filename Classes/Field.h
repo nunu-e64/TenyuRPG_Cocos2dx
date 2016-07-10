@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef FIELD_H								////
 #define FIELD_H								////
 ////////////////////////////////////////////////
@@ -57,17 +57,17 @@ public:
 
 ////////////////////////////////////////////////////////////////
 private:
-	//ƒƒ“ƒoŠÖ”
+	//ãƒ¡ãƒ³ãƒé–¢æ•°
 		bool CheckEvent(bool _foot=false, bool _push=false);
 		bool StartSet (const int _dnum);
 		int SaveData(int _dnum, const char _dataname[32] = "");
 		void CreateFieldMenu();
 
-	//ƒƒ“ƒo•Ï”
+	//ãƒ¡ãƒ³ãƒå¤‰æ•°
 		int NowMap;
-		int GodX, GodY;	//_ƒVƒXƒeƒ€—pi–¢À‘•–¢•Û‘¶j
+		int GodX, GodY;	//ç¥ã‚·ã‚¹ãƒ†ãƒ ç”¨ï¼ˆæœªå®Ÿè£…æœªä¿å­˜ï¼‰
 	
-		//‚»‚Ì‚¤‚¿‚í‚©‚è‚É‚­‚­‚È‚Á‚Ä‚«‚½‚ç–¼‘O‹óŠÔPlayer‚Æ‚©‚ÅŠ‡‚ë‚¤‚©‚È
+		//ãã®ã†ã¡ã‚ã‹ã‚Šã«ãããªã£ã¦ããŸã‚‰åå‰ç©ºé–“Playerã¨ã‹ã§æ‹¬ã‚ã†ã‹ãª
 		unsigned int X, Y;
 		unsigned int OldX, OldY;
 		int ImgPlayer[CHARA_PIC_NUM];	char PlayerPicKey[32];
@@ -77,20 +77,20 @@ private:
 		bool Visible;
 		unsigned char Alpha;
 
-		enum charaeffect_tag Effect;	//Œø‰Êi“_–ÅA©“®•às‚È‚Çj//Player‚Í‚ ‚é’ö“xŒÀ’è‚³‚ê‚é
+		enum charaeffect_tag Effect;	//åŠ¹æœï¼ˆç‚¹æ»…ã€è‡ªå‹•æ­©è¡Œãªã©ï¼‰//Playerã¯ã‚ã‚‹ç¨‹åº¦é™å®šã•ã‚Œã‚‹
 			int EffectNumCmd[5];
 			int EffectNum[5];
 
-		playdata_tag *PlayData_p;	//Main.cpp‚©‚çƒZ[ƒuƒf[ƒ^‚ğ‚·‚×‚Äƒ|ƒCƒ“ƒ^‚Å‚à‚ç‚Á‚Ä‚¨‚­
+		playdata_tag *PlayData_p;	//Main.cppã‹ã‚‰ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ã‚’ã™ã¹ã¦ãƒã‚¤ãƒ³ã‚¿ã§ã‚‚ã‚‰ã£ã¦ãŠã
 
 		int TextAutoPlaySpeed;
 		gamemode_tag Mode;
 
 
-	//ŠƒCƒ“ƒXƒ^ƒ“ƒX
+	//æ‰€æŒã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 		CMap Map;
 		CTextBox* TextBox;
-			///‹‚É‰ğŒˆ14/12/11ƒvƒƒWƒFƒNƒg‚Ìİ’è‚©‚çƒXƒ^ƒbƒNƒTƒCƒY‚ğ1MB‚©‚ç4MB‚ÉŠg‘å‚µ‚Ä‰ğŒˆBstackoverflow‚¾‚Á‚½‚æ‚¤‚¾¨//‚±‚Á‚¿‚ÉˆÚ‚·‚ÆField.Init‚Å’â~‚·‚éŒ´ˆö•s–¾14/06/10//////////
+			///é‚ã«è§£æ±º14/12/11ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã®è¨­å®šã‹ã‚‰ã‚¹ã‚¿ãƒƒã‚¯ã‚µã‚¤ã‚ºã‚’1MBã‹ã‚‰4MBã«æ‹¡å¤§ã—ã¦è§£æ±ºã€‚stackoverflowã ã£ãŸã‚ˆã†ã â†’//ã“ã£ã¡ã«ç§»ã™ã¨Field.Initã§åœæ­¢ã™ã‚‹åŸå› ä¸æ˜14/06/10//////////
 			CTextBox  TextBox1;
 			CTextWrap TextWrap1;
 			///////////////////////////////////////////////////////
@@ -106,7 +106,7 @@ private:
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////	
 ////////////////////////////////////////////////
 

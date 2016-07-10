@@ -14,7 +14,7 @@ const std::pair<int, int> CActor::DEF_DOWN(1, 1);
 const std::pair<int, int> CActor::SPD_UP  (2, 0);
 const std::pair<int, int> CActor::SPD_DOWN(2, 1);
 const std::pair<int, int> CActor::MAX_STATUSCHANGER_IMGSIZE(5, 2);
-int CActor::StatusChangerImg[5 * 2] = {0};	//ã‚Æè“®‚Åˆê’v‚³‚¹‚Ä‚¨‚©‚È‚­‚Ä‚Í‚È‚ç‚È‚¢
+int CActor::StatusChangerImg[5 * 2] = {0};	//ä¸Šã¨æ‰‹å‹•ã§ä¸€è‡´ã•ã›ã¦ãŠã‹ãªãã¦ã¯ãªã‚‰ãªã„
 
 int CActor::HpFontHandle = -1;
 
@@ -28,7 +28,7 @@ void CActor::FirstSet(int _playernum, int _enemynum, int _index, CTextBox** _tex
 	LogWindow = _logWindow;
 	CmdList = _cmdlist;
 
-	//ƒŒƒxƒ‹‚Æ¬’·‘fq‚ÉŠî‚Ã‚¢‚ÄŠeƒLƒƒƒ‰ƒXƒe[ƒ^ƒX‚ğŒvZ
+	//ãƒ¬ãƒ™ãƒ«ã¨æˆé•·ç´ å­ã«åŸºã¥ã„ã¦å„ã‚­ãƒ£ãƒ©ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’è¨ˆç®—
 		Atk   = CBattleCalc::CalcValue(CBattleCalc::ATK, Level, AtkGene);
 		Def   = CBattleCalc::CalcValue(CBattleCalc::DEF, Level, DefGene);
 		Spd   = CBattleCalc::CalcSpd(Level, SpdGene);
@@ -36,11 +36,11 @@ void CActor::FirstSet(int _playernum, int _enemynum, int _index, CTextBox** _tex
 
 	Alive = Visible = (Hp!=0? true:false);
 	VisibleStatus = (Alive? VISIBLE:INVISIBLE);
-	OldHp = Hp;		//UNDONE:í“¬‚²‚Æ‚É‘S‰ñ•œ‚³‚¹‚é‚È‚ç‚±‚±‚Å–¾¦“I‚É=MaxHp‚Æ‚µ‚Ä‚¨‚­
+	OldHp = Hp;		//UNDONE:æˆ¦é—˜ã”ã¨ã«å…¨å›å¾©ã•ã›ã‚‹ãªã‚‰ã“ã“ã§æ˜ç¤ºçš„ã«=MaxHpã¨ã—ã¦ãŠã
 	
 	MaxTimeGauge = 100;	//%
-	TimeGauge = rand() % (MaxTimeGauge / 2) + MaxTimeGauge / 2;	//ƒ^ƒCƒ€ƒQ[ƒW‰ŠúˆÊ’u‚ÍƒQ[ƒW‚Ì”¼•ªˆÈ‰º‚Åƒ‰ƒ“ƒ_ƒ€i“à•”“I‚É‚ÍMaxTimeGause/2ˆÈãjBƒoƒO–h~‚Ì‚½‚ß
-	if (HpFontHandle == -1) HpFontHandle = CreateFontToHandle(NULL, 10, -1);	//HpBar‚É•\¦‚·‚éHP—p‚ÌƒtƒHƒ“ƒgì¬
+	TimeGauge = rand() % (MaxTimeGauge / 2) + MaxTimeGauge / 2;	//ã‚¿ã‚¤ãƒ ã‚²ãƒ¼ã‚¸åˆæœŸä½ç½®ã¯ã‚²ãƒ¼ã‚¸ã®åŠåˆ†ä»¥ä¸‹ã§ãƒ©ãƒ³ãƒ€ãƒ ï¼ˆå†…éƒ¨çš„ã«ã¯MaxTimeGause/2ä»¥ä¸Šï¼‰ã€‚ãƒã‚°é˜²æ­¢ã®ãŸã‚
+	if (HpFontHandle == -1) HpFontHandle = CreateFontToHandle(NULL, 10, -1);	//HpBarã«è¡¨ç¤ºã™ã‚‹HPç”¨ã®ãƒ•ã‚©ãƒ³ãƒˆä½œæˆ
 
 	SetStatus(WAIT, true);
 	Mode = PREPARE;
@@ -72,7 +72,7 @@ void CActor::SetImg(int _img){
 
 bool CActor::SetSystemImg(CBImgBank* _bImgBank){
 	
-	//Ã“Iƒƒ“ƒo‚ğ‰½“x‚à‰Šú‰»‚·‚é‚Ì‚Í—Ç‚­‚È‚¢‚ªAƒ^ƒCƒgƒ‹‚É–ß‚Á‚½Œã‚à‰Šú‰»‚³‚ê‚È‚¢‚Ì‚Í¢‚é‚µ‘å‚µ‚½•‰‰×‚Å‚Í‚È‚¢‚Æv‚¤‚Ì‚ÅŒ»ó•ú’u
+	//é™çš„ãƒ¡ãƒ³ãƒã‚’ä½•åº¦ã‚‚åˆæœŸåŒ–ã™ã‚‹ã®ã¯è‰¯ããªã„ãŒã€ã‚¿ã‚¤ãƒˆãƒ«ã«æˆ»ã£ãŸå¾Œã‚‚åˆæœŸåŒ–ã•ã‚Œãªã„ã®ã¯å›°ã‚‹ã—å¤§ã—ãŸè² è·ã§ã¯ãªã„ã¨æ€ã†ã®ã§ç¾çŠ¶æ”¾ç½®
 		SetBarImg(_bImgBank, HP_BAR);
 		SetBarImg(_bImgBank, TIME_BAR1);
 		SetBarImg(_bImgBank, TIME_BAR2);
@@ -83,7 +83,7 @@ bool CActor::SetSystemImg(CBImgBank* _bImgBank){
 
 		_bImgBank->GetImg(STATUS_CHANGER, StatusChangerImg, MAX_STATUSCHANGER_IMGSIZE.first, MAX_STATUSCHANGER_IMGSIZE.second);
 
-	//Player‚Í–‚—ÍƒJƒEƒ“ƒ^À‘•
+	//Playerã¯é­”åŠ›ã‚«ã‚¦ãƒ³ã‚¿å®Ÿè£…
 		SetExtraImg(_bImgBank);
 
 	return true;
@@ -130,7 +130,7 @@ bool CActor::Main(){
 	return false;
 }
 
-bool CActor::Do(){		//s“®‘Ò‹@ƒŠƒXƒgãˆÊ‚Ì‚à‚Ì‚©‚çs“®‚µ‚Ä‚¢‚­
+bool CActor::Do(){		//è¡Œå‹•å¾…æ©Ÿãƒªã‚¹ãƒˆä¸Šä½ã®ã‚‚ã®ã‹ã‚‰è¡Œå‹•ã—ã¦ã„ã
 
 	if (Alive){
 		bool forReturn = false;
@@ -158,7 +158,7 @@ bool CActor::Do(){		//s“®‘Ò‹@ƒŠƒXƒgãˆÊ‚Ì‚à‚Ì‚©‚çs“®‚µ‚Ä‚¢‚­
 			return true;
 		}
 
-		//if (forReturn) TimeGaugeForward(); //“¯s“®‚És“®‚ªÏ‚ñ‚¾ƒLƒƒƒ‰‚©‚çƒQ[ƒW‚ª0‚É–ß‚é	//“¯s“®‚Í‚Ü‚¸‹N‚±‚ç‚È‚¢‚½‚ßíœ
+		//if (forReturn) TimeGaugeForward(); //åŒæ™‚è¡Œå‹•æ™‚ã«è¡Œå‹•ãŒæ¸ˆã‚“ã ã‚­ãƒ£ãƒ©ã‹ã‚‰ã‚²ãƒ¼ã‚¸ãŒ0ã«æˆ»ã‚‹	//åŒæ™‚è¡Œå‹•ã¯ã¾ãšèµ·ã“ã‚‰ãªã„ãŸã‚å‰Šé™¤
 		return forReturn;
 
 	}else{
@@ -186,9 +186,9 @@ int CActor::Damaged(CActor* _attacker, trick_tag const* _trick){
 		return 0;
 	}
 
-	double damage = _trick->Power * _attacker->GetAtk() / (double)GetDef(); //HACK:ƒ_ƒ[ƒWŒvZ®‚Í—vŒŸ“¢
+	double damage = _trick->Power * _attacker->GetAtk() / (double)GetDef(); //HACK:ãƒ€ãƒ¡ãƒ¼ã‚¸è¨ˆç®—å¼ã¯è¦æ¤œè¨
 
-	//UŒ‚‘¤‚ÌŠÔ§ŒÀ•t‚«“ÁêŒø‰Ê
+	//æ”»æ’ƒå´ã®æ™‚é–“åˆ¶é™ä»˜ãç‰¹æ®ŠåŠ¹æœ
 		for (unsigned int i = 0; i < _attacker->StatusChangerList.size(); i++) {
 			switch (_attacker->StatusChangerList[i].StatusKind) {
 			case sideEffect_tag::type_tag::ATK:
@@ -197,7 +197,7 @@ int CActor::Damaged(CActor* _attacker, trick_tag const* _trick){
 			}
 		}
 
-	//”í’e‘¤‚ÌŠÔ§ŒÀ•t‚«“ÁêŒø‰Ê
+	//è¢«å¼¾å´ã®æ™‚é–“åˆ¶é™ä»˜ãç‰¹æ®ŠåŠ¹æœ
 		for (unsigned int i = 0; i < StatusChangerList.size(); i++) {
 			switch (StatusChangerList[i].StatusKind) {
 			case sideEffect_tag::type_tag::DEF:
@@ -207,27 +207,27 @@ int CActor::Damaged(CActor* _attacker, trick_tag const* _trick){
 		}
 
 	damage = CalcDamage(damage, _attacker, _trick);
-	damage = max(1, damage);	//ƒ_ƒ[ƒWÅ¬’l‚Í1
+	damage = max(1, damage);	//ãƒ€ãƒ¡ãƒ¼ã‚¸æœ€å°å€¤ã¯1
 
 	Hp = between(0, MaxHp, Hp-(int)damage);
-	//€–S”»’è‚ÍCheckBarMove‚Å‚Í‚È‚­‚±‚±‚Å‚·‚×‚«‚©H
+	//æ­»äº¡åˆ¤å®šã¯CheckBarMoveã§ã¯ãªãã“ã“ã§ã™ã¹ãã‹ï¼Ÿ
 
 	return (int)damage;
 }
 
-bool CActor::CheckBarMove(){	//Hpƒo[‚ÌˆÚ“®I—¹‚ğŠm”F
+bool CActor::CheckBarMove(){	//Hpãƒãƒ¼ã®ç§»å‹•çµ‚äº†ã‚’ç¢ºèª
 	
 	if (Alive && Hp==0) Alive = false;
 
-	if (OldHp!=Hp) { //Hpƒo[Œ¸­’†
+	if (OldHp!=Hp) { //Hpãƒãƒ¼æ¸›å°‘ä¸­
 		return false;
-	}else{			//Hpƒo[Œ¸­I—¹
+	}else{			//Hpãƒãƒ¼æ¸›å°‘çµ‚äº†
 		if (!Alive && VisibleStatus == VISIBLE) {
-			LogWindow->Add("%s‚Í“|‚ê‚½I", GetName().c_str());
+			LogWindow->Add("%sã¯å€’ã‚ŒãŸï¼", GetName().c_str());
 			VisibleStatus = CHANGING;
 		}
 
-		return (VisibleStatus != CHANGING);		//•`‰æó‹µ‚ªˆÀ’è‚µ‚Ä‚©‚çtrue‚ğ‚©‚¦‚·
+		return (VisibleStatus != CHANGING);		//æç”»çŠ¶æ³ãŒå®‰å®šã—ã¦ã‹ã‚‰trueã‚’ã‹ãˆã™
 	}
 }
 
@@ -241,7 +241,7 @@ void CActor::AddStatusChanger(int _kind, int _powerPercent, int _time) {
 	tmp.Time = (double)_time;
 	tmp.Img = 0;
 
-	//ƒƒOo—Í
+	//ãƒ­ã‚°å‡ºåŠ›
 		char chtmp[256];
 		std::pair <int, int> imgIndex;
 
@@ -249,30 +249,30 @@ void CActor::AddStatusChanger(int _kind, int _powerPercent, int _time) {
 		case sideEffect_tag::type_tag::ATK:
 			if (_powerPercent>0) {
 				imgIndex = ATK_UP;
-				mystrcpy(chtmp, "  %s‚ÌUŒ‚—Í‚ª%d“ã‚ª‚Á‚½I");
+				mystrcpy(chtmp, "  %sã®æ”»æ’ƒåŠ›ãŒ%dï¼…ä¸ŠãŒã£ãŸï¼");
 			} else {
 				imgIndex = ATK_DOWN;
-				mystrcpy(chtmp, "  %s‚ÌUŒ‚—Í‚ª%d“‰º‚ª‚Á‚½I");
+				mystrcpy(chtmp, "  %sã®æ”»æ’ƒåŠ›ãŒ%dï¼…ä¸‹ãŒã£ãŸï¼");
 			}
 			break;
 
 		case sideEffect_tag::type_tag::DEF:
 			if (_powerPercent>0) {
 				imgIndex = DEF_UP;
-				mystrcpy(chtmp, "  %s‚Ì–hŒä—Í‚ª%d“ã‚ª‚Á‚½I");
+				mystrcpy(chtmp, "  %sã®é˜²å¾¡åŠ›ãŒ%dï¼…ä¸ŠãŒã£ãŸï¼");
 			} else {
 				imgIndex = DEF_DOWN;
-				mystrcpy(chtmp, "  %s‚Ì–hŒä—Í‚ª%d“‰º‚ª‚Á‚½I");
+				mystrcpy(chtmp, "  %sã®é˜²å¾¡åŠ›ãŒ%dï¼…ä¸‹ãŒã£ãŸï¼");
 			}
 			break;
 
 		case sideEffect_tag::type_tag::SPD:
 			if (_powerPercent>0) {
 				imgIndex = SPD_UP;
-				mystrcpy(chtmp, "  %s‚Ìs“®‘¬“x‚ª%d“ã‚ª‚Á‚½I");
+				mystrcpy(chtmp, "  %sã®è¡Œå‹•é€Ÿåº¦ãŒ%dï¼…ä¸ŠãŒã£ãŸï¼");
 			} else {
 				imgIndex = SPD_DOWN;
-				mystrcpy(chtmp, "  %s‚Ìs“®‘¬“x‚ª%d“‰º‚ª‚Á‚½I");
+				mystrcpy(chtmp, "  %sã®è¡Œå‹•é€Ÿåº¦ãŒ%dï¼…ä¸‹ãŒã£ãŸï¼");
 			}
 			break;
 
@@ -287,16 +287,16 @@ void CActor::AddStatusChanger(int _kind, int _powerPercent, int _time) {
 
 }
 
-void CActor::ChangeValue(int _kind, int _powerPercent){	//‰i‘±iƒXƒe[ƒ^ƒX‚É’¼Ú‰e‹¿j
+void CActor::ChangeValue(int _kind, int _powerPercent){	//æ°¸ç¶šï¼ˆã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã«ç›´æ¥å½±éŸ¿ï¼‰
 	
 	switch(_kind){
 	case sideEffect_tag::type_tag::ATK:
 		Atk += (int)((double)Atk*_powerPercent/100);
 
 		if (_powerPercent>0){
-			LogWindow->Add("  %s‚ÌUŒ‚—Í‚ªã‚ª‚Á‚½I", GetName().c_str());
+			LogWindow->Add("  %sã®æ”»æ’ƒåŠ›ãŒä¸ŠãŒã£ãŸï¼", GetName().c_str());
 		}else if(_powerPercent<0){
-			LogWindow->Add("  %s‚ÌUŒ‚—Í‚ª‰º‚ª‚Á‚½I", GetName().c_str());
+			LogWindow->Add("  %sã®æ”»æ’ƒåŠ›ãŒä¸‹ãŒã£ãŸï¼", GetName().c_str());
 		}
 		break;
 
@@ -304,16 +304,16 @@ void CActor::ChangeValue(int _kind, int _powerPercent){	//‰i‘±iƒXƒe[ƒ^ƒX‚É’¼Ú
 		Def += (int)((double)Def*_powerPercent/100);
 
 		if (_powerPercent>0){
-			LogWindow->Add("  %s‚Ì–hŒä‚ªã‚ª‚Á‚½I", GetName().c_str());
+			LogWindow->Add("  %sã®é˜²å¾¡ãŒä¸ŠãŒã£ãŸï¼", GetName().c_str());
 		}else if(_powerPercent<0){
-			LogWindow->Add("  %s‚Ì–hŒä—Í‚ª‰º‚ª‚Á‚½I", GetName().c_str());
+			LogWindow->Add("  %sã®é˜²å¾¡åŠ›ãŒä¸‹ãŒã£ãŸï¼", GetName().c_str());
 		}
 		break;
 
 	case sideEffect_tag::type_tag::SET_TIMEGAUGE:
 		TimeGauge = max(1, (double)MaxTimeGauge * (1 - _powerPercent / 100));
 
-		LogWindow->Add("  %s‚Ìƒ^ƒCƒ€ƒQ[ƒW‚ª‹­§•Ï“®I", GetName().c_str());
+		LogWindow->Add("  %sã®ã‚¿ã‚¤ãƒ ã‚²ãƒ¼ã‚¸ãŒå¼·åˆ¶å¤‰å‹•ï¼", GetName().c_str());
 		break;
 
 	default:
@@ -326,7 +326,7 @@ void CActor::Heal(int _percent) {
 	int hp = between(Hp, MaxHp, Hp + MaxHp*_percent / 100);
 
 	if (hp > Hp) {
-		LogWindow->Add("  %s‚ÌHP‚ª%d‰ñ•œ‚µ‚½I", GetName().c_str(), hp-Hp);
+		LogWindow->Add("  %sã®HPãŒ%då›å¾©ã—ãŸï¼", GetName().c_str(), hp-Hp);
 		Hp = hp;
 	}
 }
@@ -379,7 +379,7 @@ void CActor::Draw_Sub(int _dx, int _dy){
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
 
-	//OldHp‚ÆHp‚ÌƒMƒƒƒbƒv‚ğ–„‚ß‚é
+	//OldHpã¨Hpã®ã‚®ãƒ£ãƒƒãƒ—ã‚’åŸ‹ã‚ã‚‹
 		if (OldHp>Hp) OldHp--;
 		else if (OldHp<Hp) OldHp++;
 
@@ -395,18 +395,18 @@ bool CActor::TimeGaugeForward(){
 		Mode = (mode_tag)((Mode+1) % MODE_NUM);
 	}
 
-	//ŠÔ§ŒÀ•t‚«‘¬“x•ÏX“ÁêŒø‰Ê‚Ì—L–³Šm”F
+	//æ™‚é–“åˆ¶é™ä»˜ãé€Ÿåº¦å¤‰æ›´ç‰¹æ®ŠåŠ¹æœã®æœ‰ç„¡ç¢ºèª
 		double spd = Spd;
 		for (unsigned int i = 0; i < StatusChangerList.size(); i++) {
 			if (StatusChangerList[i].StatusKind == sideEffect_tag::type_tag::SPD) {
 				spd *= (100 + StatusChangerList[i].Power) / 100.0;
 			}
 		}
-		spd = max(spd, 0.001);	//‘¬“xÅ¬’l‚Í0.001
+		spd = max(spd, 0.001);	//é€Ÿåº¦æœ€å°å€¤ã¯0.001
 
 	TimeGauge-=spd;
 
-	//ƒXƒe[ƒ^ƒX•Ï“®Œø‰Ê‚Ì—LŒøŠÔŠÇ—
+	//ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹å¤‰å‹•åŠ¹æœã®æœ‰åŠ¹æ™‚é–“ç®¡ç†
 		for (std::vector<statusChanger_tag>::iterator it = StatusChangerList.begin(); it != StatusChangerList.end();) {
 			(*it).Time -= BASIC_SPD;
 			if ((*it).Time <= 0) { 

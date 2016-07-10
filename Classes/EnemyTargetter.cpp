@@ -9,7 +9,7 @@ const int CEnemyTargetter::ATTENTION_RATIO[MAX_PLAYER_NUM] = {4, 2, 1};
 void CEnemyTargetter::CalcAttentionRank(){
 
 
-	//ƒAƒeƒ“ƒVƒ‡ƒ“‚Ì‘å¬‚ÆRank‚ÌŒˆ‚Ü‚è•û(14/04/27)///////////////
+	//ã‚¢ãƒ†ãƒ³ã‚·ãƒ§ãƒ³ã®å¤§å°ã¨Rankã®æ±ºã¾ã‚Šæ–¹(14/04/27)///////////////
 	// a>b>c -> 0,1,2
 	// a=b>c -> 0,0,1
 	// a=b=c -> 0,0,0
@@ -26,7 +26,7 @@ void CEnemyTargetter::CalcAttentionRank(){
 		} 
 	}
 
-	//ã‚É‹l‚ß‚é
+	//ä¸Šã«è©°ã‚ã‚‹
 	int i = 0;
 	while(AttentionRank[i] != 0){
 		if (i == PLAYER_NUM-1) {
@@ -44,7 +44,7 @@ void CEnemyTargetter::CalcAttentionRank(){
 
 int CEnemyTargetter_DEFAULT::GetTarget(const CEnemy* _enemy){
 
-	//‘Sˆõ€–S‚µ‚Ä‚½‚çƒGƒ‰[‚ğ“f‚¢‚ÄI—¹
+	//å…¨å“¡æ­»äº¡ã—ã¦ãŸã‚‰ã‚¨ãƒ©ãƒ¼ã‚’åã„ã¦çµ‚äº†
 	for (int i=0; i<PLAYER_NUM; i++){
 		if (Actor[i]->GetAlive()) break;
 
@@ -54,12 +54,12 @@ int CEnemyTargetter_DEFAULT::GetTarget(const CEnemy* _enemy){
 		}
 	}
 
-	//ƒAƒeƒ“ƒVƒ‡ƒ“‚Ì‡ˆÊ‚É‰‚¶‚Äƒ^[ƒQƒbƒgŒˆ’è
+	//ã‚¢ãƒ†ãƒ³ã‚·ãƒ§ãƒ³ã®é †ä½ã«å¿œã˜ã¦ã‚¿ãƒ¼ã‚²ãƒƒãƒˆæ±ºå®š
 	int probability = 0;
 	int target = -1;
 
 	for (int i=0; i<PLAYER_NUM; i++){
-		if (!Actor[i]->GetAlive()) continue;		//Šù‚É€–S‚µ‚Ä‚¢‚é‚Æ‚«‚Íƒ^[ƒQƒbƒg‚É‚µ‚È‚¢
+		if (!Actor[i]->GetAlive()) continue;		//æ—¢ã«æ­»äº¡ã—ã¦ã„ã‚‹ã¨ãã¯ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã«ã—ãªã„
 		probability += ATTENTION_RATIO[GetAttentionRank(i)];
 		if ((rand()%100)/(double)100 * probability < ATTENTION_RATIO[GetAttentionRank(i)]){
 			target = i;
@@ -67,7 +67,7 @@ int CEnemyTargetter_DEFAULT::GetTarget(const CEnemy* _enemy){
 	}
 	
 
-	//ƒGƒ‰[ƒ`ƒFƒbƒN
+	//ã‚¨ãƒ©ãƒ¼ãƒã‚§ãƒƒã‚¯
 	if (target < 0) {
 		ERRORDX("%s:Target < 0 :%d", _enemy->GetName().c_str(), target);
 		return -1;

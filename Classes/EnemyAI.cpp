@@ -49,15 +49,15 @@ void CEnemyAI::AddAttention(int _playerIndex, int _value, CLogWindow* _logWindow
 
 	if (_logWindow != NULL && attention != Attention[_playerIndex]) {
 		char tmp[32];
-		mystrcpy(tmp, (_value > 0 ? "ã‚ª‚Á‚½" : "‰º‚ª‚Á‚½"));
-		_logWindow->Add("  %s‚Ö‚Ì%s‚ÌƒAƒeƒ“ƒVƒ‡ƒ“‚ª%dƒ|ƒCƒ“ƒg%sI", Actor[_playerIndex]->GetName().c_str(), Planner->GetName().c_str(), abs(attention-Attention[_playerIndex]), tmp);
+		mystrcpy(tmp, (_value > 0 ? "ä¸ŠãŒã£ãŸ" : "ä¸‹ãŒã£ãŸ"));
+		_logWindow->Add("  %sã¸ã®%sã®ã‚¢ãƒ†ãƒ³ã‚·ãƒ§ãƒ³ãŒ%dãƒã‚¤ãƒ³ãƒˆ%sï¼", Actor[_playerIndex]->GetName().c_str(), Planner->GetName().c_str(), abs(attention-Attention[_playerIndex]), tmp);
 	}
 
 	Attention[_playerIndex] = attention;
 	Targetter->CalcAttentionRank();
 
 
-	//‰‰o  ƒ_ƒT‚¢‚Ì‚Åˆêƒ{ƒc//
+	//æ¼”å‡º  ãƒ€ã‚µã„ã®ã§ä¸€æ™‚ãƒœãƒ„//
 		//AttentionEffectCount[_playerIndex] = (_value>0?EFFECT_COUNT:(_value<0?-EFFECT_COUNT:0));
 
 	//myLogf("Attention_P", "EnemyAI:%d", Attention);
@@ -79,24 +79,24 @@ void CEnemyAI::SetAttentionImg(int* _markerImg, int _boardImg, int _effectImg){
 
 void CEnemyAI::Draw(const CEnemy* _enemy){
 
-	//€‚ñ‚Å‚½‚çƒAƒeƒ“ƒVƒ‡ƒ“‚Í0‚É
+	//æ­»ã‚“ã§ãŸã‚‰ã‚¢ãƒ†ãƒ³ã‚·ãƒ§ãƒ³ã¯0ã«
 	for (int i=0; i<PLAYER_NUM; i++){
 		if (Attention[i]!=0 && !Actor[i]->GetAlive()){
 			SetAttention(i, 0);
 		}
 	}
 
-	//ƒAƒeƒ“ƒVƒ‡ƒ“ƒ{[ƒh‚Æƒ}[ƒJ[‚Ì•`‰æ//////////////////////////////////////////////////
+	//ã‚¢ãƒ†ãƒ³ã‚·ãƒ§ãƒ³ãƒœãƒ¼ãƒ‰ã¨ãƒãƒ¼ã‚«ãƒ¼ã®æç”»//////////////////////////////////////////////////
 
 	CVector pos(_enemy->GetRect().Center() + CVector(-60, 50));
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 200);
 	DrawCenterGraph(pos.x, pos.y, AttentionBoardImg, true);
 
-	const int YOHAKU_LEFTRIGHT = 21;	//Board‚Ì¶’[‚©‚ç•`‰æ—Ìˆæ¶’[‚Ü‚Å‚Ì‹——£i¶‰E‘ÎÌj
-	const int YOHAKU_TOPBOTTOM = 7;		//Board‚Ìã’[‚©‚ç•`‰æ—Ìˆæã’[‚Ü‚Å‚Ì‹——£iã‰º‘ÎÌj
+	const int YOHAKU_LEFTRIGHT = 21;	//Boardã®å·¦ç«¯ã‹ã‚‰æç”»é ˜åŸŸå·¦ç«¯ã¾ã§ã®è·é›¢ï¼ˆå·¦å³å¯¾ç§°ï¼‰
+	const int YOHAKU_TOPBOTTOM = 7;		//Boardã®ä¸Šç«¯ã‹ã‚‰æç”»é ˜åŸŸä¸Šç«¯ã¾ã§ã®è·é›¢ï¼ˆä¸Šä¸‹å¯¾ç§°ï¼‰
 	CVector boardSize = GetGraphSize(AttentionBoardImg) - CVector(YOHAKU_LEFTRIGHT*2, YOHAKU_TOPBOTTOM*2);
 	pos.x -= boardSize.x*0.5;
-	pos.y += boardSize.y*0.5;		//AttentionBoard‚Ì•`‰æ—Ìˆæ‚Ì¶‰ºÀ•W‚ğæ“¾
+	pos.y += boardSize.y*0.5;		//AttentionBoardã®æç”»é ˜åŸŸã®å·¦ä¸‹åº§æ¨™ã‚’å–å¾—
 
 	/*for (int i=0; i<MAX_ATTENTION+1; i++){
 		DrawLine((int)pos.x-3, (int)(pos.y - (i+0.5)*boardSize.y/(MAX_ATTENTION+1)), (int)(pos.x+boardSize.x+3), (int)(pos.y - (i+0.5)*boardSize.y/(MAX_ATTENTION+1)), GetColor(50,50,50)); 

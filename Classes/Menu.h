@@ -1,9 +1,9 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//	//pragmaonce‚Æ“¯‚¶ˆÓ–¡‚¾‚ª‚±‚¿‚ç‚ÍƒRƒ“ƒpƒCƒ‰‚ÉˆË‘¶‚µ‚È‚¢
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//	//pragmaonceã¨åŒã˜æ„å‘³ã ãŒã“ã¡ã‚‰ã¯ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ã«ä¾å­˜ã—ãªã„
 #ifndef MENU_H								////
 #define MENU_H								////
 ////////////////////////////////////////////////
 
-class CMenuNode{	//CMenu‚Ì’†‚É’è‹`‚·‚éH
+class CMenuNode{	//CMenuã®ä¸­ã«å®šç¾©ã™ã‚‹ï¼Ÿ
 public:
 	CMenuNode(const char _label[32]){
 		CONSTRUCTED;
@@ -80,7 +80,7 @@ class CFieldMenu: public CMenu {
 public:
 	CFieldMenu() { 
 		AccessoryMenu = NULL;
-		AccessoryMenuVisible = false;	//ƒAƒCƒeƒ€ƒoƒbƒOˆê——‚Ì•\¦—L–³
+		AccessoryMenuVisible = false;	//ã‚¢ã‚¤ãƒ†ãƒ ãƒãƒƒã‚°ä¸€è¦§ã®è¡¨ç¤ºæœ‰ç„¡
 		AccessorySlotNum = -1;
 		CONSTRUCTED; 
 	}
@@ -90,9 +90,9 @@ public:
 
 	CMenu* AccessoryMenu;
 	bool AccessoryMenuVisible;
-	int AccessorySlotNum;	//‚¢‚Üƒ`ƒFƒbƒN‚µ‚Ä‚éƒvƒŒƒCƒ„[‚Ì‘•”õƒXƒƒbƒgƒCƒ“ƒfƒbƒNƒX
+	int AccessorySlotNum;	//ã„ã¾ãƒã‚§ãƒƒã‚¯ã—ã¦ã‚‹ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®è£…å‚™ã‚¹ãƒ­ãƒƒãƒˆã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
 };
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

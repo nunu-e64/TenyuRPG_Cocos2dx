@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef SPECIES_H							////
 #define SPECIES_H							////
 ////////////////////////////////////////////////
@@ -32,7 +32,7 @@ protected:
 	//int CalcValue(value_tag _key, int _level, int _gene);
 
 	std::string Name;
-	int Img;	//UNDONE:‰æ‘œ—Ş‚Í‚¢‚¸‚êPlayerSpecies‚ÆEnemySpecies‚Å•Ê‚ÉŠÇ—‚·‚é
+	int Img;	//UNDONE:ç”»åƒé¡ã¯ã„ãšã‚ŒPlayerSpeciesã¨EnemySpeciesã§åˆ¥ã«ç®¡ç†ã™ã‚‹
 
 	int Level;
 	int Hp;
@@ -42,7 +42,7 @@ protected:
 	int DefGene;
 	int SpdGene;
 		
-	std::vector <trick_tag const*> TrickList;		//‹ZƒŠƒXƒg
+	std::vector <trick_tag const*> TrickList;		//æŠ€ãƒªã‚¹ãƒˆ
 	
 };
 
@@ -53,7 +53,7 @@ class CPlayerSpecies : public virtual CSpecies{
 public:
 	CPlayerSpecies(const CPlayerSpecies& obj){
 		CONSTRUCTED;
-		*this = obj;	//‚±‚ê‚ª•K{‚È‚Ì‚ª•sv‹cB‰½ŒÌ‚©ƒfƒtƒHƒ‹ƒgƒRƒs[ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ªd–‚µ‚Ä‚­‚ê‚È‚¢B
+		*this = obj;	//ã“ã‚ŒãŒå¿…é ˆãªã®ãŒä¸æ€è­°ã€‚ä½•æ•…ã‹ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ”ãƒ¼ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãŒä»•äº‹ã—ã¦ãã‚Œãªã„ã€‚
 	}
 	CPlayerSpecies(){
 		CONSTRUCTED;
@@ -66,7 +66,7 @@ public:
 	}
 
 protected:
-	int MagicCount;	//–‚—ÍBãŒÀ‚ÍMAX_MAGIC_COUNTB
+	int MagicCount;	//é­”åŠ›ã€‚ä¸Šé™ã¯MAX_MAGIC_COUNTã€‚
 	trick_tag BaseTrick; 
 	int BaseTrickPowerGene;
 	
@@ -83,14 +83,14 @@ class CEnemySpecies : public virtual CSpecies{
 public:
 	CEnemySpecies(const CEnemySpecies& obj){
 		CONSTRUCTED;	
-		*this = obj;	//‚±‚ê‚ª•K{‚È‚Ì‚ª•sv‹cB‰½ŒÌ‚©ƒfƒtƒHƒ‹ƒgƒRƒs[ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ªd–‚µ‚Ä‚­‚ê‚È‚¢B
+		*this = obj;	//ã“ã‚ŒãŒå¿…é ˆãªã®ãŒä¸æ€è­°ã€‚ä½•æ•…ã‹ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ”ãƒ¼ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãŒä»•äº‹ã—ã¦ãã‚Œãªã„ã€‚
 	}
 	CEnemySpecies(){
 		CONSTRUCTED;
 		GoldGene = -1;
 		ExpGene = -1;
 		FirstRandomPlanSettingFlag = false;
-			//RandomPlanSet‚Ì‰Šú‰»‚ÍEnemySpeciesManager‚ÌCreate‚Å
+			//RandomPlanSetã®åˆæœŸåŒ–ã¯EnemySpeciesManagerã®Createã§
 	}
 	~CEnemySpecies(){
 		DESTRUCTED;	
@@ -117,6 +117,6 @@ private:
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

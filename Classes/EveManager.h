@@ -1,10 +1,10 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef EVEOBJMANAGER_H						////
 #define EVEOBJMANAGER_H						////
 ////////////////////////////////////////////////
 
 #include "EveObj.h"
-//#include "Field.h"		//–³ŒÀƒ‹[ƒv‚É‚È‚Á‚Ä‚È‚¢‚©‚±‚¦‚¦‚¦
+//#include "Field.h"		//ç„¡é™ãƒ«ãƒ¼ãƒ—ã«ãªã£ã¦ãªã„ã‹ã“ãˆãˆãˆ
 
 class CField;
 
@@ -61,24 +61,24 @@ private:
 	};
 
 
-	//ƒƒ“ƒoŠÖ”	
+	//ãƒ¡ãƒ³ãƒé–¢æ•°	
 		bool GetEveObj(CEveObj** _eveobj_p, int _mapnum, int _x, int _y, int _kind=-1, bool _forcheck=true);
 		bool GetEveObj(CEveObj** _eveobj_p, const char* _name, const int _kind=-1, int _mapnum=-1);
 		bool GetOriginalEvent(eventset_tag** _originalevent_p, const char* _name);
 
-	//ƒƒ“ƒo•Ï”
+	//ãƒ¡ãƒ³ãƒå¤‰æ•°
 		std::vector<CEveObj> EveObj[MAP_MAX];
 		CEveObj EveObj_dammy;
 
 		std::vector<eventset_tag> OriginalEvent;
 		eventset_tag OriginalEvent_dammy;
 
-		char NowName[32];	//JOKER_NAMEŠÖ˜A‚Åg—pB¡A’²‚×‚Ä‚¢‚éƒIƒuƒWƒFƒNƒg‚Ì–¼‘O
+		char NowName[32];	//JOKER_NAMEé–¢é€£ã§ä½¿ç”¨ã€‚ä»Šã€èª¿ã¹ã¦ã„ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®åå‰
 		enum charaeffect_tag TmpEffect;
 
 		unsigned char EveMap[MAP_MAX][MAP_SIZE][MAP_SIZE];
 		
-	//’Pˆê«‚ğ•ÛØ(Singleton)//////////////////////////////////////////
+	//å˜ä¸€æ€§ã‚’ä¿è¨¼(Singleton)//////////////////////////////////////////
 		CEveManager(){
 			CONSTRUCTED;
 		}
@@ -88,6 +88,6 @@ private:
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

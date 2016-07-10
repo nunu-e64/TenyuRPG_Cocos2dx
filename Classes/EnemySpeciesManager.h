@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef ENEMYSPECIESMANAGER_H				////
 #define ENEMYSPECIESMANAGER_H				////
 ////////////////////////////////////////////////
@@ -40,7 +40,7 @@ public:
 	bool CheckAfterLoad();
 
 private:
-	bool EnemyBankLock;		//‹àŒÉ”ÔBvector‚Ì—v‘f‚ÌƒAƒhƒŒƒX‚ğƒRƒs[‚µ‚½‚ ‚Æ‚Évector‚Ì—v‘f‚ğ•Ï‰»‚³‚¹‚éiƒAƒhƒŒƒX‚ª•Ï‚í‚é‚©‚à‚µ‚ê‚È‚¢j‚±‚Æ‚Ì–³‚¢‚æ‚¤‚ÉŠÄ‹
+	bool EnemyBankLock;		//é‡‘åº«ç•ªã€‚vectorã®è¦ç´ ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’ã‚³ãƒ”ãƒ¼ã—ãŸã‚ã¨ã«vectorã®è¦ç´ ã‚’å¤‰åŒ–ã•ã›ã‚‹ï¼ˆï¼ã‚¢ãƒ‰ãƒ¬ã‚¹ãŒå¤‰ã‚ã‚‹ã‹ã‚‚ã—ã‚Œãªã„ï¼‰ã“ã¨ã®ç„¡ã„ã‚ˆã†ã«ç›£è¦–
 	std::map <std::string, CEnemySpecies> EnemyBank;
 
 	std::vector<CEnemyPlanner*> EnemyPlannerBank; 
@@ -59,7 +59,7 @@ private:
 
 	CEnemySpecies Dammy_Enemy;
 
-	//’Pˆê«‚ğ•ÛØ(Singleton)//////////////////////////////////////////
+	//å˜ä¸€æ€§ã‚’ä¿è¨¼(Singleton)//////////////////////////////////////////
 		CEnemySpeciesManager(){
 			CONSTRUCTED;
 			EnemyBankLock = false;
@@ -69,6 +69,6 @@ private:
 	//////////////////////////////////////////////////////////////////
 };
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										  //
 ////////////////////////////////////////////////

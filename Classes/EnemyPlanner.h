@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef ENEMYPLANNER_H						////
 #define ENEMYPLANNER_H						////
 ////////////////////////////////////////////////
@@ -6,7 +6,7 @@
 class CActor;
 class CEnemy;
 
-class CEnemyPlanner{ //EnemySpecies‚Ìs“®‘I‘ğAI—p‚ÌƒCƒ“ƒ^[ƒtƒF[ƒX
+class CEnemyPlanner{ //EnemySpeciesã®è¡Œå‹•é¸æŠAIç”¨ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹
 public: 
 	CEnemyPlanner(std::string _enemyname){
 		CONSTRUCTED;
@@ -39,13 +39,13 @@ protected:
 
 	std::map <int, std::vector<std::pair<int, int> > > * RandomPlanSet;
 
-	//‘SƒAƒNƒ^[‚Ö‚ÌƒAƒNƒZƒX‚ğ‚½‚¹‚Ä‚¨‚­ií“¬ŠJn‚²‚Æ‚ÉXVj
+	//å…¨ã‚¢ã‚¯ã‚¿ãƒ¼ã¸ã®ã‚¢ã‚¯ã‚»ã‚¹ã‚’æŒãŸã›ã¦ãŠãï¼ˆæˆ¦é—˜é–‹å§‹ã”ã¨ã«æ›´æ–°ï¼‰
 		const CActor* const* Actor;
 		int PLAYER_NUM;
 		int ENEMY_NUM;
 
 private:
-	std::string EnemyName;	//å‚Ì–¼‘OBƒGƒ‰[o—Í—p‚Å‚µ‚©‚È‚¢B‚¾‚Á‚ÄƒAƒNƒZƒX‚ÍEnemySpecies‚©‚ç‚È‚³‚ê‚é‚µŒÄ‚Ño‚µŒ³î•ñ‚ª•K—v‚È‚Íthis‚ğ“n‚¹‚ÎÏ‚ŞB
+	std::string EnemyName;	//ä¸»ã®åå‰ã€‚ã‚¨ãƒ©ãƒ¼å‡ºåŠ›ç”¨ã§ã—ã‹ãªã„ã€‚ã ã£ã¦ã‚¢ã‚¯ã‚»ã‚¹ã¯EnemySpeciesã‹ã‚‰ãªã•ã‚Œã‚‹ã—å‘¼ã³å‡ºã—å…ƒæƒ…å ±ãŒå¿…è¦ãªæ™‚ã¯thisã‚’æ¸¡ã›ã°æ¸ˆã‚€ã€‚
 };
 
 
@@ -56,14 +56,14 @@ public:
 	}
 	~CEnemyPlanner_DEFAULT(){DESTRUCTED;}
 
-	int GetPlan(const CEnemy* _enemy);	//‹¤’Ê
+	int GetPlan(const CEnemy* _enemy);	//å…±é€š
 };
 
 class CEnemyPlanner_MYHP: public CEnemyPlanner{
 public:
 	CEnemyPlanner_MYHP(std::string _name, std::vector<std::string> _argList);
 	~CEnemyPlanner_MYHP(){DESTRUCTED;}
-	int GetPlan(const CEnemy* _enemy); //‹¤’Ê
+	int GetPlan(const CEnemy* _enemy); //å…±é€š
 private:
 	std::vector <std::pair<int, int> > planList;
 };
@@ -73,12 +73,12 @@ class CEnemyPlanner_PLAYERNUM: public CEnemyPlanner{
 public:
 	CEnemyPlanner_PLAYERNUM(std::string _name, std::vector<std::string> _argList);
 	~CEnemyPlanner_PLAYERNUM(){DESTRUCTED;}
-	int GetPlan(const CEnemy* _enemy); //‹¤’Ê
+	int GetPlan(const CEnemy* _enemy); //å…±é€š
 private:
 	int planList[MAX_PLAYER_NUM];
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

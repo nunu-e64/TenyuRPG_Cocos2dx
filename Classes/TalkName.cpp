@@ -2,11 +2,11 @@
 
 
 void CTalkName::Init(){
-	//¶‰E‚ÌƒeƒLƒXƒgƒl[ƒ€ƒ‰ƒxƒ‹‚ğ‚·‚×‚Äíœ
+	//å·¦å³ã®ãƒ†ã‚­ã‚¹ãƒˆãƒãƒ¼ãƒ ãƒ©ãƒ™ãƒ«ã‚’ã™ã¹ã¦å‰Šé™¤
 		Clear(true);
 		Clear(false);
 
-	//ƒeƒLƒXƒgƒl[ƒ€ƒ‰ƒxƒ‹—p‰æ‘œ‚Ì“Ç‚İ‚İ
+	//ãƒ†ã‚­ã‚¹ãƒˆãƒãƒ¼ãƒ ãƒ©ãƒ™ãƒ«ç”¨ç”»åƒã®èª­ã¿è¾¼ã¿
 		ImgLabel[0] = LoadGraph(IMAGE_TALKNAMELABEL[0], true); 
 		ImgLabel[1] = LoadGraph(IMAGE_TALKNAMELABEL[1], true);
 		ImgLabel[2] = LoadGraph(IMAGE_TALKNAMELABEL[2], true);
@@ -25,7 +25,7 @@ bool CTalkName::Add(bool _left, int _num, ...){
 
 	if (_num>0){
 		va_list args;
-		va_start(args, _num);	//_num‚ª‘å‚«‚·‚¬‚½‚Æ‚«‚Ìˆ’u•û–@‚Í‚È‚¢‚Ì‚©H
+		va_start(args, _num);	//_numãŒå¤§ãã™ããŸã¨ãã®å‡¦ç½®æ–¹æ³•ã¯ãªã„ã®ã‹ï¼Ÿ
 
 		int side = (_left? 0: 1);
 		NowLeft = _left;
@@ -59,7 +59,7 @@ bool CTalkName::Add(bool _left, int _num, ...){
 bool CTalkName::Dec(bool _left, int _num, ...){
 	if (_num>0){
 		va_list args;
-		va_start(args, _num);	//_num‚ª‘å‚«‚·‚¬‚½‚Æ‚«‚Ìˆ’u•û–@‚Í‚È‚¢‚Ì‚©H
+		va_start(args, _num);	//_numãŒå¤§ãã™ããŸã¨ãã®å‡¦ç½®æ–¹æ³•ã¯ãªã„ã®ã‹ï¼Ÿ
 
 		int side = (_left? 0: 1);
 
@@ -136,7 +136,7 @@ std::string CTalkName::GetNowName() {
 	return tmpString;
 }
 
-void CTalkName::Draw(int _left, int _right, int _bottom){	//HACK:À•W‚ğ“Ç‚İ‚ñ‚¾ƒsƒNƒ`ƒƒ‚Å‚Í‚È‚­Aè“ü—Í‚µ‚Ä‚¢‚éBInit()‚Æ˜AŒg‚³‚¹‚ÄC³‚·‚×‚«B
+void CTalkName::Draw(int _left, int _right, int _bottom){	//HACK:åº§æ¨™ã‚’èª­ã¿è¾¼ã‚“ã ãƒ”ã‚¯ãƒãƒ£ã§ã¯ãªãã€æ‰‹å…¥åŠ›ã—ã¦ã„ã‚‹ã€‚Init()ã¨é€£æºã•ã›ã¦ä¿®æ­£ã™ã¹ãã€‚
 	int oldfontsize = GetFontSize();
 	
 	for (int h=0; h<SIDE_NUM; h++){
@@ -147,7 +147,7 @@ void CTalkName::Draw(int _left, int _right, int _bottom){	//HACK:À•W‚ğ“Ç‚İ‚ñ‚
 			
 			int left = (h==0? _left+81*i : _right-(100-81)-81*(i+1));
 			if (i==0 && ((h==0&&NowLeft) || (h==1&&!NowLeft))){
-				//¡˜b‚µ‚Ä‚¢‚él‚Ì–¼‘O
+				//ä»Šè©±ã—ã¦ã„ã‚‹äººã®åå‰
 				if (!h){
 					DrawGraph(left, _bottom-28, ImgLabel[0], true);
 				}else{

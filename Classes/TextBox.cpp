@@ -68,10 +68,10 @@ void CTextBox::Init(int _posx, int _posy, int _width, int _height, int _line , i
 
 	Ruby.clear();
 
-	//AddStock‚Å‚Ì”¼Šp•¶šƒI[ƒo[‚ğ‰ğŒˆ‚·‚é‚½‚ß‚É‰¡•§ŒÀ‚ğ•t‚¯‚é
-		char tmp[WORD_MAX]="‚ ";		int tmpnum=0;
+	//AddStockã§ã®åŠè§’æ–‡å­—ã‚ªãƒ¼ãƒãƒ¼ã‚’è§£æ±ºã™ã‚‹ãŸã‚ã«æ¨ªå¹…åˆ¶é™ã‚’ä»˜ã‘ã‚‹
+		char tmp[WORD_MAX]="ã‚";		int tmpnum=0;
 		while(++tmpnum<WordNum/2){
-			sprintf_s(tmp, "%s‚ ", tmp);
+			sprintf_s(tmp, "%sã‚", tmp);
 		}
 		WordWidth = GetDrawStringWidth(tmp, strlen(tmp));
 }
@@ -93,21 +93,21 @@ void CTextBox::Term(CCmdList* _cmdlist){
 
 	Ruby.clear();
 	
-	//ƒƒO‚É‰ï˜bI—¹‚Ìˆó‚ğ‘}“ü
+	//ãƒ­ã‚°ã«ä¼šè©±çµ‚äº†ã®å°ã‚’æŒ¿å…¥
 		FieldLog->Add(" ");
 		FieldLog->Add("-----------------");
 		FieldLog->Add(" ");
 		FieldLog->ResetCurrentPos();
 
-	//ƒg[ƒNƒ‰ƒxƒ‹i–¼‘O•\¦j‚ÌƒŠƒZƒbƒg•”ñ•\¦
+	//ãƒˆãƒ¼ã‚¯ãƒ©ãƒ™ãƒ«ï¼ˆåå‰è¡¨ç¤ºï¼‰ã®ãƒªã‚»ãƒƒãƒˆï¼†éè¡¨ç¤º
 		TalkName.Clear(true);
 		TalkName.Clear(false);
 		
-	//”wŒiˆê–‡ŠGƒ‚[ƒh‚Ì‰ğœ
+	//èƒŒæ™¯ä¸€æšçµµãƒ¢ãƒ¼ãƒ‰ã®è§£é™¤
 		_cmdlist->Add("@BackGround_Change(NULL, 0)");
 
-	if (ObjCount!=-1){	//ObjCount‚ª-1‚¶‚á‚È‚¢ƒCƒxƒ“ƒg‚ğ“¥‚ñ‚ÅTextBox‚É‚â‚Á‚Ä‚«‚½i‚»‚¤‚¶‚á‚È‚¢ê‡F—á‚¦‚ÎƒZ[ƒuŠ®—¹‚È‚Ç‚ÌƒVƒXƒeƒ€ƒƒbƒZ[ƒWj
-		//ˆê“I‚ÉNONE‚É•Ï‚¦‚½i‚©‚à‚µ‚ê‚È‚¢jEveObj‚ÌEffect‚ğŒ³‚É–ß‚·
+	if (ObjCount!=-1){	//ObjCountãŒ-1ã˜ã‚ƒãªã„ï¼ã‚¤ãƒ™ãƒ³ãƒˆã‚’è¸ã‚“ã§TextBoxã«ã‚„ã£ã¦ããŸï¼ˆãã†ã˜ã‚ƒãªã„å ´åˆï¼šä¾‹ãˆã°ã‚»ãƒ¼ãƒ–å®Œäº†ãªã©ã®ã‚·ã‚¹ãƒ†ãƒ ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ï¼‰
+		//ä¸€æ™‚çš„ã«NONEã«å¤‰ãˆãŸï¼ˆã‹ã‚‚ã—ã‚Œãªã„ï¼‰EveObjã®Effectã‚’å…ƒã«æˆ»ã™
 			_cmdlist->Add("@Effect_Set(%s, Tmp)", JOKER_NAME);
 	}
 }
@@ -123,16 +123,16 @@ bool CTextBox::Main(CCmdList* _cmdlist, CFlagSet *_flagset){
 				if (CheckHitKeyDown(KEY_INPUT_OK)) NextPage(_cmdlist, _flagset);
 				if (TextLineNum()==0) NextPage(_cmdlist, _flagset);
 			}else{
-				//AutoPlayƒ‚[ƒh
+				//AutoPlayãƒ¢ãƒ¼ãƒ‰
 				if (sumstrlen==0){
-					starttime = GetNowCount();			sumstrlen=1;//‹ó”’ƒy[ƒW‚Å‚ÌƒoƒO–h~
-					/*1•¶š‚ ‚½‚è‚ÌƒXƒs[ƒhw’è®‚Ì‚Æ‚«
+					starttime = GetNowCount();			sumstrlen=1;//ç©ºç™½ãƒšãƒ¼ã‚¸ã§ã®ãƒã‚°é˜²æ­¢
+					/*1æ–‡å­—ã‚ãŸã‚Šã®ã‚¹ãƒ”ãƒ¼ãƒ‰æŒ‡å®šå¼ã®ã¨ã
 					for (int i=0; i<LineNum; i++){
 						sumstrlen += strlen(chText[i]);
 					}*/
 				}
 
-				if ((GetNowCount()-starttime) > AutoPlaySpeed){	//(500+sumstrlen*AutoPlaySpeed)){	//1•¶š‚ ‚½‚è‚ÌƒXƒs[ƒhw’è	
+				if ((GetNowCount()-starttime) > AutoPlaySpeed){	//(500+sumstrlen*AutoPlaySpeed)){	//1æ–‡å­—ã‚ãŸã‚Šã®ã‚¹ãƒ”ãƒ¼ãƒ‰æŒ‡å®š	
 					NextPage(_cmdlist, _flagset);
 				}
 			}
@@ -145,7 +145,7 @@ bool CTextBox::Main(CCmdList* _cmdlist, CFlagSet *_flagset){
 }
 
 
-bool CTextBox::AddStock(char *String, int dir, const int count){		//ƒRƒƒ“ƒgs‚â‹ó”’s‚ÍLoad‚Ì’iŠK‚Å”rœ‚³‚ê‚Ä‚¢‚é
+bool CTextBox::AddStock(char *String, int dir, const int count){		//ã‚³ãƒ¡ãƒ³ãƒˆè¡Œã‚„ç©ºç™½è¡Œã¯Loadã®æ®µéšã§æ’é™¤ã•ã‚Œã¦ã„ã‚‹
 	
 	if (!Alive) {
 		StockLine = 0;
@@ -156,38 +156,38 @@ bool CTextBox::AddStock(char *String, int dir, const int count){		//ƒRƒƒ“ƒgs‚â
 	if (strlen(String) < 256){
 		if (StockLine < STOCK_LINE_NUM){
 
-			if (String[0]=='@' && !isdigit(String[1])) {					//ƒRƒ}ƒ“ƒh‚È‚ç•\¦‚µ‚È‚¢‚Ì‚Å256šˆÈ‰º‚Å‚³‚¦‚ ‚é‚È‚çˆês‚Ìš”‚ğ‹C‚É‚µ‚È‚¢				
+			if (String[0]=='@' && !isdigit(String[1])) {					//ã‚³ãƒãƒ³ãƒ‰ãªã‚‰è¡¨ç¤ºã—ãªã„ã®ã§256å­—ä»¥ä¸‹ã§ã•ãˆã‚ã‚‹ãªã‚‰ä¸€è¡Œã®å­—æ•°ã‚’æ°—ã«ã—ãªã„				
 				strcpy_s(chStock[StockLine], String);
 				StockLine++;
 				Visible=true;
 
 
-			////”¼Šp•¶š‚Å–„‚ßs‚­‚µ‚½‚Æ‚«‚ÉƒeƒLƒXƒgƒ{ƒbƒNƒX‚ğƒI[ƒo[‚·‚éƒoƒO‚ğC³=•¶š•`‰æ‚ÌƒTƒCƒY‚Å”»’f
-			}else if (GetDrawStringWidth(String, strlen(String)) > WordWidth){			//š”ƒI[ƒo[ˆ— WordWidth‚ÍInit()‚Å’è‹`
+			////åŠè§’æ–‡å­—ã§åŸ‹ã‚å°½ãã—ãŸã¨ãã«ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã‚’ã‚ªãƒ¼ãƒãƒ¼ã™ã‚‹ãƒã‚°ã‚’ä¿®æ­£=æ–‡å­—æç”»æ™‚ã®ã‚µã‚¤ã‚ºã§åˆ¤æ–­
+			}else if (GetDrawStringWidth(String, strlen(String)) > WordWidth){			//å­—æ•°ã‚ªãƒ¼ãƒãƒ¼æ™‚å‡¦ç† WordWidthã¯Init()ã§å®šç¾©
 				char chOverstring[WORD_MAX];
 				char chTruestring[WORD_MAX];
 				char tmp[WORD_MAX]="";
 				
-				int tmpnum=0;				//ˆês•ª‚Ì‰¡•‚Å‹æØ‚é‚½‚ß‚ÌˆÊ’u’T‚µ
+				int tmpnum=0;				//ä¸€è¡Œåˆ†ã®æ¨ªå¹…ã§åŒºåˆ‡ã‚‹ãŸã‚ã®ä½ç½®æ¢ã—
 				while(GetDrawStringWidth(tmp, strlen(tmp)) <= WordWidth){
 					tmp[tmpnum]=String[tmpnum];
 					tmp[++tmpnum]='\0';
 				}
 
 				if (_ismbblead(String[tmpnum-1])) {
-					tmpnum--;		//s––‚ª‘SŠp•¶š‚Ì1ƒoƒCƒg–Ú‚¾‚Á‚½ê‡A•¶š‰»‚¯‚·‚é‚Ì‚Å1ƒoƒCƒg‚¸‚ç‚·
-					//UNKOWN:‚ ‚¿‚ç‚ª—§‚Ä‚Î‚±‚¿‚ç‚ª—§‚½‚¸‚¤‚í[‚ñ¨WRAP•¶š‰»‚¯‚à‰ğŒˆ‚µ‚½H
+					tmpnum--;		//è¡Œæœ«ãŒå…¨è§’æ–‡å­—ã®1ãƒã‚¤ãƒˆç›®ã ã£ãŸå ´åˆã€æ–‡å­—åŒ–ã‘ã™ã‚‹ã®ã§1ãƒã‚¤ãƒˆãšã‚‰ã™
+					//UNKOWN:ã‚ã¡ã‚‰ãŒç«‹ã¦ã°ã“ã¡ã‚‰ãŒç«‹ãŸãšã†ã‚ãƒ¼ã‚“â†’WRAPæ–‡å­—åŒ–ã‘ã‚‚è§£æ±ºã—ãŸï¼Ÿ
 				}
 				strcpy_s(chOverstring, String+tmpnum);
 				strncpy_s(chTruestring, String, tmpnum);
 
 				AddStock(chTruestring);
-				if (strlen(chOverstring)>0) AddStock(chOverstring);				//ƒI[ƒo[‚µ‚½•ª‚ğØ‚èæ‚Á‚ÄÄ“x“Ç‚İ‚İ
+				if (strlen(chOverstring)>0) AddStock(chOverstring);				//ã‚ªãƒ¼ãƒãƒ¼ã—ãŸåˆ†ã‚’åˆ‡ã‚Šå–ã£ã¦å†åº¦èª­ã¿è¾¼ã¿
 		
 
-			}else if (mystrchr(String, '[')!=NULL){	//ƒ‹ƒrˆ—	//'['‚Æ'['‚ğ•¶šƒR[ƒh‚ÌŠÖŒWãŒë”F‚µ‚â‚ª‚é‚Ì‚Å”¼Šp•¶š‚©‘SŠp•¶š‚©‚Ìƒ`ƒFƒbƒN‚à•K—v‚É‚È‚é¨Šæ’£‚Á‚½‰´
-				//ã‚Ì‚Í‚İo‚µ‰üsˆ—‚æ‚èæ‚É‚µ‚È‚­‚Ä‚Í‚È‚ç‚È‚¢‚Ì‚Å‚ÍH
-				//TODO:¨‰üs‚ª‹²‚Ü‚éƒ‹ƒr‚Í•Êƒ‹ƒr‚Æˆµ‚¤‚Ì‚Å‚Í‚İo‚µˆ—‚ªæ‚ÅOKB‚½‚¾‚µ‚Í‚İo‚µˆ—“à‚É‰üs‰ÓŠ‚Å‚Ìƒ‹ƒr•ª—£ˆ—‚Í•K—vB
+			}else if (mystrchr(String, '[')!=NULL){	//ãƒ«ãƒ“å‡¦ç†	//'['ã¨'ãƒ¼'ã‚’æ–‡å­—ã‚³ãƒ¼ãƒ‰ã®é–¢ä¿‚ä¸Šèª¤èªã—ã‚„ãŒã‚‹ã®ã§åŠè§’æ–‡å­—ã‹å…¨è§’æ–‡å­—ã‹ã®ãƒã‚§ãƒƒã‚¯ã‚‚å¿…è¦ã«ãªã‚‹â†’é ‘å¼µã£ãŸä¿º
+				//ä¸Šã®ã¯ã¿å‡ºã—æ”¹è¡Œå‡¦ç†ã‚ˆã‚Šå…ˆã«ã—ãªãã¦ã¯ãªã‚‰ãªã„ã®ã§ã¯ï¼Ÿ
+				//TODO:â†’æ”¹è¡ŒãŒæŒŸã¾ã‚‹ãƒ«ãƒ“ã¯åˆ¥ãƒ«ãƒ“ã¨æ‰±ã†ã®ã§ã¯ã¿å‡ºã—å‡¦ç†ãŒå…ˆã§OKã€‚ãŸã ã—ã¯ã¿å‡ºã—å‡¦ç†å†…ã«æ”¹è¡Œç®‡æ‰€ã§ã®ãƒ«ãƒ“åˆ†é›¢å‡¦ç†ã¯å¿…è¦ã€‚
 
 				ruby_tag tmpruby;
 				char tmp[WORD_MAX];		mystrcpy(tmp, String);
@@ -203,7 +203,7 @@ bool CTextBox::AddStock(char *String, int dir, const int count){		//ƒRƒƒ“ƒgs‚â
 				sprintf_s(chrubynum, "%d%d", rubynum[0], rubynum[1]);
 
 				p = mystrchr(tmp, '[');	
-				//'['‚Ì‚ ‚Á‚½êŠ‚É'@'‚Æƒ‹ƒr”Ô†‚ğ–Úˆó‚Æ‚µ‚Ä‘}“ü
+				//'['ã®ã‚ã£ãŸå ´æ‰€ã«'@'ã¨ãƒ«ãƒ“ç•ªå·ã‚’ç›®å°ã¨ã—ã¦æŒ¿å…¥
 					char tmp2[WORD_MAX];		mystrcpy(tmp2, ++p);
 					*(--p) = '@';	p+=3;
 					*p = '\0';		p-=2;
@@ -221,33 +221,33 @@ bool CTextBox::AddStock(char *String, int dir, const int count){		//ƒRƒƒ“ƒgs‚â
 				}
 				*r = '\0';	r++;
 					
-				/*DebugDx("p:%s", p);	//ƒ‹ƒr•t‚¯‚é’PŒê
-				DebugDx("q:%s", q);	//ƒ‹ƒr
-				DebugDx("r:%s", r);	//']'ƒ‹ƒrˆÈ~‚Ì•¶š—ñ	*/
+				/*DebugDx("p:%s", p);	//ãƒ«ãƒ“ä»˜ã‘ã‚‹å˜èª
+				DebugDx("q:%s", q);	//ãƒ«ãƒ“
+				DebugDx("r:%s", r);	//']'ãƒ«ãƒ“ä»¥é™ã®æ–‡å­—åˆ—	*/
 
-				//ƒ‹ƒr‚ğ•ª—£‚µ‚ÄRuby‚É“o˜^
+				//ãƒ«ãƒ“ã‚’åˆ†é›¢ã—ã¦Rubyã«ç™»éŒ²
 					mystrcpy(tmpruby.Word, p);
 					mystrcpy(tmpruby.Ruby, q);
-					mystrcpy(tmpruby.chNum, chrubynum);				//“¯s“¯–¼•Êƒ‹ƒr‚É‘Î‰‚·‚é‚É‚ÍA“¯‚¶s“à‚Å‰½”Ô–Ú‚ÉŒ©‚Â‚©‚Á‚½‚Ì‚©‚Ü‚Å‹L˜^‚·‚ê‚Î‚¢‚¢
+					mystrcpy(tmpruby.chNum, chrubynum);				//åŒè¡ŒåŒååˆ¥ãƒ«ãƒ“ã«å¯¾å¿œã™ã‚‹ã«ã¯ã€åŒã˜è¡Œå†…ã§ä½•ç•ªç›®ã«è¦‹ã¤ã‹ã£ãŸã®ã‹ã¾ã§è¨˜éŒ²ã™ã‚Œã°ã„ã„
 					Ruby.push_back(tmpruby);
 
-				//ƒ‹ƒr‚ğœ‚«–Úˆó@‚ğ“ü‚ê‚½c‚è‚ÌƒeƒLƒXƒg‚ğ•’Ê‚ÉAddStock
+				//ãƒ«ãƒ“ã‚’é™¤ãç›®å°@ã‚’å…¥ã‚ŒãŸæ®‹ã‚Šã®ãƒ†ã‚­ã‚¹ãƒˆã‚’æ™®é€šã«AddStock
 					mystrcat(tmp, r);
 					AddStock(tmp);
 	
 			/*
-			}else if (mystrlen(String) > WordNum){			//š”ƒI[ƒo[ˆ—iÀÛ‚Í•`‰æƒTƒCƒY‚Åˆ—‚·‚é‚æ‚¤‚Éã‹L‚É‘‚«‘«‚µ‚½‚½‚ß‚±‚¿‚ç‚ğg‚¤‚±‚Æ‚Í‚È‚¢‚Æv‚í‚ê‚éj
+			}else if (mystrlen(String) > WordNum){			//å­—æ•°ã‚ªãƒ¼ãƒãƒ¼æ™‚å‡¦ç†ï¼ˆå®Ÿéš›ã¯æç”»ã‚µã‚¤ã‚ºã§å‡¦ç†ã™ã‚‹ã‚ˆã†ã«ä¸Šè¨˜ã«æ›¸ãè¶³ã—ãŸãŸã‚ã“ã¡ã‚‰ã‚’ä½¿ã†ã“ã¨ã¯ãªã„ã¨æ€ã‚ã‚Œã‚‹ï¼‰
 				char chOverstring[WORD_MAX];
 				char chTruestring[WORD_MAX];
 				
-				int d = (_ismbblead(String[WordNum-1])? -1:0);	//s––‚ª‘SŠp•¶š‚Ì1ƒoƒCƒg–Ú‚¾‚Á‚½ê‡A•¶š‰»‚¯‚·‚é‚Ì‚Å1ƒoƒCƒg‚¸‚ç‚·
+				int d = (_ismbblead(String[WordNum-1])? -1:0);	//è¡Œæœ«ãŒå…¨è§’æ–‡å­—ã®1ãƒã‚¤ãƒˆç›®ã ã£ãŸå ´åˆã€æ–‡å­—åŒ–ã‘ã™ã‚‹ã®ã§1ãƒã‚¤ãƒˆãšã‚‰ã™
 				strcpy_s(chOverstring, String+WordNum+d);
 				strncpy_s(chTruestring, String, WordNum+d);
 				
-				//ebugDx("Debug->š”ƒI[ƒo[:%s", chOverstring);
+				//ebugDx("Debug->å­—æ•°ã‚ªãƒ¼ãƒãƒ¼:%s", chOverstring);
 
 				AddStock(chTruestring);
-				AddStock(chOverstring);				//ƒI[ƒo[‚µ‚½•ª‚ğØ‚èæ‚Á‚ÄÄ“x“Ç‚İ‚İ
+				AddStock(chOverstring);				//ã‚ªãƒ¼ãƒãƒ¼ã—ãŸåˆ†ã‚’åˆ‡ã‚Šå–ã£ã¦å†åº¦èª­ã¿è¾¼ã¿
 			*/
 				
 			}else{
@@ -283,30 +283,30 @@ void CTextBox::Draw(bool _showingstop){
 
 	int oldfontsize = GetFontSize();
 	
-	//ƒ{ƒbƒNƒX
+	//ãƒœãƒƒã‚¯ã‚¹
 		DrawBox(PosX, PosY, PosX+Width, PosY+Height, GetColor(30, 20, 80), true);
 		DrawBox(PosX+5, PosY+5, PosX+Width-5, PosY+Height-5, GRAY, false);
 
-	//ƒeƒLƒXƒg
-		//•\¦ƒAƒjƒ[ƒVƒ‡ƒ“’²®
+	//ãƒ†ã‚­ã‚¹ãƒˆ
+		//è¡¨ç¤ºã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³èª¿æ•´
 		Draw_Animation(_showingstop);	
 	
-		//@ƒ‹ƒr‚ğRuby‚ÆÆ‡,•\¦
+		//@ãƒ«ãƒ“ã‚’Rubyã¨ç…§åˆ,è¡¨ç¤º
 		Draw_Ruby();
 
-		//ƒeƒLƒXƒg•`Ê
+		//ãƒ†ã‚­ã‚¹ãƒˆæå†™
 		SetFontSize(FontSize);
 		for (int i=0; i<LineNum; i++){
 			if (Color2!=-1) DrawString(PosX+Width/2 - WordNum*(FontSize+1)/4 + 1, PosY+Height/2 + LINE_SPACE/2 - LineNum*(FontSize+LINE_SPACE)/2 + (FontSize+LINE_SPACE)*i+1, chDrawText[i], Color2);
 							DrawString(PosX+Width/2 - WordNum*(FontSize+1)/4	, PosY+Height/2 + LINE_SPACE/2 - LineNum*(FontSize+LINE_SPACE)/2 + (FontSize+LINE_SPACE)*i	,  chDrawText[i], Color1);
 		}
 
-		//‘±‚«‚ª‚ ‚é‚Æ‚«‚Ìƒ}[ƒN•\¦
+		//ç¶šããŒã‚ã‚‹ã¨ãã®ãƒãƒ¼ã‚¯è¡¨ç¤º
 		if (!Showing && !AutoPlay && ReturnVisible) {
-			DrawString(PosX+Width/2-10, PosY+Height-10 + (GetNowCount()/100)%5, "¥", WHITE);
+			DrawString(PosX+Width/2-10, PosY+Height-10 + (GetNowCount()/100)%5, "â–¼", WHITE);
 		}
 	
-	//TextName‚Ì•`‰æ
+	//TextNameã®æç”»
 		if (TalkName.GetVisible()) TalkName.Draw(PosX, PosX+Width, PosY);	
 
 	SetFontSize(oldfontsize);
@@ -314,12 +314,12 @@ void CTextBox::Draw(bool _showingstop){
 
 void CTextBox::Draw_Animation(bool _showingstop){
 	
-	if (Showing){	//ƒeƒLƒXƒgƒAƒjƒ[ƒVƒ‡ƒ“’†
+	if (Showing){	//ãƒ†ã‚­ã‚¹ãƒˆã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ä¸­
 		if (!_showingstop) ShowingTime++;
-	}else if (NewText != -1 && !Showing){	//ƒeƒLƒXƒgƒAƒjƒ[ƒVƒ‡ƒ“‘O
+	}else if (NewText != -1 && !Showing){	//ãƒ†ã‚­ã‚¹ãƒˆã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³å‰
 		ShowingTime = 0;
 		Showing = true;
-	}else if (NewText == -1 && !Showing){	//ƒeƒLƒXƒgƒAƒjƒ[ƒVƒ‡ƒ“Ï‚İ
+	}else if (NewText == -1 && !Showing){	//ãƒ†ã‚­ã‚¹ãƒˆã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³æ¸ˆã¿
 		for (int i = 0; i<LineNum; i++){
 			strcpy_s(chDrawText[i], chText[i]);
 		}
@@ -337,7 +337,7 @@ void CTextBox::Draw_Animation(bool _showingstop){
 			if (NowShow-Sumstrlen <= 0) {
 				strcpy_s(chDrawText[i], "");
 			}else{
-				strncpy_s(chDrawText[i], chText[i], min(NowShow-Sumstrlen, mystrlen(chText[i])));	//TODO:ƒ‹ƒr—p@‚Í•\¦‚µ‚È‚¢‚Ì‚Å‚»‚±‚ÅƒAƒjƒ[ƒVƒ‡ƒ“‚ª‚¸‚ê‚È‚¢‚æ‚¤‚É‚·‚éƒR[ƒhi‚Ü‚¾‚µ‚ÄƒiƒCj¨//min(NowShow-Sumstrlen+(chText[i][min(NowShow-Sumstrlen, mystrlen(chText[i]))]=='@'?1:0), mystrlen(chText[i]))
+				strncpy_s(chDrawText[i], chText[i], min(NowShow-Sumstrlen, mystrlen(chText[i])));	//TODO:ãƒ«ãƒ“ç”¨@ã¯è¡¨ç¤ºã—ãªã„ã®ã§ãã“ã§ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãŒãšã‚Œãªã„ã‚ˆã†ã«ã™ã‚‹ã‚³ãƒ¼ãƒ‰ï¼ˆã¾ã è©¦ã—ã¦ãƒŠã‚¤ï¼‰â†’//min(NowShow-Sumstrlen+(chText[i][min(NowShow-Sumstrlen, mystrlen(chText[i]))]=='@'?1:0), mystrlen(chText[i]))
 			}
 			Sumstrlen += strlen(chText[i]);
 		} 
@@ -370,7 +370,7 @@ void CTextBox::Draw_Ruby(){
 					continue;
 				}
 
-				//"@OO"‚ğœ‹‚È‚Ç
+				//"@OO"ã‚’é™¤å»ãªã©
 					p++;
 					*(p-3)='\0';
 					char tmp[WORD_MAX];
@@ -393,10 +393,10 @@ void CTextBox::Draw_Ruby(){
 					}
 
 					if (!Showing && j==Ruby.size()-1)	ErrorDx("Error->Unexpected '@' was found. Check ruby.:", chDrawText[i]);
-					//ªWord•\¦“r’†‚Íˆê’v‚µ‚È‚¢‚½‚ßƒGƒ‰[‚ğ‚Í‚«‘±‚¯‚é
+					//â†‘Wordè¡¨ç¤ºé€”ä¸­ã¯ä¸€è‡´ã—ãªã„ãŸã‚ã‚¨ãƒ©ãƒ¼ã‚’ã¯ãç¶šã‘ã‚‹
 				}
 					
-				//ˆês‚É•¡”‚ ‚éê‡‚Ì‚½‚ß‚É‚±‚Ìs‚ğÄƒ`ƒFƒbƒN
+				//ä¸€è¡Œã«è¤‡æ•°ã‚ã‚‹å ´åˆã®ãŸã‚ã«ã“ã®è¡Œã‚’å†ãƒã‚§ãƒƒã‚¯
 				i--;
 			}
 		}
@@ -411,14 +411,14 @@ void CTextBox::NextPage(CCmdList* _cmdlist, CFlagSet *_flagset){
 	NowTarget = 0;
 	NewText = -1;
 
-	if (NowStock==StockLine){	//ƒXƒgƒbƒN‚ÌÅŒã‚Ü‚Å•\¦‚µ‚½‚È‚ç•\¦I—¹
+	if (NowStock==StockLine){	//ã‚¹ãƒˆãƒƒã‚¯ã®æœ€å¾Œã¾ã§è¡¨ç¤ºã—ãŸãªã‚‰è¡¨ç¤ºçµ‚äº†
 
 		Term(_cmdlist);	//Terminate
 	
 	}else{
 			
 		if (TextLineNum()==0){
-			//ˆês–Ú‚©‚ç‚·‚×‚Ä–„‚ß‚é
+			//ä¸€è¡Œç›®ã‹ã‚‰ã™ã¹ã¦åŸ‹ã‚ã‚‹
 			PageChange = false;
 			NewText = 0;
 			for (NowTarget = 0; NowTarget<LineNum; NowTarget++){
@@ -429,7 +429,7 @@ void CTextBox::NextPage(CCmdList* _cmdlist, CFlagSet *_flagset){
 			}
 
 		}else if (PageChange){
-			//ƒy[ƒWƒŠƒZƒbƒg‚µ‚½ŒãAˆês–Ú‚©‚ç‚·‚×‚Ä–„‚ß‚é
+			//ãƒšãƒ¼ã‚¸ãƒªã‚»ãƒƒãƒˆã—ãŸå¾Œã€ä¸€è¡Œç›®ã‹ã‚‰ã™ã¹ã¦åŸ‹ã‚ã‚‹
 			
 			PageChange = false;
 			NewText = 0;
@@ -444,7 +444,7 @@ void CTextBox::NextPage(CCmdList* _cmdlist, CFlagSet *_flagset){
 			}
 
 		}else if (TextLineNum()<LineNum){
-			//“r’†s‚©‚çÅIs‚Ü‚Å“Ç‚İ‚İ
+			//é€”ä¸­è¡Œã‹ã‚‰æœ€çµ‚è¡Œã¾ã§èª­ã¿è¾¼ã¿
 			
 			PageChange = false;
 			NewText = TextLineNum();
@@ -456,7 +456,7 @@ void CTextBox::NextPage(CCmdList* _cmdlist, CFlagSet *_flagset){
 			};
 
 		}else{
-			//ŒJ‚èã‚°‚ÄÅIs‚Ì‚İ’Ç‰Á“Ç‚İ‚İ
+			//ç¹°ã‚Šä¸Šã’ã¦æœ€çµ‚è¡Œã®ã¿è¿½åŠ èª­ã¿è¾¼ã¿
 			
 			for (int i = 0; i < LineNum-1; i++){
 				strcpy_s(chText[i], chText[i+1]);
@@ -465,7 +465,7 @@ void CTextBox::NextPage(CCmdList* _cmdlist, CFlagSet *_flagset){
 			PageChange = false;
 
 			if (! NextLine(_cmdlist, _flagset) ) {
-				//‚±‚Ì‚Æ‚«‚ÍAƒy[ƒWƒŠƒZƒbƒg‚µ‚ÄAˆês–Ú‚©‚ç‚·‚×‚Ä–„‚ß‚é
+				//ã“ã®ã¨ãã¯ã€ãƒšãƒ¼ã‚¸ãƒªã‚»ãƒƒãƒˆã—ã¦ã€ä¸€è¡Œç›®ã‹ã‚‰ã™ã¹ã¦åŸ‹ã‚ã‚‹
 				if (!Alive) return;
 				NewText = 0;
 				for (int i = 0; i < LineNum; i++){
@@ -506,18 +506,18 @@ void CTextBox::LogTalkName() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 bool CTextBox::NextLine(CCmdList *_cmdlist, CFlagSet *_flagset){
 	
-	//ƒAƒNƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh‚Æ‘˜‹ö‚µ‚½‚Æ‚«‚ÍANowStock‚ªƒeƒLƒXƒg‚É‚ ‚½‚é‚Ü‚ÅˆÚ“®AƒeƒLƒXƒg‚ğæ“¾‚·‚é
-	//ƒg[ƒNƒRƒ}ƒ“ƒh‚Æ‘˜‹ö‚µ‚½‚Æ‚«‚ÍNowStock‚ğƒeƒLƒXƒg‚ÌêŠ‚Ü‚ÅƒXƒLƒbƒv‚³‚¹‚ÄA""‚ğ‘ã“ü‚µ‚ÄFalse‚ğ•Ô‚·i‚»‚¤‚Å‚Í‚È‚­ANowStock‚ªƒeƒLƒXƒg‚É‚ ‚½‚é‚Ü‚Å“®‚©‚·‚×‚«Hj
+	//ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ã¨é­é‡ã—ãŸã¨ãã¯ã€NowStockãŒãƒ†ã‚­ã‚¹ãƒˆã«ã‚ãŸã‚‹ã¾ã§ç§»å‹•ã€ãƒ†ã‚­ã‚¹ãƒˆã‚’å–å¾—ã™ã‚‹
+	//ãƒˆãƒ¼ã‚¯ã‚³ãƒãƒ³ãƒ‰ã¨é­é‡ã—ãŸã¨ãã¯NowStockã‚’ãƒ†ã‚­ã‚¹ãƒˆã®å ´æ‰€ã¾ã§ã‚¹ã‚­ãƒƒãƒ—ã•ã›ã¦ã€""ã‚’ä»£å…¥ã—ã¦Falseã‚’è¿”ã™ï¼ˆãã†ã§ã¯ãªãã€NowStockãŒãƒ†ã‚­ã‚¹ãƒˆã«ã‚ãŸã‚‹ã¾ã§å‹•ã‹ã™ã¹ãï¼Ÿï¼‰
 
 	while(1){
 		if (!Alive) return false;
 		if (NowStock>=StockLine) {NowStock=StockLine; return false;}
 	
-		if(chStock[NowStock][0]=='@' && !isdigit(chStock[NowStock][1])){	//ƒRƒ}ƒ“ƒh
+		if(chStock[NowStock][0]=='@' && !isdigit(chStock[NowStock][1])){	//ã‚³ãƒãƒ³ãƒ‰
 
 
-			if (mystrcmp(chStock[NowStock], 'p', 3, "@NextPage", "@Stop", "@Quit") || mystrcmp(chStock[NowStock], 'm', 3, "_IF", "_ENDIF", "_CASE")){		//‚±‚±‚Éƒg[ƒNƒRƒ}ƒ“ƒh‚ğ’Ç‰Á
-				//ƒg[ƒNƒRƒ}ƒ“ƒh‚Ìˆ—
+			if (mystrcmp(chStock[NowStock], 'p', 3, "@NextPage", "@Stop", "@Quit") || mystrcmp(chStock[NowStock], 'm', 3, "_IF", "_ENDIF", "_CASE")){		//ã“ã“ã«ãƒˆãƒ¼ã‚¯ã‚³ãƒãƒ³ãƒ‰ã‚’è¿½åŠ 
+				//ãƒˆãƒ¼ã‚¯ã‚³ãƒãƒ³ãƒ‰ã®å‡¦ç†
 					if (mystrcmp(chStock[NowStock], "@NextPage")){
 						while (NowTarget<LineNum){
 							strcpy_s(chText[NowTarget], "");
@@ -547,29 +547,29 @@ bool CTextBox::NextLine(CCmdList *_cmdlist, CFlagSet *_flagset){
 						return false;
 
 					}else{
-						//‚»‚Ì‘¼‚Ìƒg[ƒNƒRƒ}ƒ“ƒh‚Ìˆ—
-						Solve(chStock[NowStock], _flagset);		//Ÿ‚Ì•¶Í‚Ì‚ ‚é‚Í‚¸‚Ì‚Æ‚±‚ë‚ğ’Tõ‚µ‚ÄNowStock‚ğ‘—‚é
+						//ãã®ä»–ã®ãƒˆãƒ¼ã‚¯ã‚³ãƒãƒ³ãƒ‰ã®å‡¦ç†
+						Solve(chStock[NowStock], _flagset);		//æ¬¡ã®æ–‡ç« ã®ã‚ã‚‹ã¯ãšã®ã¨ã“ã‚ã‚’æ¢ç´¢ã—ã¦NowStockã‚’é€ã‚‹
 						
-						if (NowStock==StockLine && (NowTarget==0 || TextLineNum()==3)) {	//UNKNOWN:‚Ü‚¾ƒoƒOc‚Á‚Ä‚é‚©‚à  ©‚»‚ñ‚È‚ñŒ¾‚í‚ê‚Ä‚àc
-							Term(_cmdlist);			//return‚Ì‚ ‚ÆŒÄ‚Ño‚µŒ³[NextPage]‚Ì•û‚Åˆ—‚ª‘±‚­‚Ì‚Å‚ß‚Á‚¿‚áƒoƒO‹N‚±‚è‚»‚¤B•|‚¢(Î)
+						if (NowStock==StockLine && (NowTarget==0 || TextLineNum()==3)) {	//UNKNOWN:ã¾ã ãƒã‚°æ®‹ã£ã¦ã‚‹ã‹ã‚‚  â†ãã‚“ãªã‚“è¨€ã‚ã‚Œã¦ã‚‚â€¦
+							Term(_cmdlist);			//returnã®ã‚ã¨å‘¼ã³å‡ºã—å…ƒ[NextPage]ã®æ–¹ã§å‡¦ç†ãŒç¶šãã®ã§ã‚ã£ã¡ã‚ƒãƒã‚°èµ·ã“ã‚Šãã†ã€‚æ€–ã„(ç¬‘)
 							return false;
 						}
 					}
 
 			}else{
-				//ƒAƒNƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh
+				//ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰
 				_cmdlist->Add(chStock[NowStock]);
 				NowStock++;
 				if (NowStock==StockLine && NowTarget==0) {
-					Term(_cmdlist);			//return‚Ì‚ ‚ÆŒÄ‚Ño‚µŒ³[NextPage]‚Ì•û‚Åˆ—‚ª‘±‚­‚Ì‚Å‚ß‚Á‚¿‚áƒoƒO‹N‚±‚è‚»‚¤B•|‚¢(Î)
+					Term(_cmdlist);			//returnã®ã‚ã¨å‘¼ã³å‡ºã—å…ƒ[NextPage]ã®æ–¹ã§å‡¦ç†ãŒç¶šãã®ã§ã‚ã£ã¡ã‚ƒãƒã‚°èµ·ã“ã‚Šãã†ã€‚æ€–ã„(ç¬‘)
 					return false;
 				}
 			}
 				
-		}else{								//ˆê”ÊƒeƒLƒXƒg
+		}else{								//ä¸€èˆ¬ãƒ†ã‚­ã‚¹ãƒˆ
 			strcpy_s(chText[NowTarget], chStock[NowStock]);
 			
-			FieldLog->Add("  %s", chStock[NowStock]);	//ƒƒO‚É‹L˜^
+			FieldLog->Add("  %s", chStock[NowStock]);	//ãƒ­ã‚°ã«è¨˜éŒ²
 
 			NowStock++;	
 			return true;
@@ -627,7 +627,7 @@ bool CTextBox::Solve(const char* string, CFlagSet *_flagset){
 					}
 
 					if (num == ObjCount || num == -1){ 
-						NowStock = i+1;		//_CASE‚ÅNum‚àˆê’v‚µ‚½ê‡A‚»‚ÌŸ‚Ìs‚É•W€‚ğ‡‚í‚¹‚ÄNextLine‚Ìƒ‹[ƒv‚É•Ô‚·
+						NowStock = i+1;		//_CASEã§Numã‚‚ä¸€è‡´ã—ãŸå ´åˆã€ãã®æ¬¡ã®è¡Œã«æ¨™æº–ã‚’åˆã‚ã›ã¦NextLineã®ãƒ«ãƒ¼ãƒ—ã«è¿”ã™
 						break;
 					}
 					
@@ -647,7 +647,7 @@ bool CTextBox::Solve(const char* string, CFlagSet *_flagset){
 						}
 
 						if (num == _flagset->GetFlagNum(arg[0]) || num == -1){
-							NowStock = i+1;		//_CASE‚ÅNum‚àˆê’v‚µ‚½ê‡A‚»‚ÌŸ‚Ìs‚É•W€‚ğ‡‚í‚¹‚ÄNextLine‚Ìƒ‹[ƒv‚É•Ô‚·
+							NowStock = i+1;		//_CASEã§Numã‚‚ä¸€è‡´ã—ãŸå ´åˆã€ãã®æ¬¡ã®è¡Œã«æ¨™æº–ã‚’åˆã‚ã›ã¦NextLineã®ãƒ«ãƒ¼ãƒ—ã«è¿”ã™
 							break;
 						}
 					}
@@ -668,7 +668,7 @@ bool CTextBox::Solve(const char* string, CFlagSet *_flagset){
 						}
 
 						if (num == CItemManager::GetInstance()->GetPlayerItemNum(arg[0]) || num == -1) {
-							NowStock = i + 1;		//_CASE‚ÅNum‚àˆê’v‚µ‚½ê‡A‚»‚ÌŸ‚Ìs‚É•W€‚ğ‡‚í‚¹‚ÄNextLine‚Ìƒ‹[ƒv‚É•Ô‚·
+							NowStock = i + 1;		//_CASEã§Numã‚‚ä¸€è‡´ã—ãŸå ´åˆã€ãã®æ¬¡ã®è¡Œã«æ¨™æº–ã‚’åˆã‚ã›ã¦NextLineã®ãƒ«ãƒ¼ãƒ—ã«è¿”ã™
 							break;
 						}
 					}
@@ -682,7 +682,7 @@ bool CTextBox::Solve(const char* string, CFlagSet *_flagset){
 						}
 					}
 					if (num == OriginalDir || num == -1){
-						NowStock = i+1;		//_CASE‚ÅNum‚àˆê’v‚µ‚½ê‡A‚»‚ÌŸ‚Ìs‚É•W€‚ğ‡‚í‚¹‚ÄNextLine‚Ìƒ‹[ƒv‚É•Ô‚·
+						NowStock = i+1;		//_CASEã§Numã‚‚ä¸€è‡´ã—ãŸå ´åˆã€ãã®æ¬¡ã®è¡Œã«æ¨™æº–ã‚’åˆã‚ã›ã¦NextLineã®ãƒ«ãƒ¼ãƒ—ã«è¿”ã™
 						break;
 					}
 
@@ -694,11 +694,11 @@ bool CTextBox::Solve(const char* string, CFlagSet *_flagset){
 
 
 			}else if (mystrcmp(chStock[i], stringend, 'l')){
-				NowStock = i+1;			//ˆê’v‚·‚éCASE‚ªŒ©‚Â‚©‚é‘O‚ÉEND‚ªŒ©‚Â‚©‚Á‚½ê‡A‚»‚ÌŸ‚Ìs‚É•W€‚ğ‡‚í‚¹‚ÄNextLine‚Ìƒ‹[ƒv‚É•Ô‚·
+				NowStock = i+1;			//ä¸€è‡´ã™ã‚‹CASEãŒè¦‹ã¤ã‹ã‚‹å‰ã«ENDãŒè¦‹ã¤ã‹ã£ãŸå ´åˆã€ãã®æ¬¡ã®è¡Œã«æ¨™æº–ã‚’åˆã‚ã›ã¦NextLineã®ãƒ«ãƒ¼ãƒ—ã«è¿”ã™
 				break;
 			}
 
-			if (i==StockLine-1){	//ÅŒã‚Ü‚Ås‚Á‚Ä‚à`_END‚ªŒ©‚Â‚©‚ç‚È‚©‚Á‚½
+			if (i==StockLine-1){	//æœ€å¾Œã¾ã§è¡Œã£ã¦ã‚‚ã€œ_ENDãŒè¦‹ã¤ã‹ã‚‰ãªã‹ã£ãŸæ™‚
 				ErrorDx("Error->TextBox.Solve->Not Found CloseCommand:%s", __FILE__, __LINE__, stringend);		
 				NowStock++;
 				_return = false;
@@ -715,7 +715,7 @@ bool CTextBox::Solve(const char* string, CFlagSet *_flagset){
 				break;
 			}
 
-			if (i==StockLine-1){	//ÅŒã‚Ü‚Ås‚Á‚Ä‚à`_END‚ªŒ©‚Â‚©‚ç‚È‚©‚Á‚½
+			if (i==StockLine-1){	//æœ€å¾Œã¾ã§è¡Œã£ã¦ã‚‚ã€œ_ENDãŒè¦‹ã¤ã‹ã‚‰ãªã‹ã£ãŸæ™‚
 				ErrorDx("Error->TextBox.Solve->Not Found CloseCommand:%s", __FILE__, __LINE__, stringend);		
 				NowStock++;
 				_return = false;
@@ -732,7 +732,7 @@ bool CTextBox::Solve(const char* string, CFlagSet *_flagset){
 		NowStock++;
 	}
 
-	//”z—ñ‚Ìdelete‚ª‚¤‚Ü‚­‚¢‚©‚È‚¢BƒRƒƒ“ƒg‰»‚ÅƒGƒ‰[‚Í‚Å‚È‚­‚È‚Á‚½‚ªA“KØ‚Édelete‚Å‚«‚Ä‚¢‚é‚Ì‚©‚Í‹^–âB‰ğŒˆ‚µ‚È‚¢ê‡‚Ínew‚ğg‚í‚È‚¢•û–@‚ÉØ‚è‘Ö‚¦‚é‚×‚«—140121
+	//é…åˆ—ã®deleteãŒã†ã¾ãã„ã‹ãªã„ã€‚ã‚³ãƒ¡ãƒ³ãƒˆåŒ–ã§ã‚¨ãƒ©ãƒ¼ã¯ã§ãªããªã£ãŸãŒã€é©åˆ‡ã«deleteã§ãã¦ã„ã‚‹ã®ã‹ã¯ç–‘å•ã€‚è§£æ±ºã—ãªã„å ´åˆã¯newã‚’ä½¿ã‚ãªã„æ–¹æ³•ã«åˆ‡ã‚Šæ›¿ãˆã‚‹ã¹ãï¼ 140121
 	delete [] command[0];
 	delete [] command[1];
 	delete [] command;
@@ -748,8 +748,8 @@ bool CTextBox::Solve(const char* string, CFlagSet *_flagset){
 
 void CTextBox::ArgCut(const char* _string, char** &command, char** &arg, int _argnum){
 
-	char *cntx;		//strtok_s—p‚ÌG—p
-	char* string_copy = new char[strlen(_string)+1];		//delete‚µ‚Ä‚È‚¢‚ª•Ô’l‚É—˜—p‚µ‚Ä‚¢‚é‚ç‚µ‚­‚±‚ÌƒvƒƒV[ƒWƒƒ‚Ådelete‚·‚é‚ÆƒGƒ‰[‚ªo‚½  ©’¼‚Á‚Ä‚é
+	char *cntx;		//strtok_sç”¨ã®é›‘ç”¨
+	char* string_copy = new char[strlen(_string)+1];		//deleteã—ã¦ãªã„ãŒè¿”å€¤ã«åˆ©ç”¨ã—ã¦ã„ã‚‹ã‚‰ã—ãã“ã®ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ã§deleteã™ã‚‹ã¨ã‚¨ãƒ©ãƒ¼ãŒå‡ºãŸ  â†ç›´ã£ã¦ã‚‹
 	mystrcpy(string_copy, _string);
 	char* tmp;
 

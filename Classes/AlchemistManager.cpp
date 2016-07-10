@@ -9,7 +9,7 @@ void CAlchemistManager::Init() {
 
 }
 
-//ŠJ“X
+//é–‹åº—
 bool CAlchemistManager::OpenShop(int _index) {
 
 	if (ShopBank.find(_index) != ShopBank.end()) {
@@ -99,19 +99,19 @@ void CAlchemistMenu::Draw() {
 	DrawBox(rect, GetColor(30, 20, 80), true);
 	DrawBox(rectMaterial, GetColor(80, 20, 30), true);
 
-	//¤•iƒŠƒXƒg
+	//å•†å“ãƒªã‚¹ãƒˆ
 	std::string strNum;
 	for (unsigned int i = 0; i < ItemList.size(); i++) {
 		int top = rect.Top + 20 + i*(2 + GetFontSize());
 
 		if (Cursor == i && !IsConfirm) {
-			DrawString(rect.Left + 20, top, "|>", WHITE, BLACK);	//ƒJ[ƒ\ƒ‹
+			DrawString(rect.Left + 20, top, "|>", WHITE, BLACK);	//ã‚«ãƒ¼ã‚½ãƒ«
 		}
 
-		//‘•”õƒAƒCƒeƒ€–¼
+		//è£…å‚™ã‚¢ã‚¤ãƒ†ãƒ å
 		DrawString(rect.Left + 50, top, ItemList[i]->Name.c_str(), WHITE, BLACK);
 
-		//Œ»İ‚ÌŠ”‚ÆŠãŒÀ
+		//ç¾åœ¨ã®æ‰€æŒæ•°ã¨æ‰€æŒä¸Šé™
 		strNum = std::to_string(ItemManager->GetPlayerItemNum(ItemList[i]->Name)) + "/" + std::to_string(ItemList[i]->OwnLimit);
 		DrawString(rect.Left + 220, top, strNum.c_str(), WHITE, BLACK);
 	}
@@ -121,21 +121,21 @@ void CAlchemistMenu::Draw() {
 		auto tmpPair = CurrentMaterialSet[Cursor][i];
 		int top = rectMaterial.Top + 20 + i*(2 + GetFontSize());
 	
-		//˜B¬•K—v‘fŞ–¼
+		//éŒ¬æˆå¿…è¦ç´ æå
 		DrawString(rectMaterial.Left + 20, top, tmpPair.first.c_str(), WHITE, BLACK);
 
-		//˜B¬•K—v‘fŞŒÂ”‚ÆŠŒÂ”B•s‘«‚È‚çÔ•¶š
+		//éŒ¬æˆå¿…è¦ç´ æå€‹æ•°ã¨æ‰€æŒå€‹æ•°ã€‚ä¸è¶³ãªã‚‰èµ¤æ–‡å­—
 		strNum = std::to_string(ItemManager->GetPlayerItemNum(tmpPair.first)) + "/"+ std::to_string(tmpPair.second);
 		int color = (tmpPair.second > ItemManager->GetPlayerItemNum(tmpPair.first) ? RED : WHITE);
 		DrawString(rectMaterial.Right - 60, top, strNum.c_str(), color, BLACK);
 
 	}
 
-	//Œˆ’è
+	//æ±ºå®š
 	int top = rect.Bottom - 40;
 	if (IsConfirm) {
 		DrawString(rect.Left + 30, top, "|>", WHITE, BLACK);
 	}
-	DrawString(rect.Left + 60, top, "Œˆ’è", (IsConfirm ? WHITE : GRAY), BLACK);
+	DrawString(rect.Left + 60, top, "æ±ºå®š", (IsConfirm ? WHITE : GRAY), BLACK);
 	
 }

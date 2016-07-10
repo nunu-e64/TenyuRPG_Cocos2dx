@@ -40,11 +40,11 @@ void CTrickManager::Clear(){
 	TrickBank.clear();
 	TrickBankLock = false;
 			
-	//ƒCƒeƒŒ[ƒ^g‚Á‚Ä‚·‚×‚Ädelete‚µ‚È‚­‚¿‚á‚¢‚¯‚È‚¢ 
+	//ã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿ä½¿ã£ã¦ã™ã¹ã¦deleteã—ãªãã¡ã‚ƒã„ã‘ãªã„ 
 	std::vector <const CTrickDamageEffect*>::iterator it = TrickDamageEffectBank.begin();
 	while(it!=TrickDamageEffectBank.end()){
 		delete (*it);	
-		++it;	//ƒCƒeƒŒ[ƒ^‚Ìw‚·æ‚ğ–³Œø‰»‚µ‚Ä‚¢‚é‚ªvector‚©‚çerase‚µ‚½‚í‚¯‚Å‚Í‚È‚¢B‚½‚¾‚µ•Ûá‚³‚ê‚Ä‚¢‚È‚¢‚½‚ßŠëŒ¯‚Å‚Í‚ ‚éB
+		++it;	//ã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿ã®æŒ‡ã™å…ˆã‚’ç„¡åŠ¹åŒ–ã—ã¦ã„ã‚‹ãŒvectorã‹ã‚‰eraseã—ãŸã‚ã‘ã§ã¯ãªã„ã€‚ãŸã ã—ä¿éšœã•ã‚Œã¦ã„ãªã„ãŸã‚å±é™ºã§ã¯ã‚ã‚‹ã€‚
 	}
 	TrickDamageEffectBank.clear();
 

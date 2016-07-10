@@ -1,19 +1,19 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–hŽ~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//	//pragmaonce‚Æ“¯‚¶ˆÓ–¡‚¾‚ª‚±‚¿‚ç‚ÍƒRƒ“ƒpƒCƒ‰‚ÉˆË‘¶‚µ‚È‚¢
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//	//pragmaonceã¨åŒã˜æ„å‘³ã ãŒã“ã¡ã‚‰ã¯ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ã«ä¾å­˜ã—ãªã„
 #ifndef MRTLIB_H							////
 #define MRTLIB_H							////
 ////////////////////////////////////////////////
 
-#include "DxLib.h"	//DXƒ‰ƒCƒuƒ‰ƒŠ‚ÌƒCƒ“ƒNƒ‹[ƒhi¦C:\ƒvƒƒWƒFƒNƒg‚É’Ç‰Á‚·‚×‚«ƒtƒ@ƒCƒ‹_VC—pj
-//#include "math.h"	//‚Ù‚©‚É•K—v‚Èƒwƒbƒ_‚ª‚ ‚ê‚ÎŽž“±“ü‚µ‚Ä‚­‚¾‚³‚¢
+#include "DxLib.h"	//DXãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ï¼ˆâ€»C:\ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã«è¿½åŠ ã™ã¹ããƒ•ã‚¡ã‚¤ãƒ«_VCç”¨ï¼‰
+//#include "math.h"	//ã»ã‹ã«å¿…è¦ãªãƒ˜ãƒƒãƒ€ãŒã‚ã‚Œã°éšæ™‚å°Žå…¥ã—ã¦ãã ã•ã„
 //#include ...
 
-namespace mrtlib{		//ŠÖ”–¼‚ÌÕ“Ë‚ð”ð‚¯‚é‚½‚ß–¼‘O‹óŠÔ‚ÅˆÍ‚¤
+namespace mrtlib{		//é–¢æ•°åã®è¡çªã‚’é¿ã‘ã‚‹ãŸã‚åå‰ç©ºé–“ã§å›²ã†
 
 
 //////////////////////////////////////////////////////////////////////////
-//mrtLibcƒTƒuƒvƒƒOƒ‰ƒ}‚ªŽ©•ª‚ÌƒR[ƒh“à‚Å‹¤’Ê‚µ‚ÄŽg‚¤Ž©ìŠÖ”‚Ì’u‚«êŠ
+//mrtLibâ€¦ã‚µãƒ–ãƒ—ãƒ­ã‚°ãƒ©ãƒžãŒè‡ªåˆ†ã®ã‚³ãƒ¼ãƒ‰å†…ã§å…±é€šã—ã¦ä½¿ã†è‡ªä½œé–¢æ•°ã®ç½®ãå ´æ‰€
 //
-//  ‚±‚±‚É‘‚­
+//  ã“ã“ã«æ›¸ã
 //		void sample();
 //		void sample1();
 //
@@ -22,6 +22,6 @@ namespace mrtlib{		//ŠÖ”–¼‚ÌÕ“Ë‚ð”ð‚¯‚é‚½‚ß–¼‘O‹óŠÔ‚ÅˆÍ‚¤
 
 
 }
-////‘½dƒCƒ“ƒNƒ‹[ƒh–hŽ~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

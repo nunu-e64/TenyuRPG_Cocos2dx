@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–hŽ~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//	//pragmaonce‚Æ“¯‚¶ˆÓ–¡‚¾‚ª‚±‚¿‚ç‚ÍƒRƒ“ƒpƒCƒ‰‚ÉˆË‘¶‚µ‚È‚¢
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//	//pragmaonceã¨åŒã˜æ„å‘³ã ãŒã“ã¡ã‚‰ã¯ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ã«ä¾å­˜ã—ãªã„
 #ifndef ALCHEMISTMANAGER_H						////
 #define ALCHEMISTMANAGER_H						////
 ////////////////////////////////////////////////
@@ -33,7 +33,7 @@ public:
 private:
 	CAlchemistMenu AlchemistMenuInstance;
 
-	//’Pˆê«‚ð•ÛØ(Singleton)////////////////////////////////
+	//å˜ä¸€æ€§ã‚’ä¿è¨¼(Singleton)////////////////////////////////
 	CAlchemistManager() {
 		CONSTRUCTED;
 	}
@@ -44,6 +44,6 @@ private:
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–hŽ~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

@@ -1,32 +1,32 @@
 #include "Mrt.h"
 
 
-using namespace mrtlib;		//usingƒfƒBƒŒƒNƒeƒBƒu‚ğg‚¤‚©‚Ç‚¤‚©‚Í‚¨”C‚¹‚µ‚Ü‚·
+using namespace mrtlib;		//usingãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–ã‚’ä½¿ã†ã‹ã©ã†ã‹ã¯ãŠä»»ã›ã—ã¾ã™
 
-namespace mrt{		//using‚Æ‚ÌˆÊ’uŠÖŒW‚ª‚±‚ê‚Å‚ ‚Á‚Ä‚é‚Ì‚©‚Í•s–¾
+namespace mrt{		//usingã¨ã®ä½ç½®é–¢ä¿‚ãŒã“ã‚Œã§ã‚ã£ã¦ã‚‹ã®ã‹ã¯ä¸æ˜
 
-void Opening(){	//•Ô‚è’lF‚È‚µ ˆø”F‚È‚µ
+void Opening(){	//è¿”ã‚Šå€¤ï¼šãªã— å¼•æ•°ï¼šãªã—
 		
 	/*/////////////////////////////////////////////////////////
-	u‚Í‚¶‚ß‚©‚çvƒvƒŒƒC‚·‚é‚Æ‚«‚¾‚¯—¬‚ê‚éƒI[ƒvƒjƒ“ƒO‰‰oB
+	ã€Œã¯ã˜ã‚ã‹ã‚‰ã€ãƒ—ãƒ¬ã‚¤ã™ã‚‹ã¨ãã ã‘æµã‚Œã‚‹ã‚ªãƒ¼ãƒ—ãƒ‹ãƒ³ã‚°æ¼”å‡ºã€‚
 	*//////////////////////////////////////////////////////////
 
 	int timecount = 0;
 	int scene = 0;
 	int fontsize = 14;
-	char* optext[] = {"•¨Œê‚Ì•‘‘ä‚Í“‡‘ƒ\ƒ‰ƒŠƒVƒA",
-		"‚±‚Ì‘‚É‚Í‚©‚Â‚Ä‘¾—z‚Ì_‚Æ¯‚Ì_‚ğ•ò‚é“ñ_‹³‚ª‘¶İ‚µ",
-		"MÒ‚Ì’†‚É‚ÍM‹Â‚ğ•ù‚°‚½_‚©‚ç–‚—Í‚ğö‚©‚é‚à‚Ì‚à‚¢‚½",
-		"’‹‚Ì‘¾—z‚©‚ç—Í‚ğö‚©‚ég‘¾—z‚Ì–‚–@g‚¢h‚Æ",
-		"–é‚Ì¯‚©‚ç—Í‚ğö‚©‚ég¯‚Ì–‚–@g‚¢h‚Å‚ ‚é",
-		"‚µ‚©‚µA‹}‘¬‚È”­’B‚ªi‚Ş“ss•”‚Å‚ÍM‹Â‚Í”–‚ê",
-		"ƒ\ƒ‰ƒŠƒVƒA‰¤‚É‚æ‚Á‚ÄV‚½‚È@‹³‚ª‹»‚³‚ê‚é",
-		"’eˆ³‚³‚ê‚½‹Œ‹³“k‚½‚¿‚ÍAŠi·‚É‚ ‚¦‚®lX‚Æè‚ğ‘g‚İ”½—‚Ì˜T‰Œ‚ğã‚°‚½",
-		"‚»‚ê‚©‚ç30”NA‚±‚Ì‘‚É‚Í¡‚È‚¨‘ˆ—‚Ì‰Îí‚ª‚­‚·‚Ô‚è‘±‚¯‚Ä‚¢‚é",
-		"‚»‚µ‚Ä¡AƒŒƒWƒXƒ^ƒ“ƒX‚ÉV‚½‚ÈƒŠ[ƒ_[‚ª’a¶‚·‚é",
-		"‚±‚ê‚ÍA’·‚«‚É‚í‚½‚é•´‘ˆ‚ÉV‚½‚È—ğj‚ğ‚ŞAá‚«ƒŠ[ƒ_[‚Ì‰p—Yæ‚Å‚ ‚é",
+	char* optext[] = {"ç‰©èªã®èˆå°ã¯å³¶å›½ã‚½ãƒ©ãƒªã‚·ã‚¢",
+		"ã“ã®å›½ã«ã¯ã‹ã¤ã¦å¤ªé™½ã®ç¥ã¨æ˜Ÿã®ç¥ã‚’å¥‰ã‚‹äºŒç¥æ•™ãŒå­˜åœ¨ã—",
+		"ä¿¡è€…ã®ä¸­ã«ã¯ä¿¡ä»°ã‚’æ§ã’ãŸç¥ã‹ã‚‰é­”åŠ›ã‚’æˆã‹ã‚‹ã‚‚ã®ã‚‚ã„ãŸ",
+		"æ˜¼ã®å¤ªé™½ã‹ã‚‰åŠ›ã‚’æˆã‹ã‚‹â€œå¤ªé™½ã®é­”æ³•ä½¿ã„â€ã¨",
+		"å¤œã®æ˜Ÿã‹ã‚‰åŠ›ã‚’æˆã‹ã‚‹â€œæ˜Ÿã®é­”æ³•ä½¿ã„â€ã§ã‚ã‚‹",
+		"ã—ã‹ã—ã€æ€¥é€Ÿãªç™ºé”ãŒé€²ã‚€éƒ½å¸‚éƒ¨ã§ã¯ä¿¡ä»°ã¯è–„ã‚Œ",
+		"ã‚½ãƒ©ãƒªã‚·ã‚¢ç‹ã«ã‚ˆã£ã¦æ–°ãŸãªå®—æ•™ãŒèˆˆã•ã‚Œã‚‹",
+		"å¼¾åœ§ã•ã‚ŒãŸæ—§æ•™å¾’ãŸã¡ã¯ã€æ ¼å·®ã«ã‚ãˆãäººã€…ã¨æ‰‹ã‚’çµ„ã¿åä¹±ã®ç‹¼ç…™ã‚’ä¸Šã’ãŸ",
+		"ãã‚Œã‹ã‚‰30å¹´ã€ã“ã®å›½ã«ã¯ä»ŠãªãŠäº‰ä¹±ã®ç«ç¨®ãŒãã™ã¶ã‚Šç¶šã‘ã¦ã„ã‚‹",
+		"ãã—ã¦ä»Šã€ãƒ¬ã‚¸ã‚¹ã‚¿ãƒ³ã‚¹ã«æ–°ãŸãªãƒªãƒ¼ãƒ€ãƒ¼ãŒèª•ç”Ÿã™ã‚‹",
+		"ã“ã‚Œã¯ã€é•·ãã«ã‚ãŸã‚‹ç´›äº‰ã«æ–°ãŸãªæ­´å²ã‚’åˆ»ã‚€ã€è‹¥ããƒªãƒ¼ãƒ€ãƒ¼ã®è‹±é›„è­šã§ã‚ã‚‹",
 		" ",
-		"i‚±‚±‚Ü‚Å‚·‚×‚Ä‰Rj"};
+		"ï¼ˆã“ã“ã¾ã§ã™ã¹ã¦å˜˜ï¼‰"};
 	
 	SetFontSize(fontsize);
 	while( BasicLoop() && !CheckHitKeyDown(KEY_INPUT_ESCAPE) && !CheckHitKeyDown(KEY_INPUT_OK) && scene != -1){
@@ -42,14 +42,14 @@ void Opening(){	//•Ô‚è’lF‚È‚µ ˆø”F‚È‚µ
 			break;
 		}
 		
-		//¶Ctrl‚Å4”{‘¬
+		//å·¦Ctrlã§4å€é€Ÿ
 		if (CheckHitKey(KEY_INPUT_LCONTROL)){ timecount+=4; }else{ timecount++;}
 	}
 }
 
-int Title(){	//•Ô‚è’lFtitle_tag  ˆø”F‚È‚µ	
+int Title(){	//è¿”ã‚Šå€¤ï¼štitle_tag  å¼•æ•°ï¼šãªã—	
 	/*///////////////////////////////////////
-	‰º‹L‚ğQl‚ÉZƒL[‚ğ‰Ÿ‚µ‚½‚Æ‚«‚É“KØ‚È’l‚ğ•Ô‚µ‚Ä‚­‚¾‚³‚¢
+	ä¸‹è¨˜ã‚’å‚è€ƒã«Zã‚­ãƒ¼ã‚’æŠ¼ã—ãŸã¨ãã«é©åˆ‡ãªå€¤ã‚’è¿”ã—ã¦ãã ã•ã„
 	enum title_tag{
 		TITLE_LOADSTART,
 		TITLE_FIRSTSTART,
@@ -74,35 +74,35 @@ int Title(){	//•Ô‚è’lFtitle_tag  ˆø”F‚È‚µ
 
 		timecount++;
 
-		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*1/10), "- “V —C -" , WHITE );
-		//DEBUG:ƒQ[ƒ€ƒƒjƒ…[¥¥¥ƒfƒoƒbƒO—p‚Éˆê‹t“]
-		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*5/10), "‚Í‚¶‚ß‚©‚ç", WHITE);
-		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*6/10), "‚Â‚Ã‚«‚©‚ç", WHITE);
-		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*7/10), "@İ’è@@", WHITE);
-		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*8/10), "ƒQ[ƒ€I—¹", WHITE);
+		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*1/10), "- å¤© ä½‘ -" , WHITE );
+		//DEBUG:ã‚²ãƒ¼ãƒ ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ»ãƒ»ãƒ»ãƒ‡ãƒãƒƒã‚°ç”¨ã«ä¸€æ™‚é€†è»¢
+		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*5/10), "ã¯ã˜ã‚ã‹ã‚‰", WHITE);
+		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*6/10), "ã¤ã¥ãã‹ã‚‰", WHITE);
+		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*7/10), "ã€€è¨­å®šã€€ã€€", WHITE);
+		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*8/10), "ã‚²ãƒ¼ãƒ çµ‚äº†", WHITE);
 		
-		if (int(timecount/15)%2) DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*(target+5)/10), "|>@@@@@@@", WHITE);
+		if (int(timecount/15)%2) DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*(target+5)/10), "|>ã€€ã€€ã€€ã€€ã€€ã€€ã€€", WHITE);
 	}
 
 	return TITLE_GAMEEND;
 }
 
 
-int ChooseData(playdata_tag* _playdata){	//•Ô‚è’lFƒ[ƒh‚·‚éƒf[ƒ^”Ô†iƒGƒ‰[F-1[backtotitle]j  ˆø”FƒZ[ƒuƒf[ƒ^”z—ñ
+int ChooseData(playdata_tag* _playdata){	//è¿”ã‚Šå€¤ï¼šãƒ­ãƒ¼ãƒ‰ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ç•ªå·ï¼ˆã‚¨ãƒ©ãƒ¼ï¼š-1[backtotitle]ï¼‰  å¼•æ•°ï¼šã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿é…åˆ—
 	
 	/*///////////////////////////////////////
-	Exist‚ªtrue‚ÌƒZ[ƒuƒf[ƒ^‚Ì‚İ•\¦‚µ‚Ä‚­‚¾‚³‚¢Biplaydata_tag‚Ìd—l‚É‚Â‚¢‚Ä‚ÍDefine.hQÆj
-	ƒZ[ƒuƒf[ƒ^‚ÍPLAYDATA_NUMŒÂ‚ ‚è‚Ü‚·Bi_playdata[0]~_playdata[PLAYDATA_NUM-1]j
+	ExistãŒtrueã®ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ã®ã¿è¡¨ç¤ºã—ã¦ãã ã•ã„ã€‚ï¼ˆplaydata_tagã®ä»•æ§˜ã«ã¤ã„ã¦ã¯Define.hå‚ç…§ï¼‰
+	ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ã¯PLAYDATA_NUMå€‹ã‚ã‚Šã¾ã™ã€‚ï¼ˆ_playdata[0]~_playdata[PLAYDATA_NUM-1]ï¼‰
 	////////////////////////////////////////*/
 
 	int dnum = 0;
 	char tmpstring[256];
 
 	while( BasicLoop()){
-		sprintf_s(tmpstring, "ƒf[ƒ^”Ô†F%d ƒf[ƒ^–¼F%s", dnum, (_playdata[dnum].Exist?_playdata[dnum].DataName:"No Data")); 
-		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*1/4), "ƒ[ƒh‚·‚éƒf[ƒ^‚ğ‘I‘ğ", WHITE);
+		sprintf_s(tmpstring, "ãƒ‡ãƒ¼ã‚¿ç•ªå·ï¼š%d ãƒ‡ãƒ¼ã‚¿åï¼š%s", dnum, (_playdata[dnum].Exist?_playdata[dnum].DataName:"No Data")); 
+		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*1/4), "ãƒ­ãƒ¼ãƒ‰ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã‚’é¸æŠ", WHITE);
 		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*2/4), tmpstring, (_playdata[dnum].Exist? WHITE:GRAY));
-		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*3/4), "ª«:ƒf[ƒ^‘I‘ğ Z:Œˆ’è Esc:ƒ^ƒCƒgƒ‹‚É–ß‚é", WHITE);
+		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*3/4), "â†‘â†“:ãƒ‡ãƒ¼ã‚¿é¸æŠ Z:æ±ºå®š Esc:ã‚¿ã‚¤ãƒˆãƒ«ã«æˆ»ã‚‹", WHITE);
 
 		if (CheckHitKeyDown (KEY_INPUT_DOWN)){
 			dnum = mod(dnum+1, PLAYDATA_NUM);
@@ -124,11 +124,11 @@ int ChooseData(playdata_tag* _playdata){	//•Ô‚è’lFƒ[ƒh‚·‚éƒf[ƒ^”Ô†iƒGƒ‰[
 	return -1;
 }
 
-bool Setting(){	//•Ô‚è’lcİ’è•ÏX(true) İ’èI—¹(false)  ˆø”c‚¢‚Ü‚Ì‚Æ‚±‚ë‚È‚µ
+bool Setting(){	//è¿”ã‚Šå€¤â€¦è¨­å®šå¤‰æ›´(true) è¨­å®šçµ‚äº†(false)  å¼•æ•°â€¦ã„ã¾ã®ã¨ã“ã‚ãªã—
 	
 	/*///////////////////////////////////////
-		Ú×–¢’èBd—l‚Í‚±‚ê‚©‚ç‹l‚ß‚éB
-		‰¹—Êã‚°‰º‚°‚­‚ç‚¢‚È‚ç‚±‚ÌŠÖ”“à‚Åˆ—‚µ‚Ä‚à‚ç‚Á‚Ä‚à‚¢‚¢‚©‚àcH
+		è©³ç´°æœªå®šã€‚ä»•æ§˜ã¯ã“ã‚Œã‹ã‚‰è©°ã‚ã‚‹ã€‚
+		éŸ³é‡ä¸Šã’ä¸‹ã’ãã‚‰ã„ãªã‚‰ã“ã®é–¢æ•°å†…ã§å‡¦ç†ã—ã¦ã‚‚ã‚‰ã£ã¦ã‚‚ã„ã„ã‹ã‚‚â€¦ï¼Ÿ
 	////////////////////////////////////////*/
 
 	int fontsize = 10;
@@ -136,7 +136,7 @@ bool Setting(){	//•Ô‚è’lcİ’è•ÏX(true) İ’èI—¹(false)  ˆø”c‚¢‚Ü‚Ì‚Æ‚±‚ë‚È‚µ
 	SetFontSize(fontsize);
 	while( BasicLoop() && !CheckHitKeyDown(KEY_INPUT_ESCAPE)){
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);	
-		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*2/5), "Šeíİ’èi‰¹—Ê’²®AƒeƒLƒXƒgƒXƒs[ƒh’²®AƒfƒUƒCƒ“•ÏX(‚Å‚«‚ê‚Î)A‚ ‚Æ‰½Hj‚ğ‚Å‚«‚é‚æ‚¤‚É‚·‚éBEsc‚ÅI—¹B", WHITE);
+		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*2/5), "å„ç¨®è¨­å®šï¼ˆéŸ³é‡èª¿æ•´ã€ãƒ†ã‚­ã‚¹ãƒˆã‚¹ãƒ”ãƒ¼ãƒ‰èª¿æ•´ã€ãƒ‡ã‚¶ã‚¤ãƒ³å¤‰æ›´(ã§ãã‚Œã°)ã€ã‚ã¨ä½•ï¼Ÿï¼‰ã‚’ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹ã€‚Escã§çµ‚äº†ã€‚", WHITE);
 	}
 
 	return false;
@@ -144,4 +144,4 @@ bool Setting(){	//•Ô‚è’lcİ’è•ÏX(true) İ’èI—¹(false)  ˆø”c‚¢‚Ü‚Ì‚Æ‚±‚ë‚È‚µ
 }
 
 
-}	//namespace•Â‚¶‚é
+}	//namespaceé–‰ã˜ã‚‹

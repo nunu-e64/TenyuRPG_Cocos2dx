@@ -1,23 +1,23 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef DEFINE_H							////
 #define DEFINE_H							////
 ////////////////////////////////////////////////
 
-//#define PRODUCT_MODE  //»•i”Å
+//#define PRODUCT_MODE  //è£½å“ç‰ˆ
 	#ifdef PRODUCT_MODE
 		#define MYLOG_DISABLE
-		#define WARNINGDX_DISABLE	//ƒ}ƒNƒ‚Ì—LŒø‰»/–³Œø‰»
-		#define DEBUGDX_DISABLE	//ƒ}ƒNƒ‚Ì—LŒø‰»/–³Œø‰»
-		#define CHECK_TIME_DISABLE	//ƒ}ƒNƒ‚Ì—LŒø‰»/–³Œø‰»
-		#define MEMORY_CHECK_DISABLE //ƒ}ƒNƒ‚Ì—LŒø‰»/–³Œø‰»
+		#define WARNINGDX_DISABLE	//ãƒã‚¯ãƒ­ã®æœ‰åŠ¹åŒ–/ç„¡åŠ¹åŒ–
+		#define DEBUGDX_DISABLE	//ãƒã‚¯ãƒ­ã®æœ‰åŠ¹åŒ–/ç„¡åŠ¹åŒ–
+		#define CHECK_TIME_DISABLE	//ãƒã‚¯ãƒ­ã®æœ‰åŠ¹åŒ–/ç„¡åŠ¹åŒ–
+		#define MEMORY_CHECK_DISABLE //ãƒã‚¯ãƒ­ã®æœ‰åŠ¹åŒ–/ç„¡åŠ¹åŒ–
 		#define FPS_DISABLE
 	#endif
 
-#define DEBUG_MODE	//ƒvƒƒOƒ‰ƒ}ƒfƒoƒbƒO”Å i‘¼‚Ìƒƒ“ƒo[‚É“n‚·‚É‚ÍƒRƒƒ“ƒgƒAƒEƒgj
+#define DEBUG_MODE	//ãƒ—ãƒ­ã‚°ãƒ©ãƒãƒ‡ãƒãƒƒã‚°ç‰ˆ ï¼ˆä»–ã®ãƒ¡ãƒ³ãƒãƒ¼ã«æ¸¡ã™æ™‚ã«ã¯ã‚³ãƒ¡ãƒ³ãƒˆã‚¢ã‚¦ãƒˆï¼‰
 	#ifndef DEBUG_MODE
-		#define DEBUGDX_DISABLE	//ƒ}ƒNƒ‚Ì—LŒø‰»/–³Œø‰»
-		#define CHECK_TIME_DISABLE	//ƒ}ƒNƒ‚Ì—LŒø‰»/–³Œø‰»
-		#define MEMORY_CHECK_DISABLE //ƒ}ƒNƒ‚Ì—LŒø‰»/–³Œø‰»
+		#define DEBUGDX_DISABLE	//ãƒã‚¯ãƒ­ã®æœ‰åŠ¹åŒ–/ç„¡åŠ¹åŒ–
+		#define CHECK_TIME_DISABLE	//ãƒã‚¯ãƒ­ã®æœ‰åŠ¹åŒ–/ç„¡åŠ¹åŒ–
+		#define MEMORY_CHECK_DISABLE //ãƒã‚¯ãƒ­ã®æœ‰åŠ¹åŒ–/ç„¡åŠ¹åŒ–
 	#endif
 
 #include "Dxlib.h"
@@ -25,7 +25,7 @@
 #include <map>
 #include <string>
 
-#define MEMORY_CHECK	//ƒƒ‚ƒŠ‚Ì‰ğ•ú‚µ–Y‚ê‚ğƒ`ƒFƒbƒNBDebugƒrƒ‹ƒh‚Åg—p‰Â”\B
+#define MEMORY_CHECK	//ãƒ¡ãƒ¢ãƒªã®è§£æ”¾ã—å¿˜ã‚Œã‚’ãƒã‚§ãƒƒã‚¯ã€‚Debugãƒ“ãƒ«ãƒ‰ã§ä½¿ç”¨å¯èƒ½ã€‚
 	#if defined(MEMORY_CHECK) && !defined(MEMORY_CHECK_DISABLE)
 		#define _CRTDBG_MAP_ALLOC
 		#include <stdlib.h>
@@ -36,7 +36,7 @@
 #include "nunuLib.h"
 //using namespace nunuLib;
 
-//"Mrt.h"‚ÅDefine.h‚ğƒCƒ“ƒNƒ‹[ƒh‚µ‚Ä‚¢‚é‚Ì‚ÅMrt.h‚Íg‚¤‚Æ‚±‚Æ‚Å”CˆÓ‚ÉƒCƒ“ƒNƒ‹[ƒh
+//"Mrt.h"ã§Define.hã‚’ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã—ã¦ã„ã‚‹ã®ã§Mrt.hã¯ä½¿ã†ã¨ã“ã¨ã§ä»»æ„ã«ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰
 
 
 ////////////////////////////////////////////////
@@ -58,13 +58,13 @@
 #define DESTRUCTED //myLog("MyClassLog", "%s.Destructed", typeid(*this).name())
 
 
-//í“¬ŠÖ˜A///////////////////////////////////////////////
+//æˆ¦é—˜é–¢é€£///////////////////////////////////////////////
 const int MAX_PLAYER_NUM = 3;
 const int MAX_ENEMY_NUM = 3;
 const int MAX_MAGIC_COUNT = 15;
 const int MAX_ATTENTION = 10;
 
-const int DEFFENCE_MC = 1;	//‘‚¦‚Ä‚«‚½‚ç•K—v‚É‰‚¶‚Äenum‚É‚Ü‚Æ‚ß‚é
+const int DEFFENCE_MC = 1;	//å¢—ãˆã¦ããŸã‚‰å¿…è¦ã«å¿œã˜ã¦enumã«ã¾ã¨ã‚ã‚‹
 const double MAGIC_DEFFENCE_RATE = 0.1;
 const double MAX_MAGIC_COUNTER_DAMAGE_RATE = 0.3;
 const int PRAY_RECOVERY_MC = 5;
@@ -75,21 +75,21 @@ const int PRAY_TIME = 100;
 const int WAIT_TIME = 50;
 /////////////////////////////////////////////////////////
 
-//rpgƒtƒ@ƒCƒ‹–¼“™///////////////////////////////////////////
-const char FILE_B_SYSTEM[] = "tenyu_data/b_system.rpg";	//í“¬‘S”ÊiƒGƒ“ƒJƒEƒ“ƒgE‹ZE“G–¡•ûƒXƒe[ƒ^ƒX‚È‚ÇjŠÖ‚·‚éƒeƒLƒXƒgƒtƒ@ƒCƒ‹
-const char FILE_SYSTEM[] = "tenyu_data/system.rpg";		//ƒVƒXƒeƒ€‘S”Ê‚ÉŠÖ‚·‚é“Ç‚İ‚İƒeƒLƒXƒgƒtƒ@ƒCƒ‹
-const char FILE_SCENARIO[] = "tenyu_data/scenario.rpg";	//ƒVƒiƒŠƒI‹y‚ÑƒCƒxƒ“ƒg‚ÉŠÖ‚·‚éƒeƒLƒXƒgƒtƒ@ƒCƒ‹
-const char FILE_EVENT[] = "tenyu_data/event.rpg";		//ƒIƒŠƒWƒiƒ‹ƒCƒxƒ“ƒg‚ÉŠÖ‚·‚éƒeƒLƒXƒgƒtƒ@ƒCƒ‹
-const char DIR_SAVE[] = "tenyu_data/save";				//ƒZ[ƒuƒf[ƒ^‚ğ•Û‘¶‚·‚éƒfƒBƒŒƒNƒgƒŠ
-const char FILE_DATANAME[] = "tenyu_data/save/dataname.rpg";	//ƒZ[ƒuƒf[ƒ^–¼‚ğŠÇ—‚·‚é‚½‚ß‚ÌƒeƒLƒXƒgƒtƒ@ƒCƒ‹
+//rpgãƒ•ã‚¡ã‚¤ãƒ«åç­‰///////////////////////////////////////////
+const char FILE_B_SYSTEM[] = "tenyu_data/b_system.rpg";	//æˆ¦é—˜å…¨èˆ¬ï¼ˆã‚¨ãƒ³ã‚«ã‚¦ãƒ³ãƒˆãƒ»æŠ€ãƒ»æ•µå‘³æ–¹ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãªã©ï¼‰é–¢ã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«
+const char FILE_SYSTEM[] = "tenyu_data/system.rpg";		//ã‚·ã‚¹ãƒ†ãƒ å…¨èˆ¬ã«é–¢ã™ã‚‹èª­ã¿è¾¼ã¿ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«
+const char FILE_SCENARIO[] = "tenyu_data/scenario.rpg";	//ã‚·ãƒŠãƒªã‚ªåŠã³ã‚¤ãƒ™ãƒ³ãƒˆã«é–¢ã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«
+const char FILE_EVENT[] = "tenyu_data/event.rpg";		//ã‚ªãƒªã‚¸ãƒŠãƒ«ã‚¤ãƒ™ãƒ³ãƒˆã«é–¢ã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«
+const char DIR_SAVE[] = "tenyu_data/save";				//ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã™ã‚‹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+const char FILE_DATANAME[] = "tenyu_data/save/dataname.rpg";	//ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿åã‚’ç®¡ç†ã™ã‚‹ãŸã‚ã®ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«
 
-//ƒVƒXƒeƒ€ƒOƒ‰ƒtƒBƒbƒN///////////////////////////////////
+//ã‚·ã‚¹ãƒ†ãƒ ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯///////////////////////////////////
 const char IMAGE_TALKNAMELABEL[3][64] ={ "tenyu_data/pic/sys/talkname00.bmp",
 									     "tenyu_data/pic/sys/talkname01.bmp",
-									     "tenyu_data/pic/sys/talkname02.bmp"};	//png‚Å‚ÍƒQ[ƒ€“Ç‚İ‚İ‚ÌTalkName.Init‚Å•s³ƒƒ‚ƒŠƒAƒNƒZƒXƒGƒ‰[‚ªo‚é‚½‚ß‘ÎÇ—Ã–@“I‚Ébmp‚ğg—p(150906)
+									     "tenyu_data/pic/sys/talkname02.bmp"};	//pngã§ã¯ã‚²ãƒ¼ãƒ èª­ã¿è¾¼ã¿æ™‚ã®TalkName.Initã§ä¸æ­£ãƒ¡ãƒ¢ãƒªã‚¢ã‚¯ã‚»ã‚¹ã‚¨ãƒ©ãƒ¼ãŒå‡ºã‚‹ãŸã‚å¯¾ç—‡ç™‚æ³•çš„ã«bmpã‚’ä½¿ç”¨(150906)
 
 
-//ƒVƒXƒeƒ€ƒOƒ‰ƒtƒBƒbƒN‚ÌPicKey///////////////////////
+//ã‚·ã‚¹ãƒ†ãƒ ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®PicKey///////////////////////
 const char TARGET_CURSOR[] = "TARGET_CURSOR";
 const char HP_BAR[]			= "HP_BAR";
 const char TIME_BAR1[]		= "TIME_BAR1";
@@ -105,23 +105,23 @@ const char LOG_WINDOW_BUTTON[] = "LOG_WINDOW_BUTTON";
 const char MAGIC_COUNTER[] = "MAGIC_COUNTER";
 const char STATUS_CHANGER[] = "STATUS_CHANGER";
 
-//ƒQ[ƒ€–¼///////////////////////////////////////////
+//ã‚²ãƒ¼ãƒ å///////////////////////////////////////////
 const char GAME_TITLE[] = "TENYU";
 const char VERSION[] = "ver0.00";
 
-//ƒQ[ƒ€“à//////////////////////////////////////////////////////
-const int PLAYDATA_NUM = 0;	//ƒZ[ƒuƒf[ƒ^‚Ì”(0~3)
+//ã‚²ãƒ¼ãƒ å†…//////////////////////////////////////////////////////
+const int PLAYDATA_NUM = 0;	//ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ã®æ•°(0~3)
 const int MAP_CHIP_SIZE = 32;
-const int MAP_SIZE = 128;		//³•ûŒ`‚ğ‘z’è
-const int MAP_DATA_SIZE = 256;	//ƒoƒCƒiƒŠƒf[ƒ^‚ÉŠi”[‚³‚ê‚Ä‚¢‚éƒf[ƒ^‚ÌÅ‘å’li256=0~255=8bit=1bytej
+const int MAP_SIZE = 128;		//æ­£æ–¹å½¢ã‚’æƒ³å®š
+const int MAP_DATA_SIZE = 256;	//ãƒã‚¤ãƒŠãƒªãƒ‡ãƒ¼ã‚¿ã«æ ¼ç´ã•ã‚Œã¦ã„ã‚‹ãƒ‡ãƒ¼ã‚¿ã®æœ€å¤§å€¤ï¼ˆ256=0~255=8bit=1byteï¼‰
 
 const char MAP_FILE_TYPE[] = ".Map2";
 const char EMAP_FILE_TYPE[] = ".eMap";
 
-const unsigned int MAP_MAX = 2;	//“Ç‚İ‚ß‚éƒ}ƒbƒv‚ÌÅ‘å”	//MAPƒf[ƒ^”z—ñ‚ÌˆêŸ‚Ì—v‘f”
-const int CHARA_PIC_NUM = 16;	//ƒLƒƒƒ‰‚ÌŠG‚ªˆê–‡‰½ƒRƒ}‚È‚Ì‚©
+const unsigned int MAP_MAX = 2;	//èª­ã¿è¾¼ã‚ã‚‹ãƒãƒƒãƒ—ã®æœ€å¤§æ•°	//MAPãƒ‡ãƒ¼ã‚¿é…åˆ—ã®ä¸€æ¬¡ã®è¦ç´ æ•°
+const int CHARA_PIC_NUM = 16;	//ã‚­ãƒ£ãƒ©ã®çµµãŒä¸€æšä½•ã‚³ãƒãªã®ã‹
 
-//ƒvƒƒOƒ‰ƒ€“à//////////////////////////////////////////////////////
+//ãƒ—ãƒ­ã‚°ãƒ©ãƒ å†…//////////////////////////////////////////////////////
 const char CMD_SEPARATOR[] = " ,	";
 const char EOP[] = "EOP";	//EndOfParagraph
 
@@ -133,8 +133,8 @@ const char _IFEND[] = "_IF_END";
 const char _IFCASE[] = "_CASE";
 const char JOKER_NAME[] = "joker";
 
-const char NO_EQUIP[] = "‘•”õ‚È‚µ";
-const char REMOVE_EQUIP[] = "‘•”õ‚µ‚È‚¢";
+const char NO_EQUIP[] = "è£…å‚™ãªã—";
+const char REMOVE_EQUIP[] = "è£…å‚™ã—ãªã„";
 ////////////////////////////////////////////////////
 
 enum gamemode_tag{
@@ -151,7 +151,7 @@ enum title_tag{
 	TITLE_GAMEEND,
 	TITLE_NUM,
 };
-enum direction_tag{		//‡”Ô•ÏX‹Ö~iSystem.cpp‚Åg—pj
+enum direction_tag{		//é †ç•ªå¤‰æ›´ç¦æ­¢ï¼ˆSystem.cppã§ä½¿ç”¨ï¼‰
 	RIGHT,
 	LEFT,
 	DOWN,
@@ -159,19 +159,19 @@ enum direction_tag{		//‡”Ô•ÏX‹Ö~iSystem.cpp‚Åg—pj
 	DIRECTION_NUM
 };
 extern ENUM(objkind_tag, PANEL, WALKABLE_NUM, BLOCK, NPC, PUSHBLOCK, UNDERDRAW_NUM, COVER);
-	//PANEL,				//“¥‚Ş‚±‚Æ‚ÅƒCƒxƒ“ƒgŠJn
-	//WALKABLE_NUM,	//ª‚±‚ê‚æ‚èã‚ÌKind‚ÍƒvƒŒƒCƒ„[‚ªã‚ğ•à‚­‚±‚Æ‚ª‚Å‚«‚éi“–‚½‚è”»’è‚ª‚È‚­“¥‚Ş‚±‚Æ‚ÅƒCƒxƒ“ƒgj
-	//BLOCK,				//BLOCK,NPC‚Í’²‚×‚é‚±‚Æ‚ÅƒCƒxƒ“ƒgŠJn
+	//PANEL,				//è¸ã‚€ã“ã¨ã§ã‚¤ãƒ™ãƒ³ãƒˆé–‹å§‹
+	//WALKABLE_NUM,	//â†‘ã“ã‚Œã‚ˆã‚Šä¸Šã®Kindã¯ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒä¸Šã‚’æ­©ãã“ã¨ãŒã§ãã‚‹ï¼ˆå½“ãŸã‚Šåˆ¤å®šãŒãªãè¸ã‚€ã“ã¨ã§ã‚¤ãƒ™ãƒ³ãƒˆï¼‰
+	//BLOCK,				//BLOCK,NPCã¯èª¿ã¹ã‚‹ã“ã¨ã§ã‚¤ãƒ™ãƒ³ãƒˆé–‹å§‹
 	//NPC,
-	//PUSHBLOCK,			//‰Ÿ‚·‚±‚Æ‚ÅƒCƒxƒ“ƒgŠJni’²‚×‚È‚¢j
-	//UNDERDRAW_NUM,	//ª‚±‚ê‚æ‚èãi”š‚Æ‚µ‚Ä‚Í¬‚³‚¢j‚ÌKind‚ÍƒvƒŒƒCƒ„[ƒLƒƒƒ‰‚Ì‰º‚É•`Ê
-	//COVER,				//ƒCƒxƒ“ƒgŠJn•û–@‚ª‚È‚¢A‰º‚ğ•às‰Â”\
+	//PUSHBLOCK,			//æŠ¼ã™ã“ã¨ã§ã‚¤ãƒ™ãƒ³ãƒˆé–‹å§‹ï¼ˆèª¿ã¹ãªã„ï¼‰
+	//UNDERDRAW_NUM,	//â†‘ã“ã‚Œã‚ˆã‚Šä¸Šï¼ˆæ•°å­—ã¨ã—ã¦ã¯å°ã•ã„ï¼‰ã®Kindã¯ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚­ãƒ£ãƒ©ã®ä¸‹ã«æå†™
+	//COVER,				//ã‚¤ãƒ™ãƒ³ãƒˆé–‹å§‹æ–¹æ³•ãŒãªã„ã€ä¸‹ã‚’æ­©è¡Œå¯èƒ½
 	//KIND_NUM
 
 enum charaeffect_tag{
 	NONE,
 	BLINK,
-	KEEP_NUM,		//«‚±‚ê‚æ‚è‰ºi”š‚Æ‚µ‚Ä‚Í‘å‚«‚¢j‚Æ‚«‚ÍƒCƒxƒ“ƒg”­¶‚ÉAˆê“I‚ÉEffect‚ªNONE‚É‚È‚é
+	KEEP_NUM,		//â†“ã“ã‚Œã‚ˆã‚Šä¸‹ï¼ˆæ•°å­—ã¨ã—ã¦ã¯å¤§ãã„ï¼‰ã¨ãã¯ã‚¤ãƒ™ãƒ³ãƒˆç™ºç”Ÿæ™‚ã«ã€ä¸€æ™‚çš„ã«EffectãŒNONEã«ãªã‚‹
 	RND_DIR,
 	WALK,
 	EFFECT_NUM
@@ -204,7 +204,7 @@ struct char256{
 	}
 };
 
-//‹¤—pŠÖ”‚âƒNƒ‰ƒX/////////////////////////////////
+//å…±ç”¨é–¢æ•°ã‚„ã‚¯ãƒ©ã‚¹/////////////////////////////////
 namespace sys{
 	direction_tag TurnDir(int _dir, signed int _rightspin);
 	direction_tag StrtoDir(const char* _str, int _originaldir=DOWN);
@@ -215,7 +215,7 @@ namespace sys{
 	bool CheckStrNULL(const std::string _str);
 }
 
-//			Estatus_effect_tag{img, time, maxtime, statustype, power}
+//			ãƒ»status_effect_tag{img, time, maxtime, statustype, power}
 
 struct statusChanger_tag {
 	int Img;
@@ -228,12 +228,12 @@ extern ENUM(target_tag, ME, SINGLE_ENEMY, SINGLE_FRIEND, ALL_FRIEND, ALL_ENEMY);
 
 struct sideEffect_tag{
 	ENUM(type_tag, ATK, DEF, SPD, HEAL, MPHEAL, ATTENTION, SET_TIMEGAUGE, HEAL_AFTER_ATTACK, HEAL_AFTER_SELECTCOMMAND);
-	type_tag::type EffectType;	//ƒ^ƒO–¼‚ğ•t‚¯‚È‚¢ê‡‚ÍintŒ^‚ÅéŒ¾‚µ‚È‚¢‚Æ‘ã“üˆ—‚ª‚Å‚«‚È‚¢B
-	target_tag::type EffectTarget;	//Œø‰Ê‘ÎÛ”ÍˆÍ
+	type_tag::type EffectType;	//ã‚¿ã‚°åã‚’ä»˜ã‘ãªã„å ´åˆã¯intå‹ã§å®£è¨€ã—ãªã„ã¨ä»£å…¥å‡¦ç†ãŒã§ããªã„ã€‚
+	target_tag::type EffectTarget;	//åŠ¹æœå¯¾è±¡ç¯„å›²
 
-	int Power;		//Œø‰Ê—Í
-	int Incidence;	//”­¶Šm—¦
-	int Time;	//—LŒøŠÔiƒo[‚Æ“¯‚¶‚­“ŒvZj
+	int Power;		//åŠ¹æœåŠ›
+	int Incidence;	//ç™ºç”Ÿç¢ºç‡
+	int Time;	//æœ‰åŠ¹æ™‚é–“ï¼ˆãƒãƒ¼ã¨åŒã˜ãï¼…è¨ˆç®—ï¼‰
 };
 struct trick_tag{
 	char Name[32];
@@ -241,13 +241,13 @@ struct trick_tag{
 	int Cost;
 	int Time;
 	std::vector <sideEffect_tag> SideEffect;
-	int DamageEffectIndex;	//•`‰æƒGƒtƒFƒNƒg‚Ìí•Ê”Ô†
+	int DamageEffectIndex;	//æç”»ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®ç¨®åˆ¥ç•ªå·
 
 	target_tag::type Target;
-	/*enum specialType_tag{ //ActorŒÂ•Êˆ—
+	/*enum specialType_tag{ //Actorå€‹åˆ¥å‡¦ç†
 		NORMAL,
 		NODEF,
-		‘¦€,
+		å³æ­»,
 	  }
 	*/
 };
@@ -297,7 +297,7 @@ public:
 			if (mystrcmp(Flag[i].Key, _key)) return Flag[i].Num;
 		}
 		ErrorDx("Error->Not Found Flag[%s] (return -2)", _key);
-		return -2;	//–¢’è‹`
+		return -2;	//æœªå®šç¾©
 	};
 	
 	std::vector <flag_tag> Flag;
@@ -323,10 +323,10 @@ private:
 ////////////////////////////////////////////////
 
 
-//ƒZ[ƒuƒf[ƒ^—p‚Ì\‘¢‘Ì/////////////////////////////////
+//ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ç”¨ã®æ§‹é€ ä½“/////////////////////////////////
 class CEveObj;
 struct playdata_tag{
-	bool Exist;		//ƒZ[ƒuƒf[ƒ^‚ª‘¶İ‚·‚é‚©”Û‚©
+	bool Exist;		//ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ãŒå­˜åœ¨ã™ã‚‹ã‹å¦ã‹
 
 	int NowMap;
 	unsigned int X, Y;
@@ -346,6 +346,6 @@ struct playdata_tag{
 ///////////////////////////////////////////////////
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////	
 ////////////////////////////////////////////////

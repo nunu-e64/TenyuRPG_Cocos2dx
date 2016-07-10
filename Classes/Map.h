@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef MAP_H								////
 #define MAP_H								////
 ////////////////////////////////////////////////
@@ -46,26 +46,26 @@ private:
 	int ImgMapChip[MAP_MAX][256];
 	int ImgObjChip[MAP_MAX][256];
 	
-	int MapGraph[MAP_MAX];		//ƒ}ƒbƒv‘S‘Ì‚ÌƒOƒ‰ƒtƒBƒbƒN‚ğ–‘O€”õ‚µDraw‚Å‚ÍDrawRectGraph‚¾‚¯‚Å•`‰æ
-	bool MapCreated[MAP_MAX];	//ƒ}ƒbƒvƒOƒ‰ƒtƒBƒbƒN‚Ì–‘O€”õ‚ª‚Å‚«‚Ä‚¢‚é‚©	
+	int MapGraph[MAP_MAX];		//ãƒãƒƒãƒ—å…¨ä½“ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’äº‹å‰æº–å‚™ã—Drawã§ã¯DrawRectGraphã ã‘ã§æç”»
+	bool MapCreated[MAP_MAX];	//ãƒãƒƒãƒ—ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®äº‹å‰æº–å‚™ãŒã§ãã¦ã„ã‚‹ã‹	
 
-	//@Load_Pic—p	
-		//HACK:vector‚Å‚Í‚È‚­map‚É‚·‚é
+	//@Load_Picç”¨	
+		//HACK:vectorã§ã¯ãªãmapã«ã™ã‚‹
 		struct ImgData_tag{	
 			int	Img[CHARA_PIC_NUM];
 			char Key[32];
-			char Kind[32];		//‚Ô‚Á‚¿‚á‚¯NPC‚©‚Ç‚¤‚©‚µ‚©–â‘è‚Å‚Í‚È‚¢
+			char Kind[32];		//ã¶ã£ã¡ã‚ƒã‘NPCã‹ã©ã†ã‹ã—ã‹å•é¡Œã§ã¯ãªã„
 		};
 		std::vector<ImgData_tag> ImgData;
 		ImgData_tag dammyimg;
 	
-	//‰¹Šy
+	//éŸ³æ¥½
 		std::string MapMusic[MAP_MAX];
 		std::string BattleMusic[MAP_MAX];
 };
 
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////	
 ////////////////////////////////////////////////

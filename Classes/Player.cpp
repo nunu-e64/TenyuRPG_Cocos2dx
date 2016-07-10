@@ -19,24 +19,24 @@ void CPlayer::CreateBattleMenu(std::vector <std::string> _battleItemList) {
 	BattleMenu.Init(10, 360, 100, 130);
 
 	if (strlen(BaseTrick.Name)) {
-		BattleMenu.Create("UŒ‚");
-		BattleMenu.Add("","‹Z");
+		BattleMenu.Create("æ”»æ’ƒ");
+		BattleMenu.Add("","æŠ€");
 	} else {
-		BattleMenu.Create("‹Z");
+		BattleMenu.Create("æŠ€");
 	}
 
-	BattleMenu.Add("", "‹F“˜");
-	BattleMenu.Add("", "–hŒä");
-	BattleMenu.Add("", "“¹‹ï");
-	BattleMenu.Add("", "“¦–S");
-	BattleMenu.Add("", "‘Ò‹@");
+	BattleMenu.Add("", "ç¥ˆç¥·");
+	BattleMenu.Add("", "é˜²å¾¡");
+	BattleMenu.Add("", "é“å…·");
+	BattleMenu.Add("", "é€ƒäº¡");
+	BattleMenu.Add("", "å¾…æ©Ÿ");
 	
 	for (unsigned int i=0; i<TrickList.size(); i++){
-		BattleMenu.Add("‹Z", TrickList[i]->Name);
+		BattleMenu.Add("æŠ€", TrickList[i]->Name);
 	}
 
 	for (unsigned int i = 0; i < _battleItemList.size(); i++) {
-		BattleMenu.Add("“¹‹ï", _battleItemList[i].c_str());
+		BattleMenu.Add("é“å…·", _battleItemList[i].c_str());
 	}	
 	
 }
@@ -50,9 +50,9 @@ void CPlayer::Draw(int _dx, int _dy){
 			SetDrawBright(255,255,255);
 			break;
 		case CHANGING:		
-			{///€–S‰‰o///////////////////////////////////////////////////
+			{///æ­»äº¡æ¼”å‡º///////////////////////////////////////////////////
 			static std::map<int, int> timeCount;
-			if (timeCount.find(ActorIndex) == timeCount.end()) timeCount[ActorIndex] = 0;	//Å‰‚Ìˆê“x‚¾‚¯‰Šú’l‘ã“ü
+			if (timeCount.find(ActorIndex) == timeCount.end()) timeCount[ActorIndex] = 0;	//æœ€åˆã®ä¸€åº¦ã ã‘åˆæœŸå€¤ä»£å…¥
 
 			++timeCount[ActorIndex];
 
@@ -71,7 +71,7 @@ void CPlayer::Draw(int _dx, int _dy){
 
 	if (BattleMenu.Alive){
 		static std::map<int, int> timeCount;
-		if (timeCount.find(ActorIndex) == timeCount.end()) timeCount[ActorIndex] = 0;	//Å‰‚Ìˆê“x‚¾‚¯‰Šú’l‘ã“ü
+		if (timeCount.find(ActorIndex) == timeCount.end()) timeCount[ActorIndex] = 0;	//æœ€åˆã®ä¸€åº¦ã ã‘åˆæœŸå€¤ä»£å…¥
 		if (timeCount[ActorIndex]==120) timeCount[ActorIndex] = 0;
 		++timeCount[ActorIndex];
 		if (Visible) DrawGraph(Rect.Left+dx, Rect.Top+dy+(int)(5*sin(timeCount[ActorIndex]*2*PI/120)), Img, true);
@@ -79,7 +79,7 @@ void CPlayer::Draw(int _dx, int _dy){
 		if (Visible) DrawGraph(Rect.Left+dx, Rect.Top+dy, Img, true);
 	}
 
-	//ƒ}ƒWƒbƒNƒJƒEƒ“ƒ^[‚Ì•`‰æ//////////////////////////////////
+	//ãƒã‚¸ãƒƒã‚¯ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼ã®æç”»//////////////////////////////////
 	if (VisibleStatus == VISIBLE){
 		SetDrawBlendMode(DX_BLENDMODE_ADD, 255);
 		int r = 40;
@@ -115,23 +115,23 @@ bool CPlayer::Plan(){
 
 	}else{
 
-		if (Target != -1) {	//Target‚ª-1‚¶‚á‚È‚¢TargetMarker.Decide‚È‚Ç‚ÅTarget‚ª‘I‘ğÏ‚İ
+		if (Target != -1) {	//TargetãŒ-1ã˜ã‚ƒãªã„ï¼TargetMarker.Decideãªã©ã§TargetãŒé¸æŠæ¸ˆã¿
 			if (NowTrick != NULL) {
-				MagicCount -= NowTrick->Cost;	//–‚—ÍÁ”ï
+				MagicCount -= NowTrick->Cost;	//é­”åŠ›æ¶ˆè²»
 				MaxTimeGauge = NowTrick->Time;
 			
 			} else if (NowItem != NULL) {
 
 				MaxTimeGauge = NowItem->WaitTime;
-				for (int i = 0; i < ENEMY_NUM; i++) {	//“GƒAƒeƒ“ƒVƒ‡ƒ“•Ï“®
+				for (int i = 0; i < ENEMY_NUM; i++) {	//æ•µã‚¢ãƒ†ãƒ³ã‚·ãƒ§ãƒ³å¤‰å‹•
 					//CmdList->Add("@Attention_Add(%d,%d,%d)", i, Index, (int)ATTENIOTN_WAIT);
 				}
 				SetStatus(WAIT, true);
 
-				LogWindow->Add("%s‚Í%s‚ğg‚Á‚½I", Name.c_str(), NowItem->Name.c_str());
+				LogWindow->Add("%sã¯%sã‚’ä½¿ã£ãŸï¼", Name.c_str(), NowItem->Name.c_str());
 				CItemManager::GetInstance()->DecPlayerItem(NowItem->Name, 1);
 
-				//g‚¤ˆ—
+				//ä½¿ã†å‡¦ç†
 				char tmpCmd[1024];
 				sprintf_s(tmpCmd, "@Item_Use(%s, %d, %d)", NowItem->Name.c_str(), ActorIndex, Target);
 				CmdList->Add(tmpCmd);
@@ -148,20 +148,20 @@ bool CPlayer::Plan(){
 			CMenuNode* result;
 			if (BattleMenu.Move(result, true) && result != NULL) {
 
-				if (mystrcmp(result->parent->label, "‹Z")) {
+				if (mystrcmp(result->parent->label, "æŠ€")) {
 					unsigned int index = BattleMenu.GetIndex(BattleMenu.GetCursor());
 				
 					if (index < TrickList.size()) {
-						//–‚—ÍŠm”F
-							if (TrickList[index]->Cost > MagicCount) {	//–‚—Í‚Í‘«‚è‚Ä‚¢‚é‚©
-								LogWindow->Add("%sF–‚—Í‚ª‘«‚è‚È‚¢I(•K—vƒRƒXƒg%d)", Name.c_str(), TrickList[index]->Cost);
+						//é­”åŠ›ç¢ºèª
+							if (TrickList[index]->Cost > MagicCount) {	//é­”åŠ›ã¯è¶³ã‚Šã¦ã„ã‚‹ã‹
+								LogWindow->Add("%sï¼šé­”åŠ›ãŒè¶³ã‚Šãªã„ï¼(å¿…è¦ã‚³ã‚¹ãƒˆ%d)", Name.c_str(), TrickList[index]->Cost);
 								return false;
 							} else {
 								NowTrick = TrickList[index];
 							}
 
 							
-						//HACK:‘I‚ñ‚¾‹Z‚Ì‘ÎÛl”‚É‚æ‚Á‚Äˆ—‚ğ•Ï‚¦‚é
+						//HACK:é¸ã‚“ã æŠ€ã®å¯¾è±¡äººæ•°ã«ã‚ˆã£ã¦å‡¦ç†ã‚’å¤‰ãˆã‚‹
 							switch(NowTrick->Target){	
 							case target_tag::SINGLE_ENEMY:
 								CmdList->Add("@Target_Appear(ENEMY,0,false)");
@@ -189,47 +189,47 @@ bool CPlayer::Plan(){
 						return false;
 					}
 
-				}else if (mystrcmp(result->label, "UŒ‚")){
+				}else if (mystrcmp(result->label, "æ”»æ’ƒ")){
 					NowTrick = &BaseTrick;
 					CmdList->Add("@Target_Appear(ENEMY,0,false)");
 					BattleMenu.Alive = false;
 	
-				}else if (mystrcmp(result->label, "‘Ò‹@")){
+				}else if (mystrcmp(result->label, "å¾…æ©Ÿ")){
 					MaxTimeGauge = WAIT_TIME;
-					for (int i=0; i<ENEMY_NUM; i++) {	//“GƒAƒeƒ“ƒVƒ‡ƒ“•Ï“®
+					for (int i=0; i<ENEMY_NUM; i++) {	//æ•µã‚¢ãƒ†ãƒ³ã‚·ãƒ§ãƒ³å¤‰å‹•
 						CmdList->Add("@Attention_Add(%d,%d,%d)", i, Index, (int)ATTENIOTN_WAIT);
 					}
 					SetStatus(WAIT, true);
 					BattleMenu.Alive=false;
 					return  (newPlan=true);
 
-				}else if (mystrcmp(result->label, "‹F“˜")){
+				}else if (mystrcmp(result->label, "ç¥ˆç¥·")){
 					if (MagicCount == MAX_MAGIC_COUNT){
-						LogWindow->Add("%sF–‚—Í‰ñ•œ‚Ì•K—v‚Í‚È‚¢‚æ‚¤‚¾", Name.c_str());
+						LogWindow->Add("%sï¼šé­”åŠ›å›å¾©ã®å¿…è¦ã¯ãªã„ã‚ˆã†ã ", Name.c_str());
 						return false;
 					} else {
 						SetStatus(PRAY, true);
 						MaxTimeGauge = PRAY_TIME;
 
-						LogWindow->Add("%s‚Í‹F‚èn‚ß‚½", Name.c_str());
-						for (int i=0; i<ENEMY_NUM; i++) {	//“GƒAƒeƒ“ƒVƒ‡ƒ“•Ï“®
+						LogWindow->Add("%sã¯ç¥ˆã‚Šå§‹ã‚ãŸ", Name.c_str());
+						for (int i=0; i<ENEMY_NUM; i++) {	//æ•µã‚¢ãƒ†ãƒ³ã‚·ãƒ§ãƒ³å¤‰å‹•
 							CmdList->Add("@Attention_Add(%d,%d,%d)", i, Index, (int)ATTENTION_PRAY);
 						}
 						BattleMenu.Alive=false;
 						return  (newPlan=true);
 					}
 
-				} else if (mystrcmp(result->label, "–hŒä")) {
-					if (DEFFENCE_MC > MagicCount) {	//–‚—Í‚Í‘«‚è‚Ä‚¢‚é‚©
-						LogWindow->Add("%sF–‚—Í‚ª‘«‚è‚È‚¢I(•K—vƒRƒXƒg%d)", Name.c_str(), DEFFENCE_MC);
+				} else if (mystrcmp(result->label, "é˜²å¾¡")) {
+					if (DEFFENCE_MC > MagicCount) {	//é­”åŠ›ã¯è¶³ã‚Šã¦ã„ã‚‹ã‹
+						LogWindow->Add("%sï¼šé­”åŠ›ãŒè¶³ã‚Šãªã„ï¼(å¿…è¦ã‚³ã‚¹ãƒˆ%d)", Name.c_str(), DEFFENCE_MC);
 						return false;
 					} else {
 						SetStatus(DEFFENCE, true);
 						MaxTimeGauge = DEFFENCE_TIME;
-						MagicCount -= DEFFENCE_MC;	//–‚—ÍÁ”ï
+						MagicCount -= DEFFENCE_MC;	//é­”åŠ›æ¶ˆè²»
 
-						LogWindow->Add("%s‚Í–hŒä‚ÉW’†‚µ‚Ä‚¢‚é", Name.c_str());
-						for (int i = 0; i < ENEMY_NUM; i++) {	//“GƒAƒeƒ“ƒVƒ‡ƒ“•Ï“®
+						LogWindow->Add("%sã¯é˜²å¾¡ã«é›†ä¸­ã—ã¦ã„ã‚‹", Name.c_str());
+						for (int i = 0; i < ENEMY_NUM; i++) {	//æ•µã‚¢ãƒ†ãƒ³ã‚·ãƒ§ãƒ³å¤‰å‹•
 							CmdList->Add("@Attention_Add(%d,%d,%d)", i, Index, (int)ATTENIOTN_DEFFENCE);
 						}
 
@@ -237,7 +237,7 @@ bool CPlayer::Plan(){
 						return  (newPlan = true);
 					}
 
-				} else if (mystrcmp(result->parent->label, "“¹‹ï")) {
+				} else if (mystrcmp(result->parent->label, "é“å…·")) {
 					NowItem = CItemManager::GetInstance()->GetConsumptionItem(result->label);
 					
 					if (NowItem != NULL &&  CItemManager::GetInstance()->GetPlayerItemNum(NowItem->Name) > 0) {
@@ -295,20 +295,20 @@ bool CPlayer::Action(){
 	if (GetStatus(PRAY)) {
 		MagicCount = min(MagicCount+PRAY_RECOVERY_MC, MAX_MAGIC_COUNT);
 		SetStatus(PRAY, false);
-		LogWindow->Add("%s‚Í‹F‚è‚ğ•ù‚°–‚—Í‚ğ‰ñ•œ‚µ‚½I", Name.c_str());
+		LogWindow->Add("%sã¯ç¥ˆã‚Šã‚’æ§ã’é­”åŠ›ã‚’å›å¾©ã—ãŸï¼", Name.c_str());
 
 	} else if (GetStatus(DEFFENCE)) {
 		SetStatus(DEFFENCE, false);
 
-	} else if (GetStatus(WAIT) || NowTrick==NULL){	//‘Ò‹@‚ğ‘I‘ğorƒAƒCƒeƒ€‚ğg—p‚µ‚½ê‡
+	} else if (GetStatus(WAIT) || NowTrick==NULL){	//å¾…æ©Ÿã‚’é¸æŠorã‚¢ã‚¤ãƒ†ãƒ ã‚’ä½¿ç”¨ã—ãŸå ´åˆ
 		SetStatus(WAIT, false);
 		
-	} else {  //‹Z‚Ìg—p
+	} else {  //æŠ€ã®ä½¿ç”¨
 		CmdList->Add("@Damage(%d,%d,%d,NORMAL)", ActorIndex, Target, NowTrick);
-		LogWindow->Add("%s‚Ì%sI", Name.c_str(), NowTrick->Name);
+		LogWindow->Add("%sã®%sï¼", Name.c_str(), NowTrick->Name);
 
 
-		////‹Zg—pŒãˆ—
+		////æŠ€ä½¿ç”¨å¾Œå‡¦ç†
 		//	NowTrick = NULL;
 		//	Target = -1;
 	}
@@ -319,9 +319,9 @@ bool CPlayer::Action(){
 double CPlayer::CalcDamage(double _damage, CActor* _attacker, trick_tag const* _trick){
 
 	if (GetStatus(DEFFENCE)) {
-		_damage *= MAGIC_DEFFENCE_RATE;	//–‚–@–hŒä
+		_damage *= MAGIC_DEFFENCE_RATE;	//é­”æ³•é˜²å¾¡
 	} else {
-		_damage -= _damage * MagicCount / MAX_MAGIC_COUNT * (1 - MAX_MAGIC_COUNTER_DAMAGE_RATE);  //–‚—Í‚É‚æ‚éƒ_ƒ[ƒWŒ¸­
+		_damage -= _damage * MagicCount / MAX_MAGIC_COUNT * (1 - MAX_MAGIC_COUNTER_DAMAGE_RATE);  //é­”åŠ›ã«ã‚ˆã‚‹ãƒ€ãƒ¡ãƒ¼ã‚¸æ¸›å°‘
 	}
 	return _damage;
 }
@@ -330,7 +330,7 @@ void CPlayer::MpHeal(int _count) {
 	int mc= between(MagicCount, MAX_MAGIC_COUNT, MagicCount + _count);
 
 	if (mc > MagicCount) {
-		LogWindow->Add("  %s‚Ì–‚—Í‚ª%dƒ|ƒCƒ“ƒg‰ñ•œ‚µ‚½I", GetName().c_str(), mc - MagicCount);
+		LogWindow->Add("  %sã®é­”åŠ›ãŒ%dãƒã‚¤ãƒ³ãƒˆå›å¾©ã—ãŸï¼", GetName().c_str(), mc - MagicCount);
 		MagicCount = mc;
 	}
 }

@@ -35,7 +35,7 @@ std::vector <std::string> CShopManager::GetShop(int _index) {
 }
 
 
-//ŠJ“X
+//é–‹åº—
 bool CShopManager::OpenShop(int _index) {
 
 	if (ShopBank.find(_index) != ShopBank.end()) {
@@ -54,7 +54,7 @@ bool CShopManager::OpenShop(int _index) {
 			ShopMenu->Basket.push_back(0);
 		}
 
-		//‡Œv‹àŠz
+		//åˆè¨ˆé‡‘é¡
 		ShopMenuInstance.SumPrice = 0;
 
 		return true;
@@ -76,7 +76,7 @@ bool CShopManager::Main() {
 
 	if (!IsOpen()) return false;
 
-	//ƒJ[ƒ\ƒ‹ˆÚ“®
+	//ã‚«ãƒ¼ã‚½ãƒ«ç§»å‹•
 	if (CheckHitKeyDown(KEY_INPUT_DOWN)) {
 		ShopMenu->Move(DOWN);
 	
@@ -91,7 +91,7 @@ bool CShopManager::Main() {
 	
 	} else if (CheckHitKeyDown(KEY_INPUT_OK)) {
 		if (ShopMenu->IsConfirm) {
-			ShopMenu->Buy();		//w“ü
+			ShopMenu->Buy();		//è³¼å…¥
 			ShopMenu->IsConfirm = false;
 		} else {
 			if (ShopMenu->CanBuy()) {
@@ -104,9 +104,9 @@ bool CShopManager::Main() {
 		if (ShopMenu->IsConfirm) {
 			ShopMenu->IsConfirm = false;
 		} else if (ShopMenu->CanClose()){
-			CurrentOpenShopIndex = -1;	//•Â“X
+			CurrentOpenShopIndex = -1;	//é–‰åº—
 		} else {
-			OpenShop(CurrentOpenShopIndex);	//ƒoƒXƒPƒbƒgƒŠƒZƒbƒg
+			OpenShop(CurrentOpenShopIndex);	//ãƒã‚¹ã‚±ãƒƒãƒˆãƒªã‚»ãƒƒãƒˆ
 		}
 	}
 
@@ -150,7 +150,7 @@ void CShopMenu::Move(int _dir) {
 			break;
 		}
 
-		//‡Œv‹àŠzŒvZ
+		//åˆè¨ˆé‡‘é¡è¨ˆç®—
 		SumPrice = 0;
 		for (unsigned int i = 0; i < ItemList.size(); i++) {
 			SumPrice += ItemList[i]->Price * Basket[i];
@@ -182,7 +182,7 @@ bool CShopMenu::Buy() {
 	ItemManager->DecGold(SumPrice);
 	for (unsigned int i = 0; i < ItemList.size(); i++) {
 		ItemManager->IncPlayerItem(ItemList[i]->Name, Basket[i]);
-		Basket[i] = 0;	//ƒoƒXƒPƒbƒg‚Í‹ó‚É‚·‚é
+		Basket[i] = 0;	//ãƒã‚¹ã‚±ãƒƒãƒˆã¯ç©ºã«ã™ã‚‹
 	}
 	SumPrice = 0;
 
@@ -196,41 +196,41 @@ void CShopMenu::Draw() {
 
 	DrawBox(rect, GetColor(30, 20, 80), true);
 
-	//¤•iƒŠƒXƒg
+	//å•†å“ãƒªã‚¹ãƒˆ
 	std::string strNum;
 	for (unsigned int i = 0; i < ItemList.size(); i++) {
 		int top = rect.Top + 20 + i*(2 + GetFontSize());
 
 		if (Cursor == i && !IsConfirm) {
-			DrawString(rect.Left + 20, top, "|>", WHITE, BLACK);	//ƒJ[ƒ\ƒ‹
+			DrawString(rect.Left + 20, top, "|>", WHITE, BLACK);	//ã‚«ãƒ¼ã‚½ãƒ«
 		}
 
-		//¤•i–¼
+		//å•†å“å
 		DrawString(rect.Left + 50, top, ItemList[i]->Name.c_str(), WHITE, BLACK);
 
-		//¤•i‹àŠz
-		strNum = std::to_string(ItemList[i]->Price) + "ƒKƒ‹";
+		//å•†å“é‡‘é¡
+		strNum = std::to_string(ItemList[i]->Price) + "ã‚¬ãƒ«";
 		DrawString(rect.Right - 240, top, strNum.c_str(), WHITE, BLACK);
 
-		//w“üŒÂ”
+		//è³¼å…¥å€‹æ•°
 		strNum = (Basket[i]>0 ? "< " : "  ") + std::to_string(Basket[i])
 			+ (Basket[i] < ItemList[i]->OwnLimit - ItemManager->GetPlayerItemNum(ItemList[i]->Name) && SumPrice+ItemList[i]->Price <= ItemManager->GetGold() ? " >" : "  ");
 		DrawString(rect.Right - 120, top, strNum.c_str(), WHITE, BLACK);
 
-		//ŠŒÂ”‚ÆŠãŒÀ
+		//æ‰€æŒå€‹æ•°ã¨æ‰€æŒä¸Šé™
 		strNum = std::to_string(ItemManager->GetPlayerItemNum(ItemList[i]->Name)) + "/" + std::to_string(ItemList[i]->OwnLimit);
 		DrawString(rect.Right - 60, top, strNum.c_str(), WHITE, BLACK);
 	}
 
-	//Œˆ’è
+	//æ±ºå®š
 	int top = rect.Bottom - 40;
 	if (IsConfirm) {
 		DrawString(rect.Left + 30, top, "|>", WHITE, BLACK);
 	}
-	DrawString(rect.Left + 60, top, "Œˆ’è", (IsConfirm ? WHITE : GRAY), BLACK);
+	DrawString(rect.Left + 60, top, "æ±ºå®š", (IsConfirm ? WHITE : GRAY), BLACK);
 
-	//‡Œv‹àŠz‚ÆŠ‹àŠz
-	strNum = "ŒvF" + std::to_string(SumPrice) + "ƒKƒ‹  Š‹àF" + std::to_string(ItemManager->GetGold()) + "ƒKƒ‹";
+	//åˆè¨ˆé‡‘é¡ã¨æ‰€æŒé‡‘é¡
+	strNum = "è¨ˆï¼š" + std::to_string(SumPrice) + "ã‚¬ãƒ«  æ‰€æŒé‡‘ï¼š" + std::to_string(ItemManager->GetGold()) + "ã‚¬ãƒ«";
 	DrawString(rect.Right - 250, top, strNum.c_str(), WHITE, BLACK);
 
 }

@@ -7,23 +7,23 @@ struct target_tag target_tag;
 int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow )
 {
 	#ifdef _DEBUG
-		_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);  //new‚ğdelete‚µ‚Ä‚¢‚È‚¢–â‘è‚ğŒŸo
+		_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);  //newã‚’deleteã—ã¦ã„ãªã„å•é¡Œã‚’æ¤œå‡º
 	#endif
 
 	
 	SetMainWindowText(GAME_TITLE);
-	ChangeWindowMode( TRUE );			// ƒEƒCƒ“ƒhƒEƒ‚[ƒh‚É•ÏX
+	ChangeWindowMode( TRUE );			// ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰ã«å¤‰æ›´
 	
-	if( DxLib_Init() == -1 ) return -1 ; // ‚c‚wƒ‰ƒCƒuƒ‰ƒŠ‰Šú‰»
+	if( DxLib_Init() == -1 ) return -1 ; // ï¼¤ï¼¸ãƒ©ã‚¤ãƒ–ãƒ©ãƒªåˆæœŸåŒ–
 	
-	SetDrawScreen( DX_SCREEN_BACK ); //•`‰ææ‚ğ‰æ–Ê— ‚É
-	SetTransColor(255, 0, 255);	//“§‰ßFw’è
-	SetMouseDispFlag( false );	//ƒ}ƒEƒXƒJ[ƒ\ƒ‹‚ğ•\¦‚µ‚È‚¢
+	SetDrawScreen( DX_SCREEN_BACK ); //æç”»å…ˆã‚’ç”»é¢è£ã«
+	SetTransColor(255, 0, 255);	//é€éè‰²æŒ‡å®š
+	SetMouseDispFlag( false );	//ãƒã‚¦ã‚¹ã‚«ãƒ¼ã‚½ãƒ«ã‚’è¡¨ç¤ºã—ãªã„
 		
 	myLogf("MyLog_Printed", "--------START------------------------------------------------------\n");
 	myLog("--------START------------------------------------------------------\n");
 
-		CMain* Main = CMain::GetInstance();		//‚±‚êˆÈ‰º‚ğ‚·‚×‚ÄCMain::Main‚Æ‚¢‚¤Ã“Iƒƒ“ƒoŠÖ”‚É‚·‚é‚Ì‚à‚ ‚è
+		CMain* Main = CMain::GetInstance();		//ã“ã‚Œä»¥ä¸‹ã‚’ã™ã¹ã¦CMain::Mainã¨ã„ã†é™çš„ãƒ¡ãƒ³ãƒé–¢æ•°ã«ã™ã‚‹ã®ã‚‚ã‚ã‚Š
 		if (Main->Init()){
 			while( BasicLoop() ){
 		
@@ -32,7 +32,7 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
 			}
 		}
 
-	DxLib_End(); // DXƒ‰ƒCƒuƒ‰ƒŠI—¹ˆ—
+	DxLib_End(); // DXãƒ©ã‚¤ãƒ–ãƒ©ãƒªçµ‚äº†å‡¦ç†
 
 	myLogf("MyLog_Printed", "----FINISH-----------------------------------------------------");	
 	myLog("----FINISH-----------------------------------------------------");
@@ -65,7 +65,7 @@ direction_tag sys::TurnDir(int _dir, signed int _rightspin){
 	return (direction_tag) choose(_turneddir+1, UP, RIGHT, DOWN, LEFT);
 }
 
-direction_tag sys::StrtoDir(const char* _str, int _originaldir){	//CCmdManager‚ÌprivateŠÖ”‚É‚µ‚Ä‚à‚¢‚¢‚©‚à
+direction_tag sys::StrtoDir(const char* _str, int _originaldir){	//CCmdManagerã®privateé–¢æ•°ã«ã—ã¦ã‚‚ã„ã„ã‹ã‚‚
 	int dir;
 	int spin = 0;
 	char* p;
@@ -80,13 +80,13 @@ direction_tag sys::StrtoDir(const char* _str, int _originaldir){	//CCmdManager‚Ì
 		*p = '\0';
 	}
 
-	if( mystrcmp2(str, "right") || mystrcmp(str, 'p', 3,"¨","0","‰E") ){
+	if( mystrcmp2(str, "right") || mystrcmp(str, 'p', 3,"â†’","0","å³") ){
 		dir = RIGHT;
-	}else if( mystrcmp2(str, "left") || mystrcmp(str, 'p', 3,"©","1","¶") ){
+	}else if( mystrcmp2(str, "left") || mystrcmp(str, 'p', 3,"â†","1","å·¦") ){
 		dir = LEFT;
-	}else if( mystrcmp2(str, "down") || mystrcmp(str, 'p', 3,"«","2","‰º") ){
+	}else if( mystrcmp2(str, "down") || mystrcmp(str, 'p', 3,"â†“","2","ä¸‹") ){
 		dir = DOWN;
-	}else if( mystrcmp2(str, "up") || mystrcmp(str, 'p', 3,"ª","3","ã") ){
+	}else if( mystrcmp2(str, "up") || mystrcmp(str, 'p', 3,"â†‘","3","ä¸Š") ){
 		dir = UP;
 	}else if( mystrcmp2(str, "original") || mystrcmp(str, "-1") ){
 		dir = (direction_tag)_originaldir;

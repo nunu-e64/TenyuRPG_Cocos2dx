@@ -12,7 +12,7 @@ void CMusicManager::Init()
 	MusicBank.clear();
 }
 
-void CMusicManager::Update()	//ƒtƒF[ƒhƒCƒ“‚ÆƒtƒF[ƒhƒAƒEƒgis
+void CMusicManager::Update()	//ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¤ãƒ³ã¨ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¢ã‚¦ãƒˆé€²è¡Œ
 {
 
 	for (auto it = FadeInVolume.begin(); it != FadeInVolume.end(); ) {
@@ -74,10 +74,10 @@ void CMusicManager::PlayMusic(std::string _key) {
 	if (handle != -1) {
 
 		if (PauseFlag[handle]) {
-			PlaySoundMem(handle, DX_PLAYTYPE_BACK, false);//ƒ|[ƒYˆÊ’u‚©‚çÄ¶
+			PlaySoundMem(handle, DX_PLAYTYPE_BACK, false);//ãƒãƒ¼ã‚ºä½ç½®ã‹ã‚‰å†ç”Ÿ
 			PauseFlag[handle]  = false;
 		} else {
-			PlaySoundMem(handle, DX_PLAYTYPE_BACK, true);	//’ÊíÄ¶i“ªo‚µj
+			PlaySoundMem(handle, DX_PLAYTYPE_BACK, true);	//é€šå¸¸å†ç”Ÿï¼ˆé ­å‡ºã—ï¼‰
 		}
 	}
 }
@@ -87,7 +87,7 @@ void CMusicManager::PlaySound(std::string _key) {
 	int handle = GetMusicHandle(_key);
 	if (handle != -1) {
 
-		PlaySoundMem(handle, DX_PLAYTYPE_BACK, true);	//’ÊíÄ¶i“ªo‚µj
+		PlaySoundMem(handle, DX_PLAYTYPE_BACK, true);	//é€šå¸¸å†ç”Ÿï¼ˆé ­å‡ºã—ï¼‰
 
 	}
 }
@@ -99,7 +99,7 @@ void CMusicManager::StopMusic(std::string _key){
 
 		StopSoundMem(handle);
 
-		//ƒ|[ƒY’†‚É‰¹Šy’â~‚³‚¹‚½‚Æ‚«‚É‚Íƒ|[ƒYƒtƒ‰ƒO‚ğƒŠƒZƒbƒg‚·‚é
+		//ãƒãƒ¼ã‚ºä¸­ã«éŸ³æ¥½åœæ­¢ã•ã›ãŸã¨ãã«ã¯ãƒãƒ¼ã‚ºãƒ•ãƒ©ã‚°ã‚’ãƒªã‚»ãƒƒãƒˆã™ã‚‹
 		PauseFlag[handle] = false;
 
 	}

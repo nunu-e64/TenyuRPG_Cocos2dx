@@ -1,11 +1,11 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–hŽ~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef TEXTWRAP_H							////
 #define TEXTWRAP_H							////
 ////////////////////////////////////////////////
 
 #include "TextBox.h"
 
-class CTextWrap : public CTextBox{	//private‚ÈŒp³‚Å‚ÍeƒNƒ‰ƒX‚Ìpublicƒƒ“ƒo‚É’¼ÚiƒCƒ“ƒXƒ^ƒ“ƒX.ŠÖ”()‚ÌŒ`‚ÅjƒAƒNƒZƒX‚Å‚«‚¸AƒCƒ“ƒXƒ^ƒ“ƒX‚ðeƒNƒ‰ƒX‚Æ‚µ‚Äˆµ‚¤‚±‚Æ‚à‚Å‚«‚È‚¢
+class CTextWrap : public CTextBox{	//privateãªç¶™æ‰¿ã§ã¯è¦ªã‚¯ãƒ©ã‚¹ã®publicãƒ¡ãƒ³ãƒã«ç›´æŽ¥ï¼ˆã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹.é–¢æ•°()ã®å½¢ã§ï¼‰ã‚¢ã‚¯ã‚»ã‚¹ã§ããšã€ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¦ªã‚¯ãƒ©ã‚¹ã¨ã—ã¦æ‰±ã†ã“ã¨ã‚‚ã§ããªã„
 public:
 	CTextWrap(){
 		CONSTRUCTED;
@@ -21,6 +21,6 @@ private:
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–hŽ~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

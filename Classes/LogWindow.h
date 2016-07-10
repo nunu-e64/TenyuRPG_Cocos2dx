@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef LOGWINDOW_H							////
 #define LOGWINDOW_H							////
 ////////////////////////////////////////////////
@@ -16,8 +16,8 @@ public:
 	};
 
 	virtual void Init(int _posx, int _posy, int _width, int _height, int _boxColor, int _stockLine , int _fontSize, int _fontColorMain, int _fontColorSub);
-	void Clear();	//•\¦ƒeƒLƒXƒg‘SÁ‹
-	void Term();	//Terminate ƒƒ‚ƒŠ‰ğ•ú
+	void Clear();	//è¡¨ç¤ºãƒ†ã‚­ã‚¹ãƒˆå…¨æ¶ˆå»
+	void Term();	//Terminate ãƒ¡ãƒ¢ãƒªè§£æ”¾
 
 	bool Add(const char *_format, ...);
 	bool Add(char **_newTextArray);
@@ -26,51 +26,51 @@ public:
 	void SetVisible(bool _visible){Visible = _visible;}
 	
 protected:
-	//’è”
+	//å®šæ•°
 		enum{
-			WORD_MAX = 255,		//ˆês‚Ì•¶š”Å‘å’l Init‚Å’²®‚³‚ê‚é
+			WORD_MAX = 255,		//ä¸€è¡Œã®æ–‡å­—æ•°æœ€å¤§å€¤ Initã§èª¿æ•´ã•ã‚Œã‚‹
 		};
 
-	//ƒƒ“ƒo•Ï”
-		bool Initialized;	//‰ŠúÏ‚İ‚©”Û‚©
+	//ãƒ¡ãƒ³ãƒå¤‰æ•°
+		bool Initialized;	//åˆæœŸæ¸ˆã¿ã‹å¦ã‹
 
-		char** Text;	//ƒƒOƒƒbƒZ[ƒW–{‘Ì
+		char** Text;	//ãƒ­ã‚°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸æœ¬ä½“
 
-		int PosX, PosY, Width, Height;			//¶ã‚ÌÀ•WA‰¡•c•
-		int StockLineNum, LineNum, WordNum;	//WordNum‚Ì’PˆÊ‚ÍƒoƒCƒg LineNum‚Í•\¦s”AStockLineNum‚Í—š—ğŠÜ‚ß‚½Å‘ås”
+		int PosX, PosY, Width, Height;			//å·¦ä¸Šã®åº§æ¨™ã€æ¨ªå¹…ç¸¦å¹…
+		int StockLineNum, LineNum, WordNum;	//WordNumã®å˜ä½ã¯ãƒã‚¤ãƒˆ LineNumã¯è¡¨ç¤ºè¡Œæ•°ã€StockLineNumã¯å±¥æ­´å«ã‚ãŸæœ€å¤§è¡Œæ•°
 
-		int LineSpace;	//sŠÔ
+		int LineSpace;	//è¡Œé–“
 		int	BoxSpace;
 			
 		int FontSize;
 		int FontHandle;
-		int FontColorMain, FontColorSub;	//Color2‚Í‰e
+		int FontColorMain, FontColorSub;	//Color2ã¯å½±
 		int BoxColor;
 
-		int WordWidth;		//WordNum‚ÆFontSize‚ÉŠî‚Ã‚¢‚Ä‰¡•‚ğZo
+		int WordWidth;		//WordNumã¨FontSizeã«åŸºã¥ã„ã¦æ¨ªå¹…ã‚’ç®—å‡º
 
-		int NextLine;	//Ÿ‚É‘‚«Š·‚¦‚ç‚ê‚é‚×‚«Text‚Ì”z—ñƒCƒ“ƒfƒbƒNƒX
-		int BackLine;	//æ“ªs‚Ì”z—ñƒCƒ“ƒfƒbƒNƒX	
-		bool Visible;	//•`‰æ‚³‚ê‚é‚©
+		int NextLine;	//æ¬¡ã«æ›¸ãæ›ãˆã‚‰ã‚Œã‚‹ã¹ãTextã®é…åˆ—ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
+		int BackLine;	//å…ˆé ­è¡Œã®é…åˆ—ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹	
+		bool Visible;	//æç”»ã•ã‚Œã‚‹ã‹
 
 		/*
-		int StockLine;		//‰½s–Ú‚Ü‚Åƒf[ƒ^‚ªƒXƒgƒbƒN‚³‚ê‚Ä‚¢‚é‚©				1~STOCK_LINE_NUM	‹óF0	//AddText‚Å‰Šú‰»‚·‚é‚Ì‚ÅNoProblem
-		int TextLineNum();		//¡A‰½s–Ú‚Ü‚Å•\¦—pƒeƒLƒXƒg‚ª‚ ‚é‚©		1~LineNum	‹óF0
+		int StockLine;		//ä½•è¡Œç›®ã¾ã§ãƒ‡ãƒ¼ã‚¿ãŒã‚¹ãƒˆãƒƒã‚¯ã•ã‚Œã¦ã„ã‚‹ã‹				1~STOCK_LINE_NUM	ç©ºï¼š0	//AddTextã§åˆæœŸåŒ–ã™ã‚‹ã®ã§NoProblem
+		int TextLineNum();		//ä»Šã€ä½•è¡Œç›®ã¾ã§è¡¨ç¤ºç”¨ãƒ†ã‚­ã‚¹ãƒˆãŒã‚ã‚‹ã‹		1~LineNum	ç©ºï¼š0
 		
-		int NowStock;	//¡AƒXƒgƒbƒN‚Ì‰½s–Ú‚É‚¢‚é‚©	0~	‹óF-1	(TextBoxŠO‚É‚¨‚¢‚Ä‚ÍŸ’²‚×‚és‚Í‚Ç‚±‚©)
-		int NowTarget;	//¡AƒeƒLƒXƒgƒ{ƒbƒNƒX‚Ì‰½s–Ú‚É‚Â‚¢‚Äˆ—‚µ‚Ä‚¢‚é‚Ì‚© 0~	‹óF-1
-		bool PageChange;	//Ÿ‚Éƒy[ƒWƒŠƒZƒbƒg‚·‚é‚©”Û‚©
+		int NowStock;	//ä»Šã€ã‚¹ãƒˆãƒƒã‚¯ã®ä½•è¡Œç›®ã«ã„ã‚‹ã‹	0~	ç©ºï¼š-1	(TextBoxå¤–ã«ãŠã„ã¦ã¯æ¬¡èª¿ã¹ã‚‹è¡Œã¯ã©ã“ã‹)
+		int NowTarget;	//ä»Šã€ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã®ä½•è¡Œç›®ã«ã¤ã„ã¦å‡¦ç†ã—ã¦ã„ã‚‹ã®ã‹ 0~	ç©ºï¼š-1
+		bool PageChange;	//æ¬¡ã«ãƒšãƒ¼ã‚¸ãƒªã‚»ãƒƒãƒˆã™ã‚‹ã‹å¦ã‹
 
-		////ƒeƒLƒXƒg‚ÌƒAƒjƒ[ƒVƒ‡ƒ“•\¦ŠÖŒW//////////////
-			int NewText;		//chText‚ÉV‚½‚É’Ç‰Á‚³‚ê‚½s -1¥¥¥•Ï‰»‚È‚µ 0~¥¥¥ã‚©‚ç‰½s–ÚˆÈ~‚ª’Ç‰Á‚³‚ê‚½‚©i‹ó”’‚àƒJƒEƒ“ƒgj
-			bool Showing;		//ƒeƒLƒXƒgƒAƒjƒ[ƒVƒ‡ƒ“‚ªŒ»İis’†FTrue Š®—¹FFalse
+		////ãƒ†ã‚­ã‚¹ãƒˆã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³è¡¨ç¤ºé–¢ä¿‚//////////////
+			int NewText;		//chTextã«æ–°ãŸã«è¿½åŠ ã•ã‚ŒãŸè¡Œ -1ãƒ»ãƒ»ãƒ»å¤‰åŒ–ãªã— 0~ãƒ»ãƒ»ãƒ»ä¸Šã‹ã‚‰ä½•è¡Œç›®ä»¥é™ãŒè¿½åŠ ã•ã‚ŒãŸã‹ï¼ˆç©ºç™½ã‚‚ã‚«ã‚¦ãƒ³ãƒˆï¼‰
+			bool Showing;		//ãƒ†ã‚­ã‚¹ãƒˆã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãŒç¾åœ¨é€²è¡Œä¸­ï¼šTrue å®Œäº†ï¼šFalse
 			int ShowingTime; 
 
-		////AddText‚Ì‚Æ‚«‚É•ÏX
+		////AddTextã®ã¨ãã«å¤‰æ›´
 			int ObjCount;
 			direction_tag OriginalDir;
 
-		//ƒ‹ƒr—p
+		//ãƒ«ãƒ“ç”¨
 			struct ruby_tag{
 				char Word[32];
 				char Ruby[32];
@@ -92,8 +92,8 @@ public:
 	}
 
 private:
-	int PosXFull, WidthFull;			//ƒtƒ‹ƒTƒCƒYƒ‚[ƒh‚Ì‚Æ‚«
-	bool FullMode;		//ƒƒOƒEƒBƒ“ƒhƒE‚Ì‘å‚«‚³‚ğØ‚è‘Ö‚¦‚éƒXƒCƒbƒ`
+	int PosXFull, WidthFull;			//ãƒ•ãƒ«ã‚µã‚¤ã‚ºãƒ¢ãƒ¼ãƒ‰ã®ã¨ã
+	bool FullMode;		//ãƒ­ã‚°ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å¤§ãã•ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹ã‚¹ã‚¤ãƒƒãƒ
 
 	int ButtonImg[2];
 	CVector ButtonImgSize;
@@ -110,11 +110,11 @@ public:
 	void InsertToMemoPos(const char* _string);
 
 private:
-	int PosMemo;	//‰ï˜b‚Ì‹æØ‚èˆÊ’u‚ğ‹L‰¯
-	int PosMemoOld; //‰ï˜b‚Ì‹æØ‚èˆÊ’u‚ğ‹L‰¯‚µ‚ÄƒƒO‚Éƒg[ƒNƒ‰ƒxƒ‹‚ğ‘}“ü
+	int PosMemo;	//ä¼šè©±ã®åŒºåˆ‡ã‚Šä½ç½®ã‚’è¨˜æ†¶
+	int PosMemoOld; //ä¼šè©±ã®åŒºåˆ‡ã‚Šä½ç½®ã‚’è¨˜æ†¶ã—ã¦ãƒ­ã‚°ã«ãƒˆãƒ¼ã‚¯ãƒ©ãƒ™ãƒ«ã‚’æŒ¿å…¥
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

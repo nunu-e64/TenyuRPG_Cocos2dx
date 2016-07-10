@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//	//pragmaonce‚Æ“¯‚¶ˆÓ–¡‚¾‚ª‚±‚¿‚ç‚ÍƒRƒ“ƒpƒCƒ‰‚ÉˆË‘¶‚µ‚È‚¢¨‚Æ‚±‚ë‚ªƒR[ƒh“à‚Å__FUNCTION__‚ğg‚Á‚Ä‚¢‚é‚Ì‚ÅˆêŠÑ«‚ğ”j‰ó‚µ‚Ä‚¢‚é¨•ÊŠÂ‹«‚Å‚Í__FUNCTION__‚ğ#define‚Å‘‚«Š·‚¦‚é•K—v‚ª‚ ‚é
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//	//pragmaonceã¨åŒã˜æ„å‘³ã ãŒã“ã¡ã‚‰ã¯ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ã«ä¾å­˜ã—ãªã„â†’ã¨ã“ã‚ãŒã‚³ãƒ¼ãƒ‰å†…ã§__FUNCTION__ã‚’ä½¿ã£ã¦ã„ã‚‹ã®ã§ä¸€è²«æ€§ã‚’ç ´å£Šã—ã¦ã„ã‚‹â†’åˆ¥ç’°å¢ƒã§ã¯__FUNCTION__ã‚’#defineã§æ›¸ãæ›ãˆã‚‹å¿…è¦ãŒã‚ã‚‹
 #ifndef NUNULIB_H							////
 #define NUNULIB_H							////
 ////////////////////////////////////////////////
@@ -11,22 +11,22 @@
 #include <string>
 
 //#define MYLOG_DISABLE
-//#define WARNINGDX_DISABLE	//ƒ}ƒNƒ‚Ì–³Œø‰»
-//#define DEBUGDX_DISABLE	//ƒ}ƒNƒ‚Ì–³Œø‰»
+//#define WARNINGDX_DISABLE	//ãƒã‚¯ãƒ­ã®ç„¡åŠ¹åŒ–
+//#define DEBUGDX_DISABLE	//ãƒã‚¯ãƒ­ã®ç„¡åŠ¹åŒ–
 //#define FPS_DISABLE
-#define CHECK_TIME_DISABLE	//ŠÔ‘ª’èƒ}ƒNƒ‚Ì–³Œø‰»
-#define CHECK_TIME2_DISABLE	//ŠÔ‘ª’èƒ}ƒNƒi‹·‚¢j‚Ì–³Œø‰»
-#define ARRAY_SIZE(array)    (sizeof(array)/sizeof(array[0]))	//new‚Å“®“I‚ÉŠm•Û‚µ‚½”z—ñ‚É‚Íg—p‚µ‚½ê‡ƒ|ƒCƒ“ƒ^‚Ìƒƒ‚ƒŠƒTƒCƒY(4)‚ª•Ô‚³‚ê‚Ä‚µ‚Ü‚¤B‚±‚ê‚Ísizeof()‚ÍƒRƒ“ƒpƒCƒ‹‚É•]‰¿‚µ‚Ä‚¢‚é‚½‚ßB
-#define STR(_var) #_var		//•Ï”–¼‚È‚Ç‚ğ•¶š—ñ‰»‚·‚éƒg[ƒNƒ“
+#define CHECK_TIME_DISABLE	//æ™‚é–“æ¸¬å®šãƒã‚¯ãƒ­ã®ç„¡åŠ¹åŒ–
+#define CHECK_TIME2_DISABLE	//æ™‚é–“æ¸¬å®šãƒã‚¯ãƒ­ï¼ˆç‹­ã„ï¼‰ã®ç„¡åŠ¹åŒ–
+#define ARRAY_SIZE(array)    (sizeof(array)/sizeof(array[0]))	//newã§å‹•çš„ã«ç¢ºä¿ã—ãŸé…åˆ—ã«ã¯ä½¿ç”¨ã—ãŸå ´åˆãƒã‚¤ãƒ³ã‚¿ã®ãƒ¡ãƒ¢ãƒªã‚µã‚¤ã‚º(4)ãŒè¿”ã•ã‚Œã¦ã—ã¾ã†ã€‚ã“ã‚Œã¯sizeof()ã¯ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ™‚ã«è©•ä¾¡ã—ã¦ã„ã‚‹ãŸã‚ã€‚
+#define STR(_var) #_var		//å¤‰æ•°åãªã©ã‚’æ–‡å­—åˆ—åŒ–ã™ã‚‹ãƒˆãƒ¼ã‚¯ãƒ³
 
-//namespace nunuLib{	//UNDONE:‚æ‚­g‚¢•û‚ª‚í‚©‚ç‚È‚©‚Á‚½
+//namespace nunuLib{	//UNDONE:ã‚ˆãä½¿ã„æ–¹ãŒã‚ã‹ã‚‰ãªã‹ã£ãŸ
 
 const double PI = 3.1415926535897932384626433832795f;
 const int WINDOW_WIDTH = 640;	//32px*20cell
 const int WINDOW_HEIGHT = 480;	//32px*15cell
 
 ////////////////////////////////////////////////////////
-//F’è”////////////////////////////////////////////////
+//è‰²å®šæ•°////////////////////////////////////////////////
 	const int RED		= GetColor( 255 , 0 , 0 );
 	const int GREEN		= GetColor( 0 , 255 , 0 );
 	const int BLUE		= GetColor( 0 , 0 , 255 );
@@ -38,16 +38,16 @@ const int WINDOW_HEIGHT = 480;	//32px*15cell
 ////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///ŠÔ‘ª’èŠÖ”//////////////////////////////////////////////
+///æ™‚é–“æ¸¬å®šé–¢æ•°//////////////////////////////////////////////
 	#ifdef CHECK_TIME_DISABLE
-	#define CHECK_TIME_START    /* ‰½‚à‚µ‚È‚¢ */
+	#define CHECK_TIME_START    /* ä½•ã‚‚ã—ãªã„ */
 	#else
 	#define CHECK_TIME_START {							\
 			int check_perform_start = GetNowCount();	
 	#endif
 
 	#ifdef CHECK_TIME_DISABLE
-	#define CHECK_TIME_END(title)    /* ‰½‚à‚µ‚È‚¢ */
+	#define CHECK_TIME_END(title)    /* ä½•ã‚‚ã—ãªã„ */
 	#else
 	#define CHECK_TIME_END(title)					\
 			int check_perform_end = GetNowCount();		\
@@ -58,14 +58,14 @@ const int WINDOW_HEIGHT = 480;	//32px*15cell
 	#endif
 
 	#ifdef CHECK_TIME2_DISABLE
-	#define CHECK_TIME_START2    /* ‰½‚à‚µ‚È‚¢ */
+	#define CHECK_TIME_START2    /* ä½•ã‚‚ã—ãªã„ */
 	#else
 	#define CHECK_TIME_START2 {							\
 			int check_perform_start = GetNowCount();	
 	#endif
 
 	#ifdef CHECK_TIME2_DISABLE
-	#define CHECK_TIME_END2(title)    /* ‰½‚à‚µ‚È‚¢ */
+	#define CHECK_TIME_END2(title)    /* ä½•ã‚‚ã—ãªã„ */
 	#else
 	#define CHECK_TIME_END(title)					\
 			int check_perform_end = GetNowCount();		\
@@ -76,15 +76,15 @@ const int WINDOW_HEIGHT = 480;	//32px*15cell
 	#endif
 /////////////////////////////////////////////////////////////
 
-//Œ»İæ“¾ŠÖ”///////////////////////////////////////////
+//ç¾åœ¨æ™‚åˆ»å–å¾—é–¢æ•°///////////////////////////////////////////
 //#include <windows.h>
 SYSTEMTIME GetNowSystemTime();
 std::string GetNowSystemTimeString();
 /////////////////////////////////////////////////////////////
 
 
-//enum‚Ì’è‹`‚ÆŠÇ——pƒ}ƒbƒv‚Ì©“®ì¬ƒ}ƒNƒ//////////////////////////////
-//—ñ‹“q‚ğ¦‚·•¶š—ñ‚ğƒL[‚Æ‚µ—ñ‹“q‚Ì”’l‚ğ’l‚Æ‚µ‚½map‚ğì¬
+//enumã®å®šç¾©ã¨ç®¡ç†ç”¨ãƒãƒƒãƒ—ã®è‡ªå‹•ä½œæˆãƒã‚¯ãƒ­//////////////////////////////
+//åˆ—æŒ™å­ã‚’ç¤ºã™æ–‡å­—åˆ—ã‚’ã‚­ãƒ¼ã¨ã—åˆ—æŒ™å­ã®æ•°å€¤ã‚’å€¤ã¨ã—ãŸmapã‚’ä½œæˆ
 #define ENUM(_name, ...)								\
 	struct _name {										\
 	enum type {__VA_ARGS__, NUM};						\
@@ -94,9 +94,9 @@ std::string GetNowSystemTimeString();
 	}_name;
 
 
-//ENUMƒ}ƒNƒ‚Åg—pBV‚½‚É’è‹`‚µ‚½enum‚É•R‚Ã‚­˜A‘z”z—ñ‚ğì¬
+//ENUMãƒã‚¯ãƒ­ã§ä½¿ç”¨ã€‚æ–°ãŸã«å®šç¾©ã—ãŸenumã«ç´ã¥ãé€£æƒ³é…åˆ—ã‚’ä½œæˆ
 template <class T>inline void createEnumMap(std::map<std::string, T> &_map, char* _list, int _num, ...) {
-	char* cntx;		//strtok_s—p‚ÌG—p	
+	char* cntx;		//strtok_sç”¨ã®é›‘ç”¨	
 	char* listCopy = new char[255];
 	char* tmpKey;
 
@@ -116,8 +116,8 @@ template <class T>inline void createEnumMap(std::map<std::string, T> &_map, char
 
 
 /////////////////////////////////////////////////////////////
-///“ñŸŒ³À•W—pƒNƒ‰ƒX////////////////////////////////////////
-class CVector{	//éŒ¾‚Æ“¯‚É’è‹`‚ğ‘‚¢‚Ä‚¢‚é‚Ì‚ÍƒCƒ“ƒ‰ƒCƒ“‰»
+///äºŒæ¬¡å…ƒåº§æ¨™ç”¨ã‚¯ãƒ©ã‚¹////////////////////////////////////////
+class CVector{	//å®£è¨€ã¨åŒæ™‚ã«å®šç¾©ã‚’æ›¸ã„ã¦ã„ã‚‹ã®ã¯ã‚¤ãƒ³ãƒ©ã‚¤ãƒ³åŒ–
 public:
 	CVector( double _x , double _y ){
 		x = _x;
@@ -152,7 +152,7 @@ public:
 		return *this;
 	}
 
-	// +‰‰ZqƒI[ƒo[ƒ[ƒh
+	// +æ¼”ç®—å­ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰
 	CVector operator+(const CVector &obj){
 		CVector tmp;
 		tmp.x = x + obj.x;
@@ -166,7 +166,7 @@ public:
 		return tmp;
 	}
 
-	// +=‰‰ZqƒI[ƒo[ƒ[ƒh
+	// +=æ¼”ç®—å­ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰
 	CVector& operator+=(const CVector &obj){
 		x += obj.x;
 		y += obj.y;
@@ -178,7 +178,7 @@ public:
 		return *this;
 	}
 	
-	// -‰‰ZqƒI[ƒo[ƒ[ƒh
+	// -æ¼”ç®—å­ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰
 	CVector operator-(const CVector &obj){
 		CVector tmp;
 		tmp.x = x - obj.x;
@@ -191,7 +191,7 @@ public:
 		tmp.y = y - _num;
 		return tmp;
 	}
-	// -=‰‰ZqƒI[ƒo[ƒ[ƒh
+	// -=æ¼”ç®—å­ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰
 	CVector& operator-=(const CVector &obj){
 		x -= obj.x;
 		y -= obj.y;
@@ -202,7 +202,7 @@ public:
 		y -= _num;
 		return *this;
 	}
-	//*‰‰ZqƒI[ƒo[ƒ[ƒh
+	//*æ¼”ç®—å­ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰
 	CVector operator*(const CVector &obj){
 		CVector tmp;
 		tmp.x = x * obj.x;
@@ -215,7 +215,7 @@ public:
 		tmp.y = y * _num;
 		return tmp;
 	}
-	//*=‰‰ZqƒI[ƒo[ƒ[ƒh
+	//*=æ¼”ç®—å­ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰
 	CVector& operator*=(const CVector &obj){
 		x *= obj.x;
 		y *= obj.y;
@@ -235,7 +235,7 @@ private:
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///“ñŸŒ³BOXƒNƒ‰ƒX////////////////////////////////////////
+///äºŒæ¬¡å…ƒBOXã‚¯ãƒ©ã‚¹////////////////////////////////////////
 class CRect{
 public:
 	int Top;
@@ -280,85 +280,85 @@ public:
 
 
 ////////////////////////////////////////////////////////////////////////////////////
-////•¶š—ñŒn///////////////////////////////////////////////////////////////////////
+////æ–‡å­—åˆ—ç³»///////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-////•¶š—ñ‚ğ”’l‚É•ÏŠ·///////////////////////////////////////
+////æ–‡å­—åˆ—ã‚’æ•°å€¤ã«å¤‰æ›///////////////////////////////////////
 bool mystrtol(const char* str, long int* result, int radix=10);
 bool mystrtol(const char* str, int* result, int radix=10);
-	//atoi‚É‚ÍƒGƒ‰[”»’è‚ª‚È‚¢‚½‚ß‚±‚ÌŠÖ”‚ğ—˜—p„§
-	//	str		F	•ÏŠ·‘ÎÛ‚Ì•¶š—ñ
-	//	*result	F	•ÏŠ·‚µ‚½LongŒ^‚Ì”‚ğó‚¯æ‚éƒAƒhƒŒƒX ©intŒ^‚à‰Â‚É
-	//	radix	F	Šî”B”’l‚ğ‰½i”‚Æ‚İ‚È‚·‚©‚ğİ’èBƒfƒtƒHƒ‹ƒg‚Í10i”
+	//atoiã«ã¯ã‚¨ãƒ©ãƒ¼åˆ¤å®šãŒãªã„ãŸã‚ã“ã®é–¢æ•°ã‚’åˆ©ç”¨æ¨å¥¨
+	//	str		ï¼š	å¤‰æ›å¯¾è±¡ã®æ–‡å­—åˆ—
+	//	*result	ï¼š	å¤‰æ›ã—ãŸLongå‹ã®æ•°ã‚’å—ã‘å–ã‚‹ã‚¢ãƒ‰ãƒ¬ã‚¹ â†intå‹ã‚‚å¯ã«
+	//	radix	ï¼š	åŸºæ•°ã€‚æ•°å€¤ã‚’ä½•é€²æ•°ã¨ã¿ãªã™ã‹ã‚’è¨­å®šã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯10é€²æ•°
 bool mystrtod(const char* str, double* result);	
 bool mystrtod(const char* str, float* result);
-	//•‚“®¬”“_”idouble‚àfloat‚à‰Âj
+	//æµ®å‹•å°æ•°ç‚¹æ•°ï¼ˆdoubleã‚‚floatã‚‚å¯ï¼‰
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-////strlen‚ğsigned‚É/////////////////////////////////////////
-signed int mystrlen(const char* _str);				   //—m—œ
+////strlenã‚’signedã«/////////////////////////////////////////
+signed int mystrlen(const char* _str);				   //æ´‹æ¢¨
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///•¶š—ñ”äŠr—pŠÖ”//////////////////////////////////////////
+///æ–‡å­—åˆ—æ¯”è¼ƒç”¨é–¢æ•°//////////////////////////////////////////
 bool mystrcmp(const char *String, const char *Words, const char Option='p');
-bool mystrcmp(const char *String, const char Option, const int arg_num, ...);		//•¡”ƒL[ƒ[ƒh‚ğOR”»’è
-	//	'p'	FŠ®‘Sˆê’vF	Words‚ª""‚ÌAFalse
-	//	'l'	F¶•ûˆê’vF	Words‚ª""‚ÌATrue
-	//	'm'	F•”•ªˆê’vF	Words‚ª""‚ÌATrue
+bool mystrcmp(const char *String, const char Option, const int arg_num, ...);		//è¤‡æ•°ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰ã‚’ORåˆ¤å®š
+	//	'p'	ï¼šå®Œå…¨ä¸€è‡´ï¼š	WordsãŒ""ã®æ™‚ã€False
+	//	'l'	ï¼šå·¦æ–¹ä¸€è‡´ï¼š	WordsãŒ""ã®æ™‚ã€True
+	//	'm'	ï¼šéƒ¨åˆ†ä¸€è‡´ï¼š	WordsãŒ""ã®æ™‚ã€True
 bool mystrcmp2(const char *String, const char *Words, const char Option='p');
-bool mystrcmp2(const char *String, const char Option, const int arg_num, ...);		//•¡”ƒL[ƒ[ƒh‚ğOR”»’è
+bool mystrcmp2(const char *String, const char Option, const int arg_num, ...);		//è¤‡æ•°ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰ã‚’ORåˆ¤å®š
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///”¼Šp•¶š³Šm’Tõ—pŠÖ”//////////////////////////////////////
+///åŠè§’æ–‡å­—æ­£ç¢ºæ¢ç´¢ç”¨é–¢æ•°//////////////////////////////////////
 char* mystrchr(char* string, char character);
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///•¶š—ñƒRƒs[—pŠÖ”////////////////////////////////////////
+///æ–‡å­—åˆ—ã‚³ãƒ”ãƒ¼ç”¨é–¢æ•°////////////////////////////////////////
 bool mystrcpy(char *String, const char *Source);
 bool mystrcpy(char **String, const char **Source, const int SourceLineSize);
 bool mystrcpy(char *String, const char *Source, int size_including_null);
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///•¶š—ñ‚Ì—¼’[‚©‚ç—]Œv‚È•¶š‚ğí‚éŠÖ”//////////////////////
+///æ–‡å­—åˆ—ã®ä¸¡ç«¯ã‹ã‚‰ä½™è¨ˆãªæ–‡å­—ã‚’å‰Šã‚‹é–¢æ•°//////////////////////
 bool mystrsmt(char *string, const char* uselesswords);
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///•¶š—ñŒ‹‡—pŠÖ”////////////////////////////////////////
+///æ–‡å­—åˆ—çµåˆç”¨é–¢æ•°////////////////////////////////////////
 bool mystrcat(char *string, const char* source);
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///•¶š—ñ’uŠ·—pŠÖ”////////////////////////////////////////
+///æ–‡å­—åˆ—ç½®æ›ç”¨é–¢æ•°////////////////////////////////////////
 void mystrrep(char* string, const char* from, const char* to);
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///•¶š—ñ‘å¬”äŠr—pŠÖ”(greater)//////////////////////////////
+///æ–‡å­—åˆ—å¤§å°æ¯”è¼ƒç”¨é–¢æ•°(greater)//////////////////////////////
 bool mystrgrt(const char* string, const char* target, bool greater=true);
 /////////////////////////////////////////////////////////////
 
-////•¶š—ñŒn‚±‚±‚Ü‚Å/////////////////////////////////////////////////////////////
+////æ–‡å­—åˆ—ç³»ã“ã“ã¾ã§/////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
 
 ////////////////////////////////////////////////////////////////////////////////////
-////•`‰æŒn//////////////////////////////////////////////////////////////////////////
-CVector GetGraphSize(int GrHandle);		//‰æ‘œ‚ÌƒTƒCƒY‚ğCVectorŒ^‚Å•Ô‚·
-int LoadGraph(const TCHAR *filename, bool errorcheck);		//Dxƒ‰ƒCƒuƒ‰ƒŠ‚ÌLoadGraph‚Ìƒtƒ@ƒCƒ‹ƒGƒ‰[o—Í•t‚«”ÅBƒR[ƒhß–ñ‚ª–Ú“IB
+////æç”»ç³»//////////////////////////////////////////////////////////////////////////
+CVector GetGraphSize(int GrHandle);		//ç”»åƒã®ã‚µã‚¤ã‚ºã‚’CVectorå‹ã§è¿”ã™
+int LoadGraph(const TCHAR *filename, bool errorcheck);		//Dxãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®LoadGraphã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚¨ãƒ©ãƒ¼å‡ºåŠ›ä»˜ãç‰ˆã€‚ã‚³ãƒ¼ãƒ‰ç¯€ç´„ãŒç›®çš„ã€‚
 
-inline int DrawGraph(double x, double y, int GrHandle, int TransFlag){		//Dxƒ‰ƒCƒuƒ‰ƒŠ‚ÌDrawGraph‚Ådouble‚ğint‚É©“®ƒLƒƒƒXƒg‚µ‚Ä‚­‚ê‚é‚¾‚¯
+inline int DrawGraph(double x, double y, int GrHandle, int TransFlag){		//Dxãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®DrawGraphã§doubleã‚’intã«è‡ªå‹•ã‚­ãƒ£ã‚¹ãƒˆã—ã¦ãã‚Œã‚‹ã ã‘
 	return DrawGraph((int)x, (int)y, GrHandle, TransFlag);
 }
-inline int DrawExtendGraph(double x1, double y1, double x2, double y2, int GrHandle, int TransFlag){		//Dxƒ‰ƒCƒuƒ‰ƒŠ‚ÌDrawExtendGraph‚Ådouble‚ğint‚É©“®ƒLƒƒƒXƒg‚µ‚Ä‚­‚ê‚é‚¾‚¯
+inline int DrawExtendGraph(double x1, double y1, double x2, double y2, int GrHandle, int TransFlag){		//Dxãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®DrawExtendGraphã§doubleã‚’intã«è‡ªå‹•ã‚­ãƒ£ã‚¹ãƒˆã—ã¦ãã‚Œã‚‹ã ã‘
 	return DrawExtendGraph((int)x1, (int)y1, (int)x2, (int)y2, GrHandle, TransFlag);
 }
-inline int DrawTurnGraph(double x, double y, int GrHandle, int TransFlag){		//Dxƒ‰ƒCƒuƒ‰ƒŠ‚ÌDrawTurnGraph‚Ådouble‚ğint‚É©“®ƒLƒƒƒXƒg‚µ‚Ä‚­‚ê‚é‚¾‚¯
+inline int DrawTurnGraph(double x, double y, int GrHandle, int TransFlag){		//Dxãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®DrawTurnGraphã§doubleã‚’intã«è‡ªå‹•ã‚­ãƒ£ã‚¹ãƒˆã—ã¦ãã‚Œã‚‹ã ã‘
 	return DrawTurnGraph((int)x, (int)y, GrHandle, TransFlag);
 }
 template<class T> inline int DrawCenterGraph(T cx, T cy, int GrHandle, int TransFlag){
@@ -366,10 +366,10 @@ template<class T> inline int DrawCenterGraph(T cx, T cy, int GrHandle, int Trans
 	return DrawGraph(cx-imgsize.x/2, cy-imgsize.y/2, GrHandle, TransFlag);
 }
 
-int DrawString(int x, int y, int color, const TCHAR* format, ...);	//ƒtƒH[ƒ}ƒbƒg‘Î‰
-inline int DrawCenterString(int cx, int y, const TCHAR *String, int color, bool centerY=false){	//x‚ğ¶‰E‚Ì’†S‚É‚µ‚ÄDrawString‚Å•¶š•`‰æi¦y‚Íã‰º’†S‚Å‚Í‚È‚­ã•Ój
+int DrawString(int x, int y, int color, const TCHAR* format, ...);	//ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå¯¾å¿œ
+inline int DrawCenterString(int cx, int y, const TCHAR *String, int color, bool centerY=false){	//xã‚’å·¦å³ã®ä¸­å¿ƒã«ã—ã¦DrawStringã§æ–‡å­—æç”»ï¼ˆâ€»yã¯ä¸Šä¸‹ä¸­å¿ƒã§ã¯ãªãä¸Šè¾ºï¼‰
 	if (centerY){
-		return DxLib::DrawString(cx-GetDrawStringWidth(String, strlen(String))/2, y-GetFontSize()/2, String, color);	//‚ ‚­‚Ü‚Å–ÚˆÀ 
+		return DxLib::DrawString(cx-GetDrawStringWidth(String, strlen(String))/2, y-GetFontSize()/2, String, color);	//ã‚ãã¾ã§ç›®å®‰ 
 	}else{
 		return DxLib::DrawString(cx-GetDrawStringWidth(String, strlen(String))/2, y, String, color); 
 	}
@@ -380,17 +380,17 @@ int DrawCenterString(int cx, int y, int color, bool centerY, const TCHAR* format
 inline int DrawBox(CRect _rect, int _color, bool _fillflag){
 	return DxLib::DrawBox(_rect.Left, _rect.Top, _rect.Right, _rect.Bottom, _color, _fillflag);
 }
-////•`‰æŒn‚±‚±‚Ü‚Å//////////////////////////////////////////////////////////////////
+////æç”»ç³»ã“ã“ã¾ã§//////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////
-////‰¹ŠyŒn//////////////////////////////////////////////////////////////////////////
+////éŸ³æ¥½ç³»//////////////////////////////////////////////////////////////////////////
 bool CheckSound(int _handle);
-////‰¹ŠyŒn‚±‚±‚Ü‚Å//////////////////////////////////////////////////////////////////
+////éŸ³æ¥½ç³»ã“ã“ã¾ã§//////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///ƒGƒ‰[&ƒfƒoƒbƒOo—Í—pŠÖ”/////////////////////////////////
+///ã‚¨ãƒ©ãƒ¼&ãƒ‡ãƒãƒƒã‚°å‡ºåŠ›ç”¨é–¢æ•°/////////////////////////////////
 #define ERRORDX(...)	 ErrorDx(__LINE__, __FUNCTION__, __FILE__,  __VA_ARGS__)
 #define WARNINGDX(...) WarningDx(__LINE__, __FUNCTION__, __FILE__,  __VA_ARGS__)
 #define DEBUGDX(...)	 DebugDx(__LINE__, __FUNCTION__, __FILE__,  __VA_ARGS__)
@@ -426,7 +426,7 @@ inline void myLogf(const char* filename, const char* format, ...){
 }
 inline void myprintfDx(const char* format, va_list args, const char* filename=NULL, int line=0){
 	char string[1024];
-	vsprintf_s(string, format, args);	//va_start‚Æva_end‚ÍŒÄ‚Ño‚µŒ³‚Å‚·‚é
+	vsprintf_s(string, format, args);	//va_startã¨va_endã¯å‘¼ã³å‡ºã—å…ƒã§ã™ã‚‹
 	if (filename != NULL) {
 		if (sprintf_s(string, "%s\n->%s(%d)\n", string, filename, line) == -1) {
 			sprintf_s(string, "BufferOverRun(nunuLib.h)\n->%s(%d)\n", filename, line);
@@ -516,8 +516,8 @@ inline void DebugDx(const char* format, ...){
 
 
 /////////////////////////////////////////////////////////////
-//////©ìChooseŠÖ”/////////////////////////////////////////
-int choose(const int target, ...);	//intŒÀ’è	//VB6d—liˆêŒÂ–Ú‚ğw’è‚µ‚½‚¢¨target=1j
+//////è‡ªä½œChooseé–¢æ•°/////////////////////////////////////////
+int choose(const int target, ...);	//inté™å®š	//VB6ä»•æ§˜ï¼ˆä¸€å€‹ç›®ã‚’æŒ‡å®šã—ãŸã„â†’target=1ï¼‰
 template <class T> T chooseT(const int target, T first, ...){
 	T choice = first;
 	
@@ -526,10 +526,10 @@ template <class T> T chooseT(const int target, T first, ...){
 
 	} else {
 		va_list args;
-		va_start( args, first);	//target‚ª‘å‚«‚·‚¬‚½‚Æ‚«‚Ìˆ’u•û–@‚Í‚È‚¢‚Ì‚©?¨0‚ª•Ô‚³‚ê‚é–Í—lB
+		va_start( args, first);	//targetãŒå¤§ãã™ããŸã¨ãã®å‡¦ç½®æ–¹æ³•ã¯ãªã„ã®ã‹?â†’0ãŒè¿”ã•ã‚Œã‚‹æ¨¡æ§˜ã€‚
 		
 		for (int i=2; i<=target; i++){
-			choice = va_arg(args, T);		//target=1‚ÌAˆêŒÂ–Ú‚ğ•Ô‚·iNot target=0j
+			choice = va_arg(args, T);		//target=1ã®æ™‚ã€ä¸€å€‹ç›®ã‚’è¿”ã™ï¼ˆNot target=0ï¼‰
 		}
 		
 		va_end(args);
@@ -541,12 +541,12 @@ template <class T> T chooseT(const int target, T first, ...){
 
 
 /////////////////////////////////////////////////////////////
-///KeyDown”»’è—pŠÖ”/////////////////////////////////////////
+///KeyDownåˆ¤å®šç”¨é–¢æ•°/////////////////////////////////////////
 const int KEY_INPUT_OK = -1;
 const int KEY_INPUT_CANCEL = -2;
 
-namespace nunuLibKey{			//ƒNƒ‰ƒX–¼Õ“Ë‚ğ”ğ‚¯‚é‚½‚ß–¼‘O‹óŠÔ‚É•ï‚Ş
-	class CKeyManager{		//\‘¢‘Ì•Ï”‚É‚µ‚Ä‚à‚¢‚¢‚¯‚Ç‚È‚é‚×‚­static‚ğg‚¢‚½‚­‚È‚©‚Á‚½
+namespace nunuLibKey{			//ã‚¯ãƒ©ã‚¹åè¡çªã‚’é¿ã‘ã‚‹ãŸã‚åå‰ç©ºé–“ã«åŒ…ã‚€
+	class CKeyManager{		//æ§‹é€ ä½“å¤‰æ•°ã«ã—ã¦ã‚‚ã„ã„ã‘ã©ãªã‚‹ã¹ãstaticã‚’ä½¿ã„ãŸããªã‹ã£ãŸ
 	public:
 		CKeyManager();
 		bool CheckDown(const int KEY_CODE);
@@ -554,24 +554,24 @@ namespace nunuLibKey{			//ƒNƒ‰ƒX–¼Õ“Ë‚ğ”ğ‚¯‚é‚½‚ß–¼‘O‹óŠÔ‚É•ï‚Ş
 		bool Pressed[256];
 	};
 }
-bool CheckHitKeyDown(const int KEY_CODE); //¦Œˆ’èƒL[¥¥¥Z,Enter  ƒLƒƒƒ“ƒZƒ‹ƒL[¥¥¥X,BackSpace  ‚»‚ê‚¼‚ê‚Ç‚¿‚ç‚Å‚à‰Â
+bool CheckHitKeyDown(const int KEY_CODE); //â€»æ±ºå®šã‚­ãƒ¼ãƒ»ãƒ»ãƒ»Z,Enter  ã‚­ãƒ£ãƒ³ã‚»ãƒ«ã‚­ãƒ¼ãƒ»ãƒ»ãƒ»X,BackSpace  ãã‚Œãã‚Œã©ã¡ã‚‰ã§ã‚‚å¯
 /////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////
-//////ƒtƒH[ƒ}ƒbƒg‘Î‰ƒEƒBƒ“ƒhƒEƒ^ƒCƒgƒ‹•ÏXŠÖ”/////////////
-int SetTitle(const char* format, ...);		//DxlibŠÖ”SetMainWindowText‚ÌãˆÊŒİŠ·
+//////ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå¯¾å¿œã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¿ã‚¤ãƒˆãƒ«å¤‰æ›´é–¢æ•°/////////////
+int SetTitle(const char* format, ...);		//Dxlibé–¢æ•°SetMainWindowTextã®ä¸Šä½äº’æ›
 /////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////
-////‚»‚Ì‘¼///////////////////////////////////////////////////
-template<class T>inline T between(const T& min_border, const T& max_border, const T& num, bool* _result=NULL) {	//num‚ªmin_borderˆÈãmax_borderˆÈ‰º‚É‚È‚é‚æ‚¤ƒ`ƒFƒbƒNBresult‚ÉŒ‹‰Ê‚ğŠi”[	¦ˆø”‚Í‚·‚×‚ÄŒ^‚ª“¯‚¶‚Å‚È‚­‚Ä‚Í‚È‚ç‚È‚¢
+////ãã®ä»–///////////////////////////////////////////////////
+template<class T>inline T between(const T& min_border, const T& max_border, const T& num, bool* _result=NULL) {	//numãŒmin_borderä»¥ä¸Šmax_borderä»¥ä¸‹ã«ãªã‚‹ã‚ˆã†ãƒã‚§ãƒƒã‚¯ã€‚resultã«çµæœã‚’æ ¼ç´	â€»å¼•æ•°ã¯ã™ã¹ã¦å‹ãŒåŒã˜ã§ãªãã¦ã¯ãªã‚‰ãªã„
 	T result = max((min_border), min((max_border), (num)));
 	if (_result != NULL) *_result = (result == num ? true : false);
 	return result;
 }
-inline int mod(int a, int b){	//VB6‚Ì‚æ‚¤‚É•K‚¸”ñ•‰‚Ì‚ ‚Ü‚è‚ğ•Ô‚·ŠÖ”B%‰‰Zq‚Í•‰‚Ì”‚ğæ‚è‚¤‚é‚Ì‚Å•s•ÖB
+inline int mod(int a, int b){	//VB6ã®ã‚ˆã†ã«å¿…ãšéè² ã®ã‚ã¾ã‚Šã‚’è¿”ã™é–¢æ•°ã€‚%æ¼”ç®—å­ã¯è² ã®æ•°ã‚’å–ã‚Šã†ã‚‹ã®ã§ä¸ä¾¿ã€‚
 	if (b!=0) {
 		return ((b)+((a)%(b)))%(b);
 	} else {
@@ -600,5 +600,5 @@ inline bool BasicLoop(){
 
 //}
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////

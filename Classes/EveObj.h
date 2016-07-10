@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef EVEOBJ_H							////
 #define EVEOBJ_H							////
 ////////////////////////////////////////////////
@@ -37,37 +37,37 @@ public:
 		//DESTRUCTED;
 	}
 
-	//•Ï”
-		//Mapnum‚ÆDatanum‚Ì‘g‚İ‡‚í‚¹‚Å“Á’è‚Å‚«‚é
+	//å¤‰æ•°
+		//Mapnumã¨Datanumã®çµ„ã¿åˆã‚ã›ã§ç‰¹å®šã§ãã‚‹
 		unsigned int Mapnum;	
-		unsigned char Datanum;	//ƒCƒxƒ“ƒgƒ}ƒbƒvƒf[ƒ^“à‚ÌƒoƒCƒiƒŠ”Ô†
+		unsigned char Datanum;	//ã‚¤ãƒ™ãƒ³ãƒˆãƒãƒƒãƒ—ãƒ‡ãƒ¼ã‚¿å†…ã®ãƒã‚¤ãƒŠãƒªç•ªå·
 
 		char Name[32];
 		std::vector<char256> Text;
-		int Count;						//•‰‚É‚È‚é–‚Í‚È‚¢
+		int Count;						//è² ã«ãªã‚‹äº‹ã¯ãªã„
 	
-		int Img[CHARA_PIC_NUM];	char PicKey[32];		//NPCˆÈŠO‚ÌImg[1~]‚Í-1‚È‚Ì‚Åg—p‹Ö~
+		int Img[CHARA_PIC_NUM];	char PicKey[32];		//NPCä»¥å¤–ã®Img[1~]ã¯-1ãªã®ã§ä½¿ç”¨ç¦æ­¢
 		bool Visible;
 
-		enum direction_tag Dir;		//DOWN‚Å‰Šú‰»
+		enum direction_tag Dir;		//DOWNã§åˆæœŸåŒ–
 		enum objkind_tag::type Kind;
 		int Step;		//0~3
-		int Dx, Dy;		//•`‰æ‚É‚¸‚ç‚·‚Ô‚ñi•às‚âƒWƒƒƒ“ƒv‚È‚Çj
+		int Dx, Dy;		//æç”»æ™‚ã«ãšã‚‰ã™ã¶ã‚“ï¼ˆæ­©è¡Œã‚„ã‚¸ãƒ£ãƒ³ãƒ—ãªã©ï¼‰
 		unsigned char Alpha;
 
-		enum charaeffect_tag Effect;	//Œø‰Êi“_–ÅA©“®•às‚È‚Çj
+		enum charaeffect_tag Effect;	//åŠ¹æœï¼ˆç‚¹æ»…ã€è‡ªå‹•æ­©è¡Œãªã©ï¼‰
 			int EffectNumCmd[5];
 			int EffectNum[5];
 			//BLINK
-				//[0]...‰ºŒÀ, [1]...ãŒÀ, [2]...‰•œŠÔ, ([3]...•Ï‰»—Ê) ‰ºŒÀ‚ÆãŒÀ‚Í“, •Ï‰»—Ê‚Í255ƒx[ƒX
+				//[0]...ä¸‹é™, [1]...ä¸Šé™, [2]...å¾€å¾©æ™‚é–“, ([3]...å¤‰åŒ–é‡) ä¸‹é™ã¨ä¸Šé™ã¯ï¼…, å¤‰åŒ–é‡ã¯255ãƒ™ãƒ¼ã‚¹
 			//RND_DIR
-				//[0]...Œü‚«‚ğ•Ï‚¦‚éŠÔ,i[1]..ƒJƒEƒ“ƒ^[j
+				//[0]...å‘ãã‚’å¤‰ãˆã‚‹æ™‚é–“,ï¼ˆ[1]..ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼ï¼‰
 
-	//ŠÖ”
+	//é–¢æ•°
 		void Draw(int _x, int _y);
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

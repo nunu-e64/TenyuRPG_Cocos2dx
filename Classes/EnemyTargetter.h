@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef ENEMYTARGETTER_H					////
 #define ENEMYTARGETTER_H					////
 ////////////////////////////////////////////////
@@ -6,7 +6,7 @@
 class CActor;
 class CEnemy;
 
-class CEnemyTargetter{ //EnemySpecies‚Ìƒ^[ƒQƒbƒg‘I‘ğAI—p‚ÌƒCƒ“ƒ^[ƒtƒF[ƒX
+class CEnemyTargetter{ //EnemySpeciesã®ã‚¿ãƒ¼ã‚²ãƒƒãƒˆé¸æŠAIç”¨ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹
 public: 
 	CEnemyTargetter(std::string _enemyname){
 		CONSTRUCTED;
@@ -47,18 +47,18 @@ public:
 
 protected:
 
-	static const int ATTENTION_RATIO[MAX_PLAYER_NUM];	//EnemyTargetter.cpp‚Å’è‹`‚µ‚Ä‚Ü‚·
+	static const int ATTENTION_RATIO[MAX_PLAYER_NUM];	//EnemyTargetter.cppã§å®šç¾©ã—ã¦ã¾ã™
 
 
-	//‘SƒAƒNƒ^[‚Ö‚ÌƒAƒNƒZƒX‚ğ‚½‚¹‚Ä‚¨‚­ií“¬ŠJn‚²‚Æ‚ÉXVj
+	//å…¨ã‚¢ã‚¯ã‚¿ãƒ¼ã¸ã®ã‚¢ã‚¯ã‚»ã‚¹ã‚’æŒãŸã›ã¦ãŠãï¼ˆæˆ¦é—˜é–‹å§‹ã”ã¨ã«æ›´æ–°ï¼‰
 		const CActor* const* Actor;
 		int PLAYER_NUM;
 		int ENEMY_NUM;
 
 private:
-	std::string EnemyName;	//å‚Ì–¼‘OBƒGƒ‰[o—Í—p‚Å‚µ‚©‚È‚¢B‚¾‚Á‚ÄƒAƒNƒZƒX‚ÍEnemySpecies‚©‚ç‚È‚³‚ê‚é‚µŒÄ‚Ño‚µŒ³î•ñ‚ª•K—v‚È‚Íthis‚ğ“n‚¹‚ÎÏ‚ŞB
+	std::string EnemyName;	//ä¸»ã®åå‰ã€‚ã‚¨ãƒ©ãƒ¼å‡ºåŠ›ç”¨ã§ã—ã‹ãªã„ã€‚ã ã£ã¦ã‚¢ã‚¯ã‚»ã‚¹ã¯EnemySpeciesã‹ã‚‰ãªã•ã‚Œã‚‹ã—å‘¼ã³å‡ºã—å…ƒæƒ…å ±ãŒå¿…è¦ãªæ™‚ã¯thisã‚’æ¸¡ã›ã°æ¸ˆã‚€ã€‚
 	int AttentionRank[MAX_PLAYER_NUM];
-	int* Attention;		//–{‘Ì‚ÍCEnemyAI‚ª‚ÂBSetAttention()‚ÅƒŠƒ“ƒN‚·‚é
+	int* Attention;		//æœ¬ä½“ã¯CEnemyAIãŒæŒã¤ã€‚SetAttention()ã§ãƒªãƒ³ã‚¯ã™ã‚‹
 };
 
 
@@ -70,7 +70,7 @@ public:
 	}
 	~CEnemyTargetter_DEFAULT(){DESTRUCTED;}
 
-	int GetTarget(const CEnemy* _enemy);	//‹¤’Ê
+	int GetTarget(const CEnemy* _enemy);	//å…±é€š
 };
 
 
@@ -82,10 +82,10 @@ public:
 	};
 	~CEnemyTargetter_REVERSE(){DESTRUCTED;}
 
-	int GetTarget(const CEnemy* _enemy); //‹¤’Ê
+	int GetTarget(const CEnemy* _enemy); //å…±é€š
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

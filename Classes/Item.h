@@ -1,11 +1,11 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//	//pragmaonce‚Æ“¯‚¶ˆÓ–¡‚¾‚ª‚±‚¿‚ç‚ÍƒRƒ“ƒpƒCƒ‰‚ÉˆË‘¶‚µ‚È‚¢
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//	//pragmaonceã¨åŒã˜æ„å‘³ã ãŒã“ã¡ã‚‰ã¯ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ã«ä¾å­˜ã—ãªã„
 #ifndef ITEM_H								////
 #define ITEM_H								////
 ////////////////////////////////////////////////
 
 #include "ItemManager.h"
 
-class CItem{	//ƒCƒ“ƒ^[ƒtƒF[ƒXƒNƒ‰ƒX
+class CItem{	//ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚¯ãƒ©ã‚¹
 public:
 	CItem() {
 		CONSTRUCTED;
@@ -17,8 +17,8 @@ public:
 
 	std::string Name;
 	CItemManager::item_tag::type Kind;
-	int OwnLimit;		//Š§ŒÀ@0‚ÅŠ•s‰Â@-1‚Å–³§ŒÀ
-	int Price;			//”„‹p‰¿Ši
+	int OwnLimit;		//æ‰€æŒåˆ¶é™ã€€0ã§æ‰€æŒä¸å¯ã€€-1ã§ç„¡åˆ¶é™
+	int Price;			//å£²å´ä¾¡æ ¼
 	bool Sellable;
 
 };
@@ -31,15 +31,15 @@ public :
 
 class CConsumptionItem: public CEffectItem {
 public:
-	bool BattleUsable;	//í“¬’†—˜—p‰Â”Û
-	int WaitTime;		//í“¬’†g—pŒã‚Ì‘Ò‹@ŠÔ
+	bool BattleUsable;	//æˆ¦é—˜ä¸­åˆ©ç”¨å¯å¦
+	int WaitTime;		//æˆ¦é—˜ä¸­ä½¿ç”¨å¾Œã®å¾…æ©Ÿæ™‚é–“
 
 	target_tag::type Target;
 };
 
 class CAccessoryItem: public CEffectItem {
 public:
-	std::vector < std::pair<std::string, int> > MaterialSet;	//—û¬‚É•K—v‚È‘fŞƒAƒCƒeƒ€–¼‚ÆŒÂ”
+	std::vector < std::pair<std::string, int> > MaterialSet;	//ç·´æˆã«å¿…è¦ãªç´ æã‚¢ã‚¤ãƒ†ãƒ åã¨å€‹æ•°
 };
 
 class CKeyItem: public CItem {
@@ -50,6 +50,6 @@ class CMaterialItem: public CItem {
 
 };
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

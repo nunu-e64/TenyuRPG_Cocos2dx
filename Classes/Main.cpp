@@ -7,17 +7,17 @@
 
 bool CMain::Init(){
 	srand((unsigned int)GetNowCount());
-	//UNKNOWN:ChangeFont("‚l‚r ‚oƒSƒVƒbƒN") ;
+	//UNKNOWN:ChangeFont("ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯") ;
 	
-	/*UNKNOWN	//‚±‚ê‚È‚ñ‚ÅƒRƒƒ“ƒgƒAƒEƒg‚µ‚Ä‚ ‚é‚Ì‚©‚í‚©‚ç‚È‚¢¥¥¥ 15/04/22
-	if (_mkdir("tenyu_data")==0){	//ƒfƒBƒŒƒNƒgƒŠ‚ğì‚ê‚é‚©‚Ç‚¤‚©‚Å‘¶İ—L–³‚ğ”»’f
-		_rmdir("tenyu_data");	//uì‚ê‚é‘¶İ‚µ‚Ä‚¢‚È‚©‚Á‚½v‚ÌŠm”F‚ªÏ‚ñ‚¾‚Ì‚Å¡ì‚Á‚½ƒfƒBƒŒƒNƒgƒŠ‚Ííœ‚µ‚Ä‚¨‚­
+	/*UNKNOWN	//ã“ã‚Œãªã‚“ã§ã‚³ãƒ¡ãƒ³ãƒˆã‚¢ã‚¦ãƒˆã—ã¦ã‚ã‚‹ã®ã‹ã‚ã‹ã‚‰ãªã„ãƒ»ãƒ»ãƒ» 15/04/22
+	if (_mkdir("tenyu_data")==0){	//ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ä½œã‚Œã‚‹ã‹ã©ã†ã‹ã§å­˜åœ¨æœ‰ç„¡ã‚’åˆ¤æ–­
+		_rmdir("tenyu_data");	//ã€Œä½œã‚Œã‚‹ï¼å­˜åœ¨ã—ã¦ã„ãªã‹ã£ãŸã€ã®ç¢ºèªãŒæ¸ˆã‚“ã ã®ã§ä»Šä½œã£ãŸãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã¯å‰Šé™¤ã—ã¦ãŠã
 		ErrorDx("Error->NotFound dir\"tenyu_data\" (exit)");
 		return false;
 	}*/
 
 	return true;
-	//ƒGƒ‰[‚É‚Íreturn false
+	//ã‚¨ãƒ©ãƒ¼æ™‚ã«ã¯return false
 }
 
 bool CMain::GameLoop(){
@@ -84,7 +84,7 @@ int CMain::Title(){
 	return mrt::Title();
 }
 
-int CMain::ChooseData(){		//ƒZ[ƒuƒf[ƒ^‚Ì‘I‘ğ‰æ–Ê
+int CMain::ChooseData(){		//ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ã®é¸æŠç”»é¢
 	return mrt::ChooseData(PlayData);
 }
 
@@ -92,7 +92,7 @@ void CMain::StartDemo(){
 	int timecount = 0;
 	int scene = 0;
 	
-	CheckHitKeyDown(KEY_INPUT_OK);	//ƒL[ó‘Ô‚ğƒŠƒZƒbƒg
+	CheckHitKeyDown(KEY_INPUT_OK);	//ã‚­ãƒ¼çŠ¶æ…‹ã‚’ãƒªã‚»ãƒƒãƒˆ
 	while( BasicLoop() && !CheckHitKeyDown(KEY_INPUT_ESCAPE) && !CheckHitKeyDown(KEY_INPUT_OK)  && !CheckHitKeyDown(KEY_INPUT_CANCEL) && scene != -1){
 		
 		switch(scene){
@@ -135,7 +135,7 @@ bool CMain::GameOver(){
 			SetDrawBlendMode(DX_BLENDMODE_ALPHA, timecount);
 		}else{	
 			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);		
-			if (int(timecount/40)%2) DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*4/5), "Z¨ƒ^ƒCƒgƒ‹‚Ö–ß‚é, X¨ƒQ[ƒ€I—¹", GRAY);
+			if (int(timecount/40)%2) DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*4/5), "Zâ†’ã‚¿ã‚¤ãƒˆãƒ«ã¸æˆ»ã‚‹, Xâ†’ã‚²ãƒ¼ãƒ çµ‚äº†", GRAY);
 		}
 		
 		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*2/5), "GAME OVER", WHITE);
@@ -161,7 +161,7 @@ bool CMain::GameClear(){
 			SetDrawBlendMode(DX_BLENDMODE_ALPHA, timecount);
 		}else{	
 			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);		
-			if (int(timecount/40)%2) DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*4/5), "Z¨ƒ^ƒCƒgƒ‹‚Ö–ß‚é, X¨ƒQ[ƒ€I—¹", GRAY);
+			if (int(timecount/40)%2) DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*4/5), "Zâ†’ã‚¿ã‚¤ãƒˆãƒ«ã¸æˆ»ã‚‹, Xâ†’ã‚²ãƒ¼ãƒ çµ‚äº†", GRAY);
 		}
 		
 		DrawCenterString(WINDOW_WIDTH/2, (int)(WINDOW_HEIGHT*2/5), "GAME CLEAR!", WHITE);
@@ -184,7 +184,7 @@ void CMain::Setting(){
 	int oldfontsize = GetFontSize();
 	
 	while(mrt::Setting()){
-		//İ’èˆ—
+		//è¨­å®šå‡¦ç†
 	}
 
 	SetFontSize(oldfontsize);

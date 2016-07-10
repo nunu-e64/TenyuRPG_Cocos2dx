@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//	//pragmaonce‚Æ“¯‚¶ˆÓ–¡‚¾‚ª‚±‚¿‚ç‚ÍƒRƒ“ƒpƒCƒ‰‚ÉˆË‘¶‚µ‚È‚¢
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//	//pragmaonceã¨åŒã˜æ„å‘³ã ãŒã“ã¡ã‚‰ã¯ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ã«ä¾å­˜ã—ãªã„
 #ifndef ITEMMANAGER_H								////
 #define ITEMMANAGER_H								////
 ////////////////////////////////////////////////
@@ -42,15 +42,15 @@ public:
 
 	CMenu* GetPlayerAccessoryMenu();
 
-	//ƒAƒCƒeƒ€ƒoƒbƒOŠÖŒW////////////////////////
+	//ã‚¢ã‚¤ãƒ†ãƒ ãƒãƒƒã‚°é–¢ä¿‚////////////////////////
 	bool IncPlayerItem(std::string _name, int _num);	
 	bool DecPlayerItem(std::string _name, int _num);
-	int GetPlayerItemNum(std::string _name);			//Š‚µ‚Ä‚¢‚éƒAƒCƒeƒ€”‚ğæ“¾
-	std::vector <std::string> GetBattleItemNameList();	//Š‚µ‚Ä‚¢‚é—˜—p‰Â”\‚ÈÁ”ïƒAƒCƒeƒ€‚ÌƒŠƒXƒg‚ğæ“¾
-	std::vector <std::string> GetAccessoryItemInBag();	//Š‚µ‚Ä‚¢‚é‘•”õƒAƒCƒeƒ€‚ÌƒŠƒXƒg‚ğæ“¾
+	int GetPlayerItemNum(std::string _name);			//æ‰€æŒã—ã¦ã„ã‚‹ã‚¢ã‚¤ãƒ†ãƒ æ•°ã‚’å–å¾—
+	std::vector <std::string> GetBattleItemNameList();	//æ‰€æŒã—ã¦ã„ã‚‹åˆ©ç”¨å¯èƒ½ãªæ¶ˆè²»ã‚¢ã‚¤ãƒ†ãƒ ã®ãƒªã‚¹ãƒˆã‚’å–å¾—
+	std::vector <std::string> GetAccessoryItemInBag();	//æ‰€æŒã—ã¦ã„ã‚‹è£…å‚™ã‚¢ã‚¤ãƒ†ãƒ ã®ãƒªã‚¹ãƒˆã‚’å–å¾—
 	////////////////////////////////////////////
 
-	//à•zŠÖŒW//////////////////////////////////
+	//è²¡å¸ƒé–¢ä¿‚//////////////////////////////////
 	bool IncGold(int _gold); 
 	bool DecGold(int _gold); 
 	int GetGold() { return Gold; };
@@ -64,8 +64,8 @@ public:
 
 private:
 
-	bool IncPlayerItem(std::string _name);	//true...‘‰Á¬Œ÷ false...Š§ŒÀorƒGƒ‰[
-	bool DecPlayerItem(std::string _name);	//true...Œ¸­¬Œ÷ false...Šù‚É0orƒGƒ‰[
+	bool IncPlayerItem(std::string _name);	//true...å¢—åŠ æˆåŠŸ false...æ‰€æŒåˆ¶é™orã‚¨ãƒ©ãƒ¼
+	bool DecPlayerItem(std::string _name);	//true...æ¸›å°‘æˆåŠŸ false...æ—¢ã«0orã‚¨ãƒ©ãƒ¼
 
 	std::map <std::string, CItem*> ItemBank;
 	std::map <std::string, CConsumptionItem*> ConsumptionItemBank;
@@ -73,12 +73,12 @@ private:
 	std::map <std::string, CKeyItem*> KeyItemBank;
 	std::map <std::string, CMaterialItem*> MaterialItemBank;
 
-	std::map <std::string, int> PlayerItemBag;	//ŠƒAƒCƒeƒ€‚ÌŒÂ”
+	std::map <std::string, int> PlayerItemBag;	//æ‰€æŒã‚¢ã‚¤ãƒ†ãƒ ã®å€‹æ•°
 
-	int Gold;	//à•z
+	int Gold;	//è²¡å¸ƒ
 
 
-	//’Pˆê«‚ğ•ÛØ(Singleton)////////////////////////////////
+	//å˜ä¸€æ€§ã‚’ä¿è¨¼(Singleton)////////////////////////////////
 	CItemManager() {
 		CONSTRUCTED;
 	}
@@ -89,6 +89,6 @@ private:
 
 };
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

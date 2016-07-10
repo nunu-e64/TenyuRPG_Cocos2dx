@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef TEXTBOX_H							////
 #define TEXTBOX_H							////
 ////////////////////////////////////////////////
@@ -6,7 +6,7 @@
 #include "TalkName.h"
 #include "LogWindow.h"
 
-	//static const int TextShowMode = 0;	//0cs‘—‚è 1cƒy[ƒW‘—‚è
+	//static const int TextShowMode = 0;	//0â€¦è¡Œé€ã‚Š 1â€¦ãƒšãƒ¼ã‚¸é€ã‚Š
 
 
 class CCmdList;
@@ -35,24 +35,24 @@ public:
 	void SetReturnVisible(bool _visible){ReturnVisible = _visible;}
 	void SetAutoPlay(bool _autoplay, int _autoplayspeed = NULL);
 
-	//TextNamei˜b‚µè‚Ì–¼‘O‚ğTextBox‚Ìã‚É•\¦j
+	//TextNameï¼ˆè©±ã—æ‰‹ã®åå‰ã‚’TextBoxã®ä¸Šã«è¡¨ç¤ºï¼‰
 		CTalkName TalkName;
 		void LogTalkName();
 
 protected:
-	//’è”
+	//å®šæ•°
 		enum{
 			STOCK_LINE_NUM = 1000,
-			LINE_MAX = 20,		//s”Å‘å’l		 Init‚Å’²®‚³‚ê‚é
-			WORD_MAX = 256,		//ˆês‚Ì•¶š”Å‘å’l Init‚Å’²®‚³‚ê‚é
-			LINE_SPACE = 10,	//HACK:INIT‚É’Ç‰Á‚·‚×‚«“à—e
-			SHOWING_SPEED = 80	//1•b“–‚½‚è‰½•¶š[‘SŠp]
+			LINE_MAX = 20,		//è¡Œæ•°æœ€å¤§å€¤		 Initã§èª¿æ•´ã•ã‚Œã‚‹
+			WORD_MAX = 256,		//ä¸€è¡Œã®æ–‡å­—æ•°æœ€å¤§å€¤ Initã§èª¿æ•´ã•ã‚Œã‚‹
+			LINE_SPACE = 10,	//HACK:INITã«è¿½åŠ ã™ã¹ãå†…å®¹
+			SHOWING_SPEED = 80	//1ç§’å½“ãŸã‚Šä½•æ–‡å­—[å…¨è§’]
 		};
 
 
-	//ƒƒ“ƒoŠÖ”
-		void StockClear();	//ƒXƒgƒbƒN‚ğ‘SÁ‹
-		void TextClear();	//•\¦ƒeƒLƒXƒg‘SÁ‹
+	//ãƒ¡ãƒ³ãƒé–¢æ•°
+		void StockClear();	//ã‚¹ãƒˆãƒƒã‚¯ã‚’å…¨æ¶ˆå»
+		void TextClear();	//è¡¨ç¤ºãƒ†ã‚­ã‚¹ãƒˆå…¨æ¶ˆå»
 
 		void Draw_Animation(bool _showingstop);
 		void Draw_Ruby();
@@ -61,17 +61,17 @@ protected:
 		bool Solve(const char* string, CFlagSet *_flagset);
 		void ArgCut(const char* _string, char** &command, char** &arg, int _argnum);
 
-	//ƒƒ“ƒo•Ï”
+	//ãƒ¡ãƒ³ãƒå¤‰æ•°
 		char chStock[STOCK_LINE_NUM][WORD_MAX];
 		char chText[LINE_MAX][WORD_MAX];
 		bool Alive;
-		bool Visible;	//ƒRƒ}ƒ“ƒh‚©‚ç•ÏX‰Â”\
-		bool ReturnVisible;	//WalkŒn‚Ì‚Æ‚«‚É‘€ì
+		bool Visible;	//ã‚³ãƒãƒ³ãƒ‰ã‹ã‚‰å¤‰æ›´å¯èƒ½
+		bool ReturnVisible;	//Walkç³»ã®ã¨ãã«æ“ä½œ
 
-		///AutoPlayŠÖŒW////////////////////////////////////////
-		bool AutoPlay;	//ƒRƒ}ƒ“ƒh‚©‚ç•ÏX‰Â”\iƒfƒtƒHƒ‹ƒgfalsej
-			int AutoPlaySpeed;	//ƒRƒ}ƒ“ƒh‚©‚ç•ÏX‰Â”\iƒfƒtƒHƒ‹ƒg‚Å‚ÍDefaultAutoPlaySpeedj
-			int DefaultAutoPlaySpeed;	//Init‚ÉField.cpp‚©‚ç’l‚ğó‚¯æ‚è‰Šú‰»‚³‚ê‚é
+		///AutoPlayé–¢ä¿‚////////////////////////////////////////
+		bool AutoPlay;	//ã‚³ãƒãƒ³ãƒ‰ã‹ã‚‰å¤‰æ›´å¯èƒ½ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆfalseï¼‰
+			int AutoPlaySpeed;	//ã‚³ãƒãƒ³ãƒ‰ã‹ã‚‰å¤‰æ›´å¯èƒ½ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯DefaultAutoPlaySpeedï¼‰
+			int DefaultAutoPlaySpeed;	//Initæ™‚ã«Field.cppã‹ã‚‰å€¤ã‚’å—ã‘å–ã‚ŠåˆæœŸåŒ–ã•ã‚Œã‚‹
 			enum{
 				PAGE
 			}AutoPlayMode;
@@ -80,30 +80,30 @@ protected:
 		char chOldText[LINE_MAX][WORD_MAX];
 		char chDrawText[LINE_MAX][WORD_MAX];
 
-		int PosX, PosY, Width, Height;			//¶ã‚ÌÀ•WA‰¡•c•
-		int LineNum, WordNum;	//WordNum‚Ì’PˆÊ‚ÍƒoƒCƒg LineNum‚Ís”
+		int PosX, PosY, Width, Height;			//å·¦ä¸Šã®åº§æ¨™ã€æ¨ªå¹…ç¸¦å¹…
+		int LineNum, WordNum;	//WordNumã®å˜ä½ã¯ãƒã‚¤ãƒˆ LineNumã¯è¡Œæ•°
 		int FontSize;
 		int RubyFontSize;
-		int Color1, Color2;	//Color2‚Í‰e
-		int WordWidth;		//WordNum‚ÆFontSize‚ÉŠî‚Ã‚¢‚Ä‰¡•‚ğZo
+		int Color1, Color2;	//Color2ã¯å½±
+		int WordWidth;		//WordNumã¨FontSizeã«åŸºã¥ã„ã¦æ¨ªå¹…ã‚’ç®—å‡º
 
-		int StockLine;		//‰½s–Ú‚Ü‚Åƒf[ƒ^‚ªƒXƒgƒbƒN‚³‚ê‚Ä‚¢‚é‚©				1~STOCK_LINE_NUM	‹óF0	//AddText‚Å‰Šú‰»‚·‚é‚Ì‚ÅNoProblem
-		int TextLineNum();		//¡A‰½s–Ú‚Ü‚Å•\¦—pƒeƒLƒXƒg‚ª‚ ‚é‚©		1~LineNum	‹óF0
+		int StockLine;		//ä½•è¡Œç›®ã¾ã§ãƒ‡ãƒ¼ã‚¿ãŒã‚¹ãƒˆãƒƒã‚¯ã•ã‚Œã¦ã„ã‚‹ã‹				1~STOCK_LINE_NUM	ç©ºï¼š0	//AddTextã§åˆæœŸåŒ–ã™ã‚‹ã®ã§NoProblem
+		int TextLineNum();		//ä»Šã€ä½•è¡Œç›®ã¾ã§è¡¨ç¤ºç”¨ãƒ†ã‚­ã‚¹ãƒˆãŒã‚ã‚‹ã‹		1~LineNum	ç©ºï¼š0
 		
-		int NowStock;	//¡AƒXƒgƒbƒN‚Ì‰½s–Ú‚É‚¢‚é‚©	0~	‹óF-1	(TextBoxŠO‚É‚¨‚¢‚Ä‚ÍŸ’²‚×‚és‚Í‚Ç‚±‚©)
-		int NowTarget;	//¡AƒeƒLƒXƒgƒ{ƒbƒNƒX‚Ì‰½s–Ú‚É‚Â‚¢‚Äˆ—‚µ‚Ä‚¢‚é‚Ì‚© 0~	‹óF-1
-		bool PageChange;	//Ÿ‚Éƒy[ƒWƒŠƒZƒbƒg‚·‚é‚©”Û‚©
+		int NowStock;	//ä»Šã€ã‚¹ãƒˆãƒƒã‚¯ã®ä½•è¡Œç›®ã«ã„ã‚‹ã‹	0~	ç©ºï¼š-1	(TextBoxå¤–ã«ãŠã„ã¦ã¯æ¬¡èª¿ã¹ã‚‹è¡Œã¯ã©ã“ã‹)
+		int NowTarget;	//ä»Šã€ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã®ä½•è¡Œç›®ã«ã¤ã„ã¦å‡¦ç†ã—ã¦ã„ã‚‹ã®ã‹ 0~	ç©ºï¼š-1
+		bool PageChange;	//æ¬¡ã«ãƒšãƒ¼ã‚¸ãƒªã‚»ãƒƒãƒˆã™ã‚‹ã‹å¦ã‹
 
-		////ƒeƒLƒXƒg‚ÌƒAƒjƒ[ƒVƒ‡ƒ“•\¦ŠÖŒW//////////////
-			int NewText;		//chText‚ÉV‚½‚É’Ç‰Á‚³‚ê‚½s -1¥¥¥•Ï‰»‚È‚µ 0~¥¥¥ã‚©‚ç‰½s–ÚˆÈ~‚ª’Ç‰Á‚³‚ê‚½‚©i‹ó”’‚àƒJƒEƒ“ƒgj
-			bool Showing;		//ƒeƒLƒXƒgƒAƒjƒ[ƒVƒ‡ƒ“‚ªŒ»İis’†FTrue Š®—¹FFalse
+		////ãƒ†ã‚­ã‚¹ãƒˆã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³è¡¨ç¤ºé–¢ä¿‚//////////////
+			int NewText;		//chTextã«æ–°ãŸã«è¿½åŠ ã•ã‚ŒãŸè¡Œ -1ãƒ»ãƒ»ãƒ»å¤‰åŒ–ãªã— 0~ãƒ»ãƒ»ãƒ»ä¸Šã‹ã‚‰ä½•è¡Œç›®ä»¥é™ãŒè¿½åŠ ã•ã‚ŒãŸã‹ï¼ˆç©ºç™½ã‚‚ã‚«ã‚¦ãƒ³ãƒˆï¼‰
+			bool Showing;		//ãƒ†ã‚­ã‚¹ãƒˆã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãŒç¾åœ¨é€²è¡Œä¸­ï¼šTrue å®Œäº†ï¼šFalse
 			int ShowingTime; 
 
-		////AddText‚Ì‚Æ‚«‚É•ÏX
+		////AddTextã®ã¨ãã«å¤‰æ›´
 			int ObjCount;
 			direction_tag OriginalDir;
 
-		//ƒ‹ƒr—p
+		//ãƒ«ãƒ“ç”¨
 			struct ruby_tag{
 				char Word[32];
 				char Ruby[32];
@@ -111,10 +111,10 @@ protected:
 			};
 			std::vector <ruby_tag> Ruby;
 
-		//ƒƒOƒNƒ‰ƒX
+		//ãƒ­ã‚°ã‚¯ãƒ©ã‚¹
 			CFieldLog* FieldLog;
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif								t////////////

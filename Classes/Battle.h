@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef BATTLE_H							////
 #define BATTLE_H							////
 ////////////////////////////////////////////////
@@ -62,15 +62,15 @@ public:
 	void SetEnemy(std::vector<CEnemySpecies*> _enemyParty);
 	
 
-	//í“¬—p
+	//æˆ¦é—˜ç”¨
 		void ManageAttack(int _attackerActorIndex, int _targetActorIndex, trick_tag const* _trick);
 		void InvokeSideEffect(sideEffect_tag _sideEffect, int _invokerActorIndex, int _cursorTargetActorIndex);
 
-		//ƒAƒeƒ“ƒVƒ‡ƒ“ŠÖŒW
+		//ã‚¢ãƒ†ãƒ³ã‚·ãƒ§ãƒ³é–¢ä¿‚
 		void AddAttention(int _enemyIndex, int _playerIndex, int _value);
 		void SetAttention(int _enemyIndex, int _playerIndex, int _value);
 	
-	//ƒ^[ƒQƒbƒg‘I‘ğƒ}[ƒJ[
+	//ã‚¿ãƒ¼ã‚²ãƒƒãƒˆé¸æŠãƒãƒ¼ã‚«ãƒ¼
 		class CTargetMarker{
 		public:
 			CTargetMarker(){
@@ -98,28 +98,28 @@ public:
 			bool Visible;
 			int Img;
 			int ImgSizeX, ImgSizeY;
-			bool EnemySide;	//“G‘¤‚©–¡•û‘¤‚©
-			int Index;		//“G‚²‚Æ–¡•û‚²‚Æ‚Ì’Ê‚µ”Ô†
-			bool DeadOk; //€l‚ğ‘I‘ğ‘ÎÛ‚Æ‚·‚é‚©
+			bool EnemySide;	//æ•µå´ã‹å‘³æ–¹å´ã‹
+			int Index;		//æ•µã”ã¨å‘³æ–¹ã”ã¨ã®é€šã—ç•ªå·
+			bool DeadOk; //æ­»äººã‚’é¸æŠå¯¾è±¡ã¨ã™ã‚‹ã‹
 
 			int ACTOR_NUM;
 			int PLAYER_NUM;
 			int ENEMY_NUM;
-			int Status; //0...‚Ó‚æ‚Ó‚æ 1...Šm’è‚Â‚È‚¬ 2...Šm’è‰‰o’†
+			int Status; //0...ãµã‚ˆãµã‚ˆ 1...ç¢ºå®šã¤ãªã 2...ç¢ºå®šæ¼”å‡ºä¸­
 		}TargetMarker;
 
 private:
-	//ƒƒ“ƒoŠÖ”
+	//ãƒ¡ãƒ³ãƒé–¢æ•°
 		void StartEffect();
 		int MainLoop();
 		void BattleFinish(int &_result, CCmdList* _fieldcmdlist);
 		int ResultCheck();
 
 	
-	//ƒƒ“ƒo•Ï”
+	//ãƒ¡ãƒ³ãƒå¤‰æ•°
 		bool Ready;
 
-		//ŠƒCƒ“ƒXƒ^ƒ“ƒX‚Æƒ|ƒCƒ“ƒ^
+		//æ‰€æŒã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã¨ãƒã‚¤ãƒ³ã‚¿
 			CCmdList B_CmdList;				
 			CBattleCmdManager B_CmdManager;	
 		
@@ -128,34 +128,34 @@ private:
 			CTextWrap TextWrap1;
 			CBattleLog LogWindow;
 		
-			CEveManager* EveManager_p;	//ƒ‰ƒbƒvƒ‚[ƒh‚ÉƒIƒŠƒWƒiƒ‹ƒCƒxƒ“ƒg“Ç‚İ‚İ—p
+			CEveManager* EveManager_p;	//ãƒ©ãƒƒãƒ—ãƒ¢ãƒ¼ãƒ‰æ™‚ã«ã‚ªãƒªã‚¸ãƒŠãƒ«ã‚¤ãƒ™ãƒ³ãƒˆèª­ã¿è¾¼ã¿ç”¨
 			CFlagSet* FlagSet_p;
 
 		//Actors
 			CPlayer* Player;
 			CEnemy* Enemy;
 			CActor** Actor;
-			int ACTOR_NUM;		//í“¬‚Éo‚Ä‚¢‚é‚·‚×‚Ä‚Ìl”i“G{–¡•ûj
-			int PLAYER_NUM;		//í“¬‚Éo‚Ä‚¢‚é–¡•ûl”
-			int ENEMY_NUM;		//í“¬‚Éo‚Ä‚¢‚é“Gl”
+			int ACTOR_NUM;		//æˆ¦é—˜ã«å‡ºã¦ã„ã‚‹ã™ã¹ã¦ã®äººæ•°ï¼ˆæ•µï¼‹å‘³æ–¹ï¼‰
+			int PLAYER_NUM;		//æˆ¦é—˜ã«å‡ºã¦ã„ã‚‹å‘³æ–¹äººæ•°
+			int ENEMY_NUM;		//æˆ¦é—˜ã«å‡ºã¦ã„ã‚‹æ•µäººæ•°
 			//vector<CEnemy>
 
 
-		//ƒOƒ‰ƒtƒBƒbƒN
-			int Img_BattleBackGround;	//í“¬”wŒi
+		//ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯
+			int Img_BattleBackGround;	//æˆ¦é—˜èƒŒæ™¯
 			
-		//d—v‚ÈŠƒCƒ“ƒXƒ^ƒ“ƒX
+		//é‡è¦ãªæ‰€æŒã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 			CBImgBank BImgBank;
 			CPlayerSpeciesManager* PlayerSpeciesManager;
 			CEnemySpeciesManager* EnemySpeciesManager;
-			CTrickManager* TrickManager;	//singletong‚¤ŠÖŒWãƒ|ƒCƒ“ƒ^‚Å•Û
-			std::queue <CActor*> ActionQueue;	//s“®‘Ò‹@ƒŠƒXƒg
+			CTrickManager* TrickManager;	//singletonä½¿ã†é–¢ä¿‚ä¸Šãƒã‚¤ãƒ³ã‚¿ã§ä¿æŒ
+			std::queue <CActor*> ActionQueue;	//è¡Œå‹•å¾…æ©Ÿãƒªã‚¹ãƒˆ
 
-		//í“¬İ’è
+		//æˆ¦é—˜è¨­å®š
 			char WinCommand[256];
 			char LoseCommand[256];
 
-	//’Pˆê«‚ğ•ÛØ(Singleton)//////////////////////////////////////////
+	//å˜ä¸€æ€§ã‚’ä¿è¨¼(Singleton)//////////////////////////////////////////
 		CBattle();
 		CBattle(const CBattle& hoge);
 		CBattle& operator=(const CBattle& hoge);
@@ -164,6 +164,6 @@ private:
 };
 
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

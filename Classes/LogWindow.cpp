@@ -46,8 +46,8 @@ void CLogWindow::Init(int _posx, int _posy, int _width, int _height, int _boxCol
 	NextLine = 0;
 	BackLine = 0;
 
-	//Width‚©‚ç•¶š”ŒvZ->WordNum
-	WordWidth = Width - BoxSpace;	//‚È‚é‚×‚­” ƒMƒŠƒMƒŠ‚Ü‚Å•¶š‚ª“ü‚é‚æ‚¤‚É‰E—]”’‚Íl—¶‚µ‚È‚¢
+	//Widthã‹ã‚‰æ–‡å­—æ•°è¨ˆç®—->WordNum
+	WordWidth = Width - BoxSpace;	//ãªã‚‹ã¹ãç®±ã‚®ãƒªã‚®ãƒªã¾ã§æ–‡å­—ãŒå…¥ã‚‹ã‚ˆã†ã«å³ä½™ç™½ã¯è€ƒæ…®ã—ãªã„
 	char tmp[WORD_MAX] = "";
 	WordNum = WORD_MAX;
 	for (int i = 0; i<WORD_MAX - 1; i++) {
@@ -59,7 +59,7 @@ void CLogWindow::Init(int _posx, int _posy, int _width, int _height, int _boxCol
 		}
 	}
 
-	//Height‚ÆFontSize‚©‚çs”ŒvZ->LineNum
+	//Heightã¨FontSizeã‹ã‚‰è¡Œæ•°è¨ˆç®—->LineNum
 	StockLineNum = max(1, _stockLine);
 	LineNum = min((Height - BoxSpace * 2) / (FontSize + LineSpace), StockLineNum);
 
@@ -108,8 +108,8 @@ void CBattleLog::Init(int _smallposx, int _posy, int _smallwidth, int _height, i
 	NextLine = 0;
 	BackLine = 0;
 	
-	//Width‚©‚ç•¶š”ŒvZ->WordNum
-		WordWidth = WidthFull - BoxSpace;	//‚È‚é‚×‚­” ƒMƒŠƒMƒŠ‚Ü‚Å•¶š‚ª“ü‚é‚æ‚¤‚É‰E—]”’‚Íl—¶‚µ‚È‚¢
+	//Widthã‹ã‚‰æ–‡å­—æ•°è¨ˆç®—->WordNum
+		WordWidth = WidthFull - BoxSpace;	//ãªã‚‹ã¹ãç®±ã‚®ãƒªã‚®ãƒªã¾ã§æ–‡å­—ãŒå…¥ã‚‹ã‚ˆã†ã«å³ä½™ç™½ã¯è€ƒæ…®ã—ãªã„
 		char tmp[WORD_MAX] = "";
 		WordNum = WORD_MAX;
 		for (int i=0; i<WORD_MAX-1; i++){
@@ -121,7 +121,7 @@ void CBattleLog::Init(int _smallposx, int _posy, int _smallwidth, int _height, i
 			}
 		}
 
-	//Height‚ÆFontSize‚©‚çs”ŒvZ->LineNum
+	//Heightã¨FontSizeã‹ã‚‰è¡Œæ•°è¨ˆç®—->LineNum
 		StockLineNum = max(1, _stockLine);
 		LineNum = min((Height-BoxSpace*2)/(FontSize+LineSpace), StockLineNum);
 
@@ -183,7 +183,7 @@ void CLogWindow::Term(){
 */
 }
 
-bool CLogWindow::Add(const char *_format, ...){		//ƒRƒƒ“ƒgs‚â‹ó”’s‚ÍLoad‚Ì’iŠK‚Å”rœ‚³‚ê‚Ä‚¢‚é
+bool CLogWindow::Add(const char *_format, ...){		//ã‚³ãƒ¡ãƒ³ãƒˆè¡Œã‚„ç©ºç™½è¡Œã¯Loadã®æ®µéšã§æ’é™¤ã•ã‚Œã¦ã„ã‚‹
 	va_list args;
 	char newText[WORD_MAX];
 	va_start(args, _format);
@@ -201,12 +201,12 @@ bool CLogWindow::Add(const char *_format, ...){		//ƒRƒƒ“ƒgs‚â‹ó”’s‚ÍLoad‚Ì’iŠ
 		else break;
 	}
 
-	////•¶š•`‰æ‚ÌƒTƒCƒY‚Æ•¶š”‚Ì—¼•û‚Å‰üs‚Ì—v•s—v”»’f
-	if (!(mystrlen(newText) < WordNum)) {			//š”ƒI[ƒo[ˆ—iÀÛ‚Í•`‰æƒTƒCƒY‚Åˆ—‚·‚é‚æ‚¤‚Éã‹L‚É‘‚«‘«‚µ‚½‚½‚ß‚±‚¿‚ç‚ğg‚¤‚±‚Æ‚Í‚È‚¢‚Æv‚í‚ê‚éj
+	////æ–‡å­—æç”»æ™‚ã®ã‚µã‚¤ã‚ºã¨æ–‡å­—æ•°ã®ä¸¡æ–¹ã§æ”¹è¡Œã®è¦ä¸è¦åˆ¤æ–­
+	if (!(mystrlen(newText) < WordNum)) {			//å­—æ•°ã‚ªãƒ¼ãƒãƒ¼æ™‚å‡¦ç†ï¼ˆå®Ÿéš›ã¯æç”»ã‚µã‚¤ã‚ºã§å‡¦ç†ã™ã‚‹ã‚ˆã†ã«ä¸Šè¨˜ã«æ›¸ãè¶³ã—ãŸãŸã‚ã“ã¡ã‚‰ã‚’ä½¿ã†ã“ã¨ã¯ãªã„ã¨æ€ã‚ã‚Œã‚‹ï¼‰
 		char chOverstring[WORD_MAX];
 		char chTruestring[WORD_MAX];
 
-		int d = (_ismbblead(newText[WordNum - 2]) ? -1 : 0);	//s––‚ª‘SŠp•¶š‚Ì1ƒoƒCƒg–Ú‚¾‚Á‚½ê‡A•¶š‰»‚¯‚·‚é‚Ì‚Å1ƒoƒCƒg‚¸‚ç‚·
+		int d = (_ismbblead(newText[WordNum - 2]) ? -1 : 0);	//è¡Œæœ«ãŒå…¨è§’æ–‡å­—ã®1ãƒã‚¤ãƒˆç›®ã ã£ãŸå ´åˆã€æ–‡å­—åŒ–ã‘ã™ã‚‹ã®ã§1ãƒã‚¤ãƒˆãšã‚‰ã™
 		mystrcpy(chTruestring, newText, WordNum + d);
 		Add(chTruestring);
 		mystrcpy(chOverstring, newText + WordNum + d - 1 - spaceCount);
@@ -215,21 +215,21 @@ bool CLogWindow::Add(const char *_format, ...){		//ƒRƒƒ“ƒgs‚â‹ó”’s‚ÍLoad‚Ì’iŠ
 		}
 		Add(chOverstring);
 
-	} else if (GetDrawStringWidthToHandle(newText, strlen(newText), FontHandle) > WordWidth) {			//š”ƒI[ƒo[ˆ— WordWidth‚ÍInit()‚Å’è‹`
+	} else if (GetDrawStringWidthToHandle(newText, strlen(newText), FontHandle) > WordWidth) {			//å­—æ•°ã‚ªãƒ¼ãƒãƒ¼æ™‚å‡¦ç† WordWidthã¯Init()ã§å®šç¾©
 
 		char chOverstring[WORD_MAX];
 		char chTruestring[WORD_MAX];
 		char tmp[WORD_MAX] = "";
 				
-		int tmpnum=0;				//ˆês•ª‚Ì‰¡•‚Å‹æØ‚é‚½‚ß‚ÌˆÊ’u’T‚µ
+		int tmpnum=0;				//ä¸€è¡Œåˆ†ã®æ¨ªå¹…ã§åŒºåˆ‡ã‚‹ãŸã‚ã®ä½ç½®æ¢ã—
 		while(GetDrawStringWidthToHandle(tmp, strlen(tmp), FontHandle) <= WordWidth && tmpnum < WORD_MAX){
 			tmp[tmpnum] = newText[tmpnum];
 			tmp[++tmpnum] = '\0';
 		}
-		--tmpnum;	//tmpnum:\0‚ğŠÜ‚Ü‚È‚¢“K³•¶š” true[tmpnum-1]='\0'‚Æ‚È‚é‚æ‚¤‚É‚·‚é
+		--tmpnum;	//tmpnum:\0ã‚’å«ã¾ãªã„é©æ­£æ–‡å­—æ•° true[tmpnum-1]='\0'ã¨ãªã‚‹ã‚ˆã†ã«ã™ã‚‹
 
 		if (_ismbblead(newText[tmpnum])) {
-			--tmpnum;		//s––‚ª‘SŠp•¶š‚Ì1ƒoƒCƒg–Ú‚¾‚Á‚½ê‡A•¶š‰»‚¯‚·‚é‚Ì‚Å1ƒoƒCƒg‚¸‚ç‚·
+			--tmpnum;		//è¡Œæœ«ãŒå…¨è§’æ–‡å­—ã®1ãƒã‚¤ãƒˆç›®ã ã£ãŸå ´åˆã€æ–‡å­—åŒ–ã‘ã™ã‚‹ã®ã§1ãƒã‚¤ãƒˆãšã‚‰ã™
 		}
 				
 		mystrcpy(chTruestring, newText, tmpnum);
@@ -238,7 +238,7 @@ bool CLogWindow::Add(const char *_format, ...){		//ƒRƒƒ“ƒgs‚â‹ó”’s‚ÍLoad‚Ì’iŠ
 		for (int i = 0; i < spaceCount; i++) {
 			chOverstring[i] = ' ';
 		}
-		Add(chOverstring);				//ƒI[ƒo[‚µ‚½•ª‚ğØ‚èæ‚Á‚ÄÄ“x“Ç‚İ‚İ
+		Add(chOverstring);				//ã‚ªãƒ¼ãƒãƒ¼ã—ãŸåˆ†ã‚’åˆ‡ã‚Šå–ã£ã¦å†åº¦èª­ã¿è¾¼ã¿
 
 	} else {
 
@@ -284,27 +284,27 @@ void CBattleLog::Draw(){
 
 	if(!Visible) return;
 
-	if (CheckHitKeyDown(KEY_INPUT_P)) {	//ƒEƒBƒ“ƒhƒEƒ‚[ƒhØ‘ÖiUŒ‚ƒGƒtƒFƒNƒg’†‚É‚àƒƒOŠm”F‚Å‚«‚é‚æ‚¤AMain‚Å‚Í‚È‚­Draw‚ÅƒL[ƒ`ƒFƒbƒNj
+	if (CheckHitKeyDown(KEY_INPUT_P)) {	//ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰åˆ‡æ›¿ï¼ˆæ”»æ’ƒã‚¨ãƒ•ã‚§ã‚¯ãƒˆä¸­ã«ã‚‚ãƒ­ã‚°ç¢ºèªã§ãã‚‹ã‚ˆã†ã€Mainã§ã¯ãªãDrawã§ã‚­ãƒ¼ãƒã‚§ãƒƒã‚¯ï¼‰
 		SetWindowMode(!FullMode);
 		BackLine = 0;
 	}
 
-	//ƒ{ƒbƒNƒX
+	//ãƒœãƒƒã‚¯ã‚¹
 		SetDrawBlendMode(DX_BLENDMODE_ALPHA, (FullMode?200:100));
 		DrawBox((!FullMode?PosX:PosXFull),	 PosY,	 (!FullMode?PosX:PosXFull)+(!FullMode?Width:WidthFull),   PosY+Height, BoxColor, true);
 		DrawBox((!FullMode?PosX:PosXFull)+5, PosY+5, (!FullMode?PosX:PosXFull)+(!FullMode?Width:WidthFull)-5, PosY+Height-5, GRAY, false);
 	
-	//ƒ{ƒ^ƒ“
+	//ãƒœã‚¿ãƒ³
 		SetDrawBlendMode(DX_BLENDMODE_ALPHA, (FullMode?150:100));
 		DrawCenterGraph((!FullMode?PosX:PosXFull), (PosY+Height)/2, ButtonImg[(!FullMode?0:1)], true);
 
-	//ƒeƒLƒXƒg
+	//ãƒ†ã‚­ã‚¹ãƒˆ
 		SetDrawBlendMode(DX_BLENDMODE_ALPHA, (FullMode?220:200));
 
-		//ƒeƒLƒXƒg•`Ê
+		//ãƒ†ã‚­ã‚¹ãƒˆæå†™
 		int line;
-		int skipCount = 0;	//‹ós‚Íã‹l‚ß
-		int drawCount = 0;  //ÀÛ‚É•`‰æ‚µ‚½s‚Ì”
+		int skipCount = 0;	//ç©ºè¡Œã¯ä¸Šè©°ã‚
+		int drawCount = 0;  //å®Ÿéš›ã«æç”»ã—ãŸè¡Œã®æ•°
 		char* textForDraw = new char[(FullMode? WordNum: 8)];
 		for (int i = 0; i+skipCount < StockLineNum && drawCount < LineNum; i++){
 			line = mod ((NextLine - LineNum - BackLine + i + skipCount), StockLineNum);
@@ -337,18 +337,18 @@ void CFieldLog::Draw() {
 
 	if (!Visible) return;
 
-	//ƒ{ƒbƒNƒX
+	//ãƒœãƒƒã‚¯ã‚¹
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 200);
 	DrawBox(PosX, PosY, PosX + Width, PosY + Height, BoxColor, true);
 	DrawBox(PosX + 5, PosY + 5, PosX + Width - 5, PosY + Height - 5, GRAY, false);
 
-	//ƒeƒLƒXƒg
+	//ãƒ†ã‚­ã‚¹ãƒˆ
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 220);
 
-	//ƒeƒLƒXƒg•`Ê
+	//ãƒ†ã‚­ã‚¹ãƒˆæå†™
 	int line;
-	int skipCount = 0;	//‹ós‚Íã‹l‚ß
-	int drawCount = 0;  //ÀÛ‚É•`‰æ‚µ‚½s‚Ì”
+	int skipCount = 0;	//ç©ºè¡Œã¯ä¸Šè©°ã‚
+	int drawCount = 0;  //å®Ÿéš›ã«æç”»ã—ãŸè¡Œã®æ•°
 	char* textForDraw = new char[WordNum];
 	for (int i = 0; i + skipCount < StockLineNum && drawCount < LineNum; i++) {
 		line = mod((NextLine - LineNum - BackLine + i + skipCount), StockLineNum);
@@ -387,7 +387,7 @@ bool CFieldLog::Main() {
 	return Visible;
 }
 
-void CFieldLog::MemorizeCurrentPos() {	//ƒg[ƒNƒ‰ƒxƒ‹‚Ì‘}“ü‰ÓŠ‚ğ‹L‰¯‚µ‚Ä‚¨‚­
+void CFieldLog::MemorizeCurrentPos() {	//ãƒˆãƒ¼ã‚¯ãƒ©ãƒ™ãƒ«ã®æŒ¿å…¥ç®‡æ‰€ã‚’è¨˜æ†¶ã—ã¦ãŠã
 	PosMemoOld = (PosMemo == -1 ? NextLine : PosMemo);
 	PosMemo = NextLine;
 	//DEBUGDX("Memorize: Memo:Old=%d:%d", PosMemo, PosMemoOld);
@@ -398,7 +398,7 @@ void CFieldLog::ResetCurrentPos() {
 	PosMemoOld = PosMemo = -1;
 }
 
-void CFieldLog::InsertToMemoPos(const char* _string) {	//ƒg[ƒNƒ‰ƒxƒ‹‚Ì‘}“ü—p
+void CFieldLog::InsertToMemoPos(const char* _string) {	//ãƒˆãƒ¼ã‚¯ãƒ©ãƒ™ãƒ«ã®æŒ¿å…¥ç”¨
 	//DEBUGDX("Insert:%s Memo:Old=%d:%d", _string, PosMemo, PosMemoOld);
 	if (PosMemoOld != -1) {
 		for (int i = NextLine; mod(i, StockLineNum) != PosMemoOld; i--) {
@@ -407,18 +407,18 @@ void CFieldLog::InsertToMemoPos(const char* _string) {	//ƒg[ƒNƒ‰ƒxƒ‹‚Ì‘}“ü—p
 		mystrcpy(Text[PosMemoOld], _string);
 		NextLine = (++NextLine) % StockLineNum;
 		
-		++PosMemo;	//‘}“ü‚µ‚½•ªA‹L˜^‚ÌˆÊ’u‚ª•Ï‚í‚é‚Ì‚Å‚¸‚ç‚µ‚Ä‚¨‚­
+		++PosMemo;	//æŒ¿å…¥ã—ãŸåˆ†ã€è¨˜éŒ²æ™‚ã®ä½ç½®ãŒå¤‰ã‚ã‚‹ã®ã§ãšã‚‰ã—ã¦ãŠã
 		++PosMemoOld;
 	}
 }
 /*void CTextBox::Draw_Animation(bool _showingstop){
 	
-	if (Showing){	//ƒeƒLƒXƒgƒAƒjƒ[ƒVƒ‡ƒ“’†
+	if (Showing){	//ãƒ†ã‚­ã‚¹ãƒˆã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ä¸­
 		if (!_showingstop) ShowingTime++;
-	}else if (NewText != -1 && !Showing){	//ƒeƒLƒXƒgƒAƒjƒ[ƒVƒ‡ƒ“‘O
+	}else if (NewText != -1 && !Showing){	//ãƒ†ã‚­ã‚¹ãƒˆã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³å‰
 		ShowingTime = 0;
 		Showing = true;
-	}else if (NewText == -1 && !Showing){	//ƒeƒLƒXƒgƒAƒjƒ[ƒVƒ‡ƒ“Ï‚İ
+	}else if (NewText == -1 && !Showing){	//ãƒ†ã‚­ã‚¹ãƒˆã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³æ¸ˆã¿
 		for (int i = 0; i<LineNum; i++){
 			strcpy_s(chDrawText[i], chText[i]);
 		}
@@ -436,7 +436,7 @@ void CFieldLog::InsertToMemoPos(const char* _string) {	//ƒg[ƒNƒ‰ƒxƒ‹‚Ì‘}“ü—p
 			if (NowShow-Sumstrlen <= 0) {
 				strcpy_s(chDrawText[i], "");
 			}else{
-				strncpy_s(chDrawText[i], chText[i], min(NowShow-Sumstrlen, mystrlen(chText[i])));	//ƒ‹ƒr—p@‚Í•\¦‚µ‚È‚¢‚Ì‚Å‚»‚±‚ÅƒAƒjƒ[ƒVƒ‡ƒ“‚ª‚¸‚ê‚È‚¢‚æ‚¤‚É‚·‚éƒR[ƒhi‚Ü‚¾‚µ‚ÄƒiƒCj¨//min(NowShow-Sumstrlen+(chText[i][min(NowShow-Sumstrlen, mystrlen(chText[i]))]=='@'?1:0), mystrlen(chText[i]))
+				strncpy_s(chDrawText[i], chText[i], min(NowShow-Sumstrlen, mystrlen(chText[i])));	//ãƒ«ãƒ“ç”¨@ã¯è¡¨ç¤ºã—ãªã„ã®ã§ãã“ã§ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãŒãšã‚Œãªã„ã‚ˆã†ã«ã™ã‚‹ã‚³ãƒ¼ãƒ‰ï¼ˆã¾ã è©¦ã—ã¦ãƒŠã‚¤ï¼‰â†’//min(NowShow-Sumstrlen+(chText[i][min(NowShow-Sumstrlen, mystrlen(chText[i]))]=='@'?1:0), mystrlen(chText[i]))
 			}
 			Sumstrlen += strlen(chText[i]);
 		} 

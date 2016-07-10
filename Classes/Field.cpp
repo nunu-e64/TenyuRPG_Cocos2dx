@@ -23,7 +23,7 @@ CField::~CField(){
 bool CField::Init(playdata_tag* _playdata_p, const int _dnum){
 	CHECK_TIME_START
 	
-		//”•Ï”‚Ì‰Šú‰»
+		//è«¸å¤‰æ•°ã®åˆæœŸåŒ–
 			NowMap=-1;
 			GodX = GodY = 0;
 
@@ -38,29 +38,29 @@ bool CField::Init(playdata_tag* _playdata_p, const int _dnum){
 
 			Mode = MODE_PLAYING;
 
-		//ItemManager‚Ì‰Šú‰»
+		//ItemManagerã®åˆæœŸåŒ–
 			CItemManager::GetInstance()->Init();
 
-		//ShopManager‚Ì‰Šú‰»
+		//ShopManagerã®åˆæœŸåŒ–
 			CShopManager::GetInstance()->Init();
 			CAlchemistManager::GetInstance()->Init();
 
-		//MusicManager‚Ì‰Šú‰»
+		//MusicManagerã®åˆæœŸåŒ–
 			CMusicManager::GetInstance()->Init();
 
-		//ƒƒOƒEƒBƒ“ƒhƒE‚Ì‰Šú‰»
+		//ãƒ­ã‚°ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®åˆæœŸåŒ–
 			FieldLog.Init(50, 50, WINDOW_WIDTH-100, WINDOW_HEIGHT-100, BLACK, 300, 12, WHITE, GRAY);
 
 	//DebugDx("TextBox_Init_Start");
 
-		//ƒƒCƒ“‚ÌƒeƒLƒXƒgƒ{ƒbƒNƒX‚ÆƒI[ƒo[ƒ‰ƒbƒv—pƒeƒLƒXƒgƒ{ƒbƒNƒX‚Ì‰Šú‰»
+		//ãƒ¡ã‚¤ãƒ³ã®ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã¨ã‚ªãƒ¼ãƒãƒ¼ãƒ©ãƒƒãƒ—ç”¨ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã®åˆæœŸåŒ–
 			TextBox1.Init(60, 370, WINDOW_WIDTH-80*2, 100, 3, 25*2, 16, WHITE, BLACK, TextAutoPlaySpeed, &FieldLog);
 			TextWrap1.Init(100, 100, 400, 300, 30, 30 * 2, 14, WHITE, GRAY, TextAutoPlaySpeed, &FieldLog);
 			TextBox = &TextBox1;
 
 	//DebugDx("TextBox_Init_End");
 
-		////WorldManager‚Ìƒ|ƒCƒ“ƒ^•Ï”‚É‘ã“ü
+		////WorldManagerã®ãƒã‚¤ãƒ³ã‚¿å¤‰æ•°ã«ä»£å…¥
 		//	EveManager_p = &EveManager;
 		//	FlagSet_p = &FlagSet;
 		//	CmdList_p = &CmdList;
@@ -68,9 +68,9 @@ bool CField::Init(playdata_tag* _playdata_p, const int _dnum){
 		//	
 
 		
-		SetTransColor(0, 0, 0);	//HACK:“§‰ßFw’è ƒ}ƒ[ƒ“ƒ_‚Å“ˆê‚ğ
+		SetTransColor(0, 0, 0);	//HACK:é€éè‰²æŒ‡å®š ãƒã‚¼ãƒ³ãƒ€ã§çµ±ä¸€ã‚’
 			
-		//ŠO•”ƒeƒLƒXƒg‚Ìƒ[ƒh
+		//å¤–éƒ¨ãƒ†ã‚­ã‚¹ãƒˆã®ãƒ­ãƒ¼ãƒ‰
 			CLoad SystemLoad;
 			CLoad ScenarioLoad;
 			CFirstSetCmdManager FirstSetCmdManager;
@@ -83,26 +83,26 @@ bool CField::Init(playdata_tag* _playdata_p, const int _dnum){
 				SystemLoad.CommandCopy(&SystemCmdList);
 				FirstSetCmdManager.Main(&SystemCmdList, this, &Map, EveManager);
 
-				ScenarioLoad.EventTextCopy(EveManager);	//‡˜‚É’ˆÓiCmdManager.Main‚ÌŒãj	
+				ScenarioLoad.EventTextCopy(EveManager);	//é †åºã«æ³¨æ„ï¼ˆCmdManager.Mainã®å¾Œï¼‰	
 			
 			}else{
 				return false;
 			}
 			//DebugDx("Load_Init_End");
 	
-		SetTransColor(255, 0, 255);	//“§‰ßFw’è
+		SetTransColor(255, 0, 255);	//é€éè‰²æŒ‡å®š
 
-		//CBattle‚Ì‰Šú‰»
+		//CBattleã®åˆæœŸåŒ–
 		//DEBUGDX("Battle_Init_Start");
 		if (!(Battle->Init())) return false;
 		//DEBUGDX("Battle_Init_End");
 	
 			
-		//ƒZ[ƒuƒf[ƒ^‚Ì“Ç‚İ‚İ
+		//ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ã®èª­ã¿è¾¼ã¿
 			if (PLAYDATA_NUM>0) PlayData_p = _playdata_p;
 			if (!StartSet(_dnum)) return false;
 		
-		//ƒtƒB[ƒ‹ƒhƒƒjƒ…[‚Ìì¬
+		//ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ä½œæˆ
 			CreateFieldMenu();
 
 
@@ -116,7 +116,7 @@ void CField::CreateFieldMenu() {
 	FieldMenu.Create(Battle->GetFieldStatusMenuFrontNode("Status"));
 }
 
-int CField::MainLoop(){	//ƒQ[ƒ€’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
+int CField::MainLoop(){	//ã‚²ãƒ¼ãƒ ä¸­ã¯ã“ã®ãƒ«ãƒ¼ãƒ—å†…ã‹ã‚‰å‡ºãªã„
 
 
 	while( BasicLoop() ){
@@ -124,22 +124,22 @@ int CField::MainLoop(){	//ƒQ[ƒ€’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
 		CHECK_TIME_START	
 
 
-		if (FieldLog.Main()) {	//ƒƒO•\¦’†‚ÍƒL[‘€ì–³Œøi•\¦”ñ•\¦Ø‚è‘Ö‚¦‚ÍMain“à‚Å”»’èj
+		if (FieldLog.Main()) {	//ãƒ­ã‚°è¡¨ç¤ºä¸­ã¯ã‚­ãƒ¼æ“ä½œç„¡åŠ¹ï¼ˆè¡¨ç¤ºéè¡¨ç¤ºåˆ‡ã‚Šæ›¿ãˆã¯Mainå†…ã§åˆ¤å®šï¼‰
 
 		} else if (CAlchemistManager::GetInstance()->Main() || CShopManager::GetInstance()->Main()) {
 		
-		}else if (TextBox->Main(&CmdList, &FlagSet)) {	//ƒeƒLƒXƒg•\¦’†‚ÍƒL[‘€ì–³ŒøiƒeƒLƒXƒg‘—‚è‚ÍTextBox.Main‚Å”»’èj
+		}else if (TextBox->Main(&CmdList, &FlagSet)) {	//ãƒ†ã‚­ã‚¹ãƒˆè¡¨ç¤ºä¸­ã¯ã‚­ãƒ¼æ“ä½œç„¡åŠ¹ï¼ˆãƒ†ã‚­ã‚¹ãƒˆé€ã‚Šã¯TextBox.Mainã§åˆ¤å®šï¼‰
 		
 		} else if (FieldMenu.Alive) {
 
 			if (!FieldMenu.AccessoryMenuVisible) {
 
-				//ˆ—‚ª•¡G‰»‚µ‚Ä‚«‚½‚çAó‘Ô‚ğCursor‚¾‚¯‚Å‚Í‚È‚­‚Äenumì‚Á‚ÄŠÇ—‚³‚¹‚½‚Ù‚¤‚ª‚æ‚¢
+				//å‡¦ç†ãŒè¤‡é›‘åŒ–ã—ã¦ããŸã‚‰ã€çŠ¶æ…‹ã‚’Cursorã ã‘ã§ã¯ãªãã¦enumä½œã£ã¦ç®¡ç†ã•ã›ãŸã»ã†ãŒã‚ˆã„
 				CMenuNode* oldCursor = FieldMenu.GetCursor();
 				CMenuNode* result;
 
 				if (FieldMenu.Move(result, false)) {
-					if (FieldMenu.GetCursor() == oldCursor && FieldMenu.GetCursor()->parent->child == FieldMenu.GetFront()) {	//ˆê”Ôã‚©‚Â•Ï‰»‚ª‚È‚¢‚Ì‚Íˆê”Ôã‚ÅX‰Ÿ‚µ‚½‚Æ‚«‚¾‚¯B‚½‚Ô‚ñB
+					if (FieldMenu.GetCursor() == oldCursor && FieldMenu.GetCursor()->parent->child == FieldMenu.GetFront()) {	//ä¸€ç•ªä¸Šã‹ã¤å¤‰åŒ–ãŒãªã„ã®ã¯ä¸€ç•ªä¸Šã§XæŠ¼ã—ãŸã¨ãã ã‘ã€‚ãŸã¶ã‚“ã€‚
 						FieldMenu.Alive = false;
 
 					} else if (mystrcmp(FieldMenu.GetCursor()->parent->label, "Status")) {		Battle->UpdateFieldPlayerAccesssoryMenu(FieldMenu.GetCursor()->parent);
@@ -154,9 +154,9 @@ int CField::MainLoop(){	//ƒQ[ƒ€’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
 				}
 				
 			} else {
-				//‘•”õƒƒjƒ…[
+				//è£…å‚™ãƒ¡ãƒ‹ãƒ¥ãƒ¼
 
-				//‘•”õˆê——•\¦
+				//è£…å‚™ä¸€è¦§è¡¨ç¤º
 				CMenuNode* result;
 				if (FieldMenu.AccessoryMenu != NULL && FieldMenu.AccessoryMenu->Move(result, true)) {
 
@@ -166,15 +166,15 @@ int CField::MainLoop(){	//ƒQ[ƒ€’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
 						if (mystrcmp(result->label, REMOVE_EQUIP) || FieldMenu.AccessoryMenu->GetIndex(result)==0) {
 							tmpCmd = "@Accessory_Set(" + std::string(FieldMenu.GetCursor()->parent->label) + ", " + std::to_string(FieldMenu.AccessorySlotNum) + ", NULL)";
 
-							//‘•”õ–¼‚Ìƒ‰ƒxƒ‹‚ğ‘‚«Š·‚¦‚é(ÀÛ‚É“à•”‘•”õ‚ª•Ï‚í‚é‚Ì‚ÍƒRƒ}ƒ“ƒhˆ—‚Ì)
+							//è£…å‚™åã®ãƒ©ãƒ™ãƒ«ã‚’æ›¸ãæ›ãˆã‚‹(å®Ÿéš›ã«å†…éƒ¨è£…å‚™ãŒå¤‰ã‚ã‚‹ã®ã¯ã‚³ãƒãƒ³ãƒ‰å‡¦ç†ã®æ™‚)
 							mystrcpy(FieldMenu.GetCursor()->label, NO_EQUIP);
 
 						} else {
-							//Menu‚Í"‘•”õ‚µ‚È‚¢"‚ğŠÜ‚Ş‚½‚ßGetIndex‚©‚ç-1‚·‚é
+							//Menuã¯"è£…å‚™ã—ãªã„"ã‚’å«ã‚€ãŸã‚GetIndexã‹ã‚‰-1ã™ã‚‹
 
 							tmpCmd = "@Accessory_Set(" + std::string(FieldMenu.GetCursor()->parent->label) + ", " + std::to_string(FieldMenu.AccessorySlotNum) + ", " + CItemManager::GetInstance()->GetAccessoryItemInBag()[FieldMenu.AccessoryMenu->GetIndex(result) - 1] + ")";
 
-							//‘•”õ–¼‚Ìƒ‰ƒxƒ‹‚ğ‘‚«Š·‚¦‚é(ÀÛ‚É“à•”‘•”õ‚ª•Ï‚í‚é‚Ì‚ÍƒRƒ}ƒ“ƒhˆ—‚Ì)
+							//è£…å‚™åã®ãƒ©ãƒ™ãƒ«ã‚’æ›¸ãæ›ãˆã‚‹(å®Ÿéš›ã«å†…éƒ¨è£…å‚™ãŒå¤‰ã‚ã‚‹ã®ã¯ã‚³ãƒãƒ³ãƒ‰å‡¦ç†ã®æ™‚)
 							mystrcpy(FieldMenu.GetCursor()->label, CItemManager::GetInstance()->GetAccessoryItemInBag()[FieldMenu.AccessoryMenu->GetIndex(result) - 1].c_str());
 
 						}
@@ -194,26 +194,26 @@ int CField::MainLoop(){	//ƒQ[ƒ€’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
 
 		} else {
 
-			if (OldX != X || OldY != Y) {		//ƒAƒNƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh‚É‚æ‚éˆÚ“®”»’è—p
+			if (OldX != X || OldY != Y) {		//ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ã«ã‚ˆã‚‹ç§»å‹•åˆ¤å®šç”¨
 				OldX = X; OldY = Y;
 				if (CheckEvent(true)) {
-					TextBox->NextPage(&CmdList, &FlagSet);		//‘«Œ³‚ÉƒeƒLƒXƒg‚ªİ’è‚µ‚Ä‚ ‚ê‚Î•\¦
+					TextBox->NextPage(&CmdList, &FlagSet);		//è¶³å…ƒã«ãƒ†ã‚­ã‚¹ãƒˆãŒè¨­å®šã—ã¦ã‚ã‚Œã°è¡¨ç¤º
 				}
 
 			}else if (CheckHitKeyDown(KEY_INPUT_OK)){
-				if (CheckEvent(false)) TextBox->NextPage(&CmdList, &FlagSet);		//–Ú‚Ì‘O‚ÌƒIƒuƒWƒFƒNƒg‚ÉƒeƒLƒXƒg‚ªİ’è‚µ‚Ä‚ ‚ê‚Î•\¦
+				if (CheckEvent(false)) TextBox->NextPage(&CmdList, &FlagSet);		//ç›®ã®å‰ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ†ã‚­ã‚¹ãƒˆãŒè¨­å®šã—ã¦ã‚ã‚Œã°è¡¨ç¤º
 
 			} else if (CheckHitKeyDown(KEY_INPUT_CANCEL)) {
 				FieldMenu.Alive = true;
 
 			}else{
-				//•às/////////////////////////////////////////////////////
+				//æ­©è¡Œ/////////////////////////////////////////////////////
 				int walkspeed = ((CheckHitKey(KEY_INPUT_LSHIFT)||CheckHitKey(KEY_INPUT_RSHIFT))? 4:2);
 				#ifndef PRODUCT_MODE
 					walkspeed = ((CheckHitKey(KEY_INPUT_LCONTROL)||CheckHitKey(KEY_INPUT_RCONTROL))? MAP_CHIP_SIZE:walkspeed);
 				#endif
 				
-				//PUSHBLOCK‚ğ‰Ÿ‚µ‚½‚Æ‚«‚¾‚¯Walk‚©‚çtrue‚ª•Ô‚é
+				//PUSHBLOCKã‚’æŠ¼ã—ãŸã¨ãã ã‘Walkã‹ã‚‰trueãŒè¿”ã‚‹
 				if(      CheckHitKey(KEY_INPUT_RIGHT)){	if(Walk(RIGHT, walkspeed)) TextBox->NextPage(&CmdList, &FlagSet);
 				}else if(CheckHitKey(KEY_INPUT_LEFT)){	if(Walk(LEFT,  walkspeed)) TextBox->NextPage(&CmdList, &FlagSet);
 				}else if(CheckHitKey(KEY_INPUT_DOWN)){	if(Walk(DOWN,  walkspeed)) TextBox->NextPage(&CmdList, &FlagSet);
@@ -222,13 +222,13 @@ int CField::MainLoop(){	//ƒQ[ƒ€’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
 				X = between(0, MAP_SIZE-1, (int)X);
 				Y = between(0, MAP_SIZE-1, (int)Y);
 				
-				if (OldX!=X || OldY!=Y) {		//ˆÚ“®‚µ‚È‚©‚Á‚½‚Í‘«Œ³ƒ`ƒFƒbƒN‚µ‚È‚¢
+				if (OldX!=X || OldY!=Y) {		//ç§»å‹•ã—ãªã‹ã£ãŸæ™‚ã¯è¶³å…ƒãƒã‚§ãƒƒã‚¯ã—ãªã„
 					OldX = X; 
 					OldY = Y;
 					if (CheckEvent(true)){
-						TextBox->NextPage(&CmdList, &FlagSet);		//‘«Œ³‚ÉƒeƒLƒXƒg‚ªİ’è‚µ‚Ä‚ ‚ê‚Î•\¦
+						TextBox->NextPage(&CmdList, &FlagSet);		//è¶³å…ƒã«ãƒ†ã‚­ã‚¹ãƒˆãŒè¨­å®šã—ã¦ã‚ã‚Œã°è¡¨ç¤º
 					}else{
-						//í“¬ƒGƒ“ƒJƒEƒ“ƒg”»’è
+						//æˆ¦é—˜ã‚¨ãƒ³ã‚«ã‚¦ãƒ³ãƒˆåˆ¤å®š
 						if (Battle->CheckEncount(NowMap, Map.GetMapData(NowMap, X, Y))){
 							CmdList.Add("@BattleEncount");
 						}
@@ -238,10 +238,10 @@ int CField::MainLoop(){	//ƒQ[ƒ€’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
 				
 			}
 
-			////DEBUGFƒQ[ƒ€ƒI[ƒo[•ƒNƒŠƒA•ƒZ[ƒu///////////
+			////DEBUGï¼šã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ï¼†ã‚¯ãƒªã‚¢ï¼†ã‚»ãƒ¼ãƒ–///////////
 				if (CheckHitKey(KEY_INPUT_S) && CheckHitKey(KEY_INPUT_LCONTROL)){
 					SaveData(0);
-					TextBox->AddStock("0”Ô‚Éã‘‚«•Û‘¶‚µ‚Ü‚µ‚½");	TextBox->NextPage(&CmdList, &FlagSet);
+					TextBox->AddStock("0ç•ªã«ä¸Šæ›¸ãä¿å­˜ã—ã¾ã—ãŸ");	TextBox->NextPage(&CmdList, &FlagSet);
 
 				}else if (CheckHitKey(KEY_INPUT_LCONTROL)){
 					int tmpdnum=-1;
@@ -252,21 +252,21 @@ int CField::MainLoop(){	//ƒQ[ƒ€’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
 					}
 					if (tmpdnum!=-1){
 						while(1){
-							//ƒZ[ƒuƒf[ƒ^–¼‚Ì©—R“ü—Í
+							//ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿åã®è‡ªç”±å…¥åŠ›
 							char dataname[32];	dataname[0]='\0';
 							char inputchar;		char inputmessage[64];
 							ClearInputCharBuf() ;
 							while(BasicLoop()){
-								// •¶š“ü—Íƒoƒbƒtƒ@‚©‚ç•¶š‚ğæ“¾‚·‚é
+								// æ–‡å­—å…¥åŠ›ãƒãƒƒãƒ•ã‚¡ã‹ã‚‰æ–‡å­—ã‚’å–å¾—ã™ã‚‹
 								inputchar = GetInputChar( TRUE ) ;
-								// ‘€ìƒR[ƒhˆÈŠO‚Ì•¶š“ü—Í‚ª‚ ‚Á‚½ê‡‚Ì‚İˆ—‚ğs‚¤
+								// æ“ä½œã‚³ãƒ¼ãƒ‰ä»¥å¤–ã®æ–‡å­—å…¥åŠ›ãŒã‚ã£ãŸå ´åˆã®ã¿å‡¦ç†ã‚’è¡Œã†
 								if( inputchar == CTRL_CODE_CR && strlen(dataname)>0){		//Enter
 									break;
 								}else if( inputchar == CTRL_CODE_BS && strlen(dataname)>0){	//BackSpace
 									dataname[strlen(dataname)-1]='\0';
 								}else{
 									switch(inputchar){
-									case '.':	case '|':	case '\\':	case '/':	case ':':	case '>':	case '<':	case '?':	case '*':	case '"':	case ' ':	case '%':	//‚È‚º‚©’m‚ç‚ñ‚ª%‚ğg—p‚·‚é‚Æ‰“š‚È‚µƒGƒ‰[‚É‚È‚é	//ƒtƒHƒ‹ƒ_‚Ég—p‚Å‚«‚È‚¢•¶š‚»‚Ì‘¼‚Ì”rœ
+									case '.':	case '|':	case '\\':	case '/':	case ':':	case '>':	case '<':	case '?':	case '*':	case '"':	case ' ':	case '%':	//ãªãœã‹çŸ¥ã‚‰ã‚“ãŒ%ã‚’ä½¿ç”¨ã™ã‚‹ã¨å¿œç­”ãªã—ã‚¨ãƒ©ãƒ¼ã«ãªã‚‹	//ãƒ•ã‚©ãƒ«ãƒ€ã«ä½¿ç”¨ã§ããªã„æ–‡å­—ãã®ä»–ã®æ’é™¤
 										break;
 									default:
 										if( inputchar != 0 && inputchar >= CTRL_CODE_CMP && strlen(dataname)<ARRAY_SIZE(dataname)-1){
@@ -280,18 +280,18 @@ int CField::MainLoop(){	//ƒQ[ƒ€’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
 								DrawString(0, 0, inputmessage, WHITE);
 							}
 
-							//ƒZ[ƒuŒ‹‰Ê‚É‰‚¶‚Äˆ—•ªŠòi-1FƒGƒ‰[A0FƒŠƒgƒ‰ƒCA1F¬Œ÷j
+							//ã‚»ãƒ¼ãƒ–çµæœã«å¿œã˜ã¦å‡¦ç†åˆ†å²ï¼ˆ-1ï¼šã‚¨ãƒ©ãƒ¼ã€0ï¼šãƒªãƒˆãƒ©ã‚¤ã€1ï¼šæˆåŠŸï¼‰
 							int saveResult= SaveData(tmpdnum, dataname);
 							if (saveResult == 1){
-								char tmpmessage[32];			sprintf_s(tmpmessage, "%d”Ô‚ÉƒZ[ƒu‚µ‚Ü‚µ‚½", tmpdnum);
+								char tmpmessage[32];			sprintf_s(tmpmessage, "%dç•ªã«ã‚»ãƒ¼ãƒ–ã—ã¾ã—ãŸ", tmpdnum);
 								TextBox->AddStock(tmpmessage);	TextBox->NextPage(&CmdList, &FlagSet);
 								break;
 							}else if(saveResult == 0){
-								char tmpmessage[128];			sprintf_s(tmpmessage, "Šù‚É“¯–¼‚ÌƒZ[ƒuƒf[ƒ^‚ª•ÊƒXƒƒbƒg‚É‘¶İ‚µ‚Ü‚·B•Ê‚Ì–¼‘O‚ğ“ü—Í‚µ‚Ä‚µ‚Ä‚­‚¾‚³‚¢Bm%sn", dataname);
+								char tmpmessage[128];			sprintf_s(tmpmessage, "æ—¢ã«åŒåã®ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ãŒåˆ¥ã‚¹ãƒ­ãƒƒãƒˆã«å­˜åœ¨ã—ã¾ã™ã€‚åˆ¥ã®åå‰ã‚’å…¥åŠ›ã—ã¦ã—ã¦ãã ã•ã„ã€‚ï¼»%sï¼½", dataname);
 								TextBox->AddStock(tmpmessage);	//TextBox->NextPage(&CmdList, &FlagSet);
 								while(BasicLoop()){
 									if( !TextBox->Main(&CmdList, &FlagSet)) {
-										break;	//ƒeƒLƒXƒgƒ{ƒbƒNƒX‚ªÁ‚³‚ê‚½‚çÄ“ü—Í‰æ–Ê‚Ö
+										break;	//ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ãŒæ¶ˆã•ã‚ŒãŸã‚‰å†å…¥åŠ›ç”»é¢ã¸
 									}else{
 										FieldCmdManager.Main(&CmdList, this, &Map, TextBox, EveManager);
 										Draw();
@@ -314,24 +314,24 @@ int CField::MainLoop(){	//ƒQ[ƒ€’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
 				} else if (CheckHitKeyDown(KEY_INPUT_I)) {
 					CItemManager::GetInstance()->DebugShowAllPlayerItem();
 				}else if (CheckHitKeyDown(KEY_INPUT_B)){;
-					CmdList.Add("@Battle(bg_01, ƒGƒlƒ~[A, ƒGƒlƒ~[B, ƒGƒlƒ~[C)");
+					CmdList.Add("@Battle(bg_01, ã‚¨ãƒãƒŸãƒ¼A, ã‚¨ãƒãƒŸãƒ¼B, ã‚¨ãƒãƒŸãƒ¼C)");
 				}
-			////DEBUG:‚±‚±‚Ü‚Å////////////////////////////////////////////
+			////DEBUG:ã“ã“ã¾ã§////////////////////////////////////////////
 		}
 
 		CHECK_TIME_END("Main_Walk")	
 
-		////ƒfƒoƒbƒO‚Ì‚É‚ÍƒvƒŒƒCƒ„[À•W‚ğƒ^ƒCƒgƒ‹ƒo[‚É•\¦////////////////////////////////////////
+		////ãƒ‡ãƒãƒƒã‚°ã®æ™‚ã«ã¯ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼åº§æ¨™ã‚’ã‚¿ã‚¤ãƒˆãƒ«ãƒãƒ¼ã«è¡¨ç¤º////////////////////////////////////////
 			#ifndef PRODUCT_MODE
 				SetTitle("Map_%d Pos_%d:%d Data_%d:%d", NowMap, X, Y, Map.GetMapData(NowMap, X, Y, 0),Map.GetMapData(NowMap, X, Y, 1));
 			#endif
 
-		////TextBox‚È‚Ç‚É‚æ‚Á‚ÄCmdList‚É’~Ï‚³‚ê‚½ƒRƒ}ƒ“ƒh‚ğˆ—////////////////////////////////////////
+		////TextBoxãªã©ã«ã‚ˆã£ã¦CmdListã«è“„ç©ã•ã‚ŒãŸã‚³ãƒãƒ³ãƒ‰ã‚’å‡¦ç†////////////////////////////////////////
 			CHECK_TIME_START	FieldCmdManager.Main(&CmdList, this, &Map, TextBox, EveManager);	CHECK_TIME_END("Command.Main")
 			if (Mode != MODE_PLAYING)	return Mode;
 
 
-		////•`‰æ////////////////////////////////////////
+		////æç”»////////////////////////////////////////
 			CHECK_TIME_START
 			Draw();
 			CHECK_TIME_END("Draw")
@@ -343,22 +343,22 @@ int CField::MainLoop(){	//ƒQ[ƒ€’†‚Í‚±‚Ìƒ‹[ƒv“à‚©‚ço‚È‚¢
 
 void CField::Draw(bool _screenflip, bool _textshowingstop, int dx, int dy, bool _playeralsoshake){
 	
-	if (ImgBackGround!=NULL){	//”wŒiˆê–‡ŠGƒ‚[ƒh‚Ì‚Æ‚«
+	if (ImgBackGround!=NULL){	//èƒŒæ™¯ä¸€æšçµµãƒ¢ãƒ¼ãƒ‰ã®ã¨ã
 		CVector picsize = GetGraphSize(ImgBackGround);
 		DrawGraph(WINDOW_WIDTH/2-picsize.x/2, WINDOW_HEIGHT/2-picsize.y/2, ImgBackGround, true);
 	}else{
 
-		///_ƒVƒXƒeƒ€ì‚è‚©‚¯////////////////////////////////////////////////////////////////
+		///ç¥ã‚·ã‚¹ãƒ†ãƒ ä½œã‚Šã‹ã‘////////////////////////////////////////////////////////////////
 		GodX = 0; GodY = 0;
 		dx+=GodX*MAP_CHIP_SIZE; dy+=GodY*MAP_CHIP_SIZE;
 		/////////////////////////////////////////////////////////////////////////////
 
 
-		//ƒ}ƒbƒv•`‰æ////////////////////////////////////////////////////////////////////////////
+		//ãƒãƒƒãƒ—æç”»////////////////////////////////////////////////////////////////////////////
 		CHECK_TIME_START2	Map.Draw(NowMap, X, Y, dx, dy);			CHECK_TIME_END2("Map.Draw")
 		CHECK_TIME_START2	EveManager->Draw(NowMap, X, Y, false, dx, dy);	CHECK_TIME_END2("EveManager->Draw_under")
 
-		//ƒvƒŒƒCƒ„[////////////////////////////////////////////////////////////////////////////
+		//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼////////////////////////////////////////////////////////////////////////////
 			switch(Effect){
 			case NONE:
 				break;
@@ -374,26 +374,26 @@ void CField::Draw(bool _screenflip, bool _textshowingstop, int dx, int dy, bool 
 			CVector playerD(Dx,Dy);
 				if(!_playeralsoshake){playerD.Add(-GodX*MAP_CHIP_SIZE,-GodY*MAP_CHIP_SIZE);
 				}else{				  playerD.Add(-dx,-dy);}
-					if(Visible) DrawGraph(playerD.x+WINDOW_WIDTH/2-MAP_CHIP_SIZE/2, playerD.y+WINDOW_HEIGHT/2-MAP_CHIP_SIZE/2, ImgPlayer[Dir*4+mod(Step,4)], true);	//_a.png‚Å“§‰ßî•ñ‚ğ“Ç‚İ‚İÏ‚İ
+					if(Visible) DrawGraph(playerD.x+WINDOW_WIDTH/2-MAP_CHIP_SIZE/2, playerD.y+WINDOW_HEIGHT/2-MAP_CHIP_SIZE/2, ImgPlayer[Dir*4+mod(Step,4)], true);	//_a.pngã§é€éæƒ…å ±ã‚’èª­ã¿è¾¼ã¿æ¸ˆã¿
 			SetDrawBlendMode( DX_BLENDMODE_NOBLEND , 0 );
 		//////////////////////////////////////////////////////////////////////////////////////////
 	
 		CHECK_TIME_START2	EveManager->Draw(NowMap, X, Y, true, dx, dy);	CHECK_TIME_END2("EveManager->Draw_over")
 	}
 
-	//ƒeƒLƒXƒgƒ{ƒbƒNƒX•`‰æ//////////////////////////////////////////////////////////////////
+	//ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹æç”»//////////////////////////////////////////////////////////////////
 	TextBox->Draw(!CmdList.Empty() || _textshowingstop);
 	////////////////////////////////////////////////////////////////////////////////////////
 
-	//ƒtƒB[ƒ‹ƒhƒƒjƒ…[‚Ì•`‰æ////////////////////////////////
+	//ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®æç”»////////////////////////////////
 	FieldMenu.Draw();
 	//////////////////////////////////////////////////////////
 
-	//ƒƒO‚Ì•`‰æ///////////////////////////////////////////////
+	//ãƒ­ã‚°ã®æç”»///////////////////////////////////////////////
 	FieldLog.Draw();
 	///////////////////////////////////////////////////////////
 
-	//ƒVƒ‡ƒbƒv‚Ì•`‰æ///////////////////////////////////////////////
+	//ã‚·ãƒ§ãƒƒãƒ—ã®æç”»///////////////////////////////////////////////
 	CShopManager::GetInstance()->Draw();
 	CAlchemistManager::GetInstance()->Draw();
 	///////////////////////////////////////////////////////////
@@ -405,12 +405,12 @@ bool CField::Walk(int _dir, int _walkspeed, bool _eventwalk, bool _walk, int _fa
 	if(_walk){
 		SetMyDir(_dir);
 		if(_walkspeed<0) _dir=sys::TurnDir(_dir, 2);
-		if (CheckHitKey(KEY_INPUT_A) && !_eventwalk)return false;	//A‚ğ‰Ÿ‚µ‚È‚ª‚ç‚Å•ûŒü“]Š·‚Ì‚İ
+		if (CheckHitKey(KEY_INPUT_A) && !_eventwalk)return false;	//Aã‚’æŠ¼ã—ãªãŒã‚‰ã§æ–¹å‘è»¢æ›ã®ã¿
 	}
 
-	if (Map.GetMapData(NowMap, (X+((_dir==RIGHT)? 1: ((_dir==LEFT)? -1: 0)))%MAP_SIZE, (Y+((_dir==DOWN)? 1: ((_dir==UP)? -1: 0)))%MAP_SIZE, 1)) return false;	//áŠQ•¨‚Ì—L–³‚ğŠm”F
-	if (!_eventwalk) if (CheckEvent(false, true)) return true;	//‰Ÿ‚¹‚éƒuƒƒbƒNiPUSH_BLOCKj‚ÌƒCƒxƒ“ƒg—L–³‚ğƒ`ƒFƒbƒN		//_eventwalk‚Ì‚Í’Ê‚ç‚È‚¢‚æ‚¤‚É‚µ‚½•û‚ª‚¢‚¢‚©‚à
-	if (!EveManager->CheckWalkable(NowMap, (X+((_dir==RIGHT)? 1: ((_dir==LEFT)? -1: 0)))%MAP_SIZE, (Y+((_dir==DOWN)? 1: ((_dir==UP)? -1: 0)))%MAP_SIZE)) return false;	//NPCorBLOCK‚Ì—L–³‚ğŠm”F
+	if (Map.GetMapData(NowMap, (X+((_dir==RIGHT)? 1: ((_dir==LEFT)? -1: 0)))%MAP_SIZE, (Y+((_dir==DOWN)? 1: ((_dir==UP)? -1: 0)))%MAP_SIZE, 1)) return false;	//éšœå®³ç‰©ã®æœ‰ç„¡ã‚’ç¢ºèª
+	if (!_eventwalk) if (CheckEvent(false, true)) return true;	//æŠ¼ã›ã‚‹ãƒ–ãƒ­ãƒƒã‚¯ï¼ˆPUSH_BLOCKï¼‰ã®ã‚¤ãƒ™ãƒ³ãƒˆæœ‰ç„¡ã‚’ãƒã‚§ãƒƒã‚¯		//_eventwalkã®æ™‚ã¯é€šã‚‰ãªã„ã‚ˆã†ã«ã—ãŸæ–¹ãŒã„ã„ã‹ã‚‚
+	if (!EveManager->CheckWalkable(NowMap, (X+((_dir==RIGHT)? 1: ((_dir==LEFT)? -1: 0)))%MAP_SIZE, (Y+((_dir==DOWN)? 1: ((_dir==UP)? -1: 0)))%MAP_SIZE)) return false;	//NPCorBLOCKã®æœ‰ç„¡ã‚’ç¢ºèª
 
 	int d=0, oldd=0;	//delta;
 	int dx=0, dy=0;
@@ -430,7 +430,7 @@ bool CField::Walk(int _dir, int _walkspeed, bool _eventwalk, bool _walk, int _fa
 		dx = ((_dir==RIGHT)? d: ((_dir==LEFT)? -d: 0));
 		dy = ((_dir==DOWN)? d: ((_dir==UP)? -d: 0));
 		
-		//Draw(true, true, dx, dy);	//140904•ÏX •à‚«‚È‚ª‚ç‚àƒeƒLƒXƒg•\¦‚ªi‚Ş‚æ‚¤‚ÉB‚à‚µ•s‹ï‡‚ªo‚ê‚Î_eventewalk‚Åˆ—‚ğ•Ï‚¦‚éB
+		//Draw(true, true, dx, dy);	//140904å¤‰æ›´ æ­©ããªãŒã‚‰ã‚‚ãƒ†ã‚­ã‚¹ãƒˆè¡¨ç¤ºãŒé€²ã‚€ã‚ˆã†ã«ã€‚ã‚‚ã—ä¸å…·åˆãŒå‡ºã‚Œã°_eventewalkã§å‡¦ç†ã‚’å¤‰ãˆã‚‹ã€‚
 		Draw(true, false, dx, dy);
 
 		if (_fade==1)  Alpha = between(0, 255, (int)(alpha*(double)abs(d)/MAP_CHIP_SIZE));
@@ -476,7 +476,7 @@ void CField::SetNowMap(int _mapnum) {
 	std::string newMusicKey = Map.GetMapMusic(NowMap);
 	std::string oldMusicKey = (oldMap != -1? Map.GetMapMusic(oldMap): "");
 
-	//b’èA‰¹Šy–¢İ’è‚Ìƒ}ƒbƒv‚É“ü‚Á‚½‚É‚Í‰¹Šy‚ª‚È‚­‚È‚éB“X‚âí“¬‚Ìo“ü‚è‚ğl‚¦‚é‚Æ‚±‚ê‚ªì‚è‚â‚·‚¢‚½‚ßB
+	//æš«å®šã€éŸ³æ¥½æœªè¨­å®šã®ãƒãƒƒãƒ—ã«å…¥ã£ãŸæ™‚ã«ã¯éŸ³æ¥½ãŒãªããªã‚‹ã€‚åº—ã‚„æˆ¦é—˜ã®å‡ºå…¥ã‚Šã‚’è€ƒãˆã‚‹ã¨ã“ã‚ŒãŒä½œã‚Šã‚„ã™ã„ãŸã‚ã€‚
 	if (newMusicKey != oldMusicKey || oldMap == -1) {
 
 		if (oldMusicKey.length() > 0) {
@@ -510,7 +510,7 @@ void CField::ChangeTextMode(bool _box, const char* _eventtext){
 	}else{
 		TextBox = &TextWrap1;
 
-		if (_eventtext!=NULL){	//EveManager::CopyOriginalEvent‚ğ”Ä—p«‚ğã‚°‚Ä‰ü‘PB‚±‚ê‚ÅTextWrap1‚É@EventWrap‚Ì“à—e‚ğ“n‚¹‚½
+		if (_eventtext!=NULL){	//EveManager::CopyOriginalEventã‚’æ±ç”¨æ€§ã‚’ä¸Šã’ã¦æ”¹å–„ã€‚ã“ã‚Œã§TextWrap1ã«@EventWrapã®å†…å®¹ã‚’æ¸¡ã›ãŸ
 			std::vector<char256> tmptext;
 			EveManager->CopyOriginalEvent(&tmptext, _eventtext);
 			for (unsigned int i=0; i<tmptext.size(); i++){
@@ -523,7 +523,7 @@ void CField::ChangeTextMode(bool _box, const char* _eventtext){
 
 void CField::SetMyEffect(int _effectname, int _effectnum[]){
 		
-		if (_effectname==-1) {	//TextBox.Term‚©‚ç‚ÌŒÄ‚Ño‚µ
+		if (_effectname==-1) {	//TextBox.Termã‹ã‚‰ã®å‘¼ã³å‡ºã—
 			return;
 		}
 
@@ -572,8 +572,8 @@ reset:
 }
 
 void CField::BattleStart(const char* _pic_bg, std::vector<std::string> _enemyList){	
-	//ƒCƒxƒ“ƒgƒoƒgƒ‹—pi”wŒi‰æ‘œ‚ÆoŒ»“G‚ğw’è‚µ‚½í“¬j
-	Battle->SetBackGround(_pic_bg);	//‘‚¦‚Ä‚«‚½‚ç‚Ü‚é‚²‚ÆB_CmdList‚É“Š‚°‚é
+	//ã‚¤ãƒ™ãƒ³ãƒˆãƒãƒˆãƒ«ç”¨ï¼ˆèƒŒæ™¯ç”»åƒã¨å‡ºç¾æ•µã‚’æŒ‡å®šã—ãŸæˆ¦é—˜ï¼‰
+	Battle->SetBackGround(_pic_bg);	//å¢—ãˆã¦ããŸã‚‰ã¾ã‚‹ã”ã¨B_CmdListã«æŠ•ã’ã‚‹
 	Battle->SetEnemy(_enemyList);
 	BattleStart();
 }
@@ -585,7 +585,7 @@ void CField::BattleStart(){
 	Battle->SetPlayer();
 	Battle->BattleReady(&FlagSet, &Map, EveManager);
 	
-	//‰¹ŠyØ‚è‘Ö‚¦
+	//éŸ³æ¥½åˆ‡ã‚Šæ›¿ãˆ
 		std::string fieldMusic = Map.GetMapMusic(NowMap, false);
 		std::string battleMusic = Map.GetMapMusic(NowMap, true);
 
@@ -594,7 +594,7 @@ void CField::BattleStart(){
 			CMusicManager::GetInstance()->PlayMusic(battleMusic);
 		}
 
-	//‰æ–ÊØ‚è‘Ö‚¦Œø‰Êií“¬ŠJnj
+	//ç”»é¢åˆ‡ã‚Šæ›¿ãˆåŠ¹æœï¼ˆæˆ¦é—˜é–‹å§‹ï¼‰
 		int fieldGraph = MakeScreen(WINDOW_WIDTH, WINDOW_HEIGHT);
 			SetDrawScreen(fieldGraph);
 			Draw(false,true);
@@ -619,11 +619,11 @@ void CField::BattleStart(){
 		}
 
 		
-	//í“¬ŠJnií“¬I—¹‚Ü‚Å‹A‚Á‚Ä‚±‚È‚¢j
+	//æˆ¦é—˜é–‹å§‹ï¼ˆæˆ¦é—˜çµ‚äº†ã¾ã§å¸°ã£ã¦ã“ãªã„ï¼‰
 	Battle->BattleStart(&result, &resultcmdlist);
 	
 
-	//‰æ–ÊØ‚è‘Ö‚¦Œø‰Êií“¬I—¹j
+	//ç”»é¢åˆ‡ã‚Šæ›¿ãˆåŠ¹æœï¼ˆæˆ¦é—˜çµ‚äº†ï¼‰
 		if (result!=LOSE_NOSCREENCHANGE){
 			GetDrawScreenGraph(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, battleGraph) ;
 			SetDrawScreen(DX_SCREEN_BACK);
@@ -631,13 +631,13 @@ void CField::BattleStart(){
 			CScreenChanger::ChangeScreen(blankGraph, fieldGraph,  CScreenChanger::SCREEN_FADE, 30);
 		}
 
-	//‰¹ŠyØ‚è‘Ö‚¦
+	//éŸ³æ¥½åˆ‡ã‚Šæ›¿ãˆ
 		if (fieldMusic.length() > 0 && battleMusic != fieldMusic) {
 			CMusicManager::GetInstance()->StopMusic(battleMusic);
 			CMusicManager::GetInstance()->PlayMusic(fieldMusic);
 		}
 
-	//í“¬Œ‹‰ÊƒRƒ}ƒ“ƒh‚Ìˆ—
+	//æˆ¦é—˜çµæœã‚³ãƒãƒ³ãƒ‰ã®å‡¦ç†
 	FieldCmdManager.Main(&resultcmdlist, this, &Map, TextBox, EveManager);
 }
 
@@ -650,7 +650,7 @@ void CField::SetBattleResult(const char* _winmessage, const char* _losemessage){
 bool CField::CheckEvent(bool _foot, bool _push){
 	char** addtext = NULL;
 	bool event_happened=false;
-	int count;		//EveManager‚©‚çEveObj‚ÌCount‚ğó‚¯æ‚é‚ª•ÏX‚Í‚Å‚«‚È‚¢iCount‰ÁZ‚ÍEveManager->GetText‚Ås‚í‚ê‚éj
+	int count;		//EveManagerã‹ã‚‰EveObjã®Countã‚’å—ã‘å–ã‚‹ãŒå¤‰æ›´ã¯ã§ããªã„ï¼ˆCountåŠ ç®—ã¯EveManager->GetTextã§è¡Œã‚ã‚Œã‚‹ï¼‰
 
 	if (_push){
 			if (EveManager->GetText(addtext, count, NowMap, (X+((Dir==RIGHT)?1:((Dir==LEFT)? -1:0)))%MAP_SIZE, (Y+((Dir==DOWN)? 1:((Dir==UP)?-1:0)))%MAP_SIZE, Dir, objkind_tag::PUSHBLOCK)){
@@ -674,7 +674,7 @@ bool CField::CheckEvent(bool _foot, bool _push){
 	}
 
 
-	if (!event_happened) goto finish;	//ƒCƒxƒ“ƒg”­¶‚µ‚È‚¯‚ê‚Îƒƒ‚ƒŠ‰ğ•ú‚¾‚¯‚µ‚ÄI—¹
+	if (!event_happened) goto finish;	//ã‚¤ãƒ™ãƒ³ãƒˆç™ºç”Ÿã—ãªã‘ã‚Œã°ãƒ¡ãƒ¢ãƒªè§£æ”¾ã ã‘ã—ã¦çµ‚äº†
 	
 	if (! TextBox->AddStock(addtext, Dir, count)) ErrorDx("Error->AddText", __FILE__, __LINE__);
 	int i;
@@ -690,7 +690,7 @@ finish:
 	return event_happened;
 }
 
-bool CField::StartSet(const int _dnum){	//PlayData‚ÉŠi”[‚³‚ê‚½“Ç‚İ‚İƒZ[ƒuƒf[ƒ^‚ğŠe•Ï”‚ÉU‚è•ª‚¯‚Ä‘ã“ü
+bool CField::StartSet(const int _dnum){	//PlayDataã«æ ¼ç´ã•ã‚ŒãŸèª­ã¿è¾¼ã¿ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ã‚’å„å¤‰æ•°ã«æŒ¯ã‚Šåˆ†ã‘ã¦ä»£å…¥
 	CCmdList PlayDataCmdList;
 
 	if (_dnum<-1 || _dnum>=PLAYDATA_NUM) {
@@ -726,7 +726,7 @@ bool CField::StartSet(const int _dnum){	//PlayData‚ÉŠi”[‚³‚ê‚½“Ç‚İ‚İƒZ[ƒuƒf[
 
 		FlagSet = PlayData_p[_dnum].FlagSet;
 		
-		PlayData_p[_dnum].Exist = false;		//‚±‚ê‚Ì•K—v«‚æ‚­‚í‚©‚ñ‚È‚¢14/05/07
+		PlayData_p[_dnum].Exist = false;		//ã“ã‚Œã®å¿…è¦æ€§ã‚ˆãã‚ã‹ã‚“ãªã„14/05/07
 	}
 	
 	if (!CheckHitKeyDown(KEY_INPUT_ESCAPE)){
@@ -737,28 +737,28 @@ bool CField::StartSet(const int _dnum){	//PlayData‚ÉŠi”[‚³‚ê‚½“Ç‚İ‚İƒZ[ƒuƒf[
 	}
 }
 
-int CField::SaveData(int _dnum, const char _dataname[32]){	//-1FƒGƒ‰[A0FƒŠƒgƒ‰ƒCA1F¬Œ÷
+int CField::SaveData(int _dnum, const char _dataname[32]){	//-1ï¼šã‚¨ãƒ©ãƒ¼ã€0ï¼šãƒªãƒˆãƒ©ã‚¤ã€1ï¼šæˆåŠŸ
 	char filename[256];
 	FILE *fp;
 	
-	//ƒZ[ƒuƒf[ƒ^”Ô†‚ª“K³‚©ƒ`ƒFƒbƒN
+	//ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ç•ªå·ãŒé©æ­£ã‹ãƒã‚§ãƒƒã‚¯
 		if (_dnum<0 || _dnum>=PLAYDATA_NUM) {
 			ErrorDx("Error->SaveDataNumber too small or big:%d", __FILE__, __LINE__, _dnum);
 			return -1;
 		}
 	
-	//ƒZ[ƒuƒtƒHƒ‹ƒ_‚ğƒŠƒl[ƒ€–”‚ÍV‹Kì¬i_dataname‚ª‹ó•¶š—ñ‚Ì‚Æ‚«‚ÍƒZ[ƒu”Ô†‚¾‚¯‚ğ—Š‚è‚Éã‘‚«•Û‘¶‚·‚éj
+	//ã‚»ãƒ¼ãƒ–ãƒ•ã‚©ãƒ«ãƒ€ã‚’ãƒªãƒãƒ¼ãƒ åˆã¯æ–°è¦ä½œæˆï¼ˆ_datanameãŒç©ºæ–‡å­—åˆ—ã®ã¨ãã¯ã‚»ãƒ¼ãƒ–ç•ªå·ã ã‘ã‚’é ¼ã‚Šã«ä¸Šæ›¸ãä¿å­˜ã™ã‚‹ï¼‰
 		char newdirname[256];
 		if (strlen(_dataname) > 0){
 			char olddirname[256];
 			sprintf_s(olddirname, "%s/%s", DIR_SAVE, PlayData_p[_dnum].DataName);
 			sprintf_s(newdirname, "%s/%s", DIR_SAVE, _dataname); 
 
-			//ƒZ[ƒuƒtƒHƒ‹ƒ_‚ğƒŠƒl[ƒ€
+			//ã‚»ãƒ¼ãƒ–ãƒ•ã‚©ãƒ«ãƒ€ã‚’ãƒªãƒãƒ¼ãƒ 
 			if (rename(olddirname, newdirname) != 0){
-				//ƒŠƒl[ƒ€‚É¸”s‚µ‚½‚Ì‚ÅAŠù‘¶ƒtƒHƒ‹ƒ_‚ª‚È‚¢‚Æ”»’f‚µV‹Kì¬
+				//ãƒªãƒãƒ¼ãƒ ã«å¤±æ•—ã—ãŸã®ã§ã€æ—¢å­˜ãƒ•ã‚©ãƒ«ãƒ€ãŒãªã„ã¨åˆ¤æ–­ã—æ–°è¦ä½œæˆ
 				if (_mkdir(newdirname) !=0 ){
-					//ƒtƒHƒ‹ƒ_ì¬‚É¸”s“¯–¼‚ÌƒtƒHƒ‹ƒ_‚ª‘¶İ‚µ‚Ä‚¢‚½
+					//ãƒ•ã‚©ãƒ«ãƒ€ä½œæˆã«å¤±æ•—ï¼åŒåã®ãƒ•ã‚©ãƒ«ãƒ€ãŒå­˜åœ¨ã—ã¦ã„ãŸ
 					return 0;
 				}
 			}
@@ -768,7 +768,7 @@ int CField::SaveData(int _dnum, const char _dataname[32]){	//-1FƒGƒ‰[A0FƒŠƒg
 			_mkdir(newdirname);
 		}
 		
-	//ƒZ[ƒuƒf[ƒ^–¼ˆê——‚Ì•Û‘¶iŠù‘¶‚Ì‚à‚Ì‚à‚·‚×‚Äã‘‚«j
+	//ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿åä¸€è¦§ã®ä¿å­˜ï¼ˆæ—¢å­˜ã®ã‚‚ã®ã‚‚ã™ã¹ã¦ä¸Šæ›¸ãï¼‰
 		fopen_s(&fp, FILE_DATANAME, "w" );
 		for (int i = 0; i < PLAYDATA_NUM; i++){
 			fputs(PlayData_p[i].DataName, fp);		
@@ -777,7 +777,7 @@ int CField::SaveData(int _dnum, const char _dataname[32]){	//-1FƒGƒ‰[A0FƒŠƒg
 		fclose(fp);
 
 		
-	///ƒZ[ƒuƒf[ƒ^”Ô†‚ÉŠî‚Ã‚¢‚ÄƒZ[ƒuƒtƒ@ƒCƒ‹‚ğŠJ‚­/////////////////////////////////////////////////////////////////////////////////////
+	///ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ç•ªå·ã«åŸºã¥ã„ã¦ã‚»ãƒ¼ãƒ–ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã/////////////////////////////////////////////////////////////////////////////////////
 		for (int i=0; i<3; i++){
 			switch(i){
 			case 0:
@@ -790,14 +790,14 @@ int CField::SaveData(int _dnum, const char _dataname[32]){	//-1FƒGƒ‰[A0FƒŠƒg
 				sprintf_s(filename, "%s/%s/eve.dat", DIR_SAVE, PlayData_p[_dnum].DataName);
 				break;
 			default:
-				//UNDONE:ƒ[ƒh‹@”\‚ ‚Æ‚ÍƒAƒCƒeƒ€AƒLƒƒƒ‰ƒXƒe[ƒ^ƒXA‹àA‚ÆH 
+				//UNDONE:ãƒ­ãƒ¼ãƒ‰æ©Ÿèƒ½ã‚ã¨ã¯ã‚¢ã‚¤ãƒ†ãƒ ã€ã‚­ãƒ£ãƒ©ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã€é‡‘ã€ã¨ï¼Ÿ 
 				break;
 			}
 
-			//ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+			//ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 			fopen_s(&fp, filename, "wb" );
 
-			////ƒtƒ@ƒCƒ‹‚É‘‚«‚ñ‚Å•Û‘¶/////////////////////////////////////////////////////////////////////////////
+			////ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãè¾¼ã‚“ã§ä¿å­˜/////////////////////////////////////////////////////////////////////////////
 			switch(i){
 			case 0:
 				fwrite(&NowMap, sizeof(NowMap), 1, fp);

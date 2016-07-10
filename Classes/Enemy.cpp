@@ -14,9 +14,9 @@ void CEnemy::Draw(int _dx, int _dy){
 		SetDrawBright(255,255,255);
 		break;
 	case CHANGING:		
-		{/////€–S‰‰o//////////////////////////////////////
+		{/////æ­»äº¡æ¼”å‡º//////////////////////////////////////
 		static std::map<int, int> timeCount;
-		if (timeCount.find(ActorIndex) == timeCount.end()) timeCount[ActorIndex] = 0;	//Å‰‚Ìˆê“x‚¾‚¯‰Šú’l‘ã“ü
+		if (timeCount.find(ActorIndex) == timeCount.end()) timeCount[ActorIndex] = 0;	//æœ€åˆã®ä¸€åº¦ã ã‘åˆæœŸå€¤ä»£å…¥
 		timeCount[ActorIndex]++;
 		
 		SetDrawBlendMode( DX_BLENDMODE_ALPHA , 240-(timeCount[ActorIndex]*8)) ;
@@ -35,10 +35,10 @@ void CEnemy::Draw(int _dx, int _dy){
 	SetDrawBright(255,255,255);
 	SetDrawBlendMode( DX_BLENDMODE_NOBLEND , 0 ) ;
 
-	//HPBar‚âTimeGauge‚Ì•`‰æ
+	//HPBarã‚„TimeGaugeã®æç”»
 		Draw_Sub(_dx, _dy);
 
-	//AttentionCursor‚Ì•`‰æ
+	//AttentionCursorã®æç”»
 		AI.Draw(this);
 	
 }
@@ -47,7 +47,7 @@ void CEnemy::Draw(int _dx, int _dy){
 bool CEnemy::Plan(){
 	
 
-	//s“®‚ÌŒˆ’è
+	//è¡Œå‹•ã®æ±ºå®š
 		int actionNum = AI.GetPlan(this);
 		if (actionNum>=0 && actionNum<(int)TrickList.size()){
 			NowTrick = TrickList[actionNum];
@@ -70,15 +70,15 @@ bool CEnemy::Plan(){
 bool CEnemy::Action(){
 	
 	
-	if (GetStatus(WAIT) || NowTrick==NULL){	//‘Ò‹@‚ğ‘I‘ğ‚µ‚½ê‡
+	if (GetStatus(WAIT) || NowTrick==NULL){	//å¾…æ©Ÿã‚’é¸æŠã—ãŸå ´åˆ
 		SetStatus(WAIT, false);
 	} else {
-		//Tatget‚Ì‘I‘ğ‚Æs“®
+		//Tatgetã®é¸æŠã¨è¡Œå‹•
 			Target = AI.GetTarget(this); 
 			CmdList->Add("@Damage(%d,%d,%d,NORMAL)", ActorIndex, Target, NowTrick);
-			LogWindow->Add("%s‚Ì%sI", Name.c_str(), NowTrick->Name);
+			LogWindow->Add("%sã®%sï¼", Name.c_str(), NowTrick->Name);
 
-		//s“®Œãˆ—
+		//è¡Œå‹•å¾Œå‡¦ç†
 			NowTrick = NULL;
 			Target = -1;
 	

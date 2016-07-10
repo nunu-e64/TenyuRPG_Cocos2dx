@@ -10,7 +10,7 @@ bool CLoad::LoadAddText(const char *_path){
 	int OldFileLineNum = FileLineNum;
 	
 
-	//ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	//ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	FileHandle = FileRead_open(_path) ;
     if (FileHandle==0) {
 		ERRORDX("FileOpenError:%s", _path);
@@ -20,13 +20,13 @@ bool CLoad::LoadAddText(const char *_path){
 	int i = OldFileLineNum;
 	while( ProcessMessage()==0 && FileRead_eof( FileHandle ) == 0){
 		if (!(i<TEXT_SIZE)) {ErrorDx("Error->LoadText Size Over!:%s", __FILE__, __LINE__, _path);	i=TEXT_SIZE;	break;}
-        if(FileRead_gets(LoadText[i], 256, FileHandle)==-1) ErrorDx("Error->FileReadError", __FILE__, __LINE__,_path) ;		//UNDONE:ƒtƒ@ƒCƒ‹‚ªShift-JIS‚¶‚á‚È‚¢ê‡‚±‚±‚ÅƒtƒŠ[ƒY	
+        if(FileRead_gets(LoadText[i], 256, FileHandle)==-1) ErrorDx("Error->FileReadError", __FILE__, __LINE__,_path) ;		//UNDONE:ãƒ•ã‚¡ã‚¤ãƒ«ãŒShift-JISã˜ã‚ƒãªã„å ´åˆã“ã“ã§ãƒ•ãƒªãƒ¼ã‚º	
 		
 		int j=0;
 		while(LoadText[i][j]=='\t'){j++;}
 		if( j>0 )strcpy_s(LoadText[i], &LoadText[i][j]);
 
-		if (!(LoadText[i][0] == '\\' || strlen(LoadText[i])==0)){	//ƒRƒƒ“ƒg‚â‹ó”’s‚Å‚È‚¯‚ê‚Î“Ç‚İ
+		if (!(LoadText[i][0] == '\\' || strlen(LoadText[i])==0)){	//ã‚³ãƒ¡ãƒ³ãƒˆã‚„ç©ºç™½è¡Œã§ãªã‘ã‚Œã°èª­è¾¼ã¿
 			i++;
 			mystrrep(LoadText[i], "\\", "\0");
 		}else{
@@ -36,46 +36,46 @@ bool CLoad::LoadAddText(const char *_path){
 
 	FileLineNum = i;
 
-    // ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+    // ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
     FileRead_close( FileHandle ) ;
 	return true;
 }
 
 void CLoad::LoadMap(const char *_path, unsigned int _mapnum, CMap* _map, CEveManager* _evemanager, bool _event){
 	int FileHandle;
-	unsigned char *buf;		//ƒf[ƒ^“Ç‚İ—pƒ|ƒCƒ“ƒ^
+	unsigned char *buf;		//ãƒ‡ãƒ¼ã‚¿èª­è¾¼ã¿ç”¨ãƒã‚¤ãƒ³ã‚¿
 	char path[256];
 
 	MAP_MAX_CHECK(_mapnum,);
 	strcpy_s(path, _path);
 	strcat_s(path, ((!_event)?MAP_FILE_TYPE:EMAP_FILE_TYPE));
 
-	//ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	//ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	FileHandle = FileRead_open(path) ;
     if (FileHandle==0){
 		ErrorDx("Error->MapOpen->%s", path);
 		return;
 	}
 	
-	//ƒtƒ@ƒCƒ‹ƒTƒCƒY‚Ìæ“¾
+	//ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºã®å–å¾—
 	int FileSize = (int)FileRead_size(path ) ;
-    // ƒtƒ@ƒCƒ‹‚ğŠi”[‚·‚éƒƒ‚ƒŠ—Ìˆæ‚ÌŠm•Û
+    // ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ ¼ç´ã™ã‚‹ãƒ¡ãƒ¢ãƒªé ˜åŸŸã®ç¢ºä¿
     buf = new unsigned char[FileSize];
 	
-	//ƒtƒ@ƒCƒ‹“Ç‚İ‚İ
+	//ãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿
 	FileRead_read(buf, FileSize, FileHandle) ;
 	
-    // ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+    // ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
     FileRead_close( FileHandle ) ;
 	
-    // Mapƒf[ƒ^‚É®—
+    // Mapãƒ‡ãƒ¼ã‚¿ã«æ•´ç†
 	if(!_event){
 		_map->SetMap(_mapnum, FileSize, buf);
 	}else{
 		_evemanager->SetMap(_mapnum, FileSize, buf);
 	}
 
-    // ƒƒ‚ƒŠ‚Ì‰ğ•ú
+    // ãƒ¡ãƒ¢ãƒªã®è§£æ”¾
     delete [] buf;
 }
 
@@ -84,13 +84,13 @@ void CLoad::LoadPlayData(playdata_tag _playdata[]){
 	FILE *fp;
 	char filename[256];
 
-	//æ‚ÉƒŠƒZƒbƒg‚µ‚Ä‚¨‚­
+	//å…ˆã«ãƒªã‚»ãƒƒãƒˆã—ã¦ãŠã
 		for (int i=0; i<PLAYDATA_NUM; i++){
 			_playdata[i].Exist = false;
 			_playdata[i].DataName[0] = '\0';
 		}
 
-	//saveƒtƒHƒ‹ƒ_‚Ì‘¶İŠm”F•¶¬ ‚Æ dataname.rpg‚Ì‘¶İŠm”F•¶¬
+	//saveãƒ•ã‚©ãƒ«ãƒ€ã®å­˜åœ¨ç¢ºèªï¼†ç”Ÿæˆ ã¨ dataname.rpgã®å­˜åœ¨ç¢ºèªï¼†ç”Ÿæˆ
 		_mkdir(DIR_SAVE);
 		FileHandle = FileRead_open(FILE_DATANAME) ;
 		if (FileHandle==0) {
@@ -100,10 +100,10 @@ void CLoad::LoadPlayData(playdata_tag _playdata[]){
 		}
 
 	for( int h = 0; FileRead_eof( FileHandle ) == 0 && h < PLAYDATA_NUM; h++){
-        // ƒZ[ƒuƒf[ƒ^–¼‚ğˆês‚¸‚Â“Ç‚İ‚İ
+        // ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿åã‚’ä¸€è¡Œãšã¤èª­ã¿è¾¼ã¿
 			if (FileRead_gets( _playdata[h].DataName, ARRAY_SIZE(_playdata[h].DataName), FileHandle ) == ARRAY_SIZE(_playdata[h].DataName)-1){
-				//ƒtƒ@ƒCƒ‹‚ªShift-JIS‚¶‚á‚È‚¢ê‡‚±‚±‚ÅƒtƒŠ[ƒY
-				//31•¶š‚¿‚å‚¤‚Ç‚Ì‚Æ‚«‚ÉŸ‚ÌFileRead_gets‚Å‚ÍNULL•¶š‚µ‚©‘ã“ü‚³‚ê‚È‚¢d—l‚ª‚ ‚é‚½‚ßƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^‚ÌˆÊ’u‚ğ‚¸‚ç‚µ‚Ä‚â‚é•K—v‚ª‚ ‚éB‚È‚º2•¶š•ª“®‚©‚³‚È‚¢‚Æ‚¢‚¯‚È‚¢‚Ì‚©‚Í•s–¾
+				//ãƒ•ã‚¡ã‚¤ãƒ«ãŒShift-JISã˜ã‚ƒãªã„å ´åˆã“ã“ã§ãƒ•ãƒªãƒ¼ã‚º
+				//31æ–‡å­—ã¡ã‚‡ã†ã©ã®ã¨ãã«æ¬¡ã®FileRead_getsã§ã¯NULLæ–‡å­—ã—ã‹ä»£å…¥ã•ã‚Œãªã„ä»•æ§˜ãŒã‚ã‚‹ãŸã‚ãƒ•ã‚¡ã‚¤ãƒ«ãƒã‚¤ãƒ³ã‚¿ã®ä½ç½®ã‚’ãšã‚‰ã—ã¦ã‚„ã‚‹å¿…è¦ãŒã‚ã‚‹ã€‚ãªãœ2æ–‡å­—åˆ†å‹•ã‹ã•ãªã„ã¨ã„ã‘ãªã„ã®ã‹ã¯ä¸æ˜
 				if (FileRead_seek(FileHandle, +2, SEEK_CUR)==-1) ErrorDx("Error->LoadPlayData") ;
 			}
 
@@ -124,16 +124,16 @@ void CLoad::LoadPlayData(playdata_tag _playdata[]){
 				break;
 			}
 
-			//ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+			//ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 			fopen_s(&fp, filename, "rb" );
 			if( fp== NULL ){
 				ErrorDx("Error->Can't Open SaveData->%s", filename);
 				_playdata[h].Exist = false;
-				break;	//Ÿ‚Ìs‚ÖiŸ‚ÌƒZ[ƒuƒf[ƒ^”Ô†‚Öj
+				break;	//æ¬¡ã®è¡Œã¸ï¼ˆæ¬¡ã®ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ç•ªå·ã¸ï¼‰
 			}
 	
 			/////////////////////////////////////////////////////
-			//Šeíƒf[ƒ^‚ÉŠi”[/////////////////////////////////////
+			//å„ç¨®ãƒ‡ãƒ¼ã‚¿ã«æ ¼ç´/////////////////////////////////////
 			switch(i){
 			case 0:
 				fread(&_playdata[h].NowMap, sizeof(_playdata[h].NowMap), 1, fp);
@@ -175,7 +175,7 @@ void CLoad::LoadPlayData(playdata_tag _playdata[]){
 			}
 			/////////////////////////////////////////////////////
 		
-			// ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+			// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 			fclose(fp);
 		}
 	}	

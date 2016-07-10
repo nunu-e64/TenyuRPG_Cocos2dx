@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–hŽ~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef WORLDMANAGER_H						////
 #define WORLDMANAGER_H						////
 ////////////////////////////////////////////////
@@ -22,7 +22,7 @@ public:
 
 protected:
 	
-	int ImgBackGround;	//”wŒiˆê–‡ŠG—p
+	int ImgBackGround;	//èƒŒæ™¯ä¸€æžšçµµç”¨
 	/*
 	CTextBox* TextBox;
 	CTextBox TextBox1;
@@ -33,7 +33,7 @@ protected:
 	CCmdList* CmdList_p;*/
 };
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–hŽ~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////	
 ////////////////////////////////////////////////
 

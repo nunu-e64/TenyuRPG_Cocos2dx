@@ -1,4 +1,4 @@
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #ifndef TALKNAME_H							////
 #define TALKNAME_H							////
 ////////////////////////////////////////////////
@@ -15,10 +15,10 @@ public:
 	}
 	void Init();
 
-	//’è”
+	//å®šæ•°
 		enum{SIDE_NUM=2, NAME_NUM=10};
 
-	//ŠÖ”
+	//é–¢æ•°
 		void Clear(bool _left);
 		bool Add(bool _left, int _num, ...);
 		bool Dec(bool _left, int _num, ...);
@@ -31,12 +31,12 @@ public:
 		void Draw(int _left, int _right, int bottom);
 
 private:
-	//•Ï”
-		char Name[SIDE_NUM][NAME_NUM][32];	//0...left, 1...right, ¶‰E‚»‚ê‚¼‚ê0~9‚Ì10l•ª–¼‘O•Û‘¶
+	//å¤‰æ•°
+		char Name[SIDE_NUM][NAME_NUM][32];	//0...left, 1...right, å·¦å³ãã‚Œãã‚Œ0~9ã®10äººåˆ†åå‰ä¿å­˜
 		int ImgLabel[3];
 		bool NowLeft;
 };
 
-////‘½dƒCƒ“ƒNƒ‹[ƒh–h~iƒCƒ“ƒNƒ‹[ƒhƒK[ƒhj//
+////å¤šé‡ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰é˜²æ­¢ï¼ˆã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰ï¼‰//
 #endif										////
 ////////////////////////////////////////////////

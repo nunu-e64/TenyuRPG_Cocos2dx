@@ -3,7 +3,7 @@
 //using namespace nunuLib;
 
 
-//Œ»İæ“¾ŠÖ”///////////////////////////////////////////
+//ç¾åœ¨æ™‚åˆ»å–å¾—é–¢æ•°///////////////////////////////////////////
 SYSTEMTIME GetNowSystemTime(){
 	SYSTEMTIME st;
 	GetSystemTime(&st);
@@ -12,9 +12,9 @@ SYSTEMTIME GetNowSystemTime(){
 	FILETIME ft2;
     SystemTimeToFileTime(&st, &ft1);
 	
-	//a ‚±‚¿‚ç‚Å‚àOKB“®ì‚ÍŠm”FÏ‚İB
+	//a ã“ã¡ã‚‰ã§ã‚‚OKã€‚å‹•ä½œã¯ç¢ºèªæ¸ˆã¿ã€‚
 	//long long int t = (long long int)(ft1.dwHighDateTime)<<32 | ft1.dwLowDateTime;
-	//t += (long long int)9*60*60*1000*1000*10;	//1“úEEE24*60*60*1000*1000*10 
+	//t += (long long int)9*60*60*1000*1000*10;	//1æ—¥ãƒ»ãƒ»ãƒ»24*60*60*1000*1000*10 
 	//ft2.dwHighDateTime = t>>32;	// & 0xFFFFFFFF;
 	//ft2.dwLowDateTime = (int)t;	
 	
@@ -37,10 +37,10 @@ std::string GetNowSystemTimeString(){
 
 
 ////////////////////////////////////////////////////////////////////////////////////
-////•¶š—ñŒn///////////////////////////////////////////////////////////////////////
+////æ–‡å­—åˆ—ç³»///////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-////•¶š—ñ‚ğ”’l‚É•ÏŠ·///////////////////////////////////////
+////æ–‡å­—åˆ—ã‚’æ•°å€¤ã«å¤‰æ›///////////////////////////////////////
 bool mystrtol(const char* str, long int* result, int radix){
 	long int num;
 	char* end;
@@ -50,9 +50,9 @@ bool mystrtol(const char* str, long int* result, int radix){
 
 	num = strtol( str, &end, radix );
 	if( errno== ERANGE && (num== LONG_MAX || num== LONG_MIN) ){
-		return false;    /* •ÏŠ·Œ‹‰Ê‚ª•\Œ»‚Å‚«‚È‚¢ */
+		return false;    /* å¤‰æ›çµæœãŒè¡¨ç¾ã§ããªã„ */
 	}else if( str== end ){
-		return false;    /* ‚P•¶š‚à•ÏŠ·‚Å‚«‚È‚¢ */
+		return false;    /* ï¼‘æ–‡å­—ã‚‚å¤‰æ›ã§ããªã„ */
 	}
 
 	*result = num;
@@ -73,9 +73,9 @@ bool mystrtod(const char* str, double* result){
 
 	num = strtod( str, &end);
 	if( num== 0 && errno== ERANGE ){
-		return false; /*ƒAƒ“ƒ_[ƒtƒ[*/
+		return false; /*ã‚¢ãƒ³ãƒ€ãƒ¼ãƒ•ãƒ­ãƒ¼*/
 	}else if( (num== HUGE_VAL || num== -HUGE_VAL) && errno== ERANGE ){
-		return false;	/*"Œ‹‰Ê‚ª•\Œ»‚Å‚«‚È‚¢*/
+		return false;	/*"çµæœãŒè¡¨ç¾ã§ããªã„*/
 	}
 
 	*result = num;
@@ -90,33 +90,33 @@ bool mystrtod(const char* str, float* result){
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-////strlen‚ğsigned‚É/////////////////////////////////////////
+////strlenã‚’signedã«/////////////////////////////////////////
 signed int mystrlen(const char* _str){
 	return (signed int)strlen(_str);
 }
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///•¶š—ñ”äŠr—pŠÖ”//////////////////////////////////////////
+///æ–‡å­—åˆ—æ¯”è¼ƒç”¨é–¢æ•°//////////////////////////////////////////
 bool mystrcmp(const char *String, const char *Words, const char Option){	
 	if (String==NULL) return false;
-	if (Option=='p'){			//Perfect: Š®‘Sˆê’v
+	if (Option=='p'){			//Perfect: å®Œå…¨ä¸€è‡´
 		return ((strcmp(String, Words)==0)? true: false);
 
-	}else if (Option=='l'){		//Left: String‚Ìæ“ª‚ÉWords‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é
+	}else if (Option=='l'){		//Left: Stringã®å…ˆé ­ã«WordsãŒå«ã¾ã‚Œã¦ã„ã‚‹
 		return ((strstr(String, Words)==String)? true: false);
 
-	}else if (Option=='m'){		//Middle: String‚Ì’†‚ÉWords‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é
+	}else if (Option=='m'){		//Middle: Stringã®ä¸­ã«WordsãŒå«ã¾ã‚Œã¦ã„ã‚‹
 		return ((strstr(String, Words)!=NULL)? true: false);
 
 	}else{
 		return mystrcmp(String, Words, 'p');
 	}
 }
-//•¡”‚ÌƒL[ƒ[ƒh‚ÅOR”»’è
+//è¤‡æ•°ã®ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰ã§ORåˆ¤å®š
 bool mystrcmp(const char *String, const char Option, const int arg_num, ...){
 	va_list args;
-	va_start( args, arg_num);	//arg_num‚ª‘å‚«‚·‚¬‚½‚Æ‚«‚Ìˆ’u•û–@‚Í‚È‚¢‚Ì‚©H
+	va_start( args, arg_num);	//arg_numãŒå¤§ãã™ããŸã¨ãã®å‡¦ç½®æ–¹æ³•ã¯ãªã„ã®ã‹ï¼Ÿ
 	
 	for (int i=0; i<arg_num; i++){
 		if (mystrcmp(String, va_arg(args, char*), Option)){
@@ -128,10 +128,10 @@ bool mystrcmp(const char *String, const char Option, const int arg_num, ...){
 	return false;
 }
 
-//‘å•¶š¬•¶š‚ğ‹æ•Ê‚¹‚¸‚É”äŠr istrcmp‚Ì‹æ•Ê‚È‚µ”Å‚Ístristr‚ª‚ ‚éB‚µ‚©‚µstrstr‚Ì‹æ•Ê‚È‚µ”Å‚Í•W€‚Å‘¶İ‚µ‚È‚¢‚Ì‚Åˆê‚Âˆê‚Âè“®’uŠ·‚·‚éistrcasestr‚Íwindows‚É‚Í‚È‚¢‚Á‚Û‚¢jj
+//å¤§æ–‡å­—å°æ–‡å­—ã‚’åŒºåˆ¥ã›ãšã«æ¯”è¼ƒ ï¼ˆstrcmpã®åŒºåˆ¥ãªã—ç‰ˆã¯stristrãŒã‚ã‚‹ã€‚ã—ã‹ã—strstrã®åŒºåˆ¥ãªã—ç‰ˆã¯æ¨™æº–ã§å­˜åœ¨ã—ãªã„ã®ã§ä¸€ã¤ä¸€ã¤æ‰‹å‹•ç½®æ›ã™ã‚‹ï¼ˆstrcasestrã¯windowsã«ã¯ãªã„ã£ã½ã„ï¼‰ï¼‰
 bool mystrcmp2(const char *String, const char *Words, const char Option){	
 	if (String==NULL) return false;
-	if (Option=='p'){			//Perfect: Š®‘Sˆê’v
+	if (Option=='p'){			//Perfect: å®Œå…¨ä¸€è‡´
 		for (unsigned int i=0; i<strlen(String)+1; i++){
 			if (tolower((unsigned char)String[i]) != tolower((unsigned char)Words[i])) {
 				return false;
@@ -139,7 +139,7 @@ bool mystrcmp2(const char *String, const char *Words, const char Option){
 		}
 		return true;
 
-	}else if (Option=='l'){		//Left: String‚Ìæ“ª‚ÉWords‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é
+	}else if (Option=='l'){		//Left: Stringã®å…ˆé ­ã«WordsãŒå«ã¾ã‚Œã¦ã„ã‚‹
 		for (unsigned int i=0; i<strlen(String)+1; i++){
 			if (Words[i] == '\0') {
 				return true;
@@ -149,7 +149,7 @@ bool mystrcmp2(const char *String, const char *Words, const char Option){
 		}
 		return true;
 
-	}else if (Option=='m'){		//Middle: String‚Ì’†‚ÉWords‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é
+	}else if (Option=='m'){		//Middle: Stringã®ä¸­ã«WordsãŒå«ã¾ã‚Œã¦ã„ã‚‹
 		char* tmpString = new char[strlen(String)+1]; 
 		char* tmpWords  = new char[strlen(Words)+1]; 
 		for (unsigned int i=0; i<strlen(String)+1; i++){
@@ -170,10 +170,10 @@ bool mystrcmp2(const char *String, const char *Words, const char Option){
 		return mystrcmp2(String, Words, 'p');
 	}
 }
-//‘å•¶š¬•¶š‚ğ‹C‚É‚¹‚¸‚É•¡”‚ÌƒL[ƒ[ƒh‚ÅOR”»’è
+//å¤§æ–‡å­—å°æ–‡å­—ã‚’æ°—ã«ã›ãšã«è¤‡æ•°ã®ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰ã§ORåˆ¤å®š
 bool mystrcmp2(const char *String, const char Option, const int arg_num, ...){
 	va_list args;
-	va_start( args, arg_num);	//arg_num‚ª‘å‚«‚·‚¬‚½‚Æ‚«‚Ìˆ’u•û–@‚Í‚È‚¢‚Ì‚©H
+	va_start( args, arg_num);	//arg_numãŒå¤§ãã™ããŸã¨ãã®å‡¦ç½®æ–¹æ³•ã¯ãªã„ã®ã‹ï¼Ÿ
 	
 	for (int i=0; i<arg_num; i++){
 		if (mystrcmp2(String, va_arg(args, char*), Option)){
@@ -187,9 +187,9 @@ bool mystrcmp2(const char *String, const char Option, const int arg_num, ...){
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///”¼Šp•¶š³Šm’Tõ—pŠÖ”////////////////////////////////////
-char* mystrchr(char* string, char character){	//’T‚µ‚½‚¢”¼Šp•¶š‚ÆA‚ ‚é‘SŠp•¶š‚Ì2Byte–Ú‚ª“¯‚¶‚Æ‚«‚ÉŒë”F‚µ‚Ä‚µ‚Ü‚¤–â‘è‚ğ‰ğŒˆi•W€ŠÖ”‚Å‚È‚¢‚Ì‚©EEEHj
-	char* p = string;							//¦string‚Ì‚Ğ‚Æ‚Â‘O‚ªA•¶“ª‚Ü‚½‚Í”¼Šp•¶š‚Ü‚½‚Í‘SŠp•¶š‚Ì2ƒoƒCƒg–Ú‚Ì•¶š‚É‚È‚è‚¦‚é•¶š‚Å‚ ‚é‚±‚Æ‚ª•ÛØ‚³‚ê‚Ä‚¢‚é‚Æ‚«‚Ì‚İ³í‹@”\	
+///åŠè§’æ–‡å­—æ­£ç¢ºæ¢ç´¢ç”¨é–¢æ•°////////////////////////////////////
+char* mystrchr(char* string, char character){	//æ¢ã—ãŸã„åŠè§’æ–‡å­—ã¨ã€ã‚ã‚‹å…¨è§’æ–‡å­—ã®2Byteç›®ãŒåŒã˜ã¨ãã«èª¤èªã—ã¦ã—ã¾ã†å•é¡Œã‚’è§£æ±ºï¼ˆæ¨™æº–é–¢æ•°ã§ãªã„ã®ã‹ãƒ»ãƒ»ãƒ»ï¼Ÿï¼‰
+	char* p = string;							//â€»stringã®ã²ã¨ã¤å‰ãŒã€æ–‡é ­ã¾ãŸã¯åŠè§’æ–‡å­—ã¾ãŸã¯å…¨è§’æ–‡å­—ã®2ãƒã‚¤ãƒˆç›®ã®æ–‡å­—ã«ãªã‚Šãˆã‚‹æ–‡å­—ã§ã‚ã‚‹ã“ã¨ãŒä¿è¨¼ã•ã‚Œã¦ã„ã‚‹ã¨ãã®ã¿æ­£å¸¸æ©Ÿèƒ½	
 	
 	while ((p=strchr(p, character))!=NULL){
 
@@ -204,14 +204,14 @@ char* mystrchr(char* string, char character){	//’T‚µ‚½‚¢”¼Šp•¶š‚ÆA‚ ‚é‘SŠp•¶š
 				if (_ismbblead(*(p-i))) {
 					continue;
 				}else{
-					return p;	//*p‚ª”¼Šp•¶š‚ÆŠm’è
+					return p;	//*pãŒåŠè§’æ–‡å­—ã¨ç¢ºå®š
 				}
 			}else{
 				if (_ismbblead(*(p-i))) {
-					if ((p-i)==string) return p;	//*p‚ª”¼Šp•¶š‚ÆŠm’è
+					if ((p-i)==string) return p;	//*pãŒåŠè§’æ–‡å­—ã¨ç¢ºå®š
 					continue;
 				}else{
-					break;		//*p‚ª‘SŠp•¶š‚Ì2ƒoƒCƒg–Ú‚ÆŠm’è
+					break;		//*pãŒå…¨è§’æ–‡å­—ã®2ãƒã‚¤ãƒˆç›®ã¨ç¢ºå®š
 				}			
 			}
 		}
@@ -223,7 +223,7 @@ char* mystrchr(char* string, char character){	//’T‚µ‚½‚¢”¼Šp•¶š‚ÆA‚ ‚é‘SŠp•¶š
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///•¶š—ñƒRƒs[—pŠÖ”////////////////////////////////////////
+///æ–‡å­—åˆ—ã‚³ãƒ”ãƒ¼ç”¨é–¢æ•°////////////////////////////////////////
 bool mystrcpy(char *String, const char *Source){
 	int i=0;
 	while(1){
@@ -249,10 +249,10 @@ bool mystrcpy(char *String, const char *Source, int size_including_null){
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///•¶š—ñ‚Ì—¼’[‚©‚ç—]Œv‚È•¶š‚ğí‚éŠÖ”//////////////////////
+///æ–‡å­—åˆ—ã®ä¸¡ç«¯ã‹ã‚‰ä½™è¨ˆãªæ–‡å­—ã‚’å‰Šã‚‹é–¢æ•°//////////////////////
 bool mystrsmt(char *string, const char* uselesswords){
 	int i = 0; int j = 0;
-	while(1){	//‘O‚©‚çí‚é
+	while(1){	//å‰ã‹ã‚‰å‰Šã‚‹
 		i = 0;
 		while (1){
 			if (string[j]==uselesswords[i]){
@@ -267,7 +267,7 @@ endloop:
 	mystrcpy(string, &string[j]);
 	
 	j = strlen(string)-1;
-	while(1){	//Œã‚ë‚©‚çí‚é
+	while(1){	//å¾Œã‚ã‹ã‚‰å‰Šã‚‹
 		i = 0;
 		while (1){
 			if (string[j]==uselesswords[i]){
@@ -285,7 +285,7 @@ finish:
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///•¶š—ñŒ‹‡—pŠÖ”////////////////////////////////////////
+///æ–‡å­—åˆ—çµåˆç”¨é–¢æ•°////////////////////////////////////////
 bool mystrcat(char *string, const char* source){
 	char* p;
 	p = string+strlen(string);
@@ -300,7 +300,7 @@ bool mystrcat(char *string, const char* source){
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///•¶š—ñ’uŠ·—pŠÖ”//////////////////////////////////////////
+///æ–‡å­—åˆ—ç½®æ›ç”¨é–¢æ•°//////////////////////////////////////////
 void mystrrep(char* string, const char* from, const char* to){
 	char* p;
 
@@ -332,12 +332,12 @@ bool mystrgrt(const char* string, const char* target, bool greater){
 /////////////////////////////////////////////////////////////
 
 
-////•¶š—ñŒn‚±‚±‚Ü‚Å////////////////////////////////////////////////////////////////
+////æ–‡å­—åˆ—ç³»ã“ã“ã¾ã§////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
 
 ////////////////////////////////////////////////////////////////////////////////////
-////•`‰æŒn//////////////////////////////////////////////////////////////////////////
+////æç”»ç³»//////////////////////////////////////////////////////////////////////////
 CVector GetGraphSize(int GrHandle){
 	CVector vec;	
 	int w, h;
@@ -346,7 +346,7 @@ CVector GetGraphSize(int GrHandle){
 	return vec;
 }
 
-int LoadGraph(const TCHAR *filename, bool errorcheck)		//Dxƒ‰ƒCƒuƒ‰ƒŠ‚ÌLoadGraph‚Ìƒtƒ@ƒCƒ‹ƒGƒ‰[o—Í•t‚«”ÅBƒR[ƒhß–ñ‚ª–Ú“IB
+int LoadGraph(const TCHAR *filename, bool errorcheck)		//Dxãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®LoadGraphã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚¨ãƒ©ãƒ¼å‡ºåŠ›ä»˜ãç‰ˆã€‚ã‚³ãƒ¼ãƒ‰ç¯€ç´„ãŒç›®çš„ã€‚
 {	int img = LoadGraph(filename);
 	if (errorcheck){
 		if(img == -1){ErrorDx("Error->Not Found Image:%s", filename);}
@@ -377,7 +377,7 @@ int DrawString(int x, int y, int color, const TCHAR* format, ...){
 
 	return for_return;	
 }
-//DrawCenterString NotƒtƒH[ƒ}ƒbƒg”Å
+//DrawCenterString Notãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆç‰ˆ
 int DrawCenterString(int cx, int y, int color, const TCHAR* format, ...){
 	va_list args;
 	char string[1024];
@@ -396,7 +396,7 @@ int DrawCenterString(int cx, int y, int color, const TCHAR* format, ...){
 
 	return for_return;	
 }
-int DrawCenterString(int cx, int y, int color, bool centerY, const TCHAR* format, ...){	//ƒtƒH[ƒ}ƒbƒg”Å
+int DrawCenterString(int cx, int y, int color, bool centerY, const TCHAR* format, ...){	//ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆç‰ˆ
 	va_list args;
 	char string[1024];
 	int for_return;
@@ -414,11 +414,11 @@ int DrawCenterString(int cx, int y, int color, bool centerY, const TCHAR* format
 
 	return for_return;	
 }
-////•`‰æŒn‚±‚±‚Ü‚Å//////////////////////////////////////////////////////////////////
+////æç”»ç³»ã“ã“ã¾ã§//////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////
-////‰¹ŠyŒn//////////////////////////////////////////////////////////////////////////
+////éŸ³æ¥½ç³»//////////////////////////////////////////////////////////////////////////
 bool CheckSound(int _handle) {
 
 	int result = CheckSoundMem(_handle);
@@ -432,22 +432,22 @@ bool CheckSound(int _handle) {
 	}
 
 }
-////‰¹ŠyŒn‚±‚±‚Ü‚Å//////////////////////////////////////////////////////////////////
+////éŸ³æ¥½ç³»ã“ã“ã¾ã§//////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///ƒGƒ‰[o—Í—pŠÖ”//////////////////////////////////////////
+///ã‚¨ãƒ©ãƒ¼å‡ºåŠ›ç”¨é–¢æ•°//////////////////////////////////////////
 //
-//ErrorDx‚ÍƒCƒ“ƒ‰ƒCƒ“ŠÖ”‚È‚Ì‚ÅA’è‹`‚Íƒwƒbƒ_‚É‹LÚ
+//ErrorDxã¯ã‚¤ãƒ³ãƒ©ã‚¤ãƒ³é–¢æ•°ãªã®ã§ã€å®šç¾©ã¯ãƒ˜ãƒƒãƒ€ã«è¨˜è¼‰
 //
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///©ìChooseŠÖ”////////////////////////////////////////////
+///è‡ªä½œChooseé–¢æ•°////////////////////////////////////////////
 int choose(const int target, ...){
 	int choice;
 	va_list args;
-	va_start( args, target);	//target‚ª‘å‚«‚·‚¬‚½‚Æ‚«‚Ìˆ’u•û–@‚Í‚È‚¢‚Ì‚©H
+	va_start( args, target);	//targetãŒå¤§ãã™ããŸã¨ãã®å‡¦ç½®æ–¹æ³•ã¯ãªã„ã®ã‹ï¼Ÿ
 	
 	if (target<=0){
 		ErrorDx("Error->arg[target] should >=1: target=%d", __FILE__, __LINE__, target);
@@ -455,7 +455,7 @@ int choose(const int target, ...){
 
 	} else {
 		for (int i=1; i<=target; i++){
-			choice = va_arg(args, int);		//target=1‚ÌAˆêŒÂ–Ú‚ğ•Ô‚·iNot target=0j
+			choice = va_arg(args, int);		//target=1ã®æ™‚ã€ä¸€å€‹ç›®ã‚’è¿”ã™ï¼ˆNot target=0ï¼‰
 		}
 	}
 
@@ -465,7 +465,7 @@ int choose(const int target, ...){
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-///KeyDown”»’è—pŠÖ”/////////////////////////////////////////
+///KeyDownåˆ¤å®šç”¨é–¢æ•°/////////////////////////////////////////
 static nunuLibKey::CKeyManager KeyManager;
 bool CheckHitKeyDown(const int KEY_CODE){
 	return KeyManager.CheckDown(KEY_CODE);
@@ -475,8 +475,8 @@ nunuLibKey::CKeyManager::CKeyManager(){
 		Pressed[i]=false;
 	}
 }
-bool nunuLibKey::CKeyManager::CheckDown(const int KEY_CODE){		//‰Ÿ‚µ‚½uŠÔ‚¾‚¯true‚ğ•Ô‚·
-	//Œˆ’èƒL[¥¥¥Z,Enter  ƒLƒƒƒ“ƒZƒ‹ƒL[¥¥¥X,BackSpace  ‚»‚ê‚¼‚ê‚Ç‚¿‚ç‚Å‚à‰Â
+bool nunuLibKey::CKeyManager::CheckDown(const int KEY_CODE){		//æŠ¼ã—ãŸç¬é–“ã ã‘trueã‚’è¿”ã™
+	//æ±ºå®šã‚­ãƒ¼ãƒ»ãƒ»ãƒ»Z,Enter  ã‚­ãƒ£ãƒ³ã‚»ãƒ«ã‚­ãƒ¼ãƒ»ãƒ»ãƒ»X,BackSpace  ãã‚Œãã‚Œã©ã¡ã‚‰ã§ã‚‚å¯
 	switch (KEY_CODE){
 		case KEY_INPUT_OK:  {
 			bool tmp0 = CheckDown(KEY_INPUT_RETURN);
@@ -493,7 +493,7 @@ bool nunuLibKey::CKeyManager::CheckDown(const int KEY_CODE){		//‰Ÿ‚µ‚½uŠÔ‚¾‚¯tr
 		}
 	}
 
-	//”»’è‚ÌƒƒCƒ“
+	//åˆ¤å®šã®ãƒ¡ã‚¤ãƒ³
 	if (CheckHitKey(KEY_CODE)){
 		if (!Pressed[KEY_CODE]) {
 			Pressed[KEY_CODE] = true;
@@ -510,7 +510,7 @@ bool nunuLibKey::CKeyManager::CheckDown(const int KEY_CODE){		//‰Ÿ‚µ‚½uŠÔ‚¾‚¯tr
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-//////ƒtƒH[ƒ}ƒbƒg‘Î‰ƒEƒBƒ“ƒhƒEƒ^ƒCƒgƒ‹•ÏXŠÖ”/////////////
+//////ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå¯¾å¿œã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¿ã‚¤ãƒˆãƒ«å¤‰æ›´é–¢æ•°/////////////
 int SetTitle(const char* format, ...){
 	va_list args;
 	char title[256];
@@ -533,7 +533,7 @@ int SetTitle(const char* format, ...){
 
 
 /////////////////////////////////////////////////////////////
-////‚»‚Ì‘¼///////////////////////////////////////////////////
-//between			‚à“¯‚¶
-//mod				‚à“¯‚¶	
+////ãã®ä»–///////////////////////////////////////////////////
+//between			ã‚‚åŒã˜
+//mod				ã‚‚åŒã˜	
 /////////////////////////////////////////////////////////////
