@@ -1,0 +1,56 @@
+\hypertarget{class_c_enemy_targetter}{}\section{C\+Enemy\+Targetter Class Reference}
+\label{class_c_enemy_targetter}\index{C\+Enemy\+Targetter@{C\+Enemy\+Targetter}}
+Inheritance diagram for C\+Enemy\+Targetter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_enemy_targetter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries C\+Enemy\+Targetter} (std\+::string \+\_\+enemyname)\hypertarget{class_c_enemy_targetter_a7ecc3fbd1e11b6d8d7c20f23edc9e67e}{}\label{class_c_enemy_targetter_a7ecc3fbd1e11b6d8d7c20f23edc9e67e}
+
+\item 
+void {\bfseries Battle\+Ready} (const \hyperlink{class_c_actor}{C\+Actor} $\ast$const $\ast$\+\_\+actor\+List, const int \+\_\+player\+Num, const int \+\_\+enemy\+Num)\hypertarget{class_c_enemy_targetter_a7a806237d0572e0e99d7436f490819e4}{}\label{class_c_enemy_targetter_a7a806237d0572e0e99d7436f490819e4}
+
+\item 
+void {\bfseries Set\+Attention} (int \+\_\+attention\mbox{[}$\,$\mbox{]})\hypertarget{class_c_enemy_targetter_a78335cd359e3354d60068348c2853e33}{}\label{class_c_enemy_targetter_a78335cd359e3354d60068348c2853e33}
+
+\item 
+std\+::string {\bfseries Get\+Name} () const \hypertarget{class_c_enemy_targetter_a464d9e107f03ac604878cafb71b62636}{}\label{class_c_enemy_targetter_a464d9e107f03ac604878cafb71b62636}
+
+\item 
+virtual int {\bfseries Get\+Target} (const \hyperlink{class_c_enemy}{C\+Enemy} $\ast$\+\_\+enemy)=0\hypertarget{class_c_enemy_targetter_af1224ba428b8ec538c665be65c3821e6}{}\label{class_c_enemy_targetter_af1224ba428b8ec538c665be65c3821e6}
+
+\item 
+void {\bfseries Calc\+Attention\+Rank} ()\hypertarget{class_c_enemy_targetter_a71cd33e88d6775738e76ed87d2399465}{}\label{class_c_enemy_targetter_a71cd33e88d6775738e76ed87d2399465}
+
+\item 
+int {\bfseries Get\+Attention\+Rank} (int \+\_\+key)\hypertarget{class_c_enemy_targetter_a59a3f4ace2840d37aa7559e08d312c58}{}\label{class_c_enemy_targetter_a59a3f4ace2840d37aa7559e08d312c58}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{class_c_actor}{C\+Actor} $\ast$const $\ast$ {\bfseries Actor}\hypertarget{class_c_enemy_targetter_a0a9807c1bae91f90e2648e25905f70a8}{}\label{class_c_enemy_targetter_a0a9807c1bae91f90e2648e25905f70a8}
+
+\item 
+int {\bfseries P\+L\+A\+Y\+E\+R\+\_\+\+N\+UM}\hypertarget{class_c_enemy_targetter_abba63cf970c8452e637a5666c84795de}{}\label{class_c_enemy_targetter_abba63cf970c8452e637a5666c84795de}
+
+\item 
+int {\bfseries E\+N\+E\+M\+Y\+\_\+\+N\+UM}\hypertarget{class_c_enemy_targetter_ab53b98698c5e32c78c58cf2bc070316c}{}\label{class_c_enemy_targetter_ab53b98698c5e32c78c58cf2bc070316c}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int {\bfseries A\+T\+T\+E\+N\+T\+I\+O\+N\+\_\+\+R\+A\+T\+IO} \mbox{[}M\+A\+X\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+N\+UM\mbox{]} = \{4, 2, 1\}\hypertarget{class_c_enemy_targetter_a7b84c79982d75a00756e6f01ef56743b}{}\label{class_c_enemy_targetter_a7b84c79982d75a00756e6f01ef56743b}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Classes/Enemy\+Targetter.\+h\item 
+Classes/Enemy\+Targetter.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,98 @@
+\hypertarget{class_c_field}{}\section{C\+Field Class Reference}
+\label{class_c_field}\index{C\+Field@{C\+Field}}
+Inheritance diagram for C\+Field\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_field}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries Init} (\hyperlink{structplaydata__tag}{playdata\+\_\+tag} $\ast$\+\_\+playdata\+\_\+p, const int \+\_\+dnum)\hypertarget{class_c_field_aeca01764ea3fa801e957396b0ec7ebe2}{}\label{class_c_field_aeca01764ea3fa801e957396b0ec7ebe2}
+
+\item 
+int {\bfseries Main\+Loop} ()\hypertarget{class_c_field_a7e7190d64b9b6ec0c8daef54edc6c21c}{}\label{class_c_field_a7e7190d64b9b6ec0c8daef54edc6c21c}
+
+\item 
+void \hyperlink{class_c_field_a7a9a8773b1277c3b9bb24695300e83f4}{Draw} (bool \+\_\+screenflip=false, bool \+\_\+textshowingstop=false, int dx=0, int dy=0, bool \+\_\+playeralsoshake=false)
+\item 
+bool {\bfseries Walk} (int \+\_\+dir, int \+\_\+walkspeed=0, bool \+\_\+eventwalk=false, bool \+\_\+walk=true, int \+\_\+fade=0)\hypertarget{class_c_field_a6bc0b60b618edb7542ada74214f43e79}{}\label{class_c_field_a6bc0b60b618edb7542ada74214f43e79}
+
+\item 
+void {\bfseries Jump} ()\hypertarget{class_c_field_a637d8d154c86aa3689e181740c783afb}{}\label{class_c_field_a637d8d154c86aa3689e181740c783afb}
+
+\item 
+int {\bfseries Get\+Now\+Map} ()\hypertarget{class_c_field_a4a8e2d4f4ab92bbc5c1a11447f2acfe6}{}\label{class_c_field_a4a8e2d4f4ab92bbc5c1a11447f2acfe6}
+
+\item 
+void {\bfseries Set\+Now\+Map} (int \+\_\+mapnum)\hypertarget{class_c_field_a26d1a70084c0c106749cc10c3a9b1e77}{}\label{class_c_field_a26d1a70084c0c106749cc10c3a9b1e77}
+
+\item 
+void {\bfseries Set\+Position} (int \+\_\+mapnum, int \+\_\+x, int \+\_\+y, bool \+\_\+d=false)\hypertarget{class_c_field_adbb9b4d407ed6d19c435a0096c6919e4}{}\label{class_c_field_adbb9b4d407ed6d19c435a0096c6919e4}
+
+\item 
+void {\bfseries Set\+My\+Pic} (const int \+\_\+img\mbox{[}C\+H\+A\+R\+A\+\_\+\+P\+I\+C\+\_\+\+N\+UM\mbox{]}, const char $\ast$\+\_\+pickey)\hypertarget{class_c_field_a59745375073813b2dabc0919eee79068}{}\label{class_c_field_a59745375073813b2dabc0919eee79068}
+
+\item 
+void {\bfseries Set\+My\+Dir} (int \+\_\+dir)\hypertarget{class_c_field_a94df6cb327cf2b049b99e03ed8820a1a}{}\label{class_c_field_a94df6cb327cf2b049b99e03ed8820a1a}
+
+\item 
+void {\bfseries Set\+My\+Visible} (bool \+\_\+visible)\hypertarget{class_c_field_ab34bc052be353dea0c928dd8adc7c957}{}\label{class_c_field_ab34bc052be353dea0c928dd8adc7c957}
+
+\item 
+void {\bfseries Set\+My\+Alpha} (unsigned char \+\_\+alpha)\hypertarget{class_c_field_ae02a68969dbd2520532253c14d9dd793}{}\label{class_c_field_ae02a68969dbd2520532253c14d9dd793}
+
+\item 
+void {\bfseries Set\+My\+Effect} (int \+\_\+effectname, int \+\_\+effectnum\mbox{[}$\,$\mbox{]})\hypertarget{class_c_field_a55706b18f51a664478f524bb36907d0a}{}\label{class_c_field_a55706b18f51a664478f524bb36907d0a}
+
+\item 
+void {\bfseries Set\+Game\+Mode} (gamemode\+\_\+tag \+\_\+mode)\hypertarget{class_c_field_ae07b7753fb0ae9413bf58be56fb723e7}{}\label{class_c_field_ae07b7753fb0ae9413bf58be56fb723e7}
+
+\item 
+gamemode\+\_\+tag {\bfseries Get\+Game\+Mode} ()\hypertarget{class_c_field_ab7835715d9a6e145d4d20cecb4beecaa}{}\label{class_c_field_ab7835715d9a6e145d4d20cecb4beecaa}
+
+\item 
+void {\bfseries Battle\+Start} (const char $\ast$\+\_\+pic\+\_\+bg, std\+::vector$<$ std\+::string $>$ \+\_\+enemy\+List)\hypertarget{class_c_field_aa9f2875d5175502c8d49a2455a462cb4}{}\label{class_c_field_aa9f2875d5175502c8d49a2455a462cb4}
+
+\item 
+void {\bfseries Battle\+Start} ()\hypertarget{class_c_field_aa22cd2ea834f50802329e3f4035c96d4}{}\label{class_c_field_aa22cd2ea834f50802329e3f4035c96d4}
+
+\item 
+void {\bfseries Set\+Battle\+Result} (const char $\ast$\+\_\+winmessage, const char $\ast$\+\_\+losemessage)\hypertarget{class_c_field_a0038d96053d468931a48ffe0f1447798}{}\label{class_c_field_a0038d96053d468931a48ffe0f1447798}
+
+\item 
+void {\bfseries Change\+Text\+Mode} (bool \+\_\+box, const char $\ast$\+\_\+eventtext=N\+U\+LL)\hypertarget{class_c_field_a1c495864a16b1546016e0e3c9abdeec8}{}\label{class_c_field_a1c495864a16b1546016e0e3c9abdeec8}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_flag_set}{C\+Flag\+Set} {\bfseries Flag\+Set}\hypertarget{class_c_field_a90452af28b0f6497cfb40b88316a5d09}{}\label{class_c_field_a90452af28b0f6497cfb40b88316a5d09}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\index{C\+Field@{C\+Field}!Draw@{Draw}}
+\index{Draw@{Draw}!C\+Field@{C\+Field}}
+\subsubsection[{\texorpdfstring{Draw(bool \+\_\+screenflip=false, bool \+\_\+textshowingstop=false, int dx=0, int dy=0, bool \+\_\+playeralsoshake=false)}{Draw(bool _screenflip=false, bool _textshowingstop=false, int dx=0, int dy=0, bool _playeralsoshake=false)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Field\+::\+Draw (
+\begin{DoxyParamCaption}
+\item[{bool}]{\+\_\+screenflip = {\ttfamily false}, }
+\item[{bool}]{\+\_\+textshowingstop = {\ttfamily false}, }
+\item[{int}]{dx = {\ttfamily 0}, }
+\item[{int}]{dy = {\ttfamily 0}, }
+\item[{bool}]{\+\_\+playeralsoshake = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_c_field_a7a9a8773b1277c3b9bb24695300e83f4}{}\label{class_c_field_a7a9a8773b1277c3b9bb24695300e83f4}
+神システム作りかけ//////////////////////////////////////////////////////////////// 
+
+Implements \hyperlink{class_c_world_manager}{C\+World\+Manager}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Classes/Field.\+h\item 
+Classes/Field.\+cpp\end{DoxyCompactItemize}

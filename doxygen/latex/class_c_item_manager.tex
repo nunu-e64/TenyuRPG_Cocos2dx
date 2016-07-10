@@ -1,0 +1,89 @@
+\hypertarget{class_c_item_manager}{}\section{C\+Item\+Manager Class Reference}
+\label{class_c_item_manager}\index{C\+Item\+Manager@{C\+Item\+Manager}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries E\+N\+UM} (item\+\_\+tag, N\+O\+K\+I\+ND, C\+O\+N\+S\+U\+M\+P\+T\+I\+ON, A\+C\+C\+E\+S\+S\+O\+RY, K\+EY, M\+A\+T\+E\+R\+I\+AL)\hypertarget{class_c_item_manager_a5e95186104368015b674093bf9a4735a}{}\label{class_c_item_manager_a5e95186104368015b674093bf9a4735a}
+
+\item 
+void {\bfseries Init} ()\hypertarget{class_c_item_manager_a782a0f695d950a98f18d3e14ec1ac840}{}\label{class_c_item_manager_a782a0f695d950a98f18d3e14ec1ac840}
+
+\item 
+void {\bfseries Clear} ()\hypertarget{class_c_item_manager_aa20f0ea8d83f0c37395f2897b5b6a97f}{}\label{class_c_item_manager_aa20f0ea8d83f0c37395f2897b5b6a97f}
+
+\item 
+bool {\bfseries Add\+Item} (\hyperlink{class_c_item}{C\+Item} $\ast$\+\_\+new\+Item, const char $\ast$\+\_\+name, item\+\_\+tag\+::type \+\_\+kind, int \+\_\+own\+Limit, int \+\_\+price, bool \+\_\+sellable)\hypertarget{class_c_item_manager_ab09e43b1d2118f1f54a00307829df1e6}{}\label{class_c_item_manager_ab09e43b1d2118f1f54a00307829df1e6}
+
+\item 
+void {\bfseries Add\+Consumption\+Item} (const char $\ast$\+\_\+name, int \+\_\+own\+Limit, int \+\_\+price, bool \+\_\+sellable, bool \+\_\+battle\+Usable, int \+\_\+wait\+Time, target\+\_\+tag\+::type \+\_\+target, std\+::vector$<$ \hyperlink{structside_effect__tag}{side\+Effect\+\_\+tag} $>$ \+\_\+side\+Effect\+Set)\hypertarget{class_c_item_manager_a68c368c7cefc81227f317348dfbeeead}{}\label{class_c_item_manager_a68c368c7cefc81227f317348dfbeeead}
+
+\item 
+void {\bfseries Add\+Accessory\+Item} (const char $\ast$\+\_\+name, int \+\_\+own\+Limit, int \+\_\+price, bool \+\_\+sellable, std\+::vector$<$ std\+::pair$<$ std\+::string, int $>$ $>$ \+\_\+material\+Set, std\+::vector$<$ \hyperlink{structside_effect__tag}{side\+Effect\+\_\+tag} $>$ \+\_\+side\+Effect\+Set)\hypertarget{class_c_item_manager_a921bf797f85173d1a17828206b1d7773}{}\label{class_c_item_manager_a921bf797f85173d1a17828206b1d7773}
+
+\item 
+void {\bfseries Add\+Key\+Item} (const char $\ast$\+\_\+name, int \+\_\+own\+Limit, int \+\_\+price, bool \+\_\+sellable)\hypertarget{class_c_item_manager_a2d8ec3a84fb41ebe5fe72249ed549581}{}\label{class_c_item_manager_a2d8ec3a84fb41ebe5fe72249ed549581}
+
+\item 
+void {\bfseries Add\+Material\+Item} (const char $\ast$\+\_\+name, int \+\_\+own\+Limit, int \+\_\+price, bool \+\_\+sellable)\hypertarget{class_c_item_manager_a6df0255f5727ec0a5f024598f5d78ba0}{}\label{class_c_item_manager_a6df0255f5727ec0a5f024598f5d78ba0}
+
+\item 
+void {\bfseries Set\+Accessory\+Effect} (const char $\ast$\+\_\+name, std\+::vector$<$ \hyperlink{structside_effect__tag}{side\+Effect\+\_\+tag} $>$ \+\_\+side\+Effect\+Set)\hypertarget{class_c_item_manager_ae29aab01bdf60439343c654533ad1131}{}\label{class_c_item_manager_ae29aab01bdf60439343c654533ad1131}
+
+\item 
+\hyperlink{class_c_item}{C\+Item} $\ast$ {\bfseries Get\+Item} (std\+::string \+\_\+name)\hypertarget{class_c_item_manager_a2f9bef94df4a3bbf13d207a176876ced}{}\label{class_c_item_manager_a2f9bef94df4a3bbf13d207a176876ced}
+
+\item 
+\hyperlink{class_c_effect_item}{C\+Effect\+Item} $\ast$ {\bfseries Get\+Effect\+Item} (std\+::string \+\_\+name)\hypertarget{class_c_item_manager_a0bfb4dfcc31ef901102c8f1afeb98ff2}{}\label{class_c_item_manager_a0bfb4dfcc31ef901102c8f1afeb98ff2}
+
+\item 
+\hyperlink{class_c_consumption_item}{C\+Consumption\+Item} $\ast$ {\bfseries Get\+Consumption\+Item} (std\+::string \+\_\+name)\hypertarget{class_c_item_manager_ae1cd036f91edf392444c7c97013c4cfc}{}\label{class_c_item_manager_ae1cd036f91edf392444c7c97013c4cfc}
+
+\item 
+\hyperlink{class_c_accessory_item}{C\+Accessory\+Item} $\ast$ {\bfseries Get\+Accessory\+Item} (std\+::string \+\_\+name)\hypertarget{class_c_item_manager_a8959913f4df6eaf0048f1c02cd161f39}{}\label{class_c_item_manager_a8959913f4df6eaf0048f1c02cd161f39}
+
+\item 
+\hyperlink{class_c_menu}{C\+Menu} $\ast$ {\bfseries Get\+Player\+Accessory\+Menu} ()\hypertarget{class_c_item_manager_ac9a179e48bb8b18030c4fa0803a1cf86}{}\label{class_c_item_manager_ac9a179e48bb8b18030c4fa0803a1cf86}
+
+\item 
+bool {\bfseries Inc\+Player\+Item} (std\+::string \+\_\+name, int \+\_\+num)\hypertarget{class_c_item_manager_ae3f58e5d1dfcf85ebbc902128c8480ba}{}\label{class_c_item_manager_ae3f58e5d1dfcf85ebbc902128c8480ba}
+
+\item 
+bool {\bfseries Dec\+Player\+Item} (std\+::string \+\_\+name, int \+\_\+num)\hypertarget{class_c_item_manager_a9c1ba5359ffb008e6711b94d6696b1bd}{}\label{class_c_item_manager_a9c1ba5359ffb008e6711b94d6696b1bd}
+
+\item 
+int {\bfseries Get\+Player\+Item\+Num} (std\+::string \+\_\+name)\hypertarget{class_c_item_manager_affaa65031e648d9bc1a09c4258896618}{}\label{class_c_item_manager_affaa65031e648d9bc1a09c4258896618}
+
+\item 
+std\+::vector$<$ std\+::string $>$ {\bfseries Get\+Battle\+Item\+Name\+List} ()\hypertarget{class_c_item_manager_aa55d93d60045df5836e39df57866f842}{}\label{class_c_item_manager_aa55d93d60045df5836e39df57866f842}
+
+\item 
+std\+::vector$<$ std\+::string $>$ {\bfseries Get\+Accessory\+Item\+In\+Bag} ()\hypertarget{class_c_item_manager_a933fef668671a7145c52fbfe8b83561e}{}\label{class_c_item_manager_a933fef668671a7145c52fbfe8b83561e}
+
+\item 
+bool {\bfseries Inc\+Gold} (int \+\_\+gold)\hypertarget{class_c_item_manager_a9f21c82114045d9d47c63c7325f8cfc7}{}\label{class_c_item_manager_a9f21c82114045d9d47c63c7325f8cfc7}
+
+\item 
+bool {\bfseries Dec\+Gold} (int \+\_\+gold)\hypertarget{class_c_item_manager_a4b1ae73faf089194a4220263aea1e836}{}\label{class_c_item_manager_a4b1ae73faf089194a4220263aea1e836}
+
+\item 
+int {\bfseries Get\+Gold} ()\hypertarget{class_c_item_manager_aafa5c2e6278ff7d4af4bf603786af6c8}{}\label{class_c_item_manager_aafa5c2e6278ff7d4af4bf603786af6c8}
+
+\item 
+void {\bfseries Debug\+Show\+All\+Item} ()\hypertarget{class_c_item_manager_aea4544fbfc0ea5b040c52191416b6d79}{}\label{class_c_item_manager_aea4544fbfc0ea5b040c52191416b6d79}
+
+\item 
+void {\bfseries Debug\+Show\+All\+Player\+Item} ()\hypertarget{class_c_item_manager_a38fe8717821d31cde98f38932db474af}{}\label{class_c_item_manager_a38fe8717821d31cde98f38932db474af}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_c_item_manager}{C\+Item\+Manager} $\ast$ {\bfseries Get\+Instance} ()\hypertarget{class_c_item_manager_a85451cfc18780bf97b932d3f22328afe}{}\label{class_c_item_manager_a85451cfc18780bf97b932d3f22328afe}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Classes/Item\+Manager.\+h\item 
+Classes/Item\+Manager.\+cpp\end{DoxyCompactItemize}

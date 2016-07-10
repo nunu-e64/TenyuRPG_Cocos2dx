@@ -1,0 +1,44 @@
+\hypertarget{class_c_enemy_a_i}{}\section{C\+Enemy\+AI Class Reference}
+\label{class_c_enemy_a_i}\index{C\+Enemy\+AI@{C\+Enemy\+AI}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Battle\+Ready} (const \hyperlink{class_c_actor}{C\+Actor} $\ast$const $\ast$\+\_\+actor\+List, const int \+\_\+player\+Num, const int \+\_\+enemy\+Num)\hypertarget{class_c_enemy_a_i_a686edd0c9def3e9e3d15db2875bc5e38}{}\label{class_c_enemy_a_i_a686edd0c9def3e9e3d15db2875bc5e38}
+
+\item 
+\hyperlink{class_c_enemy_planner}{C\+Enemy\+Planner} $\ast$ {\bfseries Set\+Planner} (\hyperlink{class_c_enemy_planner}{C\+Enemy\+Planner} $\ast$\+\_\+planner)\hypertarget{class_c_enemy_a_i_a1937e173f5e4de133e22a0b17bac3dd2}{}\label{class_c_enemy_a_i_a1937e173f5e4de133e22a0b17bac3dd2}
+
+\item 
+\hyperlink{class_c_enemy_targetter}{C\+Enemy\+Targetter} $\ast$ {\bfseries Set\+Targetter} (\hyperlink{class_c_enemy_targetter}{C\+Enemy\+Targetter} $\ast$\+\_\+targetter)\hypertarget{class_c_enemy_a_i_a7c0d802bc98c57d8fea078b7b7dd99f6}{}\label{class_c_enemy_a_i_a7c0d802bc98c57d8fea078b7b7dd99f6}
+
+\item 
+int {\bfseries Get\+Plan} (const \hyperlink{class_c_enemy}{C\+Enemy} $\ast$\+\_\+enemy)\hypertarget{class_c_enemy_a_i_a90f7d5697813517710f20412d1ca0634}{}\label{class_c_enemy_a_i_a90f7d5697813517710f20412d1ca0634}
+
+\item 
+int {\bfseries Get\+Target} (const \hyperlink{class_c_enemy}{C\+Enemy} $\ast$\+\_\+enemy)\hypertarget{class_c_enemy_a_i_a54bada58d6cf91bbfb54deaf86c4218b}{}\label{class_c_enemy_a_i_a54bada58d6cf91bbfb54deaf86c4218b}
+
+\item 
+bool {\bfseries Add\+Random\+Plan\+Set} (const unsigned int \+\_\+index, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \+\_\+plan\+List, bool \+\_\+clear=false)\hypertarget{class_c_enemy_a_i_ad538577e56076a3d43bdee2235e5083a}{}\label{class_c_enemy_a_i_ad538577e56076a3d43bdee2235e5083a}
+
+\item 
+void {\bfseries Add\+Attention} (int \+\_\+player\+Index, int \+\_\+value, \hyperlink{class_c_log_window}{C\+Log\+Window} $\ast$\+\_\+log\+Window=N\+U\+LL)\hypertarget{class_c_enemy_a_i_af5f75832f00bbc28af976893d15a6180}{}\label{class_c_enemy_a_i_af5f75832f00bbc28af976893d15a6180}
+
+\item 
+void {\bfseries Set\+Attention} (int \+\_\+player\+Index, int \+\_\+value)\hypertarget{class_c_enemy_a_i_ad3e318eec9e34d215a8b336a89ec75e0}{}\label{class_c_enemy_a_i_ad3e318eec9e34d215a8b336a89ec75e0}
+
+\item 
+void {\bfseries Draw} (const \hyperlink{class_c_enemy}{C\+Enemy} $\ast$\+\_\+enemy)\hypertarget{class_c_enemy_a_i_a6c8c0253c5ecb663bc1e73b868b4a5af}{}\label{class_c_enemy_a_i_a6c8c0253c5ecb663bc1e73b868b4a5af}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries Set\+Attention\+Img} (int $\ast$\+\_\+marker\+Img, int \+\_\+board\+Img, int \+\_\+effect\+Img)\hypertarget{class_c_enemy_a_i_af0279ae7e871a9139c03517373c53b25}{}\label{class_c_enemy_a_i_af0279ae7e871a9139c03517373c53b25}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Classes/Enemy\+A\+I.\+h\item 
+Classes/Enemy\+A\+I.\+cpp\end{DoxyCompactItemize}

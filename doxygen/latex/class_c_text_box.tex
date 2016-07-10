@@ -1,0 +1,210 @@
+\hypertarget{class_c_text_box}{}\section{C\+Text\+Box Class Reference}
+\label{class_c_text_box}\index{C\+Text\+Box@{C\+Text\+Box}}
+Inheritance diagram for C\+Text\+Box\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_text_box}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_c_text_box_1_1ruby__tag}{ruby\+\_\+tag}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Init} (int \+\_\+posx, int \+\_\+posy, int \+\_\+width, int \+\_\+height, int \+\_\+line, int \+\_\+words, int \+\_\+fontsize, int \+\_\+color1, int \+\_\+color2, int \+\_\+autoplayspeed, \hyperlink{class_c_field_log}{C\+Field\+Log} $\ast$\+\_\+log\+Window)\hypertarget{class_c_text_box_ad1e1baa450dce91e33d3d55de3db6f66}{}\label{class_c_text_box_ad1e1baa450dce91e33d3d55de3db6f66}
+
+\item 
+virtual void {\bfseries Term} (\hyperlink{class_c_cmd_list}{C\+Cmd\+List} $\ast$\+\_\+cmdlist)\hypertarget{class_c_text_box_a1cc1c4041f1c01dc807ae12fe5d67aef}{}\label{class_c_text_box_a1cc1c4041f1c01dc807ae12fe5d67aef}
+
+\item 
+bool {\bfseries Main} (\hyperlink{class_c_cmd_list}{C\+Cmd\+List} $\ast$\+\_\+cmdlist, \hyperlink{class_c_flag_set}{C\+Flag\+Set} $\ast$\+\_\+flagset)\hypertarget{class_c_text_box_a03fd29ccba104eb4728077ec505de351}{}\label{class_c_text_box_a03fd29ccba104eb4728077ec505de351}
+
+\item 
+virtual void {\bfseries Draw} (bool \+\_\+showingstop=false)\hypertarget{class_c_text_box_a37a13a78ccab5d554538a7289f654a3c}{}\label{class_c_text_box_a37a13a78ccab5d554538a7289f654a3c}
+
+\item 
+bool {\bfseries Add\+Stock} (char $\ast$String, int dir=D\+O\+WN, int count=-\/1)\hypertarget{class_c_text_box_a3f57fdc2e13a0f3e97a15df497bcee0d}{}\label{class_c_text_box_a3f57fdc2e13a0f3e97a15df497bcee0d}
+
+\item 
+bool {\bfseries Add\+Stock} (char $\ast$$\ast$String, int dir=D\+O\+WN, int count=-\/1)\hypertarget{class_c_text_box_a108213bf12542ecaf088e6fcbb3f8165}{}\label{class_c_text_box_a108213bf12542ecaf088e6fcbb3f8165}
+
+\item 
+void {\bfseries Next\+Page} (\hyperlink{class_c_cmd_list}{C\+Cmd\+List} $\ast$\+\_\+cmdlist, \hyperlink{class_c_flag_set}{C\+Flag\+Set} $\ast$\+\_\+flagset)\hypertarget{class_c_text_box_aa73ba00db6a70351678641c9b63afe3e}{}\label{class_c_text_box_aa73ba00db6a70351678641c9b63afe3e}
+
+\item 
+direction\+\_\+tag {\bfseries Get\+Original\+Dir} () const \hypertarget{class_c_text_box_a88c6bfe580409fd230e97eef4b459886}{}\label{class_c_text_box_a88c6bfe580409fd230e97eef4b459886}
+
+\item 
+void {\bfseries Set\+Visible} (bool \+\_\+visible)\hypertarget{class_c_text_box_a01bd248991cd8095c47e348eca428113}{}\label{class_c_text_box_a01bd248991cd8095c47e348eca428113}
+
+\item 
+void {\bfseries Set\+Return\+Visible} (bool \+\_\+visible)\hypertarget{class_c_text_box_ae1080ad7b6a0104a8cf0701072b3c321}{}\label{class_c_text_box_ae1080ad7b6a0104a8cf0701072b3c321}
+
+\item 
+void {\bfseries Set\+Auto\+Play} (bool \+\_\+autoplay, int \+\_\+autoplayspeed=N\+U\+LL)\hypertarget{class_c_text_box_ac8cab32e4d3c5b4e593b2ef23a727e67}{}\label{class_c_text_box_ac8cab32e4d3c5b4e593b2ef23a727e67}
+
+\item 
+void {\bfseries Log\+Talk\+Name} ()\hypertarget{class_c_text_box_a8c93524c2dab0e76bcdcbd417a77cbbb}{}\label{class_c_text_box_a8c93524c2dab0e76bcdcbd417a77cbbb}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_talk_name}{C\+Talk\+Name} {\bfseries Talk\+Name}\hypertarget{class_c_text_box_a62c9ee81affb1b131ded9511c6c0d0aa}{}\label{class_c_text_box_a62c9ee81affb1b131ded9511c6c0d0aa}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \\*
+{\bfseries S\+T\+O\+C\+K\+\_\+\+L\+I\+N\+E\+\_\+\+N\+UM} = 1000, 
+{\bfseries L\+I\+N\+E\+\_\+\+M\+AX} = 20, 
+{\bfseries W\+O\+R\+D\+\_\+\+M\+AX} = 256, 
+{\bfseries L\+I\+N\+E\+\_\+\+S\+P\+A\+CE} = 10, 
+\\*
+{\bfseries S\+H\+O\+W\+I\+N\+G\+\_\+\+S\+P\+E\+ED} = 80
+ \}\hypertarget{class_c_text_box_a24f328ef4e8a4ff88cd202ca1505be59}{}\label{class_c_text_box_a24f328ef4e8a4ff88cd202ca1505be59}
+
+\item 
+enum \{ {\bfseries P\+A\+GE}
+ \}\hypertarget{class_c_text_box_a242b47e9de734288cdd46fb1a93d2b39}{}\label{class_c_text_box_a242b47e9de734288cdd46fb1a93d2b39}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Stock\+Clear} ()\hypertarget{class_c_text_box_a85ef90b8276c375140f209720a43620c}{}\label{class_c_text_box_a85ef90b8276c375140f209720a43620c}
+
+\item 
+void {\bfseries Text\+Clear} ()\hypertarget{class_c_text_box_a4489f09f66d98d827023f931ea7e4d42}{}\label{class_c_text_box_a4489f09f66d98d827023f931ea7e4d42}
+
+\item 
+void {\bfseries Draw\+\_\+\+Animation} (bool \+\_\+showingstop)\hypertarget{class_c_text_box_aecc3d147864ce8f6db8da44beee94618}{}\label{class_c_text_box_aecc3d147864ce8f6db8da44beee94618}
+
+\item 
+void {\bfseries Draw\+\_\+\+Ruby} ()\hypertarget{class_c_text_box_aa666b4dec9d3fd299db68bd2079860e0}{}\label{class_c_text_box_aa666b4dec9d3fd299db68bd2079860e0}
+
+\item 
+bool {\bfseries Next\+Line} (\hyperlink{class_c_cmd_list}{C\+Cmd\+List} $\ast$\+\_\+cmdlist, \hyperlink{class_c_flag_set}{C\+Flag\+Set} $\ast$\+\_\+flagset)\hypertarget{class_c_text_box_a7b64cd62e3f9ae79df4b0712520f08a4}{}\label{class_c_text_box_a7b64cd62e3f9ae79df4b0712520f08a4}
+
+\item 
+bool {\bfseries Solve} (const char $\ast$string, \hyperlink{class_c_flag_set}{C\+Flag\+Set} $\ast$\+\_\+flagset)\hypertarget{class_c_text_box_a4b311191730cb9beaa9650ef9dc93774}{}\label{class_c_text_box_a4b311191730cb9beaa9650ef9dc93774}
+
+\item 
+void {\bfseries Arg\+Cut} (const char $\ast$\+\_\+string, char $\ast$$\ast$\&command, char $\ast$$\ast$\&arg, int \+\_\+argnum)\hypertarget{class_c_text_box_aed2ac0a94532d4ec17001bca21e8d22a}{}\label{class_c_text_box_aed2ac0a94532d4ec17001bca21e8d22a}
+
+\item 
+int {\bfseries Text\+Line\+Num} ()\hypertarget{class_c_text_box_aef9f285dc1b55c170f14b571f7b788de}{}\label{class_c_text_box_aef9f285dc1b55c170f14b571f7b788de}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char {\bfseries ch\+Stock} \mbox{[}S\+T\+O\+C\+K\+\_\+\+L\+I\+N\+E\+\_\+\+N\+UM\mbox{]}\mbox{[}W\+O\+R\+D\+\_\+\+M\+AX\mbox{]}\hypertarget{class_c_text_box_ab612e13e1e4952a2f48f0536f4f0c0e9}{}\label{class_c_text_box_ab612e13e1e4952a2f48f0536f4f0c0e9}
+
+\item 
+char {\bfseries ch\+Text} \mbox{[}L\+I\+N\+E\+\_\+\+M\+AX\mbox{]}\mbox{[}W\+O\+R\+D\+\_\+\+M\+AX\mbox{]}\hypertarget{class_c_text_box_ad809f7c7bf15d0982d9cbc694cfe1d30}{}\label{class_c_text_box_ad809f7c7bf15d0982d9cbc694cfe1d30}
+
+\item 
+bool {\bfseries Alive}\hypertarget{class_c_text_box_a33d176915249c79a01b7fe124c306b0e}{}\label{class_c_text_box_a33d176915249c79a01b7fe124c306b0e}
+
+\item 
+bool {\bfseries Visible}\hypertarget{class_c_text_box_ab688c74957be66a13267e3db5c2c9340}{}\label{class_c_text_box_ab688c74957be66a13267e3db5c2c9340}
+
+\item 
+bool {\bfseries Return\+Visible}\hypertarget{class_c_text_box_a6d6a8e49bfad0d38a3ddd6111d19ed6c}{}\label{class_c_text_box_a6d6a8e49bfad0d38a3ddd6111d19ed6c}
+
+\item 
+bool \hyperlink{class_c_text_box_a823c12940292090e4f6045c55aba4b64}{Auto\+Play}\hypertarget{class_c_text_box_a823c12940292090e4f6045c55aba4b64}{}\label{class_c_text_box_a823c12940292090e4f6045c55aba4b64}
+
+\begin{DoxyCompactList}\small\item\em Auto\+Play関係////////////////////////////////////////. \end{DoxyCompactList}\item 
+int {\bfseries Auto\+Play\+Speed}\hypertarget{class_c_text_box_a40fe446e69b168406497c8e487e1e843}{}\label{class_c_text_box_a40fe446e69b168406497c8e487e1e843}
+
+\item 
+int {\bfseries Default\+Auto\+Play\+Speed}\hypertarget{class_c_text_box_a121ce1e289cd23c5f176702150366316}{}\label{class_c_text_box_a121ce1e289cd23c5f176702150366316}
+
+\item 
+enum C\+Text\+Box\+:: \{ ... \}  {\bfseries Auto\+Play\+Mode}\hypertarget{class_c_text_box_ad30a874114c3e2ca93441e9fb374b61c}{}\label{class_c_text_box_ad30a874114c3e2ca93441e9fb374b61c}
+
+\item 
+char {\bfseries ch\+Old\+Text} \mbox{[}L\+I\+N\+E\+\_\+\+M\+AX\mbox{]}\mbox{[}W\+O\+R\+D\+\_\+\+M\+AX\mbox{]}\hypertarget{class_c_text_box_a0454ed50e5d79fefcdc1f91695f2de68}{}\label{class_c_text_box_a0454ed50e5d79fefcdc1f91695f2de68}
+
+\item 
+char {\bfseries ch\+Draw\+Text} \mbox{[}L\+I\+N\+E\+\_\+\+M\+AX\mbox{]}\mbox{[}W\+O\+R\+D\+\_\+\+M\+AX\mbox{]}\hypertarget{class_c_text_box_ab018e05077780da9e10d792d4a7ab611}{}\label{class_c_text_box_ab018e05077780da9e10d792d4a7ab611}
+
+\item 
+int {\bfseries PosX}\hypertarget{class_c_text_box_a8dcd0af6f70eb5aa8acb77e566031a81}{}\label{class_c_text_box_a8dcd0af6f70eb5aa8acb77e566031a81}
+
+\item 
+int {\bfseries PosY}\hypertarget{class_c_text_box_a6889565bd4cb7aa0d89d8883e5f0c320}{}\label{class_c_text_box_a6889565bd4cb7aa0d89d8883e5f0c320}
+
+\item 
+int {\bfseries Width}\hypertarget{class_c_text_box_a5efbf7d41c39492fe8db1522d27f426b}{}\label{class_c_text_box_a5efbf7d41c39492fe8db1522d27f426b}
+
+\item 
+int {\bfseries Height}\hypertarget{class_c_text_box_a93136077935aeb3f63fc65ced6474d1a}{}\label{class_c_text_box_a93136077935aeb3f63fc65ced6474d1a}
+
+\item 
+int {\bfseries Line\+Num}\hypertarget{class_c_text_box_a9556805b6b8b168811701237c1af1d35}{}\label{class_c_text_box_a9556805b6b8b168811701237c1af1d35}
+
+\item 
+int {\bfseries Word\+Num}\hypertarget{class_c_text_box_a46cf099d25cac4d9425ac0fea8a298ad}{}\label{class_c_text_box_a46cf099d25cac4d9425ac0fea8a298ad}
+
+\item 
+int {\bfseries Font\+Size}\hypertarget{class_c_text_box_afc2123363432553fb08d58dd889cc375}{}\label{class_c_text_box_afc2123363432553fb08d58dd889cc375}
+
+\item 
+int {\bfseries Ruby\+Font\+Size}\hypertarget{class_c_text_box_a733cdec9c6a620d9e2b4af1c5cceaa07}{}\label{class_c_text_box_a733cdec9c6a620d9e2b4af1c5cceaa07}
+
+\item 
+int {\bfseries Color1}\hypertarget{class_c_text_box_aa96bb9ce249e7d5a92bf8f8aaf817ee2}{}\label{class_c_text_box_aa96bb9ce249e7d5a92bf8f8aaf817ee2}
+
+\item 
+int {\bfseries Color2}\hypertarget{class_c_text_box_a60b7032551635be1e72e2aaf59cbb1ee}{}\label{class_c_text_box_a60b7032551635be1e72e2aaf59cbb1ee}
+
+\item 
+int {\bfseries Word\+Width}\hypertarget{class_c_text_box_ab6da7e5e151f60370f939009e85df447}{}\label{class_c_text_box_ab6da7e5e151f60370f939009e85df447}
+
+\item 
+int {\bfseries Stock\+Line}\hypertarget{class_c_text_box_ac4d8f0844007095eb275fa094a868f55}{}\label{class_c_text_box_ac4d8f0844007095eb275fa094a868f55}
+
+\item 
+int {\bfseries Now\+Stock}\hypertarget{class_c_text_box_ac450275fd80f5008673a43825d0a4b63}{}\label{class_c_text_box_ac450275fd80f5008673a43825d0a4b63}
+
+\item 
+int {\bfseries Now\+Target}\hypertarget{class_c_text_box_aa3490c7adb843824832cb6abb80f5865}{}\label{class_c_text_box_aa3490c7adb843824832cb6abb80f5865}
+
+\item 
+bool {\bfseries Page\+Change}\hypertarget{class_c_text_box_a5bf1d233eba330767cf909c8f1eb10c7}{}\label{class_c_text_box_a5bf1d233eba330767cf909c8f1eb10c7}
+
+\item 
+int {\bfseries New\+Text}\hypertarget{class_c_text_box_a12c5d1abfb1d863ecc5ca73c92c15d6e}{}\label{class_c_text_box_a12c5d1abfb1d863ecc5ca73c92c15d6e}
+
+\item 
+bool {\bfseries Showing}\hypertarget{class_c_text_box_a5a076cae4a0ec99410497778df327ecf}{}\label{class_c_text_box_a5a076cae4a0ec99410497778df327ecf}
+
+\item 
+int {\bfseries Showing\+Time}\hypertarget{class_c_text_box_ad0532d953cd1d5df792daba67972efb9}{}\label{class_c_text_box_ad0532d953cd1d5df792daba67972efb9}
+
+\item 
+int {\bfseries Obj\+Count}\hypertarget{class_c_text_box_abefee88e85519ccf30fda395ecd0e0f1}{}\label{class_c_text_box_abefee88e85519ccf30fda395ecd0e0f1}
+
+\item 
+direction\+\_\+tag {\bfseries Original\+Dir}\hypertarget{class_c_text_box_ae9c445673b45a5e2c91508af34cbee8e}{}\label{class_c_text_box_ae9c445673b45a5e2c91508af34cbee8e}
+
+\item 
+std\+::vector$<$ \hyperlink{struct_c_text_box_1_1ruby__tag}{ruby\+\_\+tag} $>$ {\bfseries Ruby}\hypertarget{class_c_text_box_aafcb816b49ad87d0c9665ef50613ff4f}{}\label{class_c_text_box_aafcb816b49ad87d0c9665ef50613ff4f}
+
+\item 
+\hyperlink{class_c_field_log}{C\+Field\+Log} $\ast$ {\bfseries Field\+Log}\hypertarget{class_c_text_box_a3a9e3391e04d5cc18e7c7a3f393f3b51}{}\label{class_c_text_box_a3a9e3391e04d5cc18e7c7a3f393f3b51}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Classes/Text\+Box.\+h\item 
+Classes/Text\+Box.\+cpp\end{DoxyCompactItemize}

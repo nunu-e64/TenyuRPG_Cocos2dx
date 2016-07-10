@@ -1,0 +1,77 @@
+\hypertarget{class_c_menu}{}\section{C\+Menu Class Reference}
+\label{class_c_menu}\index{C\+Menu@{C\+Menu}}
+Inheritance diagram for C\+Menu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_menu}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Clear} ()\hypertarget{class_c_menu_a0d6d9a0ed33c1865fe0ff937c2ad975f}{}\label{class_c_menu_a0d6d9a0ed33c1865fe0ff937c2ad975f}
+
+\item 
+void {\bfseries Init} (int \+\_\+x, int \+\_\+y, int \+\_\+width, int \+\_\+height)\hypertarget{class_c_menu_aedb6253ad2edea03b71011142d5f6f49}{}\label{class_c_menu_aedb6253ad2edea03b71011142d5f6f49}
+
+\item 
+void {\bfseries Create} (\hyperlink{class_c_menu_node}{C\+Menu\+Node} $\ast$\+\_\+group\+Parent)\hypertarget{class_c_menu_a4d792978b708a1cf09e83b2ce2e31786}{}\label{class_c_menu_a4d792978b708a1cf09e83b2ce2e31786}
+
+\item 
+void {\bfseries Create} (const char \+\_\+frontlabel\mbox{[}32\mbox{]})\hypertarget{class_c_menu_a06a10a9122f369cd57f502a6f38d3f55}{}\label{class_c_menu_a06a10a9122f369cd57f502a6f38d3f55}
+
+\item 
+void {\bfseries Add} (const char \+\_\+parentlabel\mbox{[}32\mbox{]}, \hyperlink{class_c_menu_node}{C\+Menu\+Node} $\ast$\+\_\+group\+Parent)\hypertarget{class_c_menu_ae9fef7c97d7de8f11c7f6a6a0dffaad8}{}\label{class_c_menu_ae9fef7c97d7de8f11c7f6a6a0dffaad8}
+
+\item 
+void {\bfseries Add} (const char \+\_\+parentlabel\mbox{[}32\mbox{]}, const char \+\_\+newlabel\mbox{[}32\mbox{]})\hypertarget{class_c_menu_ac6a2b27353ac1abac1cc6d15c210e0c8}{}\label{class_c_menu_ac6a2b27353ac1abac1cc6d15c210e0c8}
+
+\item 
+void {\bfseries Set\+Cursor} (\hyperlink{class_c_menu_node}{C\+Menu\+Node} $\ast$\+\_\+node)\hypertarget{class_c_menu_adaf997921c71f28726a990d36873a2d8}{}\label{class_c_menu_adaf997921c71f28726a990d36873a2d8}
+
+\item 
+\hyperlink{class_c_menu_node}{C\+Menu\+Node} $\ast$ {\bfseries Get\+Cursor} ()\hypertarget{class_c_menu_ab67f44905e3e4d296c3a47c1e32b49bd}{}\label{class_c_menu_ab67f44905e3e4d296c3a47c1e32b49bd}
+
+\item 
+\hyperlink{class_c_menu_node}{C\+Menu\+Node} $\ast$ {\bfseries Get\+Front} ()\hypertarget{class_c_menu_a8ebb7822ccfd66c7dcbcce2781499fba}{}\label{class_c_menu_a8ebb7822ccfd66c7dcbcce2781499fba}
+
+\item 
+\hyperlink{class_c_menu_node}{C\+Menu\+Node} $\ast$ {\bfseries Find} (const char \+\_\+label\mbox{[}32\mbox{]})\hypertarget{class_c_menu_a7df4a60ce0c2654f92c770c500f33576}{}\label{class_c_menu_a7df4a60ce0c2654f92c770c500f33576}
+
+\item 
+int {\bfseries Get\+Index} (\hyperlink{class_c_menu_node}{C\+Menu\+Node} $\ast$\+\_\+node)\hypertarget{class_c_menu_a4eae259ca5876075f4502a7138e22de0}{}\label{class_c_menu_a4eae259ca5876075f4502a7138e22de0}
+
+\item 
+bool {\bfseries Move} (\hyperlink{class_c_menu_node}{C\+Menu\+Node} $\ast$\&\+\_\+result, bool \+\_\+at\+Tip)\hypertarget{class_c_menu_a54d76f69aeb7b5c24213f294538b85a7}{}\label{class_c_menu_a54d76f69aeb7b5c24213f294538b85a7}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries Alive}\hypertarget{class_c_menu_a8ee14e0a0d7bdddd70a60388d1535578}{}\label{class_c_menu_a8ee14e0a0d7bdddd70a60388d1535578}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries X}\hypertarget{class_c_menu_ac8a6e07179118de0d2d0559c818fde01}{}\label{class_c_menu_ac8a6e07179118de0d2d0559c818fde01}
+
+\item 
+int {\bfseries Y}\hypertarget{class_c_menu_aa21585a21f674ffe6b74c11769784248}{}\label{class_c_menu_aa21585a21f674ffe6b74c11769784248}
+
+\item 
+int {\bfseries Width}\hypertarget{class_c_menu_a46e5a8e40fdeb225658b306481345684}{}\label{class_c_menu_a46e5a8e40fdeb225658b306481345684}
+
+\item 
+int {\bfseries Height}\hypertarget{class_c_menu_ab23bc5592efa0860e90ac60b8c115a38}{}\label{class_c_menu_ab23bc5592efa0860e90ac60b8c115a38}
+
+\item 
+\hyperlink{class_c_menu_node}{C\+Menu\+Node} $\ast$ {\bfseries Cursor}\hypertarget{class_c_menu_a6bd7b1f8e6838465c15d1985986f29fe}{}\label{class_c_menu_a6bd7b1f8e6838465c15d1985986f29fe}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Classes/Menu.\+h\item 
+Classes/Menu.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,41 @@
+\hypertarget{class_c_trick_manager}{}\section{C\+Trick\+Manager Class Reference}
+\label{class_c_trick_manager}\index{C\+Trick\+Manager@{C\+Trick\+Manager}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Add} (\hyperlink{structtrick__tag}{trick\+\_\+tag} \+\_\+trick, const char $\ast$\+\_\+key)\hypertarget{class_c_trick_manager_a4ff14d768273432dbb42c4107b9788f7}{}\label{class_c_trick_manager_a4ff14d768273432dbb42c4107b9788f7}
+
+\item 
+void {\bfseries Add} (char \+\_\+name\mbox{[}32\mbox{]}, int \+\_\+level, int \+\_\+cost, int \+\_\+time, target\+\_\+tag\+::type \+\_\+target\+Type, std\+::string \+\_\+damage\+Effect\+Name, std\+::vector$<$ \hyperlink{structside_effect__tag}{side\+Effect\+\_\+tag} $>$ side\+Effect\+List)\hypertarget{class_c_trick_manager_a977362fc3b7b6a5ac2d8cf790a516e9d}{}\label{class_c_trick_manager_a977362fc3b7b6a5ac2d8cf790a516e9d}
+
+\item 
+void {\bfseries Clear} ()\hypertarget{class_c_trick_manager_a3cdaa23673efbd07cd9192e1edbefb4c}{}\label{class_c_trick_manager_a3cdaa23673efbd07cd9192e1edbefb4c}
+
+\item 
+\hyperlink{structtrick__tag}{trick\+\_\+tag} const $\ast$ {\bfseries Get\+Trick} (const char \+\_\+name\mbox{[}32\mbox{]}, bool \+\_\+error\+Message=false)\hypertarget{class_c_trick_manager_a6df35ab36d8ccdf5915acfe58792cb88}{}\label{class_c_trick_manager_a6df35ab36d8ccdf5915acfe58792cb88}
+
+\item 
+void {\bfseries Create\+Damage\+Effect} (std\+::string \+\_\+type\+Name, std\+::string \+\_\+effect\+Name, std\+::vector$<$ std\+::string $>$\+\_\+arg\+List)\hypertarget{class_c_trick_manager_a1331fd57ddf7d938a1e3312686bf78e5}{}\label{class_c_trick_manager_a1331fd57ddf7d938a1e3312686bf78e5}
+
+\item 
+int {\bfseries Get\+Trick\+Damage\+Effect\+Index} (std\+::string \+\_\+name)\hypertarget{class_c_trick_manager_a855acdc647cb57daf01610de4827b6cf}{}\label{class_c_trick_manager_a855acdc647cb57daf01610de4827b6cf}
+
+\item 
+void {\bfseries Draw\+Effect} (int \+\_\+effect\+Index, \hyperlink{class_c_battle}{C\+Battle} $\ast$\+\_\+battle, \hyperlink{class_c_b_img_bank}{C\+B\+Img\+Bank} $\ast$\+\_\+bimgbank, \hyperlink{class_c_rect}{C\+Rect} \+\_\+attackerR, \hyperlink{class_c_rect}{C\+Rect} \+\_\+targetR)\hypertarget{class_c_trick_manager_ae1e882403baed30c569faa88886ad626}{}\label{class_c_trick_manager_ae1e882403baed30c569faa88886ad626}
+
+\item 
+void {\bfseries Debug\+Show\+Side\+Effect} (std\+::vector$<$ \hyperlink{structside_effect__tag}{side\+Effect\+\_\+tag} $>$ \+\_\+side\+Effect\+List)\hypertarget{class_c_trick_manager_a8c64cadcba83604210eb7a9c1b2d761d}{}\label{class_c_trick_manager_a8c64cadcba83604210eb7a9c1b2d761d}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_c_trick_manager}{C\+Trick\+Manager} $\ast$ {\bfseries Get\+Instance} ()\hypertarget{class_c_trick_manager_a0de3b7589935108977cd708b68cc9196}{}\label{class_c_trick_manager_a0de3b7589935108977cd708b68cc9196}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Classes/Trick\+Manager.\+h\item 
+Classes/Trick\+Manager.\+cpp\end{DoxyCompactItemize}

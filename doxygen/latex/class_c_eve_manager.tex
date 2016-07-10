@@ -1,0 +1,86 @@
+\hypertarget{class_c_eve_manager}{}\section{C\+Eve\+Manager Class Reference}
+\label{class_c_eve_manager}\index{C\+Eve\+Manager@{C\+Eve\+Manager}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Init} ()\hypertarget{class_c_eve_manager_a81b830f9b23ebba1e077c3e47f72f0f6}{}\label{class_c_eve_manager_a81b830f9b23ebba1e077c3e47f72f0f6}
+
+\item 
+void {\bfseries Save} (F\+I\+LE $\ast$fp)\hypertarget{class_c_eve_manager_adb2b8e538af22ca621a6287cf838ab9b}{}\label{class_c_eve_manager_adb2b8e538af22ca621a6287cf838ab9b}
+
+\item 
+void {\bfseries Draw} (int \+\_\+mapnum, int \+\_\+x, int \+\_\+y, bool \+\_\+overdraw=false, int \+\_\+dx=0, int \+\_\+dy=0)\hypertarget{class_c_eve_manager_a6fab97f20090b6151b8bae156468000f}{}\label{class_c_eve_manager_a6fab97f20090b6151b8bae156468000f}
+
+\item 
+void {\bfseries Set\+Map} (unsigned int \+\_\+mapnum, int \+\_\+filesize, unsigned char $\ast$buf)\hypertarget{class_c_eve_manager_a31457fdd1db1d4a1dd57a6d9e125b1ee}{}\label{class_c_eve_manager_a31457fdd1db1d4a1dd57a6d9e125b1ee}
+
+\item 
+void {\bfseries Set\+Eve\+Obj} (int \+\_\+mapnum, int \+\_\+datanum, int \+\_\+kind, int \+\_\+img\mbox{[}C\+H\+A\+R\+A\+\_\+\+P\+I\+C\+\_\+\+N\+UM\mbox{]}, const char $\ast$\+\_\+pickey, char $\ast$\+\_\+name, bool \+\_\+visible)\hypertarget{class_c_eve_manager_a2d31d0d756b85416f121ff94b0715352}{}\label{class_c_eve_manager_a2d31d0d756b85416f121ff94b0715352}
+
+\item 
+void {\bfseries Set\+Position} (const char $\ast$\+\_\+name, int \+\_\+dx, int \+\_\+dy, bool \+\_\+d=false)\hypertarget{class_c_eve_manager_a5abb9c13b74f5597e7598513cedc7248}{}\label{class_c_eve_manager_a5abb9c13b74f5597e7598513cedc7248}
+
+\item 
+void {\bfseries Set\+Position} (const char $\ast$\+\_\+name, const char $\ast$\+\_\+targetname)\hypertarget{class_c_eve_manager_a26d64a722dfc2f65a1b6d0d30c20d2f5}{}\label{class_c_eve_manager_a26d64a722dfc2f65a1b6d0d30c20d2f5}
+
+\item 
+void {\bfseries Set\+Position} (const char $\ast$\+\_\+name, int \+\_\+datanum)\hypertarget{class_c_eve_manager_a0c404d20b62870073c652eb068f0ea76}{}\label{class_c_eve_manager_a0c404d20b62870073c652eb068f0ea76}
+
+\item 
+void {\bfseries Set\+Pic} (const char $\ast$\+\_\+name, const int \+\_\+img\mbox{[}C\+H\+A\+R\+A\+\_\+\+P\+I\+C\+\_\+\+N\+UM\mbox{]}, const char $\ast$\+\_\+pickey)\hypertarget{class_c_eve_manager_ab06d15c3d24c0f375f2f0fbf7c93a09a}{}\label{class_c_eve_manager_ab06d15c3d24c0f375f2f0fbf7c93a09a}
+
+\item 
+bool {\bfseries Get\+Pos} (const char $\ast$\+\_\+name, int $\ast$\+\_\+mapnum, int $\ast$\+\_\+x, int $\ast$\+\_\+y)\hypertarget{class_c_eve_manager_aaab5f2af51e52e321820aaa5899b3f42}{}\label{class_c_eve_manager_aaab5f2af51e52e321820aaa5899b3f42}
+
+\item 
+bool {\bfseries Get\+Pos} (const int \+\_\+mapnum, const int \+\_\+datanum, int $\ast$\+\_\+x, int $\ast$\+\_\+y)\hypertarget{class_c_eve_manager_a3d261065c2a87a8f30c358e307a55343}{}\label{class_c_eve_manager_a3d261065c2a87a8f30c358e307a55343}
+
+\item 
+bool {\bfseries Get\+Text} (char $\ast$$\ast$\&\+\_\+text, int \&\+\_\+count, int \+\_\+mapnum, int \+\_\+x, int \+\_\+y, int \+\_\+mydir, int \+\_\+kind=-\/1)\hypertarget{class_c_eve_manager_a2c4dbfe9aad0101b96b5fb0e8bc80ee7}{}\label{class_c_eve_manager_a2c4dbfe9aad0101b96b5fb0e8bc80ee7}
+
+\item 
+void {\bfseries Set\+Text} (const char \+\_\+eventtext\mbox{[}1000\mbox{]}\mbox{[}256\mbox{]}, const int \+\_\+line, const char $\ast$\+\_\+name, const int \+\_\+kind)\hypertarget{class_c_eve_manager_ae0fad035cbcdb2e78aa519f3f26e1e98}{}\label{class_c_eve_manager_ae0fad035cbcdb2e78aa519f3f26e1e98}
+
+\item 
+bool {\bfseries Copy\+Original\+Event} (std\+::vector$<$ \hyperlink{structchar256}{char256} $>$ $\ast$vectext\+\_\+p, const char $\ast$\+\_\+eventtext, int \+\_\+count=0)\hypertarget{class_c_eve_manager_ada2ae4db5f86e66f5dda8e5077d59754}{}\label{class_c_eve_manager_ada2ae4db5f86e66f5dda8e5077d59754}
+
+\item 
+bool {\bfseries Check\+Walkable} (int \+\_\+mapnum, int \+\_\+x, int \+\_\+y)\hypertarget{class_c_eve_manager_aabd1190c4380d0c76cfe6669de019c28}{}\label{class_c_eve_manager_aabd1190c4380d0c76cfe6669de019c28}
+
+\item 
+void {\bfseries Set\+Dir} (const char $\ast$\+\_\+name, int \+\_\+dir)\hypertarget{class_c_eve_manager_afbb09f19a49e852dd157d32ab19ab9c6}{}\label{class_c_eve_manager_afbb09f19a49e852dd157d32ab19ab9c6}
+
+\item 
+void {\bfseries Set\+Visible} (const char $\ast$\+\_\+name, bool \+\_\+visible)\hypertarget{class_c_eve_manager_ad6f39f63d16bf738574168fc013d7163}{}\label{class_c_eve_manager_ad6f39f63d16bf738574168fc013d7163}
+
+\item 
+void {\bfseries Set\+Alpha} (const char $\ast$\+\_\+name, unsigned char \+\_\+alpha)\hypertarget{class_c_eve_manager_a429c6f79450735dee4b975d629b9d63d}{}\label{class_c_eve_manager_a429c6f79450735dee4b975d629b9d63d}
+
+\item 
+void {\bfseries Set\+Effect} (const char $\ast$\+\_\+name, int \+\_\+effectname, int \+\_\+effectnum\mbox{[}$\,$\mbox{]})\hypertarget{class_c_eve_manager_aa337fab7ca7e0e3b3c307482800525ee}{}\label{class_c_eve_manager_aa337fab7ca7e0e3b3c307482800525ee}
+
+\item 
+void {\bfseries Set\+Count} (const char $\ast$\+\_\+name, int \+\_\+count, bool \+\_\+add=false)\hypertarget{class_c_eve_manager_a88e81c11881a8caf7ba980f5618c79cc}{}\label{class_c_eve_manager_a88e81c11881a8caf7ba980f5618c79cc}
+
+\item 
+void {\bfseries Set\+Now\+Name} (const char $\ast$\+\_\+name)\hypertarget{class_c_eve_manager_aa384e6fb4831d74d3ad32e5c52e01c03}{}\label{class_c_eve_manager_aa384e6fb4831d74d3ad32e5c52e01c03}
+
+\item 
+void {\bfseries Jump} (\hyperlink{class_c_field}{C\+Field} $\ast$\+\_\+field, char $\ast$\+\_\+name)\hypertarget{class_c_eve_manager_a5100c61ddc22f44a7d8e34545e86d48b}{}\label{class_c_eve_manager_a5100c61ddc22f44a7d8e34545e86d48b}
+
+\item 
+void {\bfseries Walk} (\hyperlink{class_c_field}{C\+Field} $\ast$\+\_\+field, char $\ast$\+\_\+name, int \+\_\+dir, int \+\_\+walkspeed, bool \+\_\+walk=true, int \+\_\+fade=0)\hypertarget{class_c_eve_manager_af9bb4ce19f480ad4a0fd7921b86d4aaf}{}\label{class_c_eve_manager_af9bb4ce19f480ad4a0fd7921b86d4aaf}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_c_eve_manager}{C\+Eve\+Manager} $\ast$ {\bfseries Get\+Instance} ()\hypertarget{class_c_eve_manager_ae2b6a37be91de68fc22778eea00ad71a}{}\label{class_c_eve_manager_ae2b6a37be91de68fc22778eea00ad71a}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Classes/Eve\+Manager.\+h\item 
+Classes/Eve\+Manager.\+cpp\end{DoxyCompactItemize}

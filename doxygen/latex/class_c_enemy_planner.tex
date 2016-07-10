@@ -1,0 +1,53 @@
+\hypertarget{class_c_enemy_planner}{}\section{C\+Enemy\+Planner Class Reference}
+\label{class_c_enemy_planner}\index{C\+Enemy\+Planner@{C\+Enemy\+Planner}}
+Inheritance diagram for C\+Enemy\+Planner\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.914530cm]{class_c_enemy_planner}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries C\+Enemy\+Planner} (std\+::string \+\_\+enemyname)\hypertarget{class_c_enemy_planner_aa37dda7cb289c53cfabd45b5992c57fa}{}\label{class_c_enemy_planner_aa37dda7cb289c53cfabd45b5992c57fa}
+
+\item 
+void {\bfseries Battle\+Ready} (const \hyperlink{class_c_actor}{C\+Actor} $\ast$const $\ast$\+\_\+actor\+List, const int \+\_\+player\+Num, const int \+\_\+enemy\+Num)\hypertarget{class_c_enemy_planner_a52c6974a32442debbaedebf14a45458b}{}\label{class_c_enemy_planner_a52c6974a32442debbaedebf14a45458b}
+
+\item 
+void {\bfseries Set\+Random\+Plan\+Set} (std\+::map$<$ int, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ $>$ $\ast$\+\_\+random\+\_\+plan\+\_\+set)\hypertarget{class_c_enemy_planner_af89bcad6c1491139c2c3faf81f84f38a}{}\label{class_c_enemy_planner_af89bcad6c1491139c2c3faf81f84f38a}
+
+\item 
+std\+::string {\bfseries Get\+Name} () const \hypertarget{class_c_enemy_planner_a42d9f3358032f6cb1cd9804776cfc26e}{}\label{class_c_enemy_planner_a42d9f3358032f6cb1cd9804776cfc26e}
+
+\item 
+virtual int {\bfseries Get\+Plan} (const \hyperlink{class_c_enemy}{C\+Enemy} $\ast$\+\_\+enemy)=0\hypertarget{class_c_enemy_planner_ab49948ff6784b7b21d9a828f560daa40}{}\label{class_c_enemy_planner_ab49948ff6784b7b21d9a828f560daa40}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries Calc\+Random\+Plan} (int \+\_\+random\+Plan\+\_\+key, const \hyperlink{class_c_enemy}{C\+Enemy} $\ast$\+\_\+enemy)\hypertarget{class_c_enemy_planner_a830dba5323b19e2534a361949bc785c3}{}\label{class_c_enemy_planner_a830dba5323b19e2534a361949bc785c3}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ int, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ $>$ $\ast$ {\bfseries Random\+Plan\+Set}\hypertarget{class_c_enemy_planner_aa67925ceabbf73a42ca9b6d5d672b8bb}{}\label{class_c_enemy_planner_aa67925ceabbf73a42ca9b6d5d672b8bb}
+
+\item 
+const \hyperlink{class_c_actor}{C\+Actor} $\ast$const $\ast$ {\bfseries Actor}\hypertarget{class_c_enemy_planner_a8b8263d1eff7c1e301cf89a432acf169}{}\label{class_c_enemy_planner_a8b8263d1eff7c1e301cf89a432acf169}
+
+\item 
+int {\bfseries P\+L\+A\+Y\+E\+R\+\_\+\+N\+UM}\hypertarget{class_c_enemy_planner_a9bb42588ddd87d3773a2c206b62e80f3}{}\label{class_c_enemy_planner_a9bb42588ddd87d3773a2c206b62e80f3}
+
+\item 
+int {\bfseries E\+N\+E\+M\+Y\+\_\+\+N\+UM}\hypertarget{class_c_enemy_planner_a14c4bb52945b2755fb2230578ef761cd}{}\label{class_c_enemy_planner_a14c4bb52945b2755fb2230578ef761cd}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Classes/Enemy\+Planner.\+h\item 
+Classes/Enemy\+Planner.\+cpp\end{DoxyCompactItemize}

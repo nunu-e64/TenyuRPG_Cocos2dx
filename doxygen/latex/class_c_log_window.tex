@@ -1,0 +1,108 @@
+\hypertarget{class_c_log_window}{}\section{C\+Log\+Window Class Reference}
+\label{class_c_log_window}\index{C\+Log\+Window@{C\+Log\+Window}}
+Inheritance diagram for C\+Log\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_log_window}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Init} (int \+\_\+posx, int \+\_\+posy, int \+\_\+width, int \+\_\+height, int \+\_\+box\+Color, int \+\_\+stock\+Line, int \+\_\+font\+Size, int \+\_\+font\+Color\+Main, int \+\_\+font\+Color\+Sub)\hypertarget{class_c_log_window_a0b6d6ccdd24a98ab6e3f8e81e8ce657f}{}\label{class_c_log_window_a0b6d6ccdd24a98ab6e3f8e81e8ce657f}
+
+\item 
+void {\bfseries Clear} ()\hypertarget{class_c_log_window_ae01f51f5e163ba75699fa939ad0a8671}{}\label{class_c_log_window_ae01f51f5e163ba75699fa939ad0a8671}
+
+\item 
+void {\bfseries Term} ()\hypertarget{class_c_log_window_a17c0b89a15894edd9e6d919a3905ea60}{}\label{class_c_log_window_a17c0b89a15894edd9e6d919a3905ea60}
+
+\item 
+bool {\bfseries Add} (const char $\ast$\+\_\+format,...)\hypertarget{class_c_log_window_afc806191594ec4c93ac347a27d7e21c2}{}\label{class_c_log_window_afc806191594ec4c93ac347a27d7e21c2}
+
+\item 
+bool {\bfseries Add} (char $\ast$$\ast$\+\_\+new\+Text\+Array)\hypertarget{class_c_log_window_a5f8775f3bd9c29b381c97ac56c11380c}{}\label{class_c_log_window_a5f8775f3bd9c29b381c97ac56c11380c}
+
+\item 
+bool {\bfseries Main} ()\hypertarget{class_c_log_window_acb4cc76ab066eb3b6c681d3f540b36ba}{}\label{class_c_log_window_acb4cc76ab066eb3b6c681d3f540b36ba}
+
+\item 
+void {\bfseries Set\+Visible} (bool \+\_\+visible)\hypertarget{class_c_log_window_a4bb269245a2cfdfe05b2e4fdc7e9822d}{}\label{class_c_log_window_a4bb269245a2cfdfe05b2e4fdc7e9822d}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries W\+O\+R\+D\+\_\+\+M\+AX} = 255
+ \}\hypertarget{class_c_log_window_ab5fed1a6f695003cf6bfae4f4c45b55d}{}\label{class_c_log_window_ab5fed1a6f695003cf6bfae4f4c45b55d}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries Initialized}\hypertarget{class_c_log_window_a986a16a267c2d41363fe066314de4ee0}{}\label{class_c_log_window_a986a16a267c2d41363fe066314de4ee0}
+
+\item 
+char $\ast$$\ast$ {\bfseries Text}\hypertarget{class_c_log_window_a5c2399c56c2d02ee61ed9b733eaa6e27}{}\label{class_c_log_window_a5c2399c56c2d02ee61ed9b733eaa6e27}
+
+\item 
+int {\bfseries PosX}\hypertarget{class_c_log_window_a488d5b3a21d0f2d9e645c927fe0d9193}{}\label{class_c_log_window_a488d5b3a21d0f2d9e645c927fe0d9193}
+
+\item 
+int {\bfseries PosY}\hypertarget{class_c_log_window_ada10328613c4c8d2c9951927d9ba9607}{}\label{class_c_log_window_ada10328613c4c8d2c9951927d9ba9607}
+
+\item 
+int {\bfseries Width}\hypertarget{class_c_log_window_a94a87aabd208f92d49ab18597481f9f6}{}\label{class_c_log_window_a94a87aabd208f92d49ab18597481f9f6}
+
+\item 
+int {\bfseries Height}\hypertarget{class_c_log_window_afc77264b35d52aca76b03d1781721ddc}{}\label{class_c_log_window_afc77264b35d52aca76b03d1781721ddc}
+
+\item 
+int {\bfseries Stock\+Line\+Num}\hypertarget{class_c_log_window_a8d02ef592034112a45318e834bcfde28}{}\label{class_c_log_window_a8d02ef592034112a45318e834bcfde28}
+
+\item 
+int {\bfseries Line\+Num}\hypertarget{class_c_log_window_a79881c437c121f840d17b33cbf7f105c}{}\label{class_c_log_window_a79881c437c121f840d17b33cbf7f105c}
+
+\item 
+int {\bfseries Word\+Num}\hypertarget{class_c_log_window_a0faa55b1a0e06369a7dc36bc34898632}{}\label{class_c_log_window_a0faa55b1a0e06369a7dc36bc34898632}
+
+\item 
+int {\bfseries Line\+Space}\hypertarget{class_c_log_window_a878cbc283249a725d9f437e0c5787865}{}\label{class_c_log_window_a878cbc283249a725d9f437e0c5787865}
+
+\item 
+int {\bfseries Box\+Space}\hypertarget{class_c_log_window_a71c20095ebb24561e84b3e1c5389b74f}{}\label{class_c_log_window_a71c20095ebb24561e84b3e1c5389b74f}
+
+\item 
+int {\bfseries Font\+Size}\hypertarget{class_c_log_window_a747cd3ed8bdf5c7e6330ada3d4c6d5bf}{}\label{class_c_log_window_a747cd3ed8bdf5c7e6330ada3d4c6d5bf}
+
+\item 
+int {\bfseries Font\+Handle}\hypertarget{class_c_log_window_a5ae2447c2563b8a46da2225f45a7276d}{}\label{class_c_log_window_a5ae2447c2563b8a46da2225f45a7276d}
+
+\item 
+int {\bfseries Font\+Color\+Main}\hypertarget{class_c_log_window_a18b4391f11e86c99c4e0ae0e3e4c2394}{}\label{class_c_log_window_a18b4391f11e86c99c4e0ae0e3e4c2394}
+
+\item 
+int {\bfseries Font\+Color\+Sub}\hypertarget{class_c_log_window_a940601d6766f58c69f098b4c3a65978d}{}\label{class_c_log_window_a940601d6766f58c69f098b4c3a65978d}
+
+\item 
+int {\bfseries Box\+Color}\hypertarget{class_c_log_window_a3d122cd2b94fce6a7605d9b939ae47ca}{}\label{class_c_log_window_a3d122cd2b94fce6a7605d9b939ae47ca}
+
+\item 
+int {\bfseries Word\+Width}\hypertarget{class_c_log_window_aaf8a0fe5375d196e74b0e248e924c6a6}{}\label{class_c_log_window_aaf8a0fe5375d196e74b0e248e924c6a6}
+
+\item 
+int {\bfseries Next\+Line}\hypertarget{class_c_log_window_a33e2679a3f3c571d98860157f325bbda}{}\label{class_c_log_window_a33e2679a3f3c571d98860157f325bbda}
+
+\item 
+int {\bfseries Back\+Line}\hypertarget{class_c_log_window_a52511a0c99cac64c2d9097d8fad00937}{}\label{class_c_log_window_a52511a0c99cac64c2d9097d8fad00937}
+
+\item 
+bool {\bfseries Visible}\hypertarget{class_c_log_window_afee3508c4ea142dde092560d579c5688}{}\label{class_c_log_window_afee3508c4ea142dde092560d579c5688}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Classes/Log\+Window.\+h\item 
+Classes/Log\+Window.\+cpp\end{DoxyCompactItemize}

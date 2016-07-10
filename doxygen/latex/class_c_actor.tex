@@ -1,0 +1,210 @@
+\hypertarget{class_c_actor}{}\section{C\+Actor Class Reference}
+\label{class_c_actor}\index{C\+Actor@{C\+Actor}}
+Inheritance diagram for C\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_c_actor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries C\+Actor} (const \hyperlink{class_c_species}{C\+Species} \&obj)\hypertarget{class_c_actor_a5bae9b0347cfe0c298ae14d1ddc4670a}{}\label{class_c_actor_a5bae9b0347cfe0c298ae14d1ddc4670a}
+
+\item 
+void {\bfseries First\+Set} (int \+\_\+playernum, int \+\_\+enemynum, int \+\_\+index, \hyperlink{class_c_text_box}{C\+Text\+Box} $\ast$$\ast$\+\_\+textbox, \hyperlink{class_c_cmd_list}{C\+Cmd\+List} $\ast$\+\_\+cmdlist, \hyperlink{class_c_log_window}{C\+Log\+Window} $\ast$\+\_\+log\+Window)\hypertarget{class_c_actor_aab10562dcc6b8601c3986d18b0636727}{}\label{class_c_actor_aab10562dcc6b8601c3986d18b0636727}
+
+\item 
+void {\bfseries Set\+Rect} (int \+\_\+cx, int \+\_\+cy)\hypertarget{class_c_actor_a7cffff5d6184ebe6bc1a39154a3f8503}{}\label{class_c_actor_a7cffff5d6184ebe6bc1a39154a3f8503}
+
+\item 
+bool {\bfseries Set\+System\+Img} (\hyperlink{class_c_b_img_bank}{C\+B\+Img\+Bank} $\ast$\+\_\+bimgbank)\hypertarget{class_c_actor_ab7adce3f7a83b3ccac0f961177ecf3da}{}\label{class_c_actor_ab7adce3f7a83b3ccac0f961177ecf3da}
+
+\item 
+bool {\bfseries Main} ()\hypertarget{class_c_actor_a988ae25f3fa7f8767415260b3ee00023}{}\label{class_c_actor_a988ae25f3fa7f8767415260b3ee00023}
+
+\item 
+bool {\bfseries Do} ()\hypertarget{class_c_actor_a1c9fd5d3fa2eb222ff4c4bf94bd58140}{}\label{class_c_actor_a1c9fd5d3fa2eb222ff4c4bf94bd58140}
+
+\item 
+virtual void {\bfseries Draw} (int \+\_\+dx=0, int \+\_\+dy=0)=0\hypertarget{class_c_actor_ac200b40b264c90ac18641ae70913924e}{}\label{class_c_actor_ac200b40b264c90ac18641ae70913924e}
+
+\item 
+int {\bfseries Get\+Actor\+Index} () const \hypertarget{class_c_actor_afe5b8dc29fe5f77fa972ca6d0c99c109}{}\label{class_c_actor_afe5b8dc29fe5f77fa972ca6d0c99c109}
+
+\item 
+int {\bfseries Get\+Index} () const \hypertarget{class_c_actor_aad14d3764562877bf0c479ff596edc6a}{}\label{class_c_actor_aad14d3764562877bf0c479ff596edc6a}
+
+\item 
+bool {\bfseries Is\+Player} () const \hypertarget{class_c_actor_aae1a50d017aa77b7a49eb78c2e8e3763}{}\label{class_c_actor_aae1a50d017aa77b7a49eb78c2e8e3763}
+
+\item 
+bool {\bfseries Get\+Alive} () const \hypertarget{class_c_actor_aa59b20d55ebf6052b24ebd62e8408f70}{}\label{class_c_actor_aa59b20d55ebf6052b24ebd62e8408f70}
+
+\item 
+int {\bfseries Get\+Visible\+Status} () const \hypertarget{class_c_actor_a5c12c729269aaebb111a511f70a37a1c}{}\label{class_c_actor_a5c12c729269aaebb111a511f70a37a1c}
+
+\item 
+bool {\bfseries Get\+Visible} () const \hypertarget{class_c_actor_a614c99a06241d60e3f4f76b69062bf43}{}\label{class_c_actor_a614c99a06241d60e3f4f76b69062bf43}
+
+\item 
+void {\bfseries Set\+Visible} (bool \+\_\+visible)\hypertarget{class_c_actor_a6b52a3a18435cc3c3c20940aadbb2b2e}{}\label{class_c_actor_a6b52a3a18435cc3c3c20940aadbb2b2e}
+
+\item 
+int {\bfseries Get\+Atk} () const \hypertarget{class_c_actor_a638d017fe2e6a9fe88b1e4f685ffedbd}{}\label{class_c_actor_a638d017fe2e6a9fe88b1e4f685ffedbd}
+
+\item 
+int {\bfseries Get\+Def} ()\hypertarget{class_c_actor_a583ce9ec2f0868fa4793a3441bc196d8}{}\label{class_c_actor_a583ce9ec2f0868fa4793a3441bc196d8}
+
+\item 
+int {\bfseries Get\+Hp} () const \hypertarget{class_c_actor_a99584b792244713fa540f45e9267f4c3}{}\label{class_c_actor_a99584b792244713fa540f45e9267f4c3}
+
+\item 
+int {\bfseries Get\+Max\+Hp} () const \hypertarget{class_c_actor_a33abdda7a572c5c58120fbf17e68ab74}{}\label{class_c_actor_a33abdda7a572c5c58120fbf17e68ab74}
+
+\item 
+\hyperlink{structtrick__tag}{trick\+\_\+tag} const $\ast$ {\bfseries Get\+Now\+Trick} () const \hypertarget{class_c_actor_aa286c738d69e5ae35686a6892e002789}{}\label{class_c_actor_aa286c738d69e5ae35686a6892e002789}
+
+\item 
+int {\bfseries Get\+Status} (int \+\_\+key)\hypertarget{class_c_actor_a2e6c26854a8be12e0af07fec2016183c}{}\label{class_c_actor_a2e6c26854a8be12e0af07fec2016183c}
+
+\item 
+void {\bfseries Set\+Status} (int \+\_\+key, int \+\_\+value)\hypertarget{class_c_actor_a7540692fbc4f3f3ecde0070566cb9ac8}{}\label{class_c_actor_a7540692fbc4f3f3ecde0070566cb9ac8}
+
+\item 
+int {\bfseries Damaged} (\hyperlink{class_c_actor}{C\+Actor} $\ast$\+\_\+attacker, \hyperlink{structtrick__tag}{trick\+\_\+tag} const $\ast$\+\_\+trick)\hypertarget{class_c_actor_affe0a553bc8b698bafbad9d4dc1b15cf}{}\label{class_c_actor_affe0a553bc8b698bafbad9d4dc1b15cf}
+
+\item 
+bool {\bfseries Check\+Bar\+Move} ()\hypertarget{class_c_actor_aacdd243e8678573bf6f1edca3b2abe09}{}\label{class_c_actor_aacdd243e8678573bf6f1edca3b2abe09}
+
+\item 
+void {\bfseries Set\+Target} (int \+\_\+target)\hypertarget{class_c_actor_a7ec02bed0a0f03d2648e48cb1197c1d2}{}\label{class_c_actor_a7ec02bed0a0f03d2648e48cb1197c1d2}
+
+\item 
+void {\bfseries Add\+Status\+Changer} (int \+\_\+kind, int \+\_\+power\+Percent, int \+\_\+time)\hypertarget{class_c_actor_a1d71b5ab2aad32d2caf6a651c5158339}{}\label{class_c_actor_a1d71b5ab2aad32d2caf6a651c5158339}
+
+\item 
+void {\bfseries Change\+Value} (int \+\_\+kind, int \+\_\+power\+Percent)\hypertarget{class_c_actor_a344f8eeb57ddf973bb95d647e0b742c9}{}\label{class_c_actor_a344f8eeb57ddf973bb95d647e0b742c9}
+
+\item 
+void {\bfseries Heal} (int \+\_\+percent)\hypertarget{class_c_actor_a85158d40366687dc3d2f4a11f42ddd90}{}\label{class_c_actor_a85158d40366687dc3d2f4a11f42ddd90}
+
+\item 
+\hyperlink{class_c_rect}{C\+Rect} {\bfseries Get\+Rect} () const \hypertarget{class_c_actor_ab74185243a96730c9992682bb4f1beb3}{}\label{class_c_actor_ab74185243a96730c9992682bb4f1beb3}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries V\+I\+S\+I\+B\+LE}, 
+{\bfseries C\+H\+A\+N\+G\+I\+NG}, 
+{\bfseries I\+N\+V\+I\+S\+I\+B\+LE}
+ \}\hypertarget{class_c_actor_a72cc31c27f3d300119c0dae98d01eab7}{}\label{class_c_actor_a72cc31c27f3d300119c0dae98d01eab7}
+
+\item 
+enum {\bfseries mode\+\_\+tag} \{ \\*
+{\bfseries P\+L\+AN}, 
+{\bfseries P\+R\+E\+P\+A\+RE}, 
+{\bfseries A\+C\+T\+I\+ON}, 
+{\bfseries B\+E\+F\+O\+R\+E\+\_\+\+P\+L\+AN}, 
+\\*
+{\bfseries M\+O\+D\+E\+\_\+\+N\+UM}
+ \}\hypertarget{class_c_actor_a6862dea3af171b967810ee5619738939}{}\label{class_c_actor_a6862dea3af171b967810ee5619738939}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries First\+Set2} ()\hypertarget{class_c_actor_aa7ccf97658107cd329f0dd669ce860ee}{}\label{class_c_actor_aa7ccf97658107cd329f0dd669ce860ee}
+
+\item 
+virtual void {\bfseries Set\+Extra\+Img} (\hyperlink{class_c_b_img_bank}{C\+B\+Img\+Bank} $\ast$\+\_\+b\+Img\+Bank)\hypertarget{class_c_actor_a113ab38eefb563c9bac95ed6766e7753}{}\label{class_c_actor_a113ab38eefb563c9bac95ed6766e7753}
+
+\item 
+void {\bfseries Draw\+\_\+\+Sub} (int \+\_\+dx=0, int \+\_\+dy=0)\hypertarget{class_c_actor_a0e23ae6d89e19d1f97c911c3a2979f83}{}\label{class_c_actor_a0e23ae6d89e19d1f97c911c3a2979f83}
+
+\item 
+virtual bool {\bfseries Plan} ()=0\hypertarget{class_c_actor_a5d3981af7c89ec304ee42edf0dc4d5e6}{}\label{class_c_actor_a5d3981af7c89ec304ee42edf0dc4d5e6}
+
+\item 
+virtual bool {\bfseries Action} ()=0\hypertarget{class_c_actor_a8488f83306f1bb4dde2144438f3b05c0}{}\label{class_c_actor_a8488f83306f1bb4dde2144438f3b05c0}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries P\+L\+A\+Y\+E\+R\+\_\+\+N\+UM}\hypertarget{class_c_actor_acaf5a0d56d6d559605c98d2e5d123dac}{}\label{class_c_actor_acaf5a0d56d6d559605c98d2e5d123dac}
+
+\item 
+int {\bfseries E\+N\+E\+M\+Y\+\_\+\+N\+UM}\hypertarget{class_c_actor_aad97041a2e44e401c6ab4a44584f8b95}{}\label{class_c_actor_aad97041a2e44e401c6ab4a44584f8b95}
+
+\item 
+int {\bfseries Actor\+Index}\hypertarget{class_c_actor_a170ca35b074b3f06b00eb414ce5d3692}{}\label{class_c_actor_a170ca35b074b3f06b00eb414ce5d3692}
+
+\item 
+int {\bfseries Index}\hypertarget{class_c_actor_adff20f8fc1557d60af909022ae07143f}{}\label{class_c_actor_adff20f8fc1557d60af909022ae07143f}
+
+\item 
+int {\bfseries Atk}\hypertarget{class_c_actor_a38772d20effe55a79298c1f8400b3e4e}{}\label{class_c_actor_a38772d20effe55a79298c1f8400b3e4e}
+
+\item 
+int {\bfseries Def}\hypertarget{class_c_actor_aeca99c74c0265ba588ef31bb7615de90}{}\label{class_c_actor_aeca99c74c0265ba588ef31bb7615de90}
+
+\item 
+double {\bfseries Spd}\hypertarget{class_c_actor_a086fb19095dfe955b05b00fefb0a9a6f}{}\label{class_c_actor_a086fb19095dfe955b05b00fefb0a9a6f}
+
+\item 
+int {\bfseries Max\+Hp}\hypertarget{class_c_actor_ab097e6436e9bc7c885f3a62f8177065f}{}\label{class_c_actor_ab097e6436e9bc7c885f3a62f8177065f}
+
+\item 
+bool {\bfseries Alive}\hypertarget{class_c_actor_ac3eca4b5efa2ecb6bedd4e5d30ab993b}{}\label{class_c_actor_ac3eca4b5efa2ecb6bedd4e5d30ab993b}
+
+\item 
+bool {\bfseries Visible}\hypertarget{class_c_actor_aa93d950eabf8b1f0b1693adfb7ff9770}{}\label{class_c_actor_aa93d950eabf8b1f0b1693adfb7ff9770}
+
+\item 
+enum C\+Actor\+:: \{ ... \}  {\bfseries Visible\+Status}\hypertarget{class_c_actor_a79714be7b20898795e0a2b16a1e78b38}{}\label{class_c_actor_a79714be7b20898795e0a2b16a1e78b38}
+
+\item 
+int {\bfseries Old\+Hp}\hypertarget{class_c_actor_a803b716cfe5e1a59911d527059e53d6e}{}\label{class_c_actor_a803b716cfe5e1a59911d527059e53d6e}
+
+\item 
+std\+::vector$<$ \hyperlink{structstatus_changer__tag}{status\+Changer\+\_\+tag} $>$ {\bfseries Status\+Changer\+List}\hypertarget{class_c_actor_a87bfed34f5f22e66cfc494a5d520133f}{}\label{class_c_actor_a87bfed34f5f22e66cfc494a5d520133f}
+
+\item 
+enum C\+Actor\+::mode\+\_\+tag {\bfseries Mode}\hypertarget{class_c_actor_ab2bfcc416a6879d7c69e980d77c7ebb8}{}\label{class_c_actor_ab2bfcc416a6879d7c69e980d77c7ebb8}
+
+\item 
+int {\bfseries Max\+Time\+Gauge}\hypertarget{class_c_actor_a86bc225671cd386221901b28d33804cc}{}\label{class_c_actor_a86bc225671cd386221901b28d33804cc}
+
+\item 
+\hyperlink{structtrick__tag}{trick\+\_\+tag} const $\ast$ {\bfseries Now\+Trick}\hypertarget{class_c_actor_ae398d65941b26ef5ae11f718c9117873}{}\label{class_c_actor_ae398d65941b26ef5ae11f718c9117873}
+
+\item 
+int {\bfseries Target}\hypertarget{class_c_actor_acf74fa1cd5a89bfb32599bb2d0927b84}{}\label{class_c_actor_acf74fa1cd5a89bfb32599bb2d0927b84}
+
+\item 
+\hyperlink{class_c_text_box}{C\+Text\+Box} $\ast$$\ast$ {\bfseries B\+\_\+\+Text\+Box\+\_\+pp}\hypertarget{class_c_actor_a7d30e5ece501e58905ca84190a6eca0c}{}\label{class_c_actor_a7d30e5ece501e58905ca84190a6eca0c}
+
+\item 
+\hyperlink{class_c_cmd_list}{C\+Cmd\+List} $\ast$ {\bfseries Cmd\+List}\hypertarget{class_c_actor_ad2178344644dfb6641d22270347a2642}{}\label{class_c_actor_ad2178344644dfb6641d22270347a2642}
+
+\item 
+\hyperlink{class_c_log_window}{C\+Log\+Window} $\ast$ {\bfseries Log\+Window}\hypertarget{class_c_actor_ac9d927740f7bd27888810f01b7adfbb8}{}\label{class_c_actor_ac9d927740f7bd27888810f01b7adfbb8}
+
+\item 
+\hyperlink{class_c_rect}{C\+Rect} {\bfseries Rect}\hypertarget{class_c_actor_a2966bbb88f033f4a22432e3337779665}{}\label{class_c_actor_a2966bbb88f033f4a22432e3337779665}
+
+\item 
+int {\bfseries Dx}\hypertarget{class_c_actor_ad92a8c0de5571aa8b22cd3feb9c481e3}{}\label{class_c_actor_ad92a8c0de5571aa8b22cd3feb9c481e3}
+
+\item 
+int {\bfseries Dy}\hypertarget{class_c_actor_ae3c51fdf009247a37a4ab868fa17a324}{}\label{class_c_actor_ae3c51fdf009247a37a4ab868fa17a324}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Classes/Actor.\+h\item 
+Classes/Actor.\+cpp\end{DoxyCompactItemize}

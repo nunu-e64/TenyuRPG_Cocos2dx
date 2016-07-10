@@ -1,0 +1,118 @@
+\hypertarget{class_c_battle}{}\section{C\+Battle Class Reference}
+\label{class_c_battle}\index{C\+Battle@{C\+Battle}}
+Inheritance diagram for C\+Battle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_battle}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_battle_1_1_c_target_marker}{C\+Target\+Marker}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries Init} ()\hypertarget{class_c_battle_ad4288e53bf58336701344736e71a65f9}{}\label{class_c_battle_ad4288e53bf58336701344736e71a65f9}
+
+\item 
+\hyperlink{class_c_menu_node}{C\+Menu\+Node} $\ast$ {\bfseries Get\+Field\+Status\+Menu\+Front\+Node} (const char \+\_\+parent\+Label\mbox{[}32\mbox{]})\hypertarget{class_c_battle_ad6799bcab4e9db10d5c4d81aab5c4ce5}{}\label{class_c_battle_ad6799bcab4e9db10d5c4d81aab5c4ce5}
+
+\item 
+void {\bfseries Update\+Field\+Player\+Accesssory\+Menu} (\hyperlink{class_c_menu_node}{C\+Menu\+Node} $\ast$\+\_\+player\+Node\+Parent)\hypertarget{class_c_battle_ad73a837f6724042dabec35d85ede91e4}{}\label{class_c_battle_ad73a837f6724042dabec35d85ede91e4}
+
+\item 
+void {\bfseries Update\+Player\+Accesssory\+Menu} (\hyperlink{class_c_menu_node}{C\+Menu\+Node} $\ast$\+\_\+player\+Node)\hypertarget{class_c_battle_ae51c1961332588459c81f9b8383c4357}{}\label{class_c_battle_ae51c1961332588459c81f9b8383c4357}
+
+\item 
+void {\bfseries Battle\+Ready} (\hyperlink{class_c_flag_set}{C\+Flag\+Set} $\ast$\+\_\+flagset\+\_\+p, \hyperlink{class_c_map}{C\+Map} $\ast$\+\_\+map\+\_\+p, \hyperlink{class_c_eve_manager}{C\+Eve\+Manager} $\ast$\+\_\+evemanager\+\_\+p)\hypertarget{class_c_battle_aa7c067df082cdf0790580bdba32e0363}{}\label{class_c_battle_aa7c067df082cdf0790580bdba32e0363}
+
+\item 
+void {\bfseries Battle\+Start} (int $\ast$\+\_\+result, \hyperlink{class_c_cmd_list}{C\+Cmd\+List} $\ast$\+\_\+fieldcmdlist\+\_\+p)\hypertarget{class_c_battle_ad264d63f91b14627d7a207e71478a404}{}\label{class_c_battle_ad264d63f91b14627d7a207e71478a404}
+
+\item 
+void {\bfseries Battle\+Setting} (const char $\ast$\+\_\+wincommand, const char $\ast$\+\_\+losecommand)\hypertarget{class_c_battle_a277f05cdd55dfbf28e21cbcdd7d4e325}{}\label{class_c_battle_a277f05cdd55dfbf28e21cbcdd7d4e325}
+
+\item 
+bool {\bfseries Check\+Encount} (int \+\_\+mapnum, int \+\_\+chipnum)\hypertarget{class_c_battle_a3af6b934068757e5eb62ef786360dd2c}{}\label{class_c_battle_a3af6b934068757e5eb62ef786360dd2c}
+
+\item 
+void \hyperlink{class_c_battle_ac416d83a1e6f4d2ff8c744023869c054}{Draw} (bool \+\_\+screenflip=false, bool \+\_\+textshowingstop=false, int dx=0, int dy=0, bool \+\_\+playeralsoshake=false)
+\item 
+void {\bfseries Change\+Text\+Mode} (bool \+\_\+box, const char $\ast$\+\_\+eventtext=N\+U\+LL)\hypertarget{class_c_battle_a6adcdc1aa707eb768aa311a784c98a98}{}\label{class_c_battle_a6adcdc1aa707eb768aa311a784c98a98}
+
+\item 
+int {\bfseries Get\+Actor\+Num} () const \hypertarget{class_c_battle_a34bde26f083675ba06d8793b1af01df2}{}\label{class_c_battle_a34bde26f083675ba06d8793b1af01df2}
+
+\item 
+void {\bfseries Set\+Back\+Ground} (const char $\ast$\+\_\+pickey)\hypertarget{class_c_battle_a6239d9c48096fe2487f0ff1c68d11062}{}\label{class_c_battle_a6239d9c48096fe2487f0ff1c68d11062}
+
+\item 
+void {\bfseries Set\+Back\+Ground} (int \+\_\+mapnum, int \+\_\+chipnum=-\/1)\hypertarget{class_c_battle_a8a885868777f55a0124e9463f83f8ea0}{}\label{class_c_battle_a8a885868777f55a0124e9463f83f8ea0}
+
+\item 
+void {\bfseries Set\+Player} ()\hypertarget{class_c_battle_a87d5e5b1da16875838881dcd04f04fa1}{}\label{class_c_battle_a87d5e5b1da16875838881dcd04f04fa1}
+
+\item 
+void {\bfseries Set\+Player} (const int \+\_\+player\+Num,...)\hypertarget{class_c_battle_a240dec65cd7817f3e012a27d62bd952d}{}\label{class_c_battle_a240dec65cd7817f3e012a27d62bd952d}
+
+\item 
+void {\bfseries Set\+Enemy} (const int \+\_\+enemy\+Num,...)\hypertarget{class_c_battle_ab566ace6e3e4e3a3d2312642d44e0459}{}\label{class_c_battle_ab566ace6e3e4e3a3d2312642d44e0459}
+
+\item 
+void {\bfseries Set\+Enemy} (std\+::vector$<$ std\+::string $>$ \+\_\+enemy\+List)\hypertarget{class_c_battle_a8275dbc7c3f8b8f12ab51ef97efd8960}{}\label{class_c_battle_a8275dbc7c3f8b8f12ab51ef97efd8960}
+
+\item 
+void {\bfseries Set\+Enemy} (std\+::vector$<$ \hyperlink{class_c_enemy_species}{C\+Enemy\+Species} $\ast$ $>$ \+\_\+enemy\+Party)\hypertarget{class_c_battle_a671882f3bbfe8b6a34a3a65160447894}{}\label{class_c_battle_a671882f3bbfe8b6a34a3a65160447894}
+
+\item 
+void {\bfseries Manage\+Attack} (int \+\_\+attacker\+Actor\+Index, int \+\_\+target\+Actor\+Index, \hyperlink{structtrick__tag}{trick\+\_\+tag} const $\ast$\+\_\+trick)\hypertarget{class_c_battle_a4c5aafcdc5093d314d73c78196082e39}{}\label{class_c_battle_a4c5aafcdc5093d314d73c78196082e39}
+
+\item 
+void {\bfseries Invoke\+Side\+Effect} (\hyperlink{structside_effect__tag}{side\+Effect\+\_\+tag} \+\_\+side\+Effect, int \+\_\+invoker\+Actor\+Index, int \+\_\+cursor\+Target\+Actor\+Index)\hypertarget{class_c_battle_a281ea23b83e29651bc5d8ffeee52f795}{}\label{class_c_battle_a281ea23b83e29651bc5d8ffeee52f795}
+
+\item 
+void {\bfseries Add\+Attention} (int \+\_\+enemy\+Index, int \+\_\+player\+Index, int \+\_\+value)\hypertarget{class_c_battle_a7960e2044172396ea8bf5674ebee61a8}{}\label{class_c_battle_a7960e2044172396ea8bf5674ebee61a8}
+
+\item 
+void {\bfseries Set\+Attention} (int \+\_\+enemy\+Index, int \+\_\+player\+Index, int \+\_\+value)\hypertarget{class_c_battle_adb7548ecf000b3ce3b0f8cd8c6b5db83}{}\label{class_c_battle_adb7548ecf000b3ce3b0f8cd8c6b5db83}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_c_battle}{C\+Battle} $\ast$ {\bfseries Get\+Instance} ()\hypertarget{class_c_battle_a8e2e28c3ccfef842dc884e033b49fad6}{}\label{class_c_battle_a8e2e28c3ccfef842dc884e033b49fad6}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_battle_1_1_c_target_marker}{C\+Battle\+::\+C\+Target\+Marker} {\bfseries Target\+Marker}\hypertarget{class_c_battle_a834011fdbcaf9ce06c2a0aa09142daf7}{}\label{class_c_battle_a834011fdbcaf9ce06c2a0aa09142daf7}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\index{C\+Battle@{C\+Battle}!Draw@{Draw}}
+\index{Draw@{Draw}!C\+Battle@{C\+Battle}}
+\subsubsection[{\texorpdfstring{Draw(bool \+\_\+screenflip=false, bool \+\_\+textshowingstop=false, int dx=0, int dy=0, bool \+\_\+playeralsoshake=false)}{Draw(bool _screenflip=false, bool _textshowingstop=false, int dx=0, int dy=0, bool _playeralsoshake=false)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Battle\+::\+Draw (
+\begin{DoxyParamCaption}
+\item[{bool}]{\+\_\+screenflip = {\ttfamily false}, }
+\item[{bool}]{\+\_\+textshowingstop = {\ttfamily false}, }
+\item[{int}]{dx = {\ttfamily 0}, }
+\item[{int}]{dy = {\ttfamily 0}, }
+\item[{bool}]{\+\_\+playeralsoshake = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_c_battle_ac416d83a1e6f4d2ff8c744023869c054}{}\label{class_c_battle_ac416d83a1e6f4d2ff8c744023869c054}
+テスト用////////////////////////////////////////////////////////////////////////// 
+
+Implements \hyperlink{class_c_world_manager}{C\+World\+Manager}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Classes/Battle.\+h\item 
+Classes/Battle.\+cpp\end{DoxyCompactItemize}

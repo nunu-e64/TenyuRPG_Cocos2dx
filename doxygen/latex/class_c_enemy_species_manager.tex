@@ -1,0 +1,53 @@
+\hypertarget{class_c_enemy_species_manager}{}\section{C\+Enemy\+Species\+Manager Class Reference}
+\label{class_c_enemy_species_manager}\index{C\+Enemy\+Species\+Manager@{C\+Enemy\+Species\+Manager}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Clear} ()\hypertarget{class_c_enemy_species_manager_a61bff3c97ea2615e6f212f8fd90f2cbd}{}\label{class_c_enemy_species_manager_a61bff3c97ea2615e6f212f8fd90f2cbd}
+
+\item 
+bool {\bfseries Create\+Species} (const char $\ast$\+\_\+name, int \+\_\+level, int \+\_\+gene\+Max\+Hp, int \+\_\+gene\+Atk, int \+\_\+gene\+Def, int \+\_\+gene\+Spd, int \+\_\+img)\hypertarget{class_c_enemy_species_manager_a075696984dd79e5243239ecfcb088696}{}\label{class_c_enemy_species_manager_a075696984dd79e5243239ecfcb088696}
+
+\item 
+bool {\bfseries Set\+Trick\+List} (const char $\ast$\+\_\+name, std\+::vector$<$ \hyperlink{structtrick__tag}{trick\+\_\+tag} const $\ast$ $>$ \+\_\+trick\+List)\hypertarget{class_c_enemy_species_manager_aa73abd6d351d50a114ddb745733f99ab}{}\label{class_c_enemy_species_manager_aa73abd6d351d50a114ddb745733f99ab}
+
+\item 
+bool {\bfseries Set\+Drop\+Item\+List} (const char $\ast$\+\_\+name, std\+::vector$<$ std\+::pair$<$ std\+::string, int $>$ $>$ \+\_\+drop\+Item\+List)\hypertarget{class_c_enemy_species_manager_a62f78b19892fb446413109e1e491f698}{}\label{class_c_enemy_species_manager_a62f78b19892fb446413109e1e491f698}
+
+\item 
+bool {\bfseries Add\+Random\+Plan\+Set} (const char $\ast$\+\_\+name, unsigned int \+\_\+index, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \+\_\+plan\+List, bool \+\_\+default\+Plan=false)\hypertarget{class_c_enemy_species_manager_ae885e38198c0920abf4b94dd8aaa4493}{}\label{class_c_enemy_species_manager_ae885e38198c0920abf4b94dd8aaa4493}
+
+\item 
+bool {\bfseries Set\+Enemy\+Planner} (std\+::string \+\_\+enemy\+Name, std\+::string \+\_\+type\+Name, std\+::vector$<$ std\+::string $>$ \+\_\+arg\+List)\hypertarget{class_c_enemy_species_manager_a5bd6ed0db0ae0ae3c730da688c99ca07}{}\label{class_c_enemy_species_manager_a5bd6ed0db0ae0ae3c730da688c99ca07}
+
+\item 
+bool {\bfseries Set\+Enemy\+Targetter} (std\+::string \+\_\+enemy\+Name, std\+::string \+\_\+type\+Name, std\+::vector$<$ std\+::string $>$ \+\_\+arg\+List)\hypertarget{class_c_enemy_species_manager_a797a72318055c9ae74acba4feb86cbfb}{}\label{class_c_enemy_species_manager_a797a72318055c9ae74acba4feb86cbfb}
+
+\item 
+\hyperlink{class_c_enemy_species}{C\+Enemy\+Species} $\ast$ {\bfseries Get\+Species} (const char $\ast$\+\_\+name)\hypertarget{class_c_enemy_species_manager_af0a736cc0fdb58408b900667871ae5c1}{}\label{class_c_enemy_species_manager_af0a736cc0fdb58408b900667871ae5c1}
+
+\item 
+bool {\bfseries Set\+Map\+Encount} (int \+\_\+mapnum, int \+\_\+chipnum, int \+\_\+encount)\hypertarget{class_c_enemy_species_manager_a01147031a924bdf6ed939829b7e69084}{}\label{class_c_enemy_species_manager_a01147031a924bdf6ed939829b7e69084}
+
+\item 
+bool {\bfseries Add\+Map\+Encount\+Party} (int \+\_\+mapnum, int \+\_\+chipnum, int \+\_\+encount, std\+::vector$<$ std\+::string $>$ \+\_\+party)\hypertarget{class_c_enemy_species_manager_aeda3ed33dc2cda2139c9642e78be6488}{}\label{class_c_enemy_species_manager_aeda3ed33dc2cda2139c9642e78be6488}
+
+\item 
+bool {\bfseries Check\+Encount} (int \+\_\+mapnum, int \+\_\+chipnum, std\+::vector$<$ \hyperlink{class_c_enemy_species}{C\+Enemy\+Species} $\ast$ $>$ \&\+\_\+party\+\_\+p)\hypertarget{class_c_enemy_species_manager_aa81ecf36891b968c3723b3e635b97059}{}\label{class_c_enemy_species_manager_aa81ecf36891b968c3723b3e635b97059}
+
+\item 
+bool {\bfseries Check\+After\+Load} ()\hypertarget{class_c_enemy_species_manager_a1a5a8d5c7486a3e25736283c13bbe5c7}{}\label{class_c_enemy_species_manager_a1a5a8d5c7486a3e25736283c13bbe5c7}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_c_enemy_species_manager}{C\+Enemy\+Species\+Manager} $\ast$ {\bfseries Get\+Instance} ()\hypertarget{class_c_enemy_species_manager_a0b12e5c3c55fdd368aed2d475a7f9a47}{}\label{class_c_enemy_species_manager_a0b12e5c3c55fdd368aed2d475a7f9a47}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Classes/Enemy\+Species\+Manager.\+h\item 
+Classes/Enemy\+Species\+Manager.\+cpp\end{DoxyCompactItemize}
